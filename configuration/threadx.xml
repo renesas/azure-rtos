@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>threadx</name>
+		<version>6.1.3_rel-rx-1.0.2</version>
+		<application>AzureRTOSKernel</application>
+		<category>rtos.kernel</category>
+		<desc>Azure RTOS ThreadX</desc>
+		<details>Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications</details>
+		<configgenpath>
+			<path>libs/threadx/tx_user.h</path>
+		</configgenpath>
+		<!-- Copy resources to project -->
+		<impdir>
+			<toolchain>GNURX</toolchain>
+			<folder>threadx/ports/rxv2/gnu</folder>
+			<path>libs/threadx/ports/rxv2/gnu</path>
+		</impdir>
+		<impdir>
+			<toolchain>RXC</toolchain>
+			<folder>threadx/ports/rxv2/ccrx</folder>
+			<path>libs/threadx/ports/rxv2/ccrx</path>
+		</impdir>
+		<impdir>
+			<folder>threadx/common</folder>
+			<path>libs/threadx/common</path>
+		</impdir>
+		<impdir>
+			<file>configuration/config_files/tx_user.h</file>
+			<path>libs/threadx</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<toolchain>GNURX</toolchain>
+			<path>libs/threadx/ports/rxv2/gnu/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>RXC</toolchain>
+			<path>libs/threadx/ports/rxv2/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<path>libs/threadx</path>
+			<path>libs/threadx/common/inc</path>
+		</incdir>
+		<!-- app setting -->
+		<apps>
+			<app id="userconfig">
+				<macrodefinition>
+					<compiler>TX_INCLUDE_USER_DEFINE_FILE</compiler>
+				</macrodefinition>
+			</app>
+		</apps>
+	</package>
+</refinfo>

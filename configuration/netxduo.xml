@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>netxduo</name>
+		<version>6.1.3_rel-rx-1.0.2</version>
+		<application>AzureRTOSLibrary</application>
+		<desc>Azure RTOS NetX Duo</desc>
+		<details>Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications</details>
+		<category>rtos.library</category>
+		<dependency>
+			<module>threadx</module>
+		</dependency>
+		<configgenpath>
+			<path>libs/netxduo/nx_user.h</path>
+		</configgenpath>
+		<!-- Copy resources to project -->
+		<impdir>
+			<toolchain>GNURX</toolchain>
+			<folder>netxduo/ports/rxv2/gnu/inc</folder>
+			<path>libs/netxduo/ports/rxv2/gnu/inc</path>
+		</impdir>
+		<impdir>
+			<toolchain>RXC</toolchain>
+			<folder>netxduo/ports/rxv2/ccrx/inc</folder>
+			<path>libs/netxduo/ports/rxv2/ccrx/inc</path>
+		</impdir>
+		<impdir>
+			<folder>netxduo/common</folder>
+			<path>libs/netxduo/common</path>
+		</impdir>
+		<impdir>
+			<file>configuration/config_files/nx_user.h</file>
+			<path>libs/netxduo</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<toolchain>GNURX</toolchain>
+			<path>libs/netxduo/ports/rxv2/gnu/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>RXC</toolchain>
+			<path>libs/netxduo/ports/rxv2/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<path>libs/netxduo</path>
+			<path>libs/netxduo/common/inc</path>
+		</incdir>
+		<!-- app setting -->
+		<apps>
+			<app id="userconfig">
+				<macrodefinition>
+					<compiler>NX_INCLUDE_USER_DEFINE_FILE</compiler>
+				</macrodefinition>
+			</app>
+		</apps>
+	</package>
+</refinfo>

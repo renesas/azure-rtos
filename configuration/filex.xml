@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>filex</name>
+		<version>6.1.3_rel-rx-1.0.2</version>
+		<application>AzureRTOSLibrary</application>
+		<desc>Azure RTOS FileX</desc>
+		<details>Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX</details>
+		<function>RTOS</function>
+		<category>rtos.library</category>
+		<dependency>
+			<module>threadx</module>
+		</dependency>
+		<configgenpath>
+			<path>libs/filex/fx_user.h</path>
+		</configgenpath>
+		<!-- Copy resources to project -->
+		<impdir>
+			<folder>filex/common</folder>
+			<path>libs/filex/common</path>
+		</impdir>
+		<impdir>
+			<file>filex/ports/generic/inc/fx_port.h</file>
+			<path>libs/filex/ports/generic/inc</path>
+		</impdir>
+		<impdir>
+			<file>configuration/config_files/fx_user.h</file>
+			<path>libs/filex</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<path>libs/filex</path>
+			<path>libs/filex/common/inc</path>
+			<path>libs/filex/ports/generic/inc</path>
+		</incdir>
+		<!-- app setting -->
+		<apps>
+			<app id="userconfig">
+				<macrodefinition>
+					<compiler>FX_INCLUDE_USER_DEFINE_FILE</compiler>
+				</macrodefinition>
+			</app>
+		</apps>
+	</package>
+</refinfo>

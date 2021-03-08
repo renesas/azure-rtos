@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+/***********************************************************************************************************************
+  Purpose: Module Description File (MDF) Example (Schema Version 2.0)
+           This is a description of a sample FIT module configuration file
+***********************************************************************************************************************/
+-->
+<module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
+	<fileVersion>1.00</fileVersion>
+	<formatVersion>2.00</formatVersion>
+	<fileTemplate></fileTemplate>
+	<configuration>
+		<!-- TX_MAX_PRIORITIES -->
+		<property id="USE_TX_MAX_PRIORITIES" display="Enable threadx max priority" default="0" type="checkbox">
+			<option id="USE_TX_MAX_PRIORITIES.0" display="Disable" value="0"/>
+			<option id="USE_TX_MAX_PRIORITIES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_MAX_PRIORITIES" display="Max priority" default="32" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_MAX_PRIORITIES}" == 1)</constraint>
+		</property>
+		<!-- TX_MINIMUM_STACK -->
+		<property id="USE_TX_MINIMUM_STACK" display="Enable threadx minimum stack" default="0" type="checkbox">
+			<option id="USE_TX_MINIMUM_STACK.0" display="Disable" value="0"/>
+			<option id="USE_TX_MINIMUM_STACK.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_MINIMUM_STACK" display="Minimun stack" default="0" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_MINIMUM_STACK}" == 1)</constraint>
+		</property>
+		<!-- TX_TIMER_THREAD_STACK_SIZE -->
+		<property id="USE_TX_TIMER_THREAD_STACK_SIZE" display="Enable threadx stack size" default="0" type="checkbox">
+			<option id="USE_TX_TIMER_THREAD_STACK_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_TX_TIMER_THREAD_STACK_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_TIMER_THREAD_STACK_SIZE" display="Timer stack size" default="128" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_TIMER_THREAD_STACK_SIZE}" == 1)</constraint>
+		</property>
+		<!-- TX_TIMER_THREAD_PRIORITY -->
+		<property id="USE_TX_TIMER_THREAD_PRIORITY" display="Enable threadx timer priority" default="0" type="checkbox">
+			<option id="USE_TX_TIMER_THREAD_PRIORITY.0" display="Disable" value="0"/>
+			<option id="USE_TX_TIMER_THREAD_PRIORITY.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_TIMER_THREAD_PRIORITY" display="Timer priority" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_TIMER_THREAD_PRIORITY}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- TX_THREAD_USER_EXTENSION -->
+		<property id="USE_TX_THREAD_USER_EXTENSION" display="Use threadx user extension" default="0" type="checkbox">
+			<option id="USE_TX_THREAD_USER_EXTENSION.0" display="Disable" value="0"/>
+			<option id="USE_TX_THREAD_USER_EXTENSION.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_TIMER_PROCESS_IN_ISR -->
+		<property id="USE_TX_TIMER_PROCESS_IN_ISR" display="Call timer expirations" default="0" type="checkbox">
+			<option id="USE_TX_TIMER_PROCESS_IN_ISR.0" display="Disable" value="0"/>
+			<option id="USE_TX_TIMER_PROCESS_IN_ISR.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_REACTIVATE_INLINE -->
+		<property id="USE_TX_REACTIVATE_INLINE" display="In-line timer reactivation" default="0" type="checkbox">
+			<option id="USE_TX_REACTIVATE_INLINE.0" display="Disable" value="0"/>
+			<option id="USE_TX_REACTIVATE_INLINE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_DISABLE_STACK_FILLING -->
+		<property id="USE_TX_DISABLE_STACK_FILLING
+" display="Enable stack filling" default="0" type="checkbox">
+			<option id="USE_TX_DISABLE_STACK_FILLING.0" display="Disable" value="0"/>
+			<option id="USE_TX_DISABLE_STACK_FILLING.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_ENABLE_STACK_CHECKING -->
+		<property id="USE_TX_ENABLE_STACK_CHECKING
+" display="Enable stack checking" default="0" type="checkbox">
+			<option id="USE_TX_ENABLE_STACK_CHECKING.0" display="Disable" value="0"/>
+			<option id="USE_TX_ENABLE_STACK_CHECKING.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_DISABLE_PREEMPTION_THRESHOLD -->
+		<property id="USE_TX_DISABLE_PREEMPTION_THRESHOLD
+" display="Enable preemption-threshold" default="0" type="checkbox">
+			<option id="USE_TX_DISABLE_PREEMPTION_THRESHOLD.0" display="Disable" value="0"/>
+			<option id="USE_TX_DISABLE_PREEMPTION_THRESHOLD.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_DISABLE_REDUNDANT_CLEARING -->
+		<property id="USE_TX_DISABLE_REDUNDANT_CLEARING" display="Clear global variables" default="0" type="checkbox">
+			<option id="USE_TX_DISABLE_REDUNDANT_CLEARING.0" display="Disable" value="0"/>
+			<option id="USE_TX_DISABLE_REDUNDANT_CLEARING.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_NO_TIMER -->
+		<property id="USE_TX_NO_TIMER" display="No timer processing" default="0" type="checkbox">
+			<option id="USE_TX_NO_TIMER.0" display="Disable" value="0"/>
+			<option id="USE_TX_NO_TIMER.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_DISABLE_NOTIFY_CALLBACKS -->
+		<property id="USE_TX_DISABLE_NOTIFY_CALLBACKS" display="Notify callback" default="1" type="checkbox">
+			<option id="USE_TX_DISABLE_NOTIFY_CALLBACKS.0" display="Disable" value="1"/>
+			<option id="USE_TX_DISABLE_NOTIFY_CALLBACKS.1" display="Enable" value="0"/>
+			<description></description>
+		</property>
+		<!-- TX_INLINE_THREAD_RESUME_SUSPEND -->
+		<property id="USE_TX_INLINE_THREAD_RESUME_SUSPEND" display="Thread resume and suspend" default="0" type="checkbox">
+			<option id="USE_TX_INLINE_THREAD_RESUME_SUSPEND.0" display="Disable" value="0"/>
+			<option id="USE_TX_INLINE_THREAD_RESUME_SUSPEND.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_NOT_INTERRUPTABLE -->
+		<property id="USE_TX_NOT_INTERRUPTABLE" display="Non-interruptable internal ThreadX code " default="0" type="checkbox">
+			<option id="USE_TX_NOT_INTERRUPTABLE.0" display="Disable" value="0"/>
+			<option id="USE_TX_NOT_INTERRUPTABLE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_ENABLE_EVENT_TRACE -->
+		<property id="USE_TX_ENABLE_EVENT_TRACE" display="Trace event logging code" default="0" type="checkbox">
+			<option id="USE_TX_ENABLE_EVENT_TRACE.0" display="Disable" value="0"/>
+			<option id="USE_TX_ENABLE_EVENT_TRACE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO" display="Block pool performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO" display="Byte pool performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_EVENT_FLAGS_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_EVENT_FLAGS_ENABLE_PERFORMANCE_INFO" display="Event flags performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_EVENT_FLAGS_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_EVENT_FLAGS_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_MUTEX_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_MUTEX_ENABLE_PERFORMANCE_INFO" display="Mutex performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_MUTEX_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_MUTEX_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_QUEUE_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_QUEUE_ENABLE_PERFORMANCE_INFO" display="Queue performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_QUEUE_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_QUEUE_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO" display="Semaphore performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_THREAD_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_THREAD_ENABLE_PERFORMANCE_INFO" display="Thread performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_THREAD_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_THREAD_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_TIMER_ENABLE_PERFORMANCE_INFO -->
+		<property id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO" display="Timer performance gathering" default="0" type="checkbox">
+			<option id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
+			<option id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+	</configuration>
+</module>
