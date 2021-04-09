@@ -29,7 +29,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.6_rel-rx-1.0.0</version>
+		<version>6.1.6_rel-rx-1.0.3</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="Bare project" description="Project includes ThreadX, BSP, and CMT">
