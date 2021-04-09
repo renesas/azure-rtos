@@ -1,11 +1,238 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
-    <fileVersion>1.00</fileVersion>
-    <formatVersion>2.00</formatVersion>
-    <fileTemplate></fileTemplate>
-    <configuration>
-        <property id="TEST" display="Dummy" default="123" type="textbox">
-            <description></description>
-        </property>
-    </configuration>
+   <fileVersion>1.00</fileVersion>
+   <formatVersion>2.00</formatVersion>
+   <fileTemplate />
+   <configuration>
+      <!-- FX_MAX_LONG_NAME_LEN -->
+      <property id="USE_FX_MAX_LONG_NAME_LEN" display="Filex max long name length" default="0" type="checkbox">
+         <option id="USE_FX_MAX_LONG_NAME_LEN.0" display="Disable" value="0" />
+         <option id="USE_FX_MAX_LONG_NAME_LEN.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_MAX_LONG_NAME_LEN" display="Max long name length" default="256" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_MAX_LONG_NAME_LEN}" == 1)</constraint>
+         <description>Defines the maximum size of long file names supported by FileX. The default value is 33. The
+minimum value is 13 and the maximum value is 256.</description>
+      </property>
+      <!-- FX_MAX_LAST_NAME_LEN -->
+      <property id="USE_FX_MAX_LAST_NAME_LEN" display="Filex max last name length" default="0" type="checkbox">
+         <option id="USE_FX_MAX_LAST_NAME_LEN.0" display="Disable" value="0" />
+         <option id="USE_FX_MAX_LAST_NAME_LEN.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_MAX_LAST_NAME_LEN" display="Max last name length" default="256" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_MAX_LAST_NAME_LEN}" == 1)</constraint>
+         <description>Defines the maximum size of last file names supported by FileX. The default value is 33. The
+minimum value is 13 and the maximum value is 256. Must be as large or larger than FX_MAX_LONG_NAME_LEN</description>
+      </property>
+      <!-- FX_MAX_SECTOR_CACHE -->
+      <property id="USE_FX_MAX_SECTOR_CACHE" display="Filex max sector cache" default="0" type="checkbox">
+         <option id="USE_FX_MAX_SECTOR_CACHE.0" display="Disable" value="0" />
+         <option id="USE_FX_MAX_SECTOR_CACHE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_MAX_SECTOR_CACHE" display="Max sector cache" default="256" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_MAX_SECTOR_CACHE}" == 1)</constraint>
+         <description>Defines the maximum number of logical sectors that can be cached by FileX. The cache memory
+supplied to FileX at fx_media_open determines how many sectors can actually be cached. Minimum value is 2, all other values must be power of 2.</description>
+      </property>
+      <!-- FX_FAT_MAP_SIZE -->
+      <property id="USE_FX_FAT_MAP_SIZE" display="Filex FAT map size" default="0" type="checkbox">
+         <option id="USE_FX_FAT_MAP_SIZE.0" display="Disable" value="0" />
+         <option id="USE_FX_FAT_MAP_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_FAT_MAP_SIZE" display="FAT map size" default="128" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_FAT_MAP_SIZE}" == 1)</constraint>
+         <description>Defines the size in bytes of the bit map used to update the secondary FAT sectors. The larger the value the
+less unnecessary secondary FAT sector writes. Minimum value is 1, no maximum value.</description>
+      </property>
+      <!-- FX_MAX_FAT_CACHE -->
+      <property id="USE_FX_MAX_FAT_CACHE" display="Filex max FAT cache" default="0" type="checkbox">
+         <option id="USE_FX_MAX_FAT_CACHE.0" display="Disable" value="0" />
+         <option id="USE_FX_MAX_FAT_CACHE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_MAX_FAT_CACHE" display="Max FAT cache" default="16" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_MAX_FAT_CACHE}" == 1)</constraint>
+         <description>Defines the number of entries in the FAT cache. Minimum value is 8, all values must be a power of 2.</description>
+      </property>
+      <!-- FX_UPDATE_RATE_IN_SECONDS -->
+      <property id="USE_FX_UPDATE_RATE_IN_SECONDS" display="Filex update rate in seconds" default="0" type="checkbox">
+         <option id="USE_FX_UPDATE_RATE_IN_SECONDS.0" display="Disable" value="0" />
+         <option id="USE_FX_UPDATE_RATE_IN_SECONDS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_UPDATE_RATE_IN_SECONDS" display="Update rate in seconds" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_UPDATE_RATE_IN_SECONDS}" == 1)</constraint>
+         <description>Defines the number of seconds the time parameters are updated in FileX.</description>
+      </property>
+      <!-- FX_UPDATE_RATE_IN_TICKS -->
+      <property id="USE_FX_UPDATE_RATE_IN_TICKS" display="Filex update rate in ticks" default="0" type="checkbox">
+         <option id="USE_FX_UPDATE_RATE_IN_TICKS.0" display="Disable" value="0" />
+         <option id="USE_FX_UPDATE_RATE_IN_TICKS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_UPDATE_RATE_IN_TICKS" display="Update rate in ticks" default="1000" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_UPDATE_RATE_IN_TICKS}" == 1)</constraint>
+         <description>Defines the number of ThreadX timer ticks required to achieve the update rate specified by
+FX_UPDATE_RATE_IN_SECONDS defined previously. By default, the ThreadX timer tick is 10ms,
+so the default value for this constant is 1000.</description>
+      </property>
+      <!-- FX_NO_TIMER -->
+      <property id="USE_FX_NO_TIMER" display="Use filex no timer" default="0" type="checkbox">
+         <option id="USE_FX_NO_TIMER.0" display="Disable" value="0" />
+         <option id="USE_FX_NO_TIMER.1" display="Enable" value="1" />
+         <description>Defined, FileX is built without update to the time parameters.</description>
+      </property>
+      <!-- FX_DONT_UPDATE_OPEN_FILES -->
+      <property id="USE_FX_DONT_UPDATE_OPEN_FILES" display="Filex does not update open files" default="0" type="checkbox">
+         <option id="USE_FX_DONT_UPDATE_OPEN_FILES.0" display="Disable" value="0" />
+         <option id="USE_FX_DONT_UPDATE_OPEN_FILES.1" display="Enable" value="1" />
+         <description>Defined, FileX does not update already opened files.</description>
+      </property>
+      <!-- FX_MEDIA_DISABLE_SEARCH_CACHE -->
+      <property id="USE_FX_MEDIA_DISABLE_SEARCH_CACHE" display="Disable file search cache" default="0" type="checkbox">
+         <option id="USE_FX_MEDIA_DISABLE_SEARCH_CACHE.0" display="Disable" value="0" />
+         <option id="USE_FX_MEDIA_DISABLE_SEARCH_CACHE.1" display="Enable" value="1" />
+         <description>Defined, the file search cache optimization is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_DIRECT_DATA_READ_CACHE_FILL -->
+      <property id="USE_FX_DISABLE_DIRECT_DATA_READ_CACHE_FILL" display="Disable direct data read update of cache" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_DIRECT_DATA_READ_CACHE_FILL.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_DIRECT_DATA_READ_CACHE_FILL.1" display="Enable" value="1" />
+         <description>Defined, the direct read sector update of cache is disabled.</description>
+      </property>
+      <!-- FX_MEDIA_STATISTICS_DISABLE -->
+      <property id="USE_FX_MEDIA_STATISTICS_DISABLE" display="Enable media statistics" default="0" type="checkbox">
+         <option id="USE_FX_MEDIA_STATISTICS_DISABLE.0" display="Disable" value="0" />
+         <option id="USE_FX_MEDIA_STATISTICS_DISABLE.1" display="Enable" value="1" />
+         <description>Defined, gathering of media statistics is disabled.</description>
+      </property>
+      <!-- FX_SINGLE_OPEN_LEGACY -->
+      <property id="USE_FX_SINGLE_OPEN_LEGACY" display="Enable single open legacy" default="0" type="checkbox">
+         <option id="USE_FX_SINGLE_OPEN_LEGACY.0" display="Disable" value="0" />
+         <option id="USE_FX_SINGLE_OPEN_LEGACY.1" display="Enable" value="1" />
+         <description>Defined, legacy single open logic for the same file is enabled.</description>
+      </property>
+      <!-- FX_RENAME_PATH_INHERIT -->
+      <property id="USE_FX_RENAME_PATH_INHERIT" display="Enable path inherit rename" default="0" type="checkbox">
+         <option id="USE_FX_RENAME_PATH_INHERIT.0" display="Disable" value="0" />
+         <option id="USE_FX_RENAME_PATH_INHERIT.1" display="Enable" value="1" />
+         <description>Defined, renaming inherits path information.</description>
+      </property>
+      <!-- FX_NO_LOCAL_PATH -->
+      <property id="USE_FX_NO_LOCAL_PATH" display="Disable local path logic" default="0" type="checkbox">
+         <option id="USE_FX_NO_LOCAL_PATH.0" display="Disable" value="0" />
+         <option id="USE_FX_NO_LOCAL_PATH.1" display="Enable" value="1" />
+         <description>Defined, local path logic is disabled.</description>
+      </property>
+      <!-- FX_ENABLE_EXFAT -->
+      <property id="USE_FX_ENABLE_EXFAT" display="Enable EXFAT file system" default="0" type="checkbox">
+         <option id="USE_FX_ENABLE_EXFAT.0" display="Disable" value="0" />
+         <option id="USE_FX_ENABLE_EXFAT.1" display="Enable" value="1" />
+         <description>Defined, FileX is able to access exFAT file system.</description>
+      </property>
+      <!-- FX_SINGLE_THREAD -->
+      <property id="USE_FX_SINGLE_THREAD" display="Enable filex single thread" default="0" type="checkbox">
+         <option id="USE_FX_SINGLE_THREAD.0" display="Disable" value="0" />
+         <option id="USE_FX_SINGLE_THREAD.1" display="Enable" value="1" />
+         <description>Define FileX internal protection macros.  If FX_SINGLE_THREAD is defined,
+these protection macros are effectively disabled.  However, for multi-thread
+uses, the macros are setup to utilize a ThreadX mutex for multiple thread 
+access control into an open media.</description>
+      </property>
+      <!-- FX_FAULT_TOLERANT_DATA -->
+      <property id="USE_FX_FAULT_TOLERANT_DATA" display="Use filex fault tolerant data" default="0" type="checkbox">
+         <option id="USE_FX_FAULT_TOLERANT_DATA.0" display="Disable" value="0" />
+         <option id="USE_FX_FAULT_TOLERANT_DATA.1" display="Enable" value="1" />
+         <description>Defined, data sector write requests are flushed immediately to the driver.</description>
+      </property>
+      <!-- FX_FAULT_TOLERANT -->
+      <property id="USE_FX_FAULT_TOLERANT" display="Use filex fault tolerant" default="0" type="checkbox">
+         <option id="USE_FX_FAULT_TOLERANT.0" display="Disable" value="0" />
+         <option id="USE_FX_FAULT_TOLERANT.1" display="Enable" value="1" />
+         <description>Defined, system sector write requests (including FAT and directory entry requests)
+are flushed immediately to the driver.</description>
+      </property>
+      <!-- FX_DRIVER_USE_64BIT_LBA -->
+      <property id="USE_FX_DRIVER_USE_64BIT_LBA" display="Use driver 64-bit LBA" default="0" type="checkbox">
+         <option id="USE_FX_DRIVER_USE_64BIT_LBA.0" display="Disable" value="0" />
+         <option id="USE_FX_DRIVER_USE_64BIT_LBA.1" display="Enable" value="1" />
+         <description>Defined, enables 64-bits sector addresses used in I/O driver.</description>
+      </property>
+      <!-- FX_ENABLE_FAULT_TOLERANT -->
+      <property id="USE_FX_ENABLE_FAULT_TOLERANT" display="Enable filex fault tolerant" default="0" type="checkbox">
+         <option id="USE_FX_ENABLE_FAULT_TOLERANT.0" display="Disable" value="0" />
+         <option id="USE_FX_ENABLE_FAULT_TOLERANT.1" display="Enable" value="1" />
+         <description>Defined, enables FileX fault tolerant service.</description>
+      </property>
+      <!-- FX_FAULT_TOLERANT_BOOT_INDEX -->
+      <property id="USE_FX_FAULT_TOLERANT_BOOT_INDEX" display="Use filex fault tolerant boot index" default="0" type="checkbox">
+         <option id="USE_FX_FAULT_TOLERANT_BOOT_INDEX.0" display="Disable" value="0" />
+         <option id="USE_FX_FAULT_TOLERANT_BOOT_INDEX.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="FX_FAULT_TOLERANT_BOOT_INDEX" display="Filex fault tolerant booot index" default="116" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_FX_FAULT_TOLERANT_BOOT_INDEX}" == 1)</constraint>
+         <description>Define byte offset in boot sector where the cluster number of the Fault Tolerant Log file is.
+Note that this field (byte 116 to 119) is marked as reserved by FAT 12/16/32/exFAT specification.</description>
+      </property>
+      <!-- FX_DISABLE_ERROR_CHECKING -->
+      <property id="USE_FX_DISABLE_ERROR_CHECKING" display="Disable error checking" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_ERROR_CHECKING.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_ERROR_CHECKING.1" display="Enable" value="1" />
+         <description>Defined, error checking is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_CACHE -->
+      <property id="USE_FX_DISABLE_CACHE" display="Disable cache" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_CACHE.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_CACHE.1" display="Enable" value="1" />
+         <description>Defined, cache is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_FILE_CLOSE -->
+      <property id="USE_FX_DISABLE_FILE_CLOSE" display="Disable file close" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_FILE_CLOSE.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_FILE_CLOSE.1" display="Enable" value="1" />
+         <description>Defined, file close is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_FAST_OPEN -->
+      <property id="USE_FX_DISABLE_FAST_OPEN" display="Disable fast open" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_FAST_OPEN.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_FAST_OPEN.1" display="Enable" value="1" />
+         <description>Defined, fast open is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_FORCE_MEMORY_OPERATION -->
+      <property id="USE_FX_DISABLE_FORCE_MEMORY_OPERATION" display="Disable force memory operation" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_FORCE_MEMORY_OPERATION.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_FORCE_MEMORY_OPERATION.1" display="Enable" value="1" />
+         <description>Defined, force memory operations are disabled.</description>
+      </property>
+      <!-- FX_DISABLE_BUILD_OPTIONS -->
+      <property id="USE_FX_DISABLE_BUILD_OPTIONS" display="Disable build options" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_BUILD_OPTIONS.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_BUILD_OPTIONS.1" display="Enable" value="1" />
+         <description>Defined, build options is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_ONE_LINE_FUNCTION -->
+      <property id="USE_FX_DISABLE_ONE_LINE_FUNCTION" display="Disable one line function" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_ONE_LINE_FUNCTION.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_ONE_LINE_FUNCTION.1" display="Enable" value="1" />
+         <description>Defined, one line function is disabled.</description>
+      </property>
+      <!-- FX_DIABLE_FAT_ENTRY_REFRESH -->
+      <property id="USE_FX_DIABLE_FAT_ENTRY_REFRESH" display="Disable FAT entry refresh" default="0" type="checkbox">
+         <option id="USE_FX_DIABLE_FAT_ENTRY_REFRESH.0" display="Disable" value="0" />
+         <option id="USE_FX_DIABLE_FAT_ENTRY_REFRESH.1" display="Enable" value="1" />
+         <description>Defined, FAT entry refresh is disabled.</description>
+      </property>
+      <!-- FX_DISABLE_CONSECUTIVE_DETECT -->
+      <property id="USE_FX_DISABLE_CONSECUTIVE_DETECT" display="Disable consecutive detect" default="0" type="checkbox">
+         <option id="USE_FX_DISABLE_CONSECUTIVE_DETECT.0" display="Disable" value="0" />
+         <option id="USE_FX_DISABLE_CONSECUTIVE_DETECT.1" display="Enable" value="1" />
+         <description>Defined, consecutive detect is disabled.</description>
+      </property>
+   </configuration>
 </module>
+

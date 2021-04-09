@@ -29,7 +29,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.3_rel-rx-1.0.2</version>
+		<version>6.1.6_rel-rx-1.0.0</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="Bare project" description="Project includes ThreadX, BSP, and CMT">
@@ -46,7 +46,7 @@
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00004000</address>
+						<address>0x00010000</address>
 					</section>
 				</sections>
 			</app>

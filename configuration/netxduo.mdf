@@ -1,11 +1,844 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
-    <fileVersion>1.00</fileVersion>
-    <formatVersion>2.00</formatVersion>
-    <fileTemplate></fileTemplate>
-    <configuration>
-        <property id="TEST" display="Dummy" default="123" type="textbox">
-            <description></description>
-        </property>
-    </configuration>
+   <fileVersion>1.00</fileVersion>
+   <formatVersion>2.00</formatVersion>
+   <fileTemplate />
+   <configuration>
+      <!-- NX_MAX_PHYSICAL_INTERFACES -->
+      <property id="USE_NX_MAX_PHYSICAL_INTERFACES" display="Define Max physical network interfaces" default="0" type="checkbox">
+         <option id="USE_NX_MAX_PHYSICAL_INTERFACES.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_PHYSICAL_INTERFACES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_PHYSICAL_INTERFACES" display="Max physical network interfaces" default="1" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_PHYSICAL_INTERFACES}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_LOOPBACK_INTERFACE -->
+      <property id="USE_NX_DISABLE_LOOPBACK_INTERFACE" display="Disable NetX Duo support on 127.0.0.1 loopback interface" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_LOOPBACK_INTERFACE.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_LOOPBACK_INTERFACE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_INTERFACE_CAPABILITY -->
+      <property id="USE_NX_ENABLE_INTERFACE_CAPABILITY" display="Enable Specify extra capability for link driver" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_INTERFACE_CAPABILITY.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_INTERFACE_CAPABILITY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_IP_PERIODIC_RATE -->
+      <property id="USE_NX_IP_PERIODIC_RATE" display="Define ThreadX timer ticks in one second" default="0" type="checkbox">
+         <option id="USE_NX_IP_PERIODIC_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_IP_PERIODIC_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IP_PERIODIC_RATE" display="ThreadX timer ticks in one second" default="100" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IP_PERIODIC_RATE}" == 1)</constraint>
+         <description>This configuration is valid only if TX_TIMER_TICKS_PER_SECOND is not defined</description>
+      </property>
+      <!-- NX_ENABLE_IP_RAW_PACKET_FILTER -->
+      <property id="USE_NX_ENABLE_IP_RAW_PACKET_FILTER" display="Allow install filter for incoming raw packets" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_IP_RAW_PACKET_FILTER.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_IP_RAW_PACKET_FILTER.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_IP_RAW_MAX_QUEUE_DEPTH -->
+      <property id="USE_NX_IP_RAW_MAX_QUEUE_DEPTH" display="Define Maximum RAW packages in queue" default="0" type="checkbox">
+         <option id="USE_NX_IP_RAW_MAX_QUEUE_DEPTH.0" display="Disable" value="0" />
+         <option id="USE_NX_IP_RAW_MAX_QUEUE_DEPTH.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IP_RAW_MAX_QUEUE_DEPTH" display="Maximum RAW packages in queue" default="20" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IP_RAW_MAX_QUEUE_DEPTH}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ENABLE_IP_STATIC_ROUTING -->
+      <property id="USE_NX_ENABLE_IP_STATIC_ROUTING" display="Enables IP static routing feature" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_IP_STATIC_ROUTING.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_IP_STATIC_ROUTING.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_IP_ROUTING_TABLE_SIZE -->
+      <property id="USE_NX_IP_ROUTING_TABLE_SIZE" display="Define size of IP routing table" default="0" type="checkbox">
+         <option id="USE_NX_IP_ROUTING_TABLE_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_IP_ROUTING_TABLE_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IP_ROUTING_TABLE_SIZE" display="Size of IP routing table" default="8" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IP_ROUTING_TABLE_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_MAX_MULTICAST_GROUPS -->
+      <property id="USE_NX_MAX_MULTICAST_GROUPS" display="Define maximum number of multicast groups" default="0" type="checkbox">
+         <option id="USE_NX_MAX_MULTICAST_GROUPS.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_MULTICAST_GROUPS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_MULTICAST_GROUPS" display="Maximum number of multicast groups" default="7" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_MULTICAST_GROUPS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_IPV6 -->
+      <property id="USE_NX_DISABLE_IPV6" display="Disable IPv6 processing" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IPV6.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IPV6.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!--USE_NX_MAX_IPV6_ADDRESSES-->
+      <property id="USE_NX_MAX_IPV6_ADDRESSES" display="Define the number of entries in IPv6 address pool" default="0" type="checkbox">
+         <option id="USE_NX_MAX_IPV6_ADDRESSES.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_IPV6_ADDRESSES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_IPV6_ADDRESSES" display="Number of entries in IPv6 address pool" default="NX_MAX_PHYSICAL_INTERFACES * 3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_IPV6_ADDRESSES}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_REDIRECT_PROCESS -->
+      <property id="USE_NX_DISABLE_ICMPV6_REDIRECT_PROCESS" display="Disable Process IPv6 ICMP Redirect Messages" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV6_REDIRECT_PROCESS.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV6_REDIRECT_PROCESS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_ROUTER_ADVERTISEMENT_PROCESS -->
+      <property id="USE_NX_DISABLE_ICMPV6_ROUTER_ADVERTISEMENT_PROCESS" display="Disable Send IPv6 Router Advertisement Messages" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV6_ROUTER_ADVERTISEMENT_PROCESS.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV6_ROUTER_ADVERTISEMENT_PROCESS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_ROUTER_SOLICITATION -->
+      <property id="USE_NX_DISABLE_ICMPV6_ROUTER_SOLICITATION" display="Disable Send IPv6 Router Solicitation Messages" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV6_ROUTER_SOLICITATION.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV6_ROUTER_SOLICITATION.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ICMPV6_MAX_RTR_SOLICITATIONS -->
+      <property id="USE_NX_ICMPV6_MAX_RTR_SOLICITATIONS" display="Define maximum number of of router solicitations" default="0" type="checkbox">
+         <option id="USE_NX_ICMPV6_MAX_RTR_SOLICITATIONS.0" display="Disable" value="0" />
+         <option id="USE_NX_ICMPV6_MAX_RTR_SOLICITATIONS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ICMPV6_MAX_RTR_SOLICITATIONS" display="Maximum number of router solicitations" default="3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ICMPV6_MAX_RTR_SOLICITATIONS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ICMPV6_RTR_SOLICITATION_INTERVAL -->
+      <property id="USE_NX_ICMPV6_RTR_SOLICITATION_INTERVAL" display="Define the interval between which the host sends router solicitations in seconds" default="0" type="checkbox">
+         <option id="USE_NX_ICMPV6_RTR_SOLICITATION_INTERVAL.0" display="Disable" value="0" />
+         <option id="USE_NX_ICMPV6_RTR_SOLICITATION_INTERVAL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ICMPV6_RTR_SOLICITATION_INTERVAL" display="Router solicitations host send interval" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ICMPV6_RTR_SOLICITATION_INTERVAL}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ICMPV6_RTR_SOLICITATION_DELAY -->
+      <property id="USE_NX_ICMPV6_RTR_SOLICITATION_DELAY" display="Define maximum delay for the initial router solicitation" default="0" type="checkbox">
+         <option id="USE_NX_ICMPV6_RTR_SOLICITATION_DELAY.0" display="Disable" value="0" />
+         <option id="USE_NX_ICMPV6_RTR_SOLICITATION_DELAY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ICMPV6_RTR_SOLICITATION_DELAY" display="Maximum delay for the initial router solicitation" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ICMPV6_RTR_SOLICITATION_DELAY}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV4_ERROR_MESSAGE -->
+      <property id="USE_NX_DISABLE_ICMPV4_ERROR_MESSAGE" display="Disable Send ICMPv4 Error Messages" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV4_ERROR_MESSAGE.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV4_ERROR_MESSAGE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_ERROR_MESSAGE -->
+      <property id="USE_NX_DISABLE_ICMPV6_ERROR_MESSAGE" display="Disable Send ICMPv6 Error Messages" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV6_ERROR_MESSAGE.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV6_ERROR_MESSAGE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IPV6_DAD -->
+      <property id="USE_NX_DISABLE_IPV6_DAD" display="Disable Duplicate Address Detection" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IPV6_DAD.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IPV6_DAD.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_IPV6_STATELESS_AUTOCONFIG_CONTROL -->
+      <property id="USE_NX_IPV6_STATELESS_AUTOCONFIG_CONTROL" display="IPv6 stateless address autoconfiguration" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_STATELESS_AUTOCONFIG_CONTROL.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_STATELESS_AUTOCONFIG_CONTROL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_IPV6_ADDRESS_CHANGE_NOTIFY -->
+      <property id="USE_NX_ENABLE_IPV6_ADDRESS_CHANGE_NOTIFY" display="Allow install a callback function for IPv6" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_IPV6_ADDRESS_CHANGE_NOTIFY.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_IPV6_ADDRESS_CHANGE_NOTIFY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IPV6_PURGE_UNUSED_CACHE_ENTRIES -->
+      <property id="USE_NX_DISABLE_IPV6_PURGE_UNUSED_CACHE_ENTRIES" display="Disable Allow removing stale (old) cache table entries" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IPV6_PURGE_UNUSED_CACHE_ENTRIES.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IPV6_PURGE_UNUSED_CACHE_ENTRIES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_IPV6_MULTICAST -->
+      <property id="USE_NX_ENABLE_IPV6_MULTICAST" display="Simple IPv6 multicast group join/leave function" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_IPV6_MULTICAST.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_IPV6_MULTICAST.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_IPV6_PATH_MTU_DISCOVERY -->
+      <property id="USE_NX_ENABLE_IPV6_PATH_MTU_DISCOVERY" display="Minimum Path MTU Discovery" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_IPV6_PATH_MTU_DISCOVERY.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_IPV6_PATH_MTU_DISCOVERY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_PATH_MTU_INCREASE_WAIT_INTERVAL -->
+      <property id="USE_NX_PATH_MTU_INCREASE_WAIT_INTERVAL" display="Define wait interval to reset path MTU (big error message)" default="0" type="checkbox">
+         <option id="USE_NX_PATH_MTU_INCREASE_WAIT_INTERVAL.0" display="Disable" value="0" />
+         <option id="USE_NX_PATH_MTU_INCREASE_WAIT_INTERVAL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_PATH_MTU_INCREASE_WAIT_INTERVAL" display="Path MTU Wait interval" default="600" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_PATH_MTU_INCREASE_WAIT_INTERVAL}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_MAX_MULTICAST_SOLICIT -->
+      <property id="USE_NX_MAX_MULTICAST_SOLICIT" display="Define maximum number of multicast Neighbor Solicitation packets" default="0" type="checkbox">
+         <option id="USE_NX_MAX_MULTICAST_SOLICIT.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_MULTICAST_SOLICIT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_MULTICAST_SOLICIT" display="Maximum number of multicast Neighbor Solicitation packets" default="3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_MULTICAST_SOLICIT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_REACHABLE_TIME -->
+      <property id="USE_NX_REACHABLE_TIME" display="Define Neighbor Cache reachable time" default="0" type="checkbox">
+         <option id="USE_NX_REACHABLE_TIME.0" display="Disable" value="0" />
+         <option id="USE_NX_REACHABLE_TIME.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_REACHABLE_TIME" display="Neighbor Cache reachable time (seconds)" default="30" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_REACHABLE_TIME}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_RETRANS_TIMER -->
+      <property id="USE_NX_RETRANS_TIMER" display="Define Neighbor Solicitation (NS) packets retransmit time" default="0" type="checkbox">
+         <option id="USE_NX_RETRANS_TIMER.0" display="Disable" value="0" />
+         <option id="USE_NX_RETRANS_TIMER.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_RETRANS_TIMER" display="Neighbor Solicitation (NS) packets retransmit time (miliseconds)" default="1000" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_RETRANS_TIMER}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DELAY_FIRST_PROBE_TIME -->
+      <property id="USE_NX_DELAY_FIRST_PROBE_TIME" display="Define Neighbor Solicitation (NS) packets remain time in the Delay state" default="0" type="checkbox">
+         <option id="USE_NX_DELAY_FIRST_PROBE_TIME.0" display="Disable" value="0" />
+         <option id="USE_NX_DELAY_FIRST_PROBE_TIME.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_DELAY_FIRST_PROBE_TIME" display="Neighbor Solicitation (NS) packets remain time in the Delay state (seconds)" default="5" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_DELAY_FIRST_PROBE_TIME}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ND_MAX_QUEUE_DEPTH -->
+      <property id="USE_NX_ND_MAX_QUEUE_DEPTH" display="Define maximum number of packets can be queued for Neighbor Discovery (IPv6)" default="0" type="checkbox">
+         <option id="USE_NX_ND_MAX_QUEUE_DEPTH.0" display="Disable" value="0" />
+         <option id="USE_NX_ND_MAX_QUEUE_DEPTH.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ND_MAX_QUEUE_DEPTH" display="Maximum number of packets can be queued for Neighbor Discovery (IPv6)" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ND_MAX_QUEUE_DEPTH}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV6_DAD_TRANSMITS -->
+      <property id="USE_NX_IPV6_DAD_TRANSMITS" display="Enable maximum ICMPv6 Duplicate Address Detect Transmit" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_DAD_TRANSMITS.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_DAD_TRANSMITS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV6_DAD_TRANSMITS" display="Maximum ICMPv6 Duplicate Address Detect Transmit" default="3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV6_DAD_TRANSMITS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV6_NEIGHBOR_CACHE_SIZE -->
+      <property id="USE_NX_IPV6_NEIGHBOR_CACHE_SIZE" display="Define number of neighbor cache entries" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_NEIGHBOR_CACHE_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_NEIGHBOR_CACHE_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV6_NEIGHBOR_CACHE_SIZE" display="Number of neighbor cache entries" default="16" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV6_NEIGHBOR_CACHE_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV6_DESTINATION_TABLE_SIZE -->
+      <property id="USE_NX_IPV6_DESTINATION_TABLE_SIZE" display="Define size of IPv6 destination table" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_DESTINATION_TABLE_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_DESTINATION_TABLE_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV6_DESTINATION_TABLE_SIZE" display="Size of IPv6 destination table" default="8" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV6_DESTINATION_TABLE_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV6_PREFIX_LIST_TABLE_SIZE -->
+      <property id="USE_NX_IPV6_PREFIX_LIST_TABLE_SIZE" display="Define size of IPv6 prefix table" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_PREFIX_LIST_TABLE_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_PREFIX_LIST_TABLE_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV6_PREFIX_LIST_TABLE_SIZE" display="Size of IPv6 prefix table" default="8" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV6_PREFIX_LIST_TABLE_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPSEC_ENABLE -->
+      <property id="USE_NX_IPSEC_ENABLE" display="IPSEC" default="0" type="checkbox">
+         <option id="USE_NX_IPSEC_ENABLE.0" display="Disable" value="0" />
+         <option id="USE_NX_IPSEC_ENABLE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_NAT_ENABLE -->
+      <property id="USE_NX_NAT_ENABLE" display="NAT process" default="0" type="checkbox">
+         <option id="USE_NX_NAT_ENABLE.0" display="Disable" value="0" />
+         <option id="USE_NX_NAT_ENABLE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IGMPV2 -->
+      <property id="USE_NX_DISABLE_IGMPV2" display="Disable IGMP v2 support" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IGMPV2.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IGMPV2.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ARP_DEFEND_BY_REPLY -->
+      <property id="USE_NX_ARP_DEFEND_BY_REPLY" display="Send ARP reply if address conflict" default="0" type="checkbox">
+         <option id="USE_NX_ARP_DEFEND_BY_REPLY.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_DEFEND_BY_REPLY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_ARP_MAC_CHANGE_NOTIFICATION -->
+      <property id="USE_NX_ENABLE_ARP_MAC_CHANGE_NOTIFICATION" display="Check invalid message with ARP collision hander" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_ARP_MAC_CHANGE_NOTIFICATION.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_ARP_MAC_CHANGE_NOTIFICATION.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ARP_EXPIRATION_RATE -->
+      <property id="USE_NX_ARP_EXPIRATION_RATE" display="Define ARP expiration rate" default="0" type="checkbox">
+         <option id="USE_NX_ARP_EXPIRATION_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_EXPIRATION_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ARP_EXPIRATION_RATE" display="ARP expiration rate" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ARP_EXPIRATION_RATE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ARP_UPDATE_RATE -->
+      <property id="USE_NX_ARP_UPDATE_RATE" display="Define ARP update rate" default="0" type="checkbox">
+         <option id="USE_NX_ARP_UPDATE_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_UPDATE_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ARP_UPDATE_RATE" display="ARP update rate" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ARP_UPDATE_RATE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ARP_MAXIMUM_RETRIES -->
+      <property id="USE_NX_ARP_MAXIMUM_RETRIES" display="Define maximum ARP entries" default="0" type="checkbox">
+         <option id="USE_NX_ARP_MAXIMUM_RETRIES.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_MAXIMUM_RETRIES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ARP_MAXIMUM_RETRIES" display="Maximum ARP entries" default="18" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ARP_MAXIMUM_RETRIES}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ARP_MAX_QUEUE_DEPTH -->
+      <property id="USE_NX_ARP_MAX_QUEUE_DEPTH" display="Define maximum queued packets for ARP response" default="0" type="checkbox">
+         <option id="USE_NX_ARP_MAX_QUEUE_DEPTH.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_MAX_QUEUE_DEPTH.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ARP_MAX_QUEUE_DEPTH" display="Maximum queued packets for ARP response" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ARP_MAX_QUEUE_DEPTH}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_ARP_AUTO_ENTRY -->
+      <property id="USE_NX_DISABLE_ARP_AUTO_ENTRY" display="Disable Entering ARP request information" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ARP_AUTO_ENTRY.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ARP_AUTO_ENTRY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ARP_DEFEND_INTERVAL -->
+      <property id="USE_NX_ARP_DEFEND_INTERVAL" display="Define ARP defend interval" default="0" type="checkbox">
+         <option id="USE_NX_ARP_DEFEND_INTERVAL.0" display="Disable" value="0" />
+         <option id="USE_NX_ARP_DEFEND_INTERVAL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ARP_DEFEND_INTERVAL" display="ARP defend interval" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ARP_DEFEND_INTERVAL}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_ACK_TIMER_RATE -->
+      <property id="USE_NX_TCP_ACK_TIMER_RATE" display="Define TCP delayed ACK timer rate" default="0" type="checkbox">
+         <option id="USE_NX_TCP_ACK_TIMER_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_ACK_TIMER_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_ACK_TIMER_RATE" display="Devide value for TCP delayed ACK timer rate" default="5" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_ACK_TIMER_RATE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_FAST_TIMER_RATE -->
+      <property id="USE_NX_TCP_FAST_TIMER_RATE" display="Define fast TCP timer rate" default="0" type="checkbox">
+         <option id="USE_NX_TCP_FAST_TIMER_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_FAST_TIMER_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_FAST_TIMER_RATE" display="Devide value for fast TCP timer rate" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_FAST_TIMER_RATE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_TRANSMIT_TIMER_RATE -->
+      <property id="USE_NX_TCP_TRANSMIT_TIMER_RATE" display="Define TCP transmit retry processing" default="0" type="checkbox">
+         <option id="USE_NX_TCP_TRANSMIT_TIMER_RATE.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_TRANSMIT_TIMER_RATE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_TRANSMIT_TIMER_RATE" display="Devide value TCP transmit retry processing" default="1" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_TRANSMIT_TIMER_RATE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_KEEPALIVE_INITIAL -->
+      <property id="USE_NX_TCP_KEEPALIVE_INITIAL" display="Define keepalive timer activates initial" default="0" type="checkbox">
+         <option id="USE_NX_TCP_KEEPALIVE_INITIAL.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_KEEPALIVE_INITIAL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_KEEPALIVE_INITIAL" display="Keepalive timer activates initial" default="7200" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_KEEPALIVE_INITIAL}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_KEEPALIVE_RETRY -->
+      <property id="USE_NX_TCP_KEEPALIVE_RETRY" display="Define keepalive timer retries" default="0" type="checkbox">
+         <option id="USE_NX_TCP_KEEPALIVE_RETRY.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_KEEPALIVE_RETRY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_KEEPALIVE_RETRY" display="Keepalive timer retries" default="75" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_KEEPALIVE_RETRY}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_MAX_OUT_OF_ORDER_PACKETS -->
+      <property id="USE_NX_TCP_MAX_OUT_OF_ORDER_PACKETS" display="Define maximum packets that are out of order" default="0" type="checkbox">
+         <option id="USE_NX_TCP_MAX_OUT_OF_ORDER_PACKETS.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_MAX_OUT_OF_ORDER_PACKETS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_MAX_OUT_OF_ORDER_PACKETS" display="Maximum packets that are out of order" default="8" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_MAX_OUT_OF_ORDER_PACKETS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_MAX_LISTEN_REQUESTS -->
+      <property id="USE_NX_MAX_LISTEN_REQUESTS" display="Define maximum packets that are out of order" default="0" type="checkbox">
+         <option id="USE_NX_MAX_LISTEN_REQUESTS.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_LISTEN_REQUESTS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_LISTEN_REQUESTS" display="Maximum packets that are out of order" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_LISTEN_REQUESTS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ENABLE_TCP_KEEPALIVE -->
+      <property id="USE_NX_ENABLE_TCP_KEEPALIVE" display="Enables the optional TCP keepalive timer" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_TCP_KEEPALIVE.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_TCP_KEEPALIVE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_TCP_IMMEDIATE_ACK -->
+      <property id="USE_NX_TCP_IMMEDIATE_ACK" display="Enables the optional TCP immediate ACK response processing" default="0" type="checkbox">
+         <option id="USE_NX_TCP_IMMEDIATE_ACK.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_IMMEDIATE_ACK.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_TCP_ACK_EVERY_N_PACKETS -->
+      <property id="USE_NX_TCP_ACK_EVERY_N_PACKETS" display="Define number of TCP packets to receive before sending an ACK" default="0" type="checkbox">
+         <option id="USE_NX_TCP_ACK_EVERY_N_PACKETS.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_ACK_EVERY_N_PACKETS.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_ACK_EVERY_N_PACKETS" display="Number of TCP packets to receive before sending an ACK" default="2" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_ACK_EVERY_N_PACKETS}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_MAXIMUM_RETRIES -->
+      <property id="USE_NX_TCP_MAXIMUM_RETRIES" display="Define number of transmit retires are allowed before the connection is deemed broken" default="0" type="checkbox">
+         <option id="USE_NX_TCP_MAXIMUM_RETRIES.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_MAXIMUM_RETRIES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_MAXIMUM_RETRIES" display="Number of transmit retires are allowed before the connection is deemed broken" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_MAXIMUM_RETRIES}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_MAXIMUM_TX_QUEUE -->
+      <property id="USE_NX_TCP_MAXIMUM_TX_QUEUE" display="Define maximum depth of the TCP transmit queue before TCP send requests are suspended or rejected" default="0" type="checkbox">
+         <option id="USE_NX_TCP_MAXIMUM_TX_QUEUE.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_MAXIMUM_TX_QUEUE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_MAXIMUM_TX_QUEUE" display="maximum depth of the TCP transmit queue before TCP send requests are suspended or rejected" default="20" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_MAXIMUM_TX_QUEUE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_RETRY_SHIFT -->
+      <property id="USE_NX_TCP_RETRY_SHIFT" display="Define retransmit timeout period changes between successive retries" default="0" type="checkbox">
+         <option id="USE_NX_TCP_RETRY_SHIFT.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_RETRY_SHIFT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_RETRY_SHIFT" display="Retransmit timeout period changes between successive retries" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_RETRY_SHIFT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_TCP_KEEPALIVE_RETRIES -->
+      <property id="USE_NX_TCP_KEEPALIVE_RETRIES" display="Define keepalive retries are allowed before the connection is deemed broken" default="0" type="checkbox">
+         <option id="USE_NX_TCP_KEEPALIVE_RETRIES.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_KEEPALIVE_RETRIES.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_KEEPALIVE_RETRIES" display="Numer of keepalive retries are allowed before the connection is deemed broken" default="10" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_KEEPALIVE_RETRIES}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ENABLE_TCP_WINDOW_SCALING -->
+      <property id="USE_NX_ENABLE_TCP_WINDOW_SCALING" display="The TCP window scaling feature" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_TCP_WINDOW_SCALING.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_TCP_WINDOW_SCALING.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_RESET_DISCONNECT -->
+      <property id="USE_NX_DISABLE_RESET_DISCONNECT" display="Disable Reset processing during disconnect when the timeout value is specified as NX_NO_WAIT" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_RESET_DISCONNECT.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_RESET_DISCONNECT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_TCP_MSS_CHECK -->
+      <property id="USE_NX_ENABLE_TCP_MSS_CHECK" display="The incoming SYN package for a minimum acceptable MSS" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_TCP_MSS_CHECK.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_TCP_MSS_CHECK.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_TCP_MSS_MINIMUM -->
+      <property id="USE_NX_TCP_MSS_MINIMUM" display="Define TCP MSS minimum" default="0" type="checkbox">
+         <option id="USE_NX_TCP_MSS_MINIMUM.0" display="Disable" value="0" />
+         <option id="USE_NX_TCP_MSS_MINIMUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_TCP_MSS_MINIMUM" display="TCP MSS minimum" default="128" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_TCP_MSS_MINIMUM}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_ENABLE_TCP_QUEUE_DEPTH_UPDATE_NOTIFY -->
+      <property id="USE_NX_ENABLE_TCP_QUEUE_DEPTH_UPDATE_NOTIFY" display="The TCP window scaling feature" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_TCP_QUEUE_DEPTH_UPDATE_NOTIFY.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_TCP_QUEUE_DEPTH_UPDATE_NOTIFY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_LOW_WATERMARK -->
+      <property id="USE_NX_ENABLE_LOW_WATERMARK" display="Define the maximum receive queue for TCP socket" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_LOW_WATERMARK.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_LOW_WATERMARK.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ENABLE_LOW_WATERMARK" display="The maximum receive queue for TCP socket" default="20" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ENABLE_LOW_WATERMARK}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_FRAGMENTATION -->
+      <property id="USE_NX_DISABLE_FRAGMENTATION" display="Disable IPv4 and IPv6 fragmentation and reassembly logic" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_FRAGMENTATION.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_FRAGMENTATION.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_FRAGMENT_IMMEDIATE_ASSEMBLY -->
+      <property id="USE_NX_FRAGMENT_IMMEDIATE_ASSEMBLY" display="Process IP fragmentation immediately" default="0" type="checkbox">
+         <option id="USE_NX_FRAGMENT_IMMEDIATE_ASSEMBLY.0" display="Disable" value="0" />
+         <option id="USE_NX_FRAGMENT_IMMEDIATE_ASSEMBLY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_IP_MAX_REASSEMBLY_TIME -->
+      <property id="USE_NX_IP_MAX_REASSEMBLY_TIME" display="Define specifies the maximum time of IP reassembly" default="0" type="checkbox">
+         <option id="USE_NX_IP_MAX_REASSEMBLY_TIME.0" display="Disable" value="0" />
+         <option id="USE_NX_IP_MAX_REASSEMBLY_TIME.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IP_MAX_REASSEMBLY_TIME" display="The maximum time of IP reassembly" default="60" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IP_MAX_REASSEMBLY_TIME}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV4_MAX_REASSEMBLY_TIME -->
+      <property id="USE_NX_IPV4_MAX_REASSEMBLY_TIME" display="Define specifies the maximum time of IPv4 reassembly" default="0" type="checkbox">
+         <option id="USE_NX_IPV4_MAX_REASSEMBLY_TIME.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV4_MAX_REASSEMBLY_TIME.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV4_MAX_REASSEMBLY_TIME" display="The maximum time of IPv4 reassembly" default="15" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV4_MAX_REASSEMBLY_TIME}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_IPV6_MAX_REASSEMBLY_TIME -->
+      <property id="USE_NX_IPV6_MAX_REASSEMBLY_TIME" display="Define specifies the maximum time of IPv6 reassembly" default="0" type="checkbox">
+         <option id="USE_NX_IPV6_MAX_REASSEMBLY_TIME.0" display="Disable" value="0" />
+         <option id="USE_NX_IPV6_MAX_REASSEMBLY_TIME.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_IPV6_MAX_REASSEMBLY_TIME" display="The maximum time of IPv6 reassembly" default="60" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_IPV6_MAX_REASSEMBLY_TIME}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV4_RX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_ICMPV4_RX_CHECKSUM" display="Disable Checksum logic on received ICMPv4 packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV4_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV4_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_RX_CHECKSUM -->
+      <property id="NX_DISABLE_ICMPV6_RX_CHECKSUM" display="Disable Checksum logic on received ICMPv6 packets" default="0" type="checkbox">
+         <option id="NX_DISABLE_ICMPV6_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="NX_DISABLE_ICMPV6_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMP_RX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_ICMP_RX_CHECKSUM" display="Disable Checksum logic on received ICMPv4 or ICMPv6 packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMP_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMP_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV4_TX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_ICMPV4_TX_CHECKSUM" display="Disable Checksum logic on transmitted ICMPv4 packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMPV4_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMPV4_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMPV6_TX_CHECKSUM -->
+      <property id="NX_DISABLE_ICMPV6_TX_CHECKSUM" display="Disable Checksum logic on transmitted ICMPv6 packets" default="0" type="checkbox">
+         <option id="NX_DISABLE_ICMPV6_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="NX_DISABLE_ICMPV6_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMP_TX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_ICMP_TX_CHECKSUM" display="Disable Checksum logic on transmitted ICMPv4 or ICMPv6 packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMP_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMP_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IP_RX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_IP_RX_CHECKSUM" display="Disable Checksum logic on received IP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IP_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IP_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IP_TX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_IP_TX_CHECKSUM" display="Disable Checksum logic on transmitted IP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IP_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IP_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_TCP_RX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_TCP_RX_CHECKSUM" display="Disable Checksum logic on received TCP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_TCP_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_TCP_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_TCP_TX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_TCP_TX_CHECKSUM" display="Disable Checksum logic on transmitted TCP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_TCP_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_TCP_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_UDP_RX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_UDP_RX_CHECKSUM" display="Disable Checksum logic on received UDP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_UDP_RX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_UDP_RX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_UDP_TX_CHECKSUM -->
+      <property id="USE_NX_DISABLE_UDP_TX_CHECKSUM" display="Disable Checksum logic on transmitted UDP packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_UDP_TX_CHECKSUM.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_UDP_TX_CHECKSUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ARP_INFO -->
+      <property id="USE_NX_DISABLE_ARP_INFO" display="Disable ARP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ARP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ARP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IP_INFO -->
+      <property id="USE_NX_DISABLE_IP_INFO" display="Disable IP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ICMP_INFO -->
+      <property id="USE_NX_DISABLE_ICMP_INFO" display="Disable ICMP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ICMP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ICMP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_IGMP_INFO -->
+      <property id="USE_NX_DISABLE_IGMP_INFO" display="Disable IGMP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IGMP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IGMP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_PACKET_INFO -->
+      <property id="USE_NX_DISABLE_PACKET_INFO" display="Disable Packet information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_PACKET_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_PACKET_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_RARP_INFO -->
+      <property id="USE_NX_DISABLE_RARP_INFO" display="Disable RARP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_RARP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_RARP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_TCP_INFO -->
+      <property id="USE_NX_DISABLE_TCP_INFO" display="Disable TCP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_TCP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_TCP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_UDP_INFO -->
+      <property id="USE_NX_DISABLE_UDP_INFO" display="Disable UDP information gathering" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_UDP_INFO.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_UDP_INFO.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_PHYSICAL_HEADER -->
+      <property id="USE_NX_PHYSICAL_HEADER" display="Define specifies the size of the physical packet header" default="0" type="checkbox">
+         <option id="USE_NX_PHYSICAL_HEADER.0" display="Disable" value="0" />
+         <option id="USE_NX_PHYSICAL_HEADER.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_PHYSICAL_HEADER" display="The size of the physical packet header" default="16" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_PHYSICAL_HEADER}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_PHYSICAL_TRAILER -->
+      <property id="USE_NX_PHYSICAL_TRAILER" display="Define specifies the size of the physical packet trailer" default="0" type="checkbox">
+         <option id="USE_NX_PHYSICAL_TRAILER.0" display="Disable" value="0" />
+         <option id="USE_NX_PHYSICAL_TRAILER.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_PHYSICAL_TRAILER" display="The size of the physical packet trailer" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_PHYSICAL_TRAILER}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_RX_SIZE_CHECKING -->
+      <property id="USE_NX_DISABLE_RX_SIZE_CHECKING" display="Disable The addition size checking on received packets" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_RX_SIZE_CHECKING.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_RX_SIZE_CHECKING.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_PACKET_HEADER_PAD -->
+      <property id="USE_NX_PACKET_HEADER_PAD" display="Pad NX_PACKET structure for alignment purpose" default="0" type="checkbox">
+         <option id="USE_NX_PACKET_HEADER_PAD.0" display="Disable" value="0" />
+         <option id="USE_NX_PACKET_HEADER_PAD.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_PACKET_HEADER_PAD_SIZE -->
+      <property id="USE_NX_PACKET_HEADER_PAD_SIZE" display="Define NX_PACKET size" default="0" type="checkbox">
+         <option id="USE_NX_PACKET_HEADER_PAD_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_PACKET_HEADER_PAD_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_PACKET_HEADER_PAD_SIZE" display="NX_PACKET size" default="1" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_PACKET_HEADER_PAD_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_PACKET_ALIGNMENT -->
+      <property id="USE_NX_PACKET_ALIGNMENT" display="Define aligned value of packet header and payload" default="0" type="checkbox">
+         <option id="USE_NX_PACKET_ALIGNMENT.0" display="Disable" value="0" />
+         <option id="USE_NX_PACKET_ALIGNMENT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_PACKET_ALIGNMENT" display="Aligned value of packet header and payload" default="sizeof(ULONG)" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_PACKET_ALIGNMENT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_PACKET_CHAIN -->
+      <property id="USE_NX_DISABLE_PACKET_CHAIN" display="Disable The packet chain feature" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_PACKET_CHAIN.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_PACKET_CHAIN.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_DUAL_PACKET_POOL -->
+      <property id="USE_NX_ENABLE_DUAL_PACKET_POOL" display="IP instance manages dual packet pools" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_DUAL_PACKET_POOL.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_DUAL_PACKET_POOL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ERROR_CHECKING -->
+      <property id="USE_NX_DISABLE_ERROR_CHECKING" display="Disable The basic NetX error checking" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ERROR_CHECKING.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ERROR_CHECKING.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DRIVER_DEFERRED_PROCESSING -->
+      <property id="USE_NX_DRIVER_DEFERRED_PROCESSING" display="Deferred driver packet handling" default="0" type="checkbox">
+         <option id="USE_NX_DRIVER_DEFERRED_PROCESSING.0" display="Disable" value="0" />
+         <option id="USE_NX_DRIVER_DEFERRED_PROCESSING.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_SOURCE_ADDRESS_CHECK -->
+      <property id="USE_NX_ENABLE_SOURCE_ADDRESS_CHECK" display="Checking the source address of incoming packet" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_SOURCE_ADDRESS_CHECK.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_SOURCE_ADDRESS_CHECK.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_EXTENDED_NOTIFY_SUPPORT -->
+      <property id="USE_NX_ENABLE_EXTENDED_NOTIFY_SUPPORT" display="The extended notify support" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_EXTENDED_NOTIFY_SUPPORT.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_EXTENDED_NOTIFY_SUPPORT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DISABLE_ASSERT -->
+      <property id="USE_NX_DISABLE_ASSERT" display="Disable ASSERT" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_ASSERT.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_ASSERT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ASSERT_FAIL -->
+      <property id="USE_NX_ASSERT_FAIL" display="Define the process when assert fails" default="0" type="checkbox">
+         <option id="USE_NX_ASSERT_FAIL.0" display="Disable" value="0" />
+         <option id="USE_NX_ASSERT_FAIL.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_ASSERT_FAIL" display="The process when assert fails" default="while (1) tx_thread_sleep(NX_WAIT_FOREVER);" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_ASSERT_FAIL}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_DISABLE_IPV4 -->
+      <property id="USE_NX_DISABLE_IPV4" display="Disable The IPv4 feature" default="0" type="checkbox">
+         <option id="USE_NX_DISABLE_IPV4.0" display="Disable" value="0" />
+         <option id="USE_NX_DISABLE_IPV4.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_ENABLE_ICMP_ADDRESS_CHECK -->
+      <property id="USE_NX_ENABLE_ICMP_ADDRESS_CHECK" display="Checking the destination address of ICMP packet" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_ICMP_ADDRESS_CHECK.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_ICMP_ADDRESS_CHECK.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_MAX_STRING_LENGTH -->
+      <property id="USE_NX_MAX_STRING_LENGTH" display="Define the max string length" default="0" type="checkbox">
+         <option id="USE_NX_MAX_STRING_LENGTH.0" display="Disable" value="0" />
+         <option id="USE_NX_MAX_STRING_LENGTH.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_MAX_STRING_LENGTH" display="The max string length" default="1024" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_STRING_LENGTH}" == 1)</constraint>
+         <description />
+      </property>
+   </configuration>
 </module>
