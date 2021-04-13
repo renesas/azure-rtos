@@ -35,7 +35,7 @@
 			<app id="application" value="bare" name="Bare project" description="Project includes ThreadX, BSP, and CMT">
 				<!-- Copy resources to project -->
 				<impdir>
-					<file>threadx/samples/demo_threadx.c</file>
+					<folder>configuration/samples/bare</folder>
 					<path>src</path>
 				</impdir>
 				<!-- compiler setting -->
