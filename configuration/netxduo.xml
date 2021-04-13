@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>netxduo</name>
-		<version>6.1.6_rel-rx-1.0.3</version>
+		<version>6.1.6_rel-rx-1.0.4</version>
 		<application>AzureRTOSLibrary</application>
 		<desc>Azure RTOS NetX Duo</desc>
 		<details>Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications</details>
