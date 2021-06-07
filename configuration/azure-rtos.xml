@@ -29,10 +29,10 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.6_rel-rx-1.0.4</version>
+		<version>6.1.6_rel-rx-1.0.5</version>
 		<application>AzureRTOS</application>
 		<apps>
-			<app id="application" value="bare" name="Bare project" description="Project includes ThreadX, BSP, and CMT">
+			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/bare</folder>
@@ -46,9 +46,500 @@
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
+						<address>0x00004000</address>
+					</section>
+				</sections>
+			</app>
+			<app id="application" value="ramdisk" name="FileX RAM Disk sample project" description="Project includes ThreadX, FileX, BSP, CMT. This sample illustrates the use of the FileX embedded FAT file system. The example creates a small RAM-disk with a sample file and data, and reads the file data back into memory">
+				<!-- Copy resources to project -->
+				<impdir>
+					<file>configuration/samples/ramdisk/hardware_setup.h</file>
+					<file>configuration/samples/ramdisk/hardware_setup.c</file>
+					<file>configuration/samples/ramdisk/sample_filex_ram_disk.c</file>
+					<path>src</path>
+				</impdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/ramdisk/ramdisk_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00004000</address>
+					</section>
+				</sections>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.optimize.level0</value>
+				</option>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+			</app>
+			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/ping/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/ping/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/src/demo_printf.c</file>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/src/hardware_setup.c</file>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
+					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/ping/rsk-rx65n-2mb/RSKRX65N-2MB-ping_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B_ETHERNET_BUFFERS_1</name>
+						<name>B_TX_DESC_1</name>
+						<name>B_RX_DESC_1</name>
+						<name>B</name>
+						<name>FREEMEM</name>
 						<address>0x00010000</address>
 					</section>
 				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<compiler>NX_ENABLE_DHCP</compiler>
+				</macrodefinition>
+			</app>
+			<!-- TODO add more apps -->
+			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/iperf/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/iperf/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/demo_printf.c</file>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/hardware_setup.c</file>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
+					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/iperf/rsk-rx65n-2mb/RSKRX65N-2MB-iperf_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B_ETHERNET_BUFFERS_1</name>
+						<name>B_TX_DESC_1</name>
+						<name>B_RX_DESC_1</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00010000</address>
+					</section>
+				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<compiler>NX_ENABLE_DHCP</compiler>
+				</macrodefinition>
+			</app>
+			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/iot_sdk/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/demo_printf.c</file>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/hardware_setup.c</file>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
+					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/iot_sdk/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B_ETHERNET_BUFFERS_1</name>
+						<name>B_TX_DESC_1</name>
+						<name>B_RX_DESC_1</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00009000</address>
+					</section>
+				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<compiler>NX_ENABLE_DHCP</compiler>
+				</macrodefinition>
+			</app>
+			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/iot_sdk_pnp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/demo_printf.c</file>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/hardware_setup.c</file>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
+					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B_ETHERNET_BUFFERS_1</name>
+						<name>B_TX_DESC_1</name>
+						<name>B_RX_DESC_1</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00009000</address>
+					</section>
+				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<compiler>NX_ENABLE_DHCP</compiler>
+				</macrodefinition>
+			</app>
+			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/temperature_pnp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/demo_printf.c</file>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/hardware_setup.c</file>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
+					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/temperature_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-temperature-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<section>
+						<name>B_ETHERNET_BUFFERS_1</name>
+						<name>B_TX_DESC_1</name>
+						<name>B_RX_DESC_1</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00009000</address>
+					</section>
+				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<compiler>NX_ENABLE_DHCP</compiler>
+				</macrodefinition>
 			</app>
 		</apps>
 	</package>
