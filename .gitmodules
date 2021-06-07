@@ -10,3 +10,6 @@
 	path = threadx
 	url = https://github.com/azure-rtos/threadx
 	branch = v6.1.6_rel
+[submodule "rx-driver-package"]
+	path = rx-driver-package
+	url = https://github.com/renesas/rx-driver-package
