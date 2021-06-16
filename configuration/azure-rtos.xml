@@ -29,7 +29,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.6_rel-rx-1.0.5</version>
+		<version>6.1.6_rel-rx-1.0.6</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
@@ -86,7 +86,7 @@
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
 			</app>
-			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window">
+			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -139,12 +139,12 @@
 					<series>RX600</series>
 					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS_1</name>
-						<name>B_TX_DESC_1</name>
-						<name>B_RX_DESC_1</name>
+						<name>B_ETHERNET_BUFFERS</name>
+						<name>B_TX_DESC</name>
+						<name>B_RX_DESC</name>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00010000</address>
+						<address>0x00004000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -177,7 +177,7 @@
 				</macrodefinition>
 			</app>
 			<!-- TODO add more apps -->
-			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI">
+			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -231,12 +231,12 @@
 					<series>RX600</series>
 					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS_1</name>
-						<name>B_TX_DESC_1</name>
-						<name>B_RX_DESC_1</name>
+						<name>B_ETHERNET_BUFFERS</name>
+						<name>B_TX_DESC</name>
+						<name>B_RX_DESC</name>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00010000</address>
+						<address>0x00004000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -268,7 +268,7 @@
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS">
+			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -322,12 +322,12 @@
 					<series>RX600</series>
 					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS_1</name>
-						<name>B_TX_DESC_1</name>
-						<name>B_RX_DESC_1</name>
+						<name>B_ETHERNET_BUFFERS</name>
+						<name>B_TX_DESC</name>
+						<name>B_RX_DESC</name>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00009000</address>
+						<address>0x00004000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -359,7 +359,7 @@
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play">
+			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -413,12 +413,12 @@
 					<series>RX600</series>
 					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS_1</name>
-						<name>B_TX_DESC_1</name>
-						<name>B_RX_DESC_1</name>
+						<name>B_ETHERNET_BUFFERS</name>
+						<name>B_TX_DESC</name>
+						<name>B_RX_DESC</name>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00009000</address>
+						<address>0x00004000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -450,7 +450,7 @@
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components">
+			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -504,12 +504,12 @@
 					<series>RX600</series>
 					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS_1</name>
-						<name>B_TX_DESC_1</name>
-						<name>B_RX_DESC_1</name>
+						<name>B_ETHERNET_BUFFERS</name>
+						<name>B_TX_DESC</name>
+						<name>B_RX_DESC</name>
 						<name>B</name>
 						<name>FREEMEM</name>
-						<address>0x00009000</address>
+						<address>0x00004000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -542,5 +542,12 @@
 				</macrodefinition>
 			</app>
 		</apps>
+		<!-- Setting for all sample projects -->
+		<option>
+			<toolchain>RXC</toolchain>
+			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
+			<value>true</value>
+		</option>
 	</package>
 </refinfo>

@@ -59,14 +59,17 @@
         </configuration>
         <configuration inuse="true" name="Config_SCI8">
             <allocatable id="SCI8">
+                <option enabled="true" id="Bitrate" selection="FreeValue">
+                    <item id="FreeValue" input="115200" vlaue="115200"/>
+                </option>
             </allocatable>
             <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.9.2"/>
             <allocator channelLevel0="8" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 8" display="SCI8" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci8" type="">
-				<context>
+                <context>
                     <option enabled="true" id="Mode" selection="BothMode">
                     </option>
                 </context>
-			</allocator>
+            </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
     </tool>
