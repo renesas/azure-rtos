@@ -14,22 +14,38 @@
 	<target>
 		<toolchain>RXC</toolchain>
 		<board>RSKRX65N-2MB</board>
+		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
+		<series>RX100</series>
 		<series>RX600</series>
+		<series>RX700</series>
+		<group>RX130</group>
 		<group>RX65N</group>
+		<group>RX651</group>
+		<group>RX66T</group>
+		<group>RX671</group>
+		<group>RX72N</group>
 	</target>
 	<target>
 		<toolchain>GNURX</toolchain>
 		<board>RSKRX65N-2MB</board>
+		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
+		<series>RX100</series>
 		<series>RX600</series>
+		<series>RX700</series>
+		<group>RX130</group>
 		<group>RX65N</group>
+		<group>RX651</group>
+		<group>RX66T</group>
+		<group>RX671</group>
+		<group>RX72N</group>
 	</target>
 	<!-- only one package entry allowed -->
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.6_rel-rx-1.0.6</version>
+		<version>6.1.9_rel-rx-1.0.0</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
@@ -38,11 +54,27 @@
 					<folder>configuration/samples/bare</folder>
 					<path>src</path>
 				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/bare/bare_scfg.ftl</path>
+				</scfgtemplate>
 				<!-- compiler setting -->
 				<sections>
 					<toolchain>RXC</toolchain>
+					<series>RX100</series>
 					<series>RX600</series>
+					<series>RX700</series>
+					<group>RX130</group>
 					<group>RX65N</group>
+					<group>RX651</group>
+					<group>RX66T</group>
+					<group>RX671</group>
+					<group>RX72N</group>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
@@ -58,6 +90,11 @@
 					<file>configuration/samples/ramdisk/sample_filex_ram_disk.c</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<path>configuration/samples/ramdisk/ramdisk_scfg.ftl</path>
@@ -65,8 +102,15 @@
 				<!-- compiler setting -->
 				<sections>
 					<toolchain>RXC</toolchain>
+					<series>RX100</series>
 					<series>RX600</series>
+					<series>RX700</series>
+					<group>RX130</group>
 					<group>RX65N</group>
+					<group>RX651</group>
+					<group>RX66T</group>
+					<group>RX671</group>
+					<group>RX72N</group>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>

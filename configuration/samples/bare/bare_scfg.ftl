@@ -13,10 +13,6 @@
         <platform id="${targetDevice}"/>
         <option id="board" value="Custom User Board"/>
     </general>
-    <tool id="Summary" version="1.0.0.0">
-        <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
-        <option id="com.renesas.smc.code.type" value="Normal Folder"/>
-    </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp6.20" version="6.20">
@@ -30,11 +26,6 @@
         </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="threadx">
             <component display="Azure RTOS ThreadX" id="threadx${packageVersion}" version="${packageVersion}">
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="filex">
-            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
