@@ -51,7 +51,9 @@
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
 				<!-- Copy resources to project -->
 				<impdir>
-					<folder>configuration/samples/bare</folder>
+					<file>configuration/samples/bare/hardware_setup.h</file>
+					<file>configuration/samples/bare/hardware_setup.c</file>
+					<file>configuration/samples/bare/demo_threadx.c</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -59,6 +61,14 @@
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<path>configuration/samples/bare/bare_scfg.ftl</path>
@@ -95,6 +105,14 @@
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<path>configuration/samples/ramdisk/ramdisk_scfg.ftl</path>
