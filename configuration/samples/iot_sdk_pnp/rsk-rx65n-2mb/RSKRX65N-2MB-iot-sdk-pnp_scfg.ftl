@@ -11,12 +11,7 @@
             </toolchain>
         </configuration>
         <platform id="${targetDevice}"/>
-        <option id="board" value="RSKRX65N-2MB (1.03)"/>
     </general>
-    <tool id="Summary" version="1.0.0.0">
-        <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
-        <option id="com.renesas.smc.code.type" value="Normal Folder"/>
-    </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp6.20" version="6.20">

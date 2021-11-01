@@ -11,7 +11,6 @@
             </toolchain>
         </configuration>
         <platform id="${targetDevice}"/>
-        <option id="board" value="Custom User Board"/>
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
