@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>threadx</name>
-		<version>6.1.6_rel-rx-1.0.6</version>
+		<version>6.1.9_rel-rx-1.0.0</version>
 		<application>AzureRTOSKernel</application>
 		<category>rtos.kernel</category>
 		<desc>Azure RTOS ThreadX</desc>
@@ -15,13 +15,53 @@
 		<!-- Copy resources to project -->
 		<impdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX100</series>
+			<group>RX130</group>
+			<folder>threadx/ports/rxv1/gnu</folder>
+			<path>libs/threadx/ports/rxv1/gnu</path>
+		</impdir>
+		<impdir>
+			<toolchain>RXC</toolchain>
+			<series>RX100</series>
+			<group>RX130</group>
+			<folder>threadx/ports/rxv1/ccrx</folder>
+			<path>libs/threadx/ports/rxv1/ccrx</path>
+		</impdir>
+		<impdir>
+			<toolchain>GNURX</toolchain>
+			<series>RX600</series>
+			<group>RX65N</group>
+			<group>RX651</group>
 			<folder>threadx/ports/rxv2/gnu</folder>
 			<path>libs/threadx/ports/rxv2/gnu</path>
 		</impdir>
 		<impdir>
 			<toolchain>RXC</toolchain>
+			<series>RX600</series>
+			<group>RX65N</group>
+			<group>RX651</group>
 			<folder>threadx/ports/rxv2/ccrx</folder>
 			<path>libs/threadx/ports/rxv2/ccrx</path>
+		</impdir>
+		<impdir>
+			<toolchain>GNURX</toolchain>
+			<series>RX600</series>
+			<series>RX700</series>
+			<group>RX66T</group>
+			<group>RX671</group>
+			<group>RX72N</group>
+			<folder>threadx/ports/rxv3/gnu</folder>
+			<path>libs/threadx/ports/rxv3/gnu</path>
+		</impdir>
+		<impdir>
+			<toolchain>RXC</toolchain>
+			<series>RX600</series>
+			<series>RX700</series>
+			<group>RX66T</group>
+			<group>RX671</group>
+			<group>RX72N</group>
+			<folder>threadx/ports/rxv3/ccrx</folder>
+			<path>libs/threadx/ports/rxv3/ccrx</path>
 		</impdir>
 		<impdir>
 			<folder>threadx/common</folder>
@@ -34,11 +74,47 @@
 		<!-- include header-->
 		<incdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX100</series>
+			<group>RX130</group>
+			<path>libs/threadx/ports/rxv1/gnu/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>RXC</toolchain>
+			<series>RX100</series>
+			<group>RX130</group>
+			<path>libs/threadx/ports/rxv1/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>GNURX</toolchain>
+			<series>RX600</series>
+			<group>RX65N</group>
+			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/gnu/inc</path>
 		</incdir>
 		<incdir>
 			<toolchain>RXC</toolchain>
+			<series>RX600</series>
+			<group>RX65N</group>
+			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>GNURX</toolchain>
+			<series>RX600</series>
+			<series>RX700</series>
+			<group>RX66T</group>
+			<group>RX671</group>
+			<group>RX72N</group>
+			<path>libs/threadx/ports/rxv3/gnu/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>RXC</toolchain>
+			<series>RX600</series>
+			<series>RX700</series>
+			<group>RX66T</group>
+			<group>RX671</group>
+			<group>RX72N</group>
+			<path>libs/threadx/ports/rxv3/ccrx/inc</path>
 		</incdir>
 		<incdir>
 			<path>libs/threadx</path>

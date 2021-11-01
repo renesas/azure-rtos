@@ -28,10 +28,5 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="filex">
-            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
     </tool>
 </smc>
