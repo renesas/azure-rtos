@@ -46,7 +46,6 @@ NX_PACKET_POOL      *_iperf_test_pool;
 UCHAR               *_iperf_stack_area;
 ULONG               _iperf_stack_area_size; 
 ULONG               _iperf_test_error_counter;     
-UINT   _nx_http_server_number_convert(UINT, CHAR* );
 UINT   END_TICK = 100;       
 static ULONG  error_counter;
 
@@ -225,13 +224,13 @@ char *get_ip_addr_string(NXD_ADDRESS ip)
 #endif
     {
       
-        _nx_http_server_number_convert(ip.nxd_ip_address.v4 >> 24, device_ip_addr_string);
+        _nx_utility_uint_to_string(ip.nxd_ip_address.v4 >> 24, 10, device_ip_addr_string, sizeof(device_ip_addr_string));
         device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-        _nx_http_server_number_convert(((ip.nxd_ip_address.v4 >> 16) & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+        _nx_utility_uint_to_string(((ip.nxd_ip_address.v4 >> 16) & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
         device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-        _nx_http_server_number_convert(((ip.nxd_ip_address.v4 >> 8) & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+        _nx_utility_uint_to_string(((ip.nxd_ip_address.v4 >> 8) & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
         device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-        _nx_http_server_number_convert((ip.nxd_ip_address.v4 & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+        _nx_utility_uint_to_string((ip.nxd_ip_address.v4 & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
         
     }
     return device_ip_addr_string; 
@@ -240,13 +239,13 @@ char *get_ip_addr_string(NXD_ADDRESS ip)
 char *get_ip_addr_string(ULONG ip)
 {
     memset(device_ip_addr_string, 0, sizeof(device_ip_addr_string));
-    _nx_http_server_number_convert(ip >> 24, device_ip_addr_string);
+    _nx_utility_uint_to_string(ip >> 24, 10, device_ip_addr_string), sizeof(device_ip_addr_string));
     device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-    _nx_http_server_number_convert(((ip >> 16) & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+    _nx_utility_uint_to_string(((ip >> 16) & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
     device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-    _nx_http_server_number_convert(((ip >> 8) & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+    _nx_utility_uint_to_string(((ip >> 8) & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
     device_ip_addr_string[strlen(device_ip_addr_string)] = '.';
-    _nx_http_server_number_convert((ip & 0xFF), &device_ip_addr_string[strlen(device_ip_addr_string)]);
+    _nx_utility_uint_to_string((ip & 0xFF), 10, &device_ip_addr_string[strlen(device_ip_addr_string)], sizeof(device_ip_addr_string)-strlen(device_ip_addr_string));
     
     return device_ip_addr_string;                                   
 }   
@@ -569,13 +568,13 @@ static VOID print_main_test_window(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, udptxsubmittag1);
     status += htmlwrite(resp_packet_ptr, get_ip_addr_string(udp_tx_ip_address));
     status += htmlwrite(resp_packet_ptr, udptxsubmittag2);
-    _nx_http_server_number_convert(udp_tx_port, mytempstring);
+    _nx_utility_uint_to_string(udp_tx_port, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, udptxsubmittag3);
-    _nx_http_server_number_convert(udp_tx_test_time, mytempstring);
+    _nx_utility_uint_to_string(udp_tx_test_time, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, udptxsubmittag4);
-    _nx_http_server_number_convert(udp_tx_packet_size, mytempstring);
+    _nx_utility_uint_to_string(udp_tx_packet_size, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, udptxsubmittag5);
     status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
@@ -588,7 +587,7 @@ static VOID print_main_test_window(NX_HTTP_SERVER *server_ptr)
 
     status = nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
     status += htmlwrite(resp_packet_ptr, udprxsubmittag1);
-    _nx_http_server_number_convert(udp_rx_test_time, mytempstring);
+    _nx_utility_uint_to_string(udp_rx_test_time, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, udprxsubmittag2);
     status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
@@ -603,10 +602,10 @@ static VOID print_main_test_window(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tcptxsubmittag1);
     status += htmlwrite(resp_packet_ptr, get_ip_addr_string(tcp_tx_ip_address));
     status += htmlwrite(resp_packet_ptr, tcptxsubmittag2);
-    _nx_http_server_number_convert(tcp_tx_port, mytempstring);
+    _nx_utility_uint_to_string(tcp_tx_port, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, tcptxsubmittag3);
-    _nx_http_server_number_convert(tcp_tx_test_time, mytempstring);
+    _nx_utility_uint_to_string(tcp_tx_test_time, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, tcptxsubmittag4);
     status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
@@ -619,7 +618,7 @@ static VOID print_main_test_window(NX_HTTP_SERVER *server_ptr)
     
     status = nx_packet_allocate(server_ptr -> nx_http_server_packet_pool_ptr, &resp_packet_ptr, NX_TCP_PACKET, NX_WAIT_FOREVER);
     status += htmlwrite(resp_packet_ptr, tcprxsubmittag1);
-     _nx_http_server_number_convert(tcp_rx_test_time, mytempstring);
+     _nx_utility_uint_to_string(tcp_rx_test_time, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, tcprxsubmittag2);
     status +=  nx_tcp_socket_send(&(server_ptr -> nx_http_server_socket), resp_packet_ptr, NX_HTTP_SERVER_TIMEOUT);
@@ -1132,7 +1131,7 @@ static void print_tcp_rx_results(NX_HTTP_SERVER *server_ptr)
     htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Test Time(milliseconds): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);   
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1142,7 +1141,7 @@ static void print_tcp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Packets Received: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsRxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsRxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);     
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1152,7 +1151,7 @@ static void print_tcp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Bytes Received: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.BytesRxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.BytesRxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1162,7 +1161,7 @@ static void print_tcp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Throughput(Mbps): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.ThroughPut, mytempstring); 
+    _nx_utility_uint_to_string(iperf_ctrl_info.ThroughPut, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1172,7 +1171,7 @@ static void print_tcp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, trtag);
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
-    _nx_http_server_number_convert(iperf_ctrl_info.idleTime, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.idleTime, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, "Idle Time: ");
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, "%");   
@@ -1232,7 +1231,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Destination Port: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.port, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.port, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1242,7 +1241,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Test Time(milliseconds): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);   
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1252,7 +1251,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Packets Transmitted: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsTxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsTxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);     
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1262,7 +1261,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Bytes Transmitted: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.BytesTxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.BytesTxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1272,7 +1271,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Throughput(Mbps): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.ThroughPut, mytempstring);   
+    _nx_utility_uint_to_string(iperf_ctrl_info.ThroughPut, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);     
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1282,7 +1281,7 @@ static void print_tcp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, trtag);
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
-    _nx_http_server_number_convert(iperf_ctrl_info.idleTime, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.idleTime, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, "Idle Time: ");
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, "%");   
@@ -1342,7 +1341,7 @@ static void print_udp_rx_results(NX_HTTP_SERVER *server_ptr)
     htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Test Time(milliseconds): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);   
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1352,7 +1351,7 @@ static void print_udp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Packets Received: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsRxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsRxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);     
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1362,7 +1361,7 @@ static void print_udp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Bytes Received: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.BytesRxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.BytesRxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1372,7 +1371,7 @@ static void print_udp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Throughput(Mbps):");
-    _nx_http_server_number_convert(iperf_ctrl_info.ThroughPut, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.ThroughPut, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);  
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1382,7 +1381,7 @@ static void print_udp_rx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, trtag);
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
-    _nx_http_server_number_convert(iperf_ctrl_info.idleTime, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.idleTime, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, "Idle Time: ");
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, "%");   
@@ -1441,7 +1440,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Destination Port: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.port, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.port, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1451,7 +1450,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Test Time(milliseconds): ");
-    _nx_http_server_number_convert(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.RunTime * 1000 / NX_IP_PERIODIC_RATE, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);   
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1461,7 +1460,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Packets Transmitted: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsTxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsTxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);     
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1471,7 +1470,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Bytes Transmitted: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.BytesTxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.BytesTxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1481,7 +1480,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Throughput(Mbps):");
-    _nx_http_server_number_convert(iperf_ctrl_info.ThroughPut, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.ThroughPut, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);  
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1491,7 +1490,7 @@ static void print_udp_tx_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, trtag);
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
-    _nx_http_server_number_convert(iperf_ctrl_info.idleTime, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.idleTime, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, "Idle Time: ");
     status += htmlwrite(resp_packet_ptr, mytempstring);
     status += htmlwrite(resp_packet_ptr, "%");   
@@ -1578,7 +1577,7 @@ static void  print_ping_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Ping Sent: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsTxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsTxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);      
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
@@ -1588,7 +1587,7 @@ static void  print_ping_results(NX_HTTP_SERVER *server_ptr)
     status += htmlwrite(resp_packet_ptr, tdtag);
     status += htmlwrite(resp_packet_ptr, fonttag);
     status += htmlwrite(resp_packet_ptr, "Number of Ping Received: ");
-    _nx_http_server_number_convert(iperf_ctrl_info.PacketsRxed, mytempstring);
+    _nx_utility_uint_to_string(iperf_ctrl_info.PacketsRxed, 10, mytempstring, sizeof(mytempstring));
     status += htmlwrite(resp_packet_ptr, mytempstring);       
     status += htmlwrite(resp_packet_ptr, fontendtag);
     status += htmlwrite(resp_packet_ptr, tdendtag);
