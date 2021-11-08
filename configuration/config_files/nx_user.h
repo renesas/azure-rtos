@@ -26,7 +26,7 @@
 /*  PORT SPECIFIC C INFORMATION                            RELEASE        */
 /*                                                                        */
 /*    nx_user.h                                           PORTABLE C      */
-/*                                                           6.1          */
+/*                                                           6.1.8        */
 /*                                                                        */
 /*  AUTHOR                                                                */
 /*                                                                        */
@@ -47,6 +47,9 @@
 /*  05-19-2020     Yuxin Zhou               Initial Version 6.0           */
 /*  09-30-2020     Yuxin Zhou               Modified comment(s),          */
 /*                                            resulting in version 6.1    */
+/*  08-02-2021     Yuxin Zhou               Modified comment(s), and      */
+/*                                            supported TCP/IP offload,   */
+/*                                            resulting in version 6.1.8  */
 /*                                                                        */
 /**************************************************************************/
 
@@ -857,6 +860,13 @@
 #define USE_NX_MAX_STRING_LENGTH						0
 #if USE_NX_MAX_STRING_LENGTH
 #define NX_MAX_STRING_LENGTH							1024
+#endif
+
+/* Defined, the TCP/IP offload feature is enabled.
+   NX_ENABLE_INTERFACE_CAPABILITY must be defined to enable this feature.  */
+#define USE_NX_ENABLE_TCPIP_OFFLOAD				0
+#if USE_NX_ENABLE_TCPIP_OFFLOAD
+#define NX_ENABLE_TCPIP_OFFLOAD
 #endif
 
 #endif

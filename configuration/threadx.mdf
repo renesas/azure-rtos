@@ -47,10 +47,26 @@
 			<constraint display="default disable" actionOnFail="disable">("${USE_TX_TIMER_THREAD_PRIORITY}" == 1)</constraint>
 			<description></description>
 		</property>
+		<!-- TX_TIMER_TICKS_PER_SECOND -->
+		<property id="USE_TX_TIMER_TICKS_PER_SECOND" display="Enable threadx timer sticks per second" default="0" type="checkbox">
+			<option id="USE_TX_TIMER_TICKS_PER_SECOND.0" display="Disable" value="0"/>
+			<option id="USE_TX_TIMER_TICKS_PER_SECOND.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_TIMER_TICKS_PER_SECOND" display="Threadx timer ticks per second" default="100" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_TIMER_TICKS_PER_SECOND}" == 1)</constraint>
+			<description></description>
+		</property>
 		<!-- TX_THREAD_USER_EXTENSION -->
 		<property id="USE_TX_THREAD_USER_EXTENSION" display="Use threadx user extension" default="0" type="checkbox">
 			<option id="USE_TX_THREAD_USER_EXTENSION.0" display="Disable" value="0"/>
 			<option id="USE_TX_THREAD_USER_EXTENSION.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_NO_FILEX_POINTER -->
+		<property id="USE_TX_NO_FILEX_POINTER" display="Is FileX pointer in threadx control block" default="0" type="checkbox">
+			<option id="USE_TX_NO_FILEX_POINTER.0" display="Disable" value="0"/>
+			<option id="USE_TX_NO_FILEX_POINTER.1" display="Enable" value="1"/>
 			<description></description>
 		</property>
 		<!-- TX_TIMER_PROCESS_IN_ISR -->
@@ -168,6 +184,26 @@
 		<property id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO" display="Timer performance gathering" default="0" type="checkbox">
 			<option id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO.0" display="Disable" value="0"/>
 			<option id="USE_TX_TIMER_ENABLE_PERFORMANCE_INFO.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH -->
+		<property id="USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH" display="Enable override byte pool searchs of multiple blocks" default="0" type="checkbox">
+			<option id="USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH.0" display="Disable" value="0"/>
+			<option id="USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH" display="override byte pool searchs of multiple blocks" default="20" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- TX_BYTE_POOL_DELAY_VALUE -->
+		<property id="USE_TX_BYTE_POOL_DELAY_VALUE" display="Enable override byte pool searchs delay" default="0" type="checkbox">
+			<option id="USE_TX_BYTE_POOL_DELAY_VALUE.0" display="Disable" value="0"/>
+			<option id="USE_TX_BYTE_POOL_DELAY_VALUE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="TX_BYTE_POOL_DELAY_VALUE" display="override byte pool searchs delay" default="3" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_TX_BYTE_POOL_DELAY_VALUE}" == 1)</constraint>
 			<description></description>
 		</property>
 	</configuration>

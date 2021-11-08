@@ -26,7 +26,7 @@
 /*  PORT SPECIFIC C INFORMATION                            RELEASE        */
 /*                                                                        */
 /*    tx_user.h                                           PORTABLE C      */
-/*                                                           6.1          */
+/*                                                           6.1.9        */
 /*                                                                        */
 /*  AUTHOR                                                                */
 /*                                                                        */
@@ -44,9 +44,20 @@
 /*                                                                        */
 /*    DATE              NAME                      DESCRIPTION             */
 /*                                                                        */
-/*  05-19-2020     William E. Lamie         Initial Version 6.0           */
-/*  09-30-2020     Yuxin Zhou               Modified comment(s),          */
+/*  05-19-2020      William E. Lamie        Initial Version 6.0           */
+/*  09-30-2020      Yuxin Zhou              Modified comment(s),          */
 /*                                            resulting in version 6.1    */
+/*  03-02-2021      Scott Larson            Modified comment(s),          */
+/*                                            added option to remove      */
+/*                                            FileX pointer,              */
+/*                                            resulting in version 6.1.5  */
+/*  06-02-2021      Scott Larson            Added options for multiple    */
+/*                                            block pool search & delay,  */
+/*                                            resulting in version 6.1.7  */
+/*  10-15-2021      Yuxin Zhou              Modified comment(s), added    */
+/*                                            user-configurable symbol    */
+/*                                            TX_TIMER_TICKS_PER_SECOND   */
+/*                                            resulting in version 6.1.9  */
 /*                                                                        */
 /**************************************************************************/
 
@@ -113,6 +124,24 @@
 #define USE_TX_THREAD_USER_EXTENSION				0
 #if USE_TX_THREAD_USER_EXTENSION
 #define TX_THREAD_USER_EXTENSION
+#endif
+
+/* Define the common timer tick reference for use by other middleware components. The default
+   value is 10ms (i.e. 100 ticks, defined in tx_api.h), but may be replaced by a port-specific
+   version in tx_port.h or here.
+   Note: the actual hardware timer value may need to be changed (usually in tx_initialize_low_level).  */
+#define USE_TX_TIMER_TICKS_PER_SECOND				0
+#if USE_TX_TIMER_TICKS_PER_SECOND
+#define TX_TIMER_TICKS_PER_SECOND		((ULONG) 100)
+#endif
+
+/* Determine if there is a FileX pointer in the thread control block.
+   By default, the pointer is there for legacy/backwards compatibility.
+   The pointer must also be there for applications using FileX.
+   Define this to save space in the thread control block.  */
+#define USE_TX_NO_FILEX_POINTER						0
+#if USE_TX_NO_FILEX_POINTER
+#define TX_NO_FILEX_POINTER
 #endif
 
 /* Determine if timer expirations (application timers, timeouts, and tx_thread_sleep calls 
@@ -273,6 +302,18 @@
 #define USE_TX_TIMER_ENABLE_PERFORMANCE_INFO		0
 #if USE_TX_TIMER_ENABLE_PERFORMANCE_INFO
 #define TX_TIMER_ENABLE_PERFORMANCE_INFO
+#endif
+
+/* Override options for byte pool searches of multiple blocks. */
+#define USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH		0
+#if USE_TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH
+#define TX_BYTE_POOL_MULTIPLE_BLOCK_SEARCH			20
+#endif
+
+/* Override options for byte pool search delay to avoid thrashing. */
+#define USE_TX_BYTE_POOL_DELAY_VALUE				0
+#if USE_TX_BYTE_POOL_DELAY_VALUE
+#define TX_BYTE_POOL_DELAY_VALUE 					3
 #endif
 
 #endif

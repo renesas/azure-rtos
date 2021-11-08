@@ -840,5 +840,11 @@
          <constraint display="default disable" actionOnFail="disable">("${USE_NX_MAX_STRING_LENGTH}" == 1)</constraint>
          <description />
       </property>
+	  <!-- NX_ENABLE_TCPIP_OFFLOAD -->
+      <property id="USE_NX_ENABLE_TCPIP_OFFLOAD" display="Enable TCP/IP offload feature" default="0" type="checkbox">
+         <option id="USE_NX_ENABLE_TCPIP_OFFLOAD.0" display="Disable" value="0" />
+         <option id="USE_NX_ENABLE_TCPIP_OFFLOAD.1" display="Enable" value="1" />
+         <description />
+      </property>
    </configuration>
 </module>
