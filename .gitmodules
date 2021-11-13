@@ -1,15 +1,15 @@
 [submodule "filex"]
 	path = filex
 	url = https://github.com/azure-rtos/filex
-	branch = v6.1.6_rel
 [submodule "netxduo"]
 	path = netxduo
 	url = https://github.com/azure-rtos/netxduo
-	branch = v6.1.6_rel
 [submodule "threadx"]
 	path = threadx
 	url = https://github.com/azure-rtos/threadx
-	branch = v6.1.6_rel
 [submodule "rx-driver-package"]
 	path = rx-driver-package
 	url = https://github.com/renesas/rx-driver-package
+[submodule "guix"]
+	path = guix
+	url = https://github.com/azure-rtos/guix
