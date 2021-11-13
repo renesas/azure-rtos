@@ -603,6 +603,262 @@
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
 			</app>
+			<app id="application" value="guix_8bpp" name="GUIX 8bpp sample project" description="This demonstration illustrates GUIX sample project with 8 bits color look-up table">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/guix_8bpp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/guix_8bpp/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
+					<path>src/smc_gen/r_glcdc_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_sci_iic_rx</folder>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_config/r_sci_iic_rx_pin_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_glcdc_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/guix_8bpp/rsk-rx65n-2mb/RSKRX65N-2MB-guix_8bpp_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00000004</address>
+					</section>
+				</sections> 
+				<!-- macro definition -->
+				<macrodefinition>
+					<toolchain>GNURX</toolchain>
+					<compiler>GX_PALETTE_MODE_AA_TEXT_COLORS=16</compiler>
+				</macrodefinition> 
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+			</app>
+			<app id="application" value="guix_16bpp" name="GUIX 16bpp sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/guix_16bpp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
+					<path>src/smc_gen/r_glcdc_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_sci_iic_rx</folder>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_config/r_sci_iic_rx_pin_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_glcdc_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/guix_16bpp/rsk-rx65n-2mb/RSKRX65N-2MB-guix_16bpp_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x0083FC00</address>
+					</section>
+				</sections> 
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+			</app>
+			<app id="application" value="guix_16bpp_draw2d" name="GUIX 16bpp draw 2d sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565 and drawing 2d engine driver">
+				<board>RSKRX65N-2MB</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/guix_16bpp_draw2d/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
+					<path>src/smc_gen/r_glcdc_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_sci_iic_rx</folder>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_config/r_sci_iic_rx_pin_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_drw2d_rx/r_drw2d_rx_vx.xx/r_drw2d_rx</folder>
+					<path>src/smc_gen/r_drw2d_rx</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_glcdc_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx</path>
+					<path>src/smc_gen/r_sci_iic_rx/src</path>
+					<path>src/smc_gen/r_drw2d_rx</path>
+					<path>src/smc_gen/r_drw2d_rx/inc/tes</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<path>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/RSKRX65N-2MB-guix_16bpp_draw2d_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x0083FC00</address>
+					</section>
+				</sections> 
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+				<!-- macro definition -->
+				<macrodefinition>
+					<board>RSKRX65N-2MB</board>
+					<compiler>GX_USE_DAVE2D_DRAW=1</compiler>
+				</macrodefinition>
+			</app>
 		</apps>
 		<!-- Setting for all sample projects -->
 		<option>
