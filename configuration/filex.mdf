@@ -143,6 +143,12 @@ these protection macros are effectively disabled.  However, for multi-thread
 uses, the macros are setup to utilize a ThreadX mutex for multiple thread 
 access control into an open media.</description>
       </property>
+      <!-- FX_STANDALONE_ENABLE -->
+      <property id="USE_FX_STANDALONE_ENABLE" display="Enable filex used in standalone mode" default="0" type="checkbox">
+         <option id="USE_FX_STANDALONE_ENABLE.0" display="Disable" value="0" />
+         <option id="USE_FX_STANDALONE_ENABLE.1" display="Enable" value="1" />
+         <description>Defined, Filex will be used in standalone mode (without ThreadX)</description>
+      </property>
       <!-- FX_FAULT_TOLERANT_DATA -->
       <property id="USE_FX_FAULT_TOLERANT_DATA" display="Use filex fault tolerant data" default="0" type="checkbox">
          <option id="USE_FX_FAULT_TOLERANT_DATA.0" display="Disable" value="0" />
