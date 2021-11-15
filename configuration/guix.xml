@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>guix</name>
+		<version>6.1.9_rel-rx-1.0.0</version>
+		<application>AzureRTOSLibrary</application>
+		<category>rtos.library</category>
+		<desc>Azure RTOS GUIX</desc>
+		<details>Azure GUIX is Microsoft’s advanced, industrial grade GUI solution designed specifically for deeply embedded, real-time, and IoT applications</details>
+		<function>RTOS</function>
+		<dependency>
+			<module>threadx</module>
+		</dependency>
+		<configgenpath>
+			<path>libs/guix/gx_user.h</path>
+		</configgenpath>
+		<!-- Copy resources to project -->
+		<impdir>
+			<folder>guix/common</folder>
+			<path>libs/guix/common</path>
+		</impdir>
+		<impdir>
+			<toolchain>GNURX</toolchain>
+			<file>guix/ports/generic/inc/gx_port.h</file>
+			<path>libs/guix/ports/generic/inc</path>
+		</impdir>
+		<impdir>
+			<toolchain>RXC</toolchain>
+			<file>guix/ports/ccrx/inc/gx_port.h</file>
+			<path>libs/guix/ports/ccrx/inc</path>
+		</impdir>
+		<impdir>
+			<file>configuration/config_files/gx_user.h</file>
+			<path>libs/guix</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<path>libs/guix</path>
+			<path>libs/guix/common/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>RXC</toolchain>
+			<path>libs/guix/ports/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>GNURX</toolchain>
+			<path>libs/guix/ports/generic/inc</path>
+		</incdir>
+		<!-- app setting -->
+		<apps>
+			<app id="userconfig">
+				<macrodefinition>
+					<compiler>GX_INCLUDE_USER_DEFINE_FILE</compiler>
+				</macrodefinition>
+			</app>
+		</apps>
+	</package>
+</refinfo>

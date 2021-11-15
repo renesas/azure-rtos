@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+/***********************************************************************************************************************
+  Purpose: Module Description File (MDF) Example (Schema Version 2.0)
+           This is a description of a sample FIT module configuration file
+***********************************************************************************************************************/
+-->
+<module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
+	<fileVersion>1.00</fileVersion>
+	<formatVersion>2.00</formatVersion>
+	<fileTemplate></fileTemplate>
+	<configuration>
+		<!-- GUIX_DISABLE_MULTITHREAD_SUPPORT -->
+		<property id="USE_GUIX_DISABLE_MULTITHREAD_SUPPORT" display="Disable guix multithread support" default="0" type="checkbox">
+			<option id="USE_GUIX_DISABLE_MULTITHREAD_SUPPORT.0" display="Disable" value="0"/>
+			<option id="USE_GUIX_DISABLE_MULTITHREAD_SUPPORT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- GX_DISABLE_UTF8_SUPPORT -->
+		<property id="USE_GX_DISABLE_UTF8_SUPPORT" display="Disable guix UTF8 support" default="0" type="checkbox">
+			<option id="USE_GX_DISABLE_UTF8_SUPPORT.0" display="Disable" value="0"/>
+			<option id="USE_GX_DISABLE_UTF8_SUPPORT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- GX_SYSTEM_TIMER_MS -->
+		<property id="USE_GX_SYSTEM_TIMER_MS" display="Enable guix system timer" default="0" type="checkbox">
+			<option id="USE_GX_SYSTEM_TIMER_MS.0" display="Disable" value="0"/>
+			<option id="USE_GX_SYSTEM_TIMER_MS.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="GX_SYSTEM_TIMER_MS" display="Guix system timer ms" default="20" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_GX_SYSTEM_TIMER_MS}" == 1)</constraint>
+		</property>
+		<!-- GX_WIDGET_USER_DATA -->
+		<property id="USE_GX_WIDGET_USER_DATA" display="Enable guix widget user data" default="0" type="checkbox">
+			<option id="USE_GX_WIDGET_USER_DATA.0" display="Disable" value="0"/>
+			<option id="USE_GX_WIDGET_USER_DATA.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+	</configuration>
+</module>
