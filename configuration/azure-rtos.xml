@@ -699,6 +699,13 @@
 					<folder>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
+				<!-- add a note for user -->
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -738,6 +745,13 @@
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<section>
+						<name>SU</name>
+						<name>SI</name>
+						<name>B_1</name>
+						<name>R_1</name>
+						<name>B_2</name>
+						<name>R_2</name>
+						<name>R</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x0083FC00</address>
@@ -778,6 +792,13 @@
 				<impdir>
 					<folder>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/smc_gen</folder>
 					<path>src/smc_gen</path>
+				</impdir>
+				<!-- add a note for user -->
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
+					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -824,6 +845,13 @@
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<section>
+						<name>SU</name>
+						<name>SI</name>
+						<name>B_1</name>
+						<name>R_1</name>
+						<name>B_2</name>
+						<name>R_2</name>
+						<name>R</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x0083FC00</address>
@@ -848,11 +876,11 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
 					<value>true</value>
 				</option>
-				<option>
+				<!--option>
 					<toolchain>GNURX</toolchain>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
-				</option>
+				</option-->
 				<!-- macro definition -->
 				<macrodefinition>
 					<board>RSKRX65N-2MB</board>
