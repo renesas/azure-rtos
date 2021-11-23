@@ -13,3 +13,6 @@
 [submodule "guix"]
 	path = guix
 	url = https://github.com/azure-rtos/guix
+[submodule "usbx"]
+	path = usbx
+	url = https://github.com/azure-rtos/usbx/
