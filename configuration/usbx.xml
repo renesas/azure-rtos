@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>usbx</name>
+		<version>6.1.9_rel-rx-1.0.0</version>
+		<application>AzureRTOSLibrary</application>
+		<category>rtos.library</category>
+		<desc>Azure RTOS USBX</desc>
+		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX</details>
+		<function>RTOS</function>
+		<dependency>
+			<module>threadx</module>
+		</dependency>
+		<dependency>
+			<module>filex</module>
+		</dependency>
+		<dependency>
+			<module>netxduo</module>
+		</dependency>
+		<configgenpath>
+			<path>libs/usbx/ux_user.h</path>
+		</configgenpath>
+		<!-- Copy resources to project -->
+		<impdir>
+			<folder>usbx/common</folder>
+			<path>libs/usbx/common</path>
+		</impdir>
+		<impdir>
+			<folder>usbx/ports/generic</folder>
+			<path>libs/usbx/ports/generic</path>
+		</impdir>
+		<impdir>
+			<folder>configuration/libs/usbx</folder>
+			<path>libs/usbx</path>
+		</impdir>
+		<impdir>
+			<file>configuration/config_files/ux_user.h</file>
+			<path>libs/usbx</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<path>libs/usbx</path>
+			<path>libs/usbx/common/core/inc</path>
+			<path>libs/usbx/common/usbx_device_classes/inc</path>
+			<path>libs/usbx/common/usbx_host_classes/inc</path>
+			<path>libs/usbx/common/usbx_host_controllers/inc</path>
+			<path>libs/usbx/common/usbx_network/inc</path>
+			<path>libs/usbx/common/usbx_pictbridge/inc</path>
+			<path>libs/usbx/usbx_device_controllers</path>
+			<path>libs/usbx/ports/generic/inc</path>
+		</incdir>
+		<!-- app setting -->
+		<apps>
+			<app id="userconfig">
+				<macrodefinition>
+					<compiler>UX_INCLUDE_USER_DEFINE_FILE</compiler>
+				</macrodefinition>
+			</app>
+		</apps>
+	</package>
+</refinfo>
