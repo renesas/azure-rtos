@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+/***********************************************************************************************************************
+  Purpose: Module Description File (MDF) Example (Schema Version 2.0)
+           This is a description of a sample FIT module configuration file
+***********************************************************************************************************************/
+-->
+<module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
+	<fileVersion>1.00</fileVersion>
+	<formatVersion>2.00</formatVersion>
+	<fileTemplate></fileTemplate>
+	<configuration>
+		<!-- UX_THREAD_STACK_SIZE -->
+		<property id="USE_UX_THREAD_STACK_SIZE" display="Enable usbx thread stack size" default="0" type="checkbox">
+			<option id="USE_UX_THREAD_STACK_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_THREAD_STACK_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+			<property id="UX_THREAD_STACK_SIZE" display="Usbx thread stack size" default="2 * 1024" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_THREAD_STACK_SIZE}" == 1)</constraint>
+			<description></description>
+		</property>
+		</property>
+		<!-- UX_HOST_ENUM_THREAD_STACK_SIZE -->
+		<property id="USE_UX_HOST_ENUM_THREAD_STACK_SIZE" display="Enable Usbx host enum stack size" default="0" type="checkbox">
+			<option id="USE_UX_HOST_ENUM_THREAD_STACK_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_ENUM_THREAD_STACK_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_HCD_THREAD_STACK_SIZE -->
+		<property id="USE_UX_HOST_HCD_THREAD_STACK_SIZE" display="Enable Usbx host thread stack size" default="0" type="checkbox">
+			<option id="USE_UX_HOST_HCD_THREAD_STACK_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_HCD_THREAD_STACK_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_HNP_POLLING_THREAD_STACK -->
+		<property id="USE_UX_HOST_HNP_POLLING_THREAD_STACK" display="Enable Usbx host polling thread stack" default="0" type="checkbox">
+			<option id="USE_UX_HOST_HNP_POLLING_THREAD_STACK.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_HNP_POLLING_THREAD_STACK.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_PERIODIC_RATE -->
+		<property id="USE_SPECIFIED_UX_PERIODIC_RATE" display="Enable Usbx number ticks per seconds" default="1" type="checkbox">
+			<option id="USE_SPECIFIED_UX_PERIODIC_RATE.0" display="Disable" value="0"/>
+			<option id="USE_SPECIFIED_UX_PERIODIC_RATE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_PERIODIC_RATE" display="Usbx number ticks per seconds" default="TX_TIMER_TICKS_PER_SECOND" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_SPECIFIED_UX_PERIODIC_RATE}" == 1)</constraint>
+			<description>The default is 1000 indicating 1 tick per millisecond and can be set by TX_TIMER_TICKS_PER_SECOND by Threadx</description>
+		</property> 
+		<!-- UX_CONTROL_TRANSFER_TIMEOUT -->
+		<property id="USE_UX_CONTROL_TRANSFER_TIMEOUT" display="Enable control transfer timeout value" default="0" type="checkbox">
+			<option id="USE_UX_CONTROL_TRANSFER_TIMEOUT.0" display="Disable" value="0"/>
+			<option id="USE_UX_CONTROL_TRANSFER_TIMEOUT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_CONTROL_TRANSFER_TIMEOUT" display="Control transfer timeout value" default="10000" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_CONTROL_TRANSFER_TIMEOUT}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_NON_CONTROL_TRANSFER_TIMEOUT -->
+		<property id="USE_UX_NON_CONTROL_TRANSFER_TIMEOUT" display="Enable none control transfer timeout value" default="0" type="checkbox">
+			<option id="USE_UX_NON_CONTROL_TRANSFER_TIMEOUT.0" display="Disable" value="0"/>
+			<option id="USE_UX_NON_CONTROL_TRANSFER_TIMEOUT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_NON_CONTROL_TRANSFER_TIMEOUT" display="None control transfer timeout value" default="50000" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_NON_CONTROL_TRANSFER_TIMEOUT}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_CLASSES -->
+		<property id="USE_UX_MAX_CLASSES" display="Enable the maximum number of classes container value" default="0" type="checkbox">
+			<option id="USE_UX_MAX_CLASSES.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_CLASSES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_CLASSES" display="Maximum the number of classes container value" default="3" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_CLASSES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_SLAVE_CLASS_DRIVER -->
+		<property id="USE_UX_MAX_SLAVE_CLASS_DRIVER" display="Enable the maximum number of classes value" default="0" type="checkbox">
+			<option id="USE_UX_MAX_SLAVE_CLASS_DRIVER.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_SLAVE_CLASS_DRIVER.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_SLAVE_CLASS_DRIVER" display="Maximum the number of classes value" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_SLAVE_CLASS_DRIVER}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_SLAVE_INTERFACES -->
+		<property id="USE_UX_MAX_SLAVE_INTERFACES" display="Enable the maximum number of interfaces" default="0" type="checkbox">
+			<option id="USE_UX_MAX_SLAVE_INTERFACES.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_SLAVE_INTERFACES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_SLAVE_INTERFACES" display="Maximum the number of interfaces" default="16" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_SLAVE_INTERFACES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_HCD -->
+		<property id="USE_UX_MAX_HCD" display="Enable the number of different host controllers available" default="0" type="checkbox">
+			<option id="USE_UX_MAX_HCD.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_HCD.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_HCD" display="The number of different host controllers available" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_HCD}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_DEVICES -->
+		<property id="USE_UX_MAX_DEVICES" display="Enable the maximum number of devices attached to USB" default="0" type="checkbox">
+			<option id="USE_UX_MAX_DEVICES.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_DEVICES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_DEVICES" display="The maximum number of devices attached to USB" default="127" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_DEVICES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_SLAVE_LUN -->
+		<property id="USE_UX_MAX_SLAVE_LUN" display="Enable the current number of SCSI logical units in device storage class driver" default="0" type="checkbox">
+			<option id="USE_UX_MAX_SLAVE_LUN.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_SLAVE_LUN.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_SLAVE_LUN" display="The current number of SCSI logical units in device storage class driver" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_SLAVE_LUN}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_HOST_LUN -->
+		<property id="USE_UX_MAX_HOST_LUN" display="Enable the current number of SCSI logical units in host storage class driver" default="0" type="checkbox">
+			<option id="USE_UX_MAX_HOST_LUN.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_HOST_LUN.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_HOST_LUN" display="The current number of SCSI logical units host storage class driver" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_HOST_LUN}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH -->
+		<property id="USE_UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH" display="Enable the maximum number of bytes received in device stack" default="1" type="checkbox">
+			<option id="USE_UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH.0" display="Disable" value="0"/>
+			<option id="USE_UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH" display="The maximum number of bytes received in device stack" default="256" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_SLAVE_REQUEST_DATA_MAX_LENGTH -->
+		<property id="USE_UX_SLAVE_REQUEST_DATA_MAX_LENGTH" display="Enable the maximum number of bytes received/transmitted on any endpoint" default="0" type="checkbox">
+			<option id="USE_UX_SLAVE_REQUEST_DATA_MAX_LENGTH.0" display="Disable" value="0"/>
+			<option id="USE_UX_SLAVE_REQUEST_DATA_MAX_LENGTH.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_SLAVE_REQUEST_DATA_MAX_LENGTH" display="The maximum number of bytes received/transmitted on any endpoint" default="1024*2" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_SLAVE_REQUEST_DATA_MAX_LENGTH}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_SLAVE_CLASS_STORAGE_INCLUDE_MMC -->
+		<property id="USE_UX_SLAVE_CLASS_STORAGE_INCLUDE_MMC" display="Enable storage Multi-Media Commands" default="0" type="checkbox">
+			<option id="USE_UX_SLAVE_CLASS_STORAGE_INCLUDE_MMC.0" display="Disable" value="0"/>
+			<option id="USE_UX_SLAVE_CLASS_STORAGE_INCLUDE_MMC.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE -->
+		<property id="USE_UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE" display="Enable the maximum number of bytes sent/received by a storage payload" default="1" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE" display="The maximum number of bytes sent/received by a storage payload" default="1024*8" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_STORAGE_MEMORY_BUFFER_SIZE}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_THREAD_STACK_SIZE -->
+		<property id="USE_UX_HOST_CLASS_STORAGE_THREAD_STACK_SIZE" display="Enable Mass Storage Thread Stack Size" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_STORAGE_THREAD_STACK_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_STORAGE_THREAD_STACK_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_MAX_ED -->
+		<property id="USE_UX_MAX_ED" display="Enable the maximum number of Ed" default="1" type="checkbox">
+			<option id="USE_UX_MAX_ED.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_ED.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_ED" display="The maximum number of Ed" default="80" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_ED}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_TD -->
+		<property id="USE_UX_MAX_TD" display="Enable the maximum number of regular TDs" default="1" type="checkbox">
+			<option id="USE_UX_MAX_TD.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_TD.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_TD" display="The maximum number of regular TDs" default="128" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_TD}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_MAX_ISO_TD -->
+		<property id="USE_UX_MAX_ISO_TD" display="Enable the maximum number of Isochronous TDs" default="1" type="checkbox">
+			<option id="USE_UX_MAX_ISO_TD.0" display="Disable" value="0"/>
+			<option id="USE_UX_MAX_ISO_TD.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_MAX_ISO_TD" display="The maximum number of Isochronous TDs" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_MAX_ISO_TD}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER -->
+		<property id="USE_UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER" display="Enable the maximum size of the HID decompressed buffer" default="1" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER" display="The maximum size of the HID decompressed buffer" default="4096" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_HID_DECOMPRESSION_BUFFER}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_USAGES -->
+		<property id="USE_UX_HOST_CLASS_HID_USAGES" display="Enable the maximum number of HID usages for a HID device" default="1" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_USAGES.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_USAGES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_HID_USAGES" display="The maximum number of HID usages for a HID device" default="2048" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_HID_USAGES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE -->
+		<property id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE" display="Enable key changes events mode reported by host class" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_KEY_DOWN_ONLY -->
+		<property id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_KEY_DOWN_ONLY" display="Enable key down changes events mode reported by host class" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_KEY_DOWN_ONLY.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_KEY_DOWN_ONLY.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_LOCK_KEYS -->
+		<property id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_LOCK_KEYS" display="Enable lock keys changes events mode reported by host class" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_LOCK_KEYS.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_LOCK_KEYS.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_MODIFIER_KEYS -->
+		<property id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_MODIFIER_KEYS" display="Enable modified keys changes events mode reported by host class" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_MODIFIER_KEYS.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_HID_KEYBOARD_EVENTS_KEY_CHANGES_MODE_REPORT_MODIFIER_KEYS.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_MAX_MEDIA -->
+		<property id="USE_UX_HOST_CLASS_STORAGE_MAX_MEDIA" display="Enable the maximum number of media for host storage class" default="1" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_STORAGE_MAX_MEDIA.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_STORAGE_MAX_MEDIA.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_STORAGE_MAX_MEDIA" display="The maximum number of media for host storage class" default="2" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_STORAGE_MAX_MEDIA}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_INCLUDE_LEGACY_PROTOCOL_SUPPORT -->
+		<property id="USE_UX_HOST_CLASS_STORAGE_INCLUDE_LEGACY_PROTOCOL_SUPPORT" display="Enable handling storage devices used CB/CBI protocol" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_STORAGE_INCLUDE_LEGACY_PROTOCOL_SUPPORT.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_STORAGE_INCLUDE_LEGACY_PROTOCOL_SUPPORT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_ENFORCE_SAFE_ALIGNMENT -->
+		<property id="USE_UX_ENFORCE_SAFE_ALIGNMENT" display="Enable forcing memory alignment with UX_SAFE_ALIGN" default="0" type="checkbox">
+			<option id="USE_UX_ENFORCE_SAFE_ALIGNMENT.0" display="Disable" value="0"/>
+			<option id="USE_UX_ENFORCE_SAFE_ALIGNMENT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES -->
+		<property id="USE_UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES" display="Enable the number of packets in CDC_ECM device class" default="1" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES" display="The number of packets in CDC_ECM device class" default="4" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES -->
+		<property id="USE_UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES" display="Enable the number of packets in the CDC_ECM host class" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES" display="The number of packets in the CDC_ECM host class" default="16" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_CDC_ECM_NX_PKPOOL_ENTRIES}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT -->
+		<property id="USE_UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT" display="Enable number of milliseconds to wait for packet pool availability" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT" display="The number of milliseconds to wait for packet pool availability" default="10" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_CDC_ECM_PACKET_POOL_INSTANCE_WAIT}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_CDC_ECM_USE_PACKET_POOL_FROM_NETX -->
+		<property id="USE_UX_HOST_CLASS_CDC_ECM_USE_PACKET_POOL_FROM_NETX" display="Enable CDC ECM class to use packet pool from NetX" default="0" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_USE_PACKET_POOL_FROM_NETX.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_CDC_ECM_USE_PACKET_POOL_FROM_NETX.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT -->
+		<property id="USE_UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT" display="Enable the number of milliseconds to wait for packet allocation" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT.1" display="Enable" value="1"/>
+			<description>Enable the number of milliseconds to wait for packet allocation until invoking the application's error callback and retrying.</description>
+		</property>
+		<property id="UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT" display="The number of milliseconds to wait for packet allocation" default="10" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_CDC_ECM_PACKET_POOL_WAIT}" == 1)</constraint>
+			<description>The number of milliseconds to wait for packet allocation until invoking the application's error callback and retrying.</description>
+		</property>
+		<!-- UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH -->
+		<property id="USE_UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH" display="Enable the maximum length of HID reports on device" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH" display="The number of milliseconds to wait for packet allocation" default="64" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_HID_EVENT_BUFFER_LENGTH}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE -->
+		<property id="USE_UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE" display="Enable the maximum number of HID events/reports queued at once" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE" display="The maximum number of HID events/reports queued at once" default="8" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_HID_MAX_EVENTS_QUEUE}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_DFU_UPLOAD_DISABLE -->
+		<property id="USE_UX_DEVICE_CLASS_DFU_UPLOAD_DISABLE" display="Disable DFU_UPLOAD support" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_DFU_UPLOAD_DISABLE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_DFU_UPLOAD_DISABLE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE -->
+		<property id="USE_UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE" display="Enable DFU_GETSTATUS and DFU_GETSTATE in dfuERROR" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_DFU_STATUS_MODE -->
+		<property id="USE_UX_DEVICE_CLASS_DFU_STATUS_MODE" display="Enable changing status mode" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_DFU_STATUS_MODE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_DFU_STATUS_MODE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEVICE_CLASS_DFU_STATUS_MODE" display="Status modes" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_DFU_STATUS_MODE}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT -->
+		<property id="USE_UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT" display="Enable default DFU status bwPollTimeout" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT" display="Default DFU status bwPollTimeout" default="1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE -->
+		<property id="USE_UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE" display="Enable custom request process callback" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_BIDIRECTIONAL_ENDPOINT_SUPPORT -->
+		<property id="USE_UX_DEVICE_BIDIRECTIONAL_ENDPOINT_SUPPORT" display="Enable device bi-directional-endpoint support" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_BIDIRECTIONAL_ENDPOINT_SUPPORT.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_BIDIRECTIONAL_ENDPOINT_SUPPORT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_HOST_SIDE_ONLY -->
+		<property id="USE_UX_HOST_SIDE_ONLY" display="Enable the host side of usbx" default="0" type="checkbox">
+			<option id="USE_UX_HOST_SIDE_ONLY.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_SIDE_ONLY.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_DEVICE_SIDE_ONLY -->
+		<property id="USE_UX_DEVICE_SIDE_ONLY" display="Enable the device side of usbx" default="0" type="checkbox">
+			<option id="USE_UX_DEVICE_SIDE_ONLY.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEVICE_SIDE_ONLY.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_OTG_SUPPORT -->
+		<property id="USE_UX_OTG_SUPPORT" display="Enable OTG polling thread" default="0" type="checkbox">
+			<option id="USE_UX_OTG_SUPPORT.0" display="Disable" value="0"/>
+			<option id="USE_UX_OTG_SUPPORT.1" display="Enable" value="1"/>
+			<description>This value will include the OTG polling thread. OTG can only be active if both host/device are present.</description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE -->
+		<property id="USE_UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE" display="Enable the maximum size of single tansfers for SCSI data phase" default="1" type="checkbox">
+			<option id="USE_UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE" display="The maximum size of single tansfers for SCSI data phase" default="1024 * 1" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_HOST_CLASS_STORAGE_MAX_TRANSFER_SIZE -->
+		<property id="USE_UX_DEBUG_LOG_SIZE" display="Enable the size of the log pool" default="1" type="checkbox">
+			<option id="USE_UX_DEBUG_LOG_SIZE.0" display="Disable" value="0"/>
+			<option id="USE_UX_DEBUG_LOG_SIZE.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<property id="UX_DEBUG_LOG_SIZE" display="The size of the log pool" default="1024 * 16" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">("${USE_UX_DEBUG_LOG_SIZE}" == 1)</constraint>
+			<description></description>
+		</property>
+		<!-- UX_ENABLE_ASSERT -->
+		<property id="USE_UX_ENABLE_ASSERT" display="Enable assert checks inside usbx" default="1" type="checkbox">
+			<option id="USE_UX_ENABLE_ASSERT.0" display="Disable" value="0"/>
+			<option id="USE_UX_ENABLE_ASSERT.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_ASSERT_FAIL -->
+		<property id="USE_UX_ASSERT_FAIL" display="Enable assert action taken when failure detected" default="0" type="checkbox">
+			<option id="USE_UX_ASSERT_FAIL.0" display="Disable" value="0"/>
+			<option id="USE_UX_ASSERT_FAIL.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+		<!-- UX_INCLUDE_USER_DEFINE_BSP -->
+		<property id="USE_UX_INCLUDE_USER_DEFINE_BSP" display="Enable DEBUG includes and macros" default="0" type="checkbox">
+			<option id="USE_UX_INCLUDE_USER_DEFINE_BSP.0" display="Disable" value="0"/>
+			<option id="USE_UX_INCLUDE_USER_DEFINE_BSP.1" display="Enable" value="1"/>
+			<description></description>
+		</property>
+	</configuration>
+</module>
