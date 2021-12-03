@@ -28,12 +28,12 @@
 			<path>libs/usbx/common</path>
 		</impdir>
 		<impdir>
-			<folder>usbx/ports/generic</folder>
-			<path>libs/usbx/ports/generic</path>
+			<folder>configuration/libs/usbx/ports/ccrx_gnu</folder>
+			<path>libs/usbx/ports/ccrx_gnu</path>
 		</impdir>
 		<impdir>
-			<folder>configuration/libs/usbx</folder>
-			<path>libs/usbx</path>
+			<folder>configuration/libs/usbx/usbx_device_controllers</folder>
+			<path>libs/usbx/usbx_device_controllers</path>
 		</impdir>
 		<impdir>
 			<file>configuration/config_files/ux_user.h</file>
@@ -49,7 +49,7 @@
 			<path>libs/usbx/common/usbx_network/inc</path>
 			<path>libs/usbx/common/usbx_pictbridge/inc</path>
 			<path>libs/usbx/usbx_device_controllers</path>
-			<path>libs/usbx/ports/generic/inc</path>
+			<path>libs/usbx/ports/ccrx_gnu/inc</path>
 		</incdir>
 		<!-- app setting -->
 		<apps>
