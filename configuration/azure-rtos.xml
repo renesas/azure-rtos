@@ -109,6 +109,35 @@
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
+				<!-- copy sample ld and readme for RX130, RX72N -->
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/ramdisk/rx130/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/ramdisk/rx130/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/ramdisk/rx72n/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/ramdisk/rx72n/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
@@ -699,12 +728,16 @@
 					<folder>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
-				<!-- add a note for user -->
+				<!-- copy sample ld and readme -->
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script.ld</file>
 					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/guix_16bpp/README.md</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -793,12 +826,16 @@
 					<folder>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
-				<!-- add a note for user -->
+				<!-- copy sample ld and readme -->
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script.ld</file>
 					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/guix_16bpp_draw2d/README.md</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -960,5 +997,9 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
 			<value>true</value>
 		</option>
+		<!-- Open readme file if it exists -->
+		<openfile>
+			<path>README.md</path>
+		</openfile>
 	</package>
 </refinfo>
