@@ -15,6 +15,7 @@
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp6.20" version="6.20">
+                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -28,25 +29,35 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="guix">
-            <component display="Azure RTOS GUIX" id="guix${packageVersion}" version="${packageVersion}">
+        <configuration enable="true" exclude="false" inuse="true" name="filex">
+            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="r_glcdc_rx">
-            <component display="r_glcdc_rx" id="r_glcdc_rx1.50" version="1.50">
-                <gridItem id="LCD_CH0_IN_GR2_FRAME_EDGE" selectedIndex="1"/>
-                <gridItem id="LCD_CH0_BLEND_GR2_VISIBLE" selectedIndex="1"/>
-                <gridItem id="LCD_CH0_BLEND_GR1_VISIBLE" selectedIndex="0"/>
-                <gridItem id="LCD_CH0_IN_GR2_PBASE" selectedIndex="0x00860000"/>
+        <configuration enable="true" exclude="false" inuse="true" name="netxduo">
+            <component display="Azure RTOS NetX Duo" id="netxduo${packageVersion}" version="${packageVersion}">
             </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="r_sci_iic_rx">
-            <component display="r_sci_iic_rx" id="r_sci_iic_rx2.49" version="2.49">
-                <gridItem id="SCI_IIC_CFG_CH7_INCLUDED" selectedIndex="1"/>
+        <configuration enable="true" exclude="false" inuse="true" name="usbx">
+            <component display="Azure RTOS UsbX" id="usbx${packageVersion}" version="${packageVersion}">
             </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration inuse="true" name="Config_SCI2">
+            <allocatable id="SCI2">
+                <option enabled="true" id="Bitrate" selection="FreeValue">
+                    <item id="FreeValue" input="115200" vlaue="115200"/>
+                </option>
+            </allocatable>
+            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.9.2"/>
+            <allocator channelLevel0="2" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 2" display="SCI2" id="com.renesas.smc.swc.cg.rx.sciasync.rx72n.sci2" type="SCI">
+                <context>
+                    <option enabled="true" id="Mode" selection="BothMode">
+                    </option>
+                </context>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
     </tool>
 </smc>
