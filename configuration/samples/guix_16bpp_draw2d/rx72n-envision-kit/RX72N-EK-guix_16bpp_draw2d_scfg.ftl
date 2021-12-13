@@ -44,8 +44,12 @@
         </configuration>
         <configuration inuse="true" name="r_sci_iic_rx">
             <component display="r_sci_iic_rx" id="r_sci_iic_rx2.49" version="2.49">
-                <gridItem id="SCI_IIC_CFG_CH7_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_IIC_CFG_CH6_INCLUDED" selectedIndex="1"/>
             </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_drw2d_rx">
+            <component display="r_drw2d_rx" id="r_drw2d_rx1.11" version="1.11"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>

@@ -109,6 +109,35 @@
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
+				<!-- copy sample ld and readme for RX130, RX72N -->
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/ramdisk/rx130/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/ramdisk/rx130/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/ramdisk/rx72n/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/ramdisk/rx72n/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
@@ -150,25 +179,32 @@
 			</app>
 			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/ping/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/ping/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/ping/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/ping/rsk-rx65n-2mb/src/demo_printf.c</file>
-					<file>configuration/samples/ping/rsk-rx65n-2mb/src/hardware_setup.c</file>
-					<file>configuration/samples/ping/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/ping/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/ping/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/ping/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/ping/rsk-rx65n-2mb/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/ping/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -192,21 +228,36 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/ping/rsk-rx65n-2mb/RSKRX65N-2MB-ping_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/ping/rx72n-envision-kit/RX72N-EK-ping_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
-					<series>RX600</series>
-					<group>RX65N</group>
+					<board>RSKRX65N-2MB</board>
 					<section>
-						<name>B_ETHERNET_BUFFERS</name>
-						<name>B_TX_DESC</name>
-						<name>B_RX_DESC</name>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -241,25 +292,32 @@
 			<!-- TODO add more apps -->
 			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iperf/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/iperf/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/iperf/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/demo_printf.c</file>
-					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/hardware_setup.c</file>
-					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/iperf/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/iperf/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/iperf/rsk-rx65n-2mb/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/iperf/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -283,22 +341,36 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/iperf/rsk-rx65n-2mb/RSKRX65N-2MB-iperf_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/iperf/rx72n-envision-kit/RX72N-EK-iperf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<series>RX600</series>
-					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS</name>
-						<name>B_TX_DESC</name>
-						<name>B_RX_DESC</name>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -332,25 +404,32 @@
 			</app>
 			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iot_sdk/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/demo_printf.c</file>
-					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/hardware_setup.c</file>
-					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/iot_sdk/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/iot_sdk/rsk-rx65n-2mb/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/iot_sdk/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -374,22 +453,36 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/iot_sdk/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/iot_sdk/rx72n-envision-kit/RX72N-EK-iot-sdk_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<series>RX600</series>
-					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS</name>
-						<name>B_TX_DESC</name>
-						<name>B_RX_DESC</name>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -423,25 +516,32 @@
 			</app>
 			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iot_sdk_pnp/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/demo_printf.c</file>
-					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/hardware_setup.c</file>
-					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -465,22 +565,36 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/RX72N-EK-iot-sdk-pnp_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<series>RX600</series>
-					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS</name>
-						<name>B_TX_DESC</name>
-						<name>B_RX_DESC</name>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -514,25 +628,32 @@
 			</app>
 			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/temperature_pnp/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/demo_printf.c</file>
-					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/hardware_setup.c</file>
-					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/temperature_pnp/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src/linker_script.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/temperature_pnp/rsk-rx65n-2mb/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/temperature_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -556,22 +677,36 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/temperature_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-temperature-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/temperature_pnp/rx72n-envision-kit/RX72N-EK-temperature-pnp_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<series>RX600</series>
-					<group>RX65N</group>
 					<section>
-						<name>B_ETHERNET_BUFFERS</name>
-						<name>B_TX_DESC</name>
-						<name>B_RX_DESC</name>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B_ETHERNET_BUFFERS*</name>
+						<name>B_TX_DESC*</name>
+						<name>B_RX_DESC*</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections>
 				<!-- enable remove unused code -->
@@ -605,14 +740,21 @@
 			</app>
 			<app id="application" value="guix_8bpp" name="GUIX 8bpp sample project" description="This demonstration illustrates GUIX sample project with 8 bits color look-up table">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/guix_8bpp/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/guix_8bpp/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/guix_8bpp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/guix_8bpp/rx72n-envision-kit/src</folder>
+					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -645,13 +787,19 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/guix_8bpp/rsk-rx65n-2mb/RSKRX65N-2MB-guix_8bpp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/guix_8bpp/rx72n-envision-kit/RX72N-EK-guix_8bpp_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
@@ -690,21 +838,40 @@
 			</app>
 			<app id="application" value="guix_16bpp" name="GUIX 16bpp sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/guix_16bpp/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
-				<!-- add a note for user -->
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/guix_16bpp/rx72n-envision-kit/src</folder>
+					<path>src</path>
+				</impdir>
+				<!-- copy sample ld and readme -->
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script.ld</file>
-					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/linker_script_sample.ld</file>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/guix_16bpp/README.md</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -737,7 +904,12 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/guix_16bpp/rsk-rx65n-2mb/RSKRX65N-2MB-guix_16bpp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/guix_16bpp/rx72n-envision-kit/RX72N-EK-guix_16bpp_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
@@ -755,6 +927,24 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x0083FC00</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>SU</name>
+						<name>SI</name>
+						<name>B_1</name>
+						<name>R_1</name>
+						<name>B_2</name>
+						<name>R_2</name>
+						<name>B_8</name>
+						<name>R_8</name>
+						<name>R</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections> 
 				<!-- enable remove unused code -->
@@ -784,21 +974,40 @@
 			</app>
 			<app id="application" value="guix_16bpp_draw2d" name="GUIX 16bpp draw 2d sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565 and drawing 2d engine driver">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/guix_16bpp_draw2d/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
-				<!-- add a note for user -->
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/guix_16bpp_draw2d/rx72n-envision-kit/src</folder>
+					<path>src</path>
+				</impdir>
+				<!-- copy sample ld and readme -->
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script.ld</file>
-					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/src/linker_script_sample.ld</file>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/linker_script_sample.ld</file>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/guix_16bpp_draw2d/rx72n-envision-kit/linker_script.ld</file>
+					<file>configuration/samples/guix_16bpp_draw2d/rx72n-envision-kit/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/guix_16bpp_draw2d/README.md</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -837,7 +1046,12 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/RSKRX65N-2MB-guix_16bpp_draw2d_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/guix_16bpp_draw2d/rx72n-envision-kit/RX72N-EK-guix_16bpp_draw2d_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
@@ -855,6 +1069,24 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x0083FC00</address>
+					</section>
+				</sections> 
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>SU</name>
+						<name>SI</name>
+						<name>B_1</name>
+						<name>R_1</name>
+						<name>B_2</name>
+						<name>R_2</name>
+						<name>B_8</name>
+						<name>R_8</name>
+						<name>R</name>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
 					</section>
 				</sections> 
 				<!-- enable remove unused code -->
@@ -884,19 +1116,27 @@
 				<!-- macro definition -->
 				<macrodefinition>
 					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<compiler>GX_USE_DAVE2D_DRAW=1</compiler>
 				</macrodefinition>
 			</app>
 			<app id="application" value="usbx_device_cdc_acm" name="USBX device CDC-ACM Class sample project" description="This demonstration illustrates the setup and use of USBX device CDC-ACM Class to communicate with the host as a serial device.">
 				<board>RSKRX65N-2MB</board>
+				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/usbx_device_cdc_acm/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<folder>configuration/samples/usbx_device_cdc_acm/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<board>RSKRX65N-2MB</board>
+					<folder>configuration/samples/usbx_device_cdc_acm/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/usbx_device_cdc_acm/rx72n-envision-kit/src</folder>
+					<path>src</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -914,13 +1154,19 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/usbx_device_cdc_acm/rsk-rx65n-2mb/RSKRX65N-2MB-usbx_device_cdc_acm_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<path>configuration/samples/usbx_device_cdc_acm/rx72n-envision-kit/RX72N-EK-usbx_device_cdc_acm_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
@@ -960,5 +1206,9 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
 			<value>true</value>
 		</option>
+		<!-- Open readme file if it exists -->
+		<openfile>
+			<path>README.md</path>
+		</openfile>
 	</package>
 </refinfo>

@@ -38,6 +38,7 @@
                 <gridItem id="LCD_CH0_IN_GR2_FRAME_EDGE" selectedIndex="1"/>
                 <gridItem id="LCD_CH0_BLEND_GR2_VISIBLE" selectedIndex="1"/>
                 <gridItem id="LCD_CH0_BLEND_GR1_VISIBLE" selectedIndex="0"/>
+                <gridItem id="LCD_CH0_IN_GR2_PBASE" selectedIndex="0x00860000"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
