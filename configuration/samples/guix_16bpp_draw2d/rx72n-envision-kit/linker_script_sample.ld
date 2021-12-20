@@ -1,8 +1,8 @@
 MEMORY
 {
 	RAM : ORIGIN = 0x4, LENGTH = 0x7fffc
-	RAM2 : ORIGIN = 0x00800000, LENGTH = 524288
-	ROM : ORIGIN = 0xFFE00000, LENGTH = 2097152
+	RAM2 : ORIGIN = 0x0083fc00, LENGTH = 132096
+	ROM : ORIGIN = 0xFFC00000, LENGTH = 4194304
 	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
@@ -17,7 +17,7 @@ SECTIONS
 	{
 		KEEP(*(.fvectors))
 	} > ROM
-	.text 0xFFE00000: AT(0xFFE00000)
+	.text 0xFFC00000: AT(0xFFC00000)
 	{
 		*(.text)
 		*(.text.*)
@@ -150,7 +150,7 @@ SECTIONS
 	{
 		KEEP(*(.ofs8))
 	} > OFS
-	.r_bsp_NULL :
+.r_bsp_NULL :
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
