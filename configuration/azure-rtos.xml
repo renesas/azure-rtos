@@ -14,6 +14,7 @@
 	<target>
 		<toolchain>RXC</toolchain>
 		<board>RSKRX65N-2MB</board>
+		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
 		<series>RX100</series>
@@ -29,6 +30,7 @@
 	<target>
 		<toolchain>GNURX</toolchain>
 		<board>RSKRX65N-2MB</board>
+		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
 		<series>RX100</series>
@@ -179,6 +181,7 @@
 			</app>
 			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -188,6 +191,11 @@
 				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<folder>configuration/samples/ping/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/ping/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -213,23 +221,79 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
-				</incdir>
-				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<incdir>
+					<board>RSKRX671</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/ping/rsk-rx65n-2mb/RSKRX65N-2MB-ping_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/ping/rsk-rx671/RSKRX671-ping_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
@@ -247,6 +311,15 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00000004</address>
 					</section>
 				</sections>
 				<sections>
@@ -404,6 +477,7 @@
 			</app>
 			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -413,6 +487,11 @@
 				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_sdk/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -438,23 +517,79 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
-				</incdir>
-				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<incdir>
+					<board>RSKRX671</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/iot_sdk/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/iot_sdk/rsk-rx671/RSKRX671-iot-sdk_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
@@ -472,6 +607,15 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00000004</address>
 					</section>
 				</sections>
 				<sections>
@@ -516,6 +660,7 @@
 			</app>
 			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -525,6 +670,11 @@
 				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_sdk_pnp/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -550,23 +700,79 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
-				</incdir>
-				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<incdir>
+					<board>RSKRX671</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/iot_sdk_pnp/rsk-rx671/RSKRX671-iot-sdk-pnp_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
@@ -584,6 +790,15 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00000004</address>
 					</section>
 				</sections>
 				<sections>
@@ -628,6 +843,7 @@
 			</app>
 			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -637,6 +853,11 @@
 				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<folder>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/temperature_pnp/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -662,23 +883,79 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
-				</incdir>
-				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RX72NEnvisionKit</board>
 					<path>src/smc_gen/r_ether_rx</path>
+				</incdir>
+				<incdir>
+					<board>RSKRX671</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/temperature_pnp/rsk-rx65n-2mb/RSKRX65N-2MB-temperature-pnp_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/temperature_pnp/rsk-rx671/RSKRX671-temperature-pnp_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
@@ -696,6 +973,15 @@
 						<name>B</name>
 						<name>FREEMEM</name>
 						<address>0x00004000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00000004</address>
 					</section>
 				</sections>
 				<sections>
@@ -1122,6 +1408,7 @@
 			</app>
 			<app id="application" value="usbx_device_cdc_acm" name="USBX device CDC-ACM Class sample project" description="This demonstration illustrates the setup and use of USBX device CDC-ACM Class to communicate with the host as a serial device.">
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -1131,6 +1418,11 @@
 				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<folder>configuration/samples/usbx_device_cdc_acm/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/usbx_device_cdc_acm/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1158,6 +1450,10 @@
 					<path>configuration/samples/usbx_device_cdc_acm/rsk-rx65n-2mb/RSKRX65N-2MB-usbx_device_cdc_acm_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/usbx_device_cdc_acm/rsk-rx671/RSKRX671-usbx_device_cdc_acm_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
 					<path>configuration/samples/usbx_device_cdc_acm/rx72n-envision-kit/RX72N-EK-usbx_device_cdc_acm_scfg.ftl</path>
 				</scfgtemplate>
@@ -1166,6 +1462,7 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B</name>
