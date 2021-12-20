@@ -3,7 +3,6 @@
 
 #include <platform.h>
 
-#include <Config_SCI10.h>
 #include <r_cmt_rx_if.h>
 
 #include <tx_api.h>
@@ -21,7 +20,6 @@ void timer_callback(void * pdata)
 
 /* USB0 setup
  *     The USB SCKCR2 is configured by Smart Configure's clock tab and initialized by r_bsp.
- *     The interrupt number for USB0 is pre-assinged as 181 in r_bsp_interrupt_config.h
  */
 void usb0_setup(void)
 {
@@ -40,8 +38,6 @@ void usb0_setup(void)
     /* Enable USBR0 interrupt */
     R_BSP_InterruptRequestEnable(VECT(USB0, USBR0));
 
-    BSP_PRV_INT_B_SELECT_181 = BSP_PRV_INT_B_NUM_USB0_USBI0;
-
     /* Set USBI0 priority level */
     IPR(USB0, USBI0) = ICU_USB0_USBI0_PRIORITY;
 
@@ -56,8 +52,8 @@ void platform_setup(void)
 {
     uint32_t chan;
 
-    /* Setup SCI10 for printf output. */
-    R_Config_SCI10_Start();
+    /* Setup SCIx for printf output. */
+    //R_Config_SCIx_Start();
 
     /* Create periodic timer for the system tick. */
     R_CMT_CreatePeriodic(100u, timer_callback, &chan);

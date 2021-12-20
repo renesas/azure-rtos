@@ -1573,6 +1573,10 @@
 				<board>RX65NCloudKit</board>
 				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
+				<memoryreq>
+					<group>RX66T</group>
+					<RAM>128</RAM>
+				</memoryreq>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/usbx_device_cdc_acm/common</folder>
@@ -1586,6 +1590,11 @@
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<folder>configuration/samples/usbx_device_cdc_acm/rx65n-cloudkit/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX66T</group>
+					<folder>configuration/samples/usbx_device_cdc_acm/rx66t/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1622,6 +1631,10 @@
 					<path>configuration/samples/usbx_device_cdc_acm/rx65n-cloudkit/RX65N_Cloudkit-usbx_device_cdc_acm_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
+					<group>RX66T</group>
+					<path>configuration/samples/usbx_device_cdc_acm/rx66t/RX66T-usbx_device_cdc_acm_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RSKRX671</board>
 					<path>configuration/samples/usbx_device_cdc_acm/rsk-rx671/RSKRX671-usbx_device_cdc_acm_scfg.ftl</path>
 				</scfgtemplate>
@@ -1637,6 +1650,15 @@
 					<board>RX65NCloudKit</board>
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00010000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<group>RX66T</group>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
