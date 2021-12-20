@@ -215,6 +215,17 @@
 					<file>configuration/samples/ping/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme and pdf for RSK RX671-->
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/r12tu0157ej0100-rx671-rsk-preparation.pdf</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -511,6 +522,17 @@
 					<file>configuration/samples/iot_sdk/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme and pdf for RSK RX671-->
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/r12tu0157ej0100-rx671-rsk-preparation.pdf</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -694,6 +716,17 @@
 					<file>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme and pdf for RSK RX671-->
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/r12tu0157ej0100-rx671-rsk-preparation.pdf</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -876,6 +909,17 @@
 					<board>RX72NEnvisionKit</board>
 					<file>configuration/samples/temperature_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
+				</impdir>
+				<!-- copy readme and pdf for RSK RX671-->
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/ping/rsk-rx671/r12tu0157ej0100-rx671-rsk-preparation.pdf</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
