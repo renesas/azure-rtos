@@ -46,7 +46,7 @@ void usb0_setup(void)
     IPR(USB0, USBI0) = ICU_USB0_USBI0_PRIORITY;
 
     /* Enable USBI0 interrupt in ICU */
-    IEN(USB0,USBI0) = 1U;
+    R_BSP_InterruptRequestEnable(VECT(USB0, USBI0));
 
     /* Enable protection */
     SYSTEM.PRCR.WORD = 0xA500U;
@@ -56,7 +56,7 @@ void platform_setup(void)
 {
     uint32_t chan;
 
-    /* Setup SCI8 for printf output. */
+    /* Setup SCI2 for printf output. */
     R_Config_SCI2_Start();
 
     /* Create periodic timer for the system tick. */
