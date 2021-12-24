@@ -307,9 +307,6 @@ static VOID gx_flip_canvas_to_working_16bpp(GX_CANVAS  *canvas, GX_RECTANGLE *co
 #include "r_glcdc_rx_if.h"
 #include "r_glcdc_rx_pinset.h"
 
-/* Header files for RSKRX65N-2MB board output by QE for Display [RX] */
-//#include "r_image_config_RX65N_RSK.h"
-//#include "r_lcd_timing_RX65N_RSK.h"
 
 static void glcdc_initialize (void);
 void qe_for_display_parameter_set (glcdc_cfg_t * glcdc_qe_cfg);
