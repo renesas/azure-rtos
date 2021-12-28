@@ -1684,11 +1684,11 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
 					<value>true</value>
 				</option>
-				<option>
+				<!--option>
 					<toolchain>GNURX</toolchain>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
-				</option>
+				</option-->
 			</app>
 		</apps>
 		<!-- Setting for all sample projects -->

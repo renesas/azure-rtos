@@ -12,6 +12,10 @@
         </configuration>
         <platform id="${targetDevice}"/>
     </general>
+    <tool id="Interrupt">
+        <Item currentVect="90" id="USB0_USBR0" priority="2" usedState="Not Use"/>
+        <Item currentVect="185" defaultVect="185" id="USB0_USBI0" priority="3" usedState="Not Use"/>
+    </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp6.20" version="6.20">
