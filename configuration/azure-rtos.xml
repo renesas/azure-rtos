@@ -296,6 +296,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -559,10 +565,15 @@
 					<file>configuration/samples/iot_sdk/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -632,6 +643,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -782,10 +799,15 @@
 					<file>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -855,6 +877,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1005,10 +1033,15 @@
 					<file>configuration/samples/temperature_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -1078,6 +1111,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
