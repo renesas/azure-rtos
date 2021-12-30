@@ -406,6 +406,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>

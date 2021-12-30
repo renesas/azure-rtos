@@ -2,7 +2,7 @@
 
 #include "tx_api.h"
 #include "nx_api.h"
-#include <nx_wifi.h>
+#include "nx_driver_rx671_rsk.h"
 
 #include <demo_printf.h>
 
@@ -64,6 +64,7 @@ ULONG             ip_thread_stack[2 * 1024 / sizeof(ULONG)];
 /* Define packet pool for the demonstration.  */
 static ULONG sample_pool[SAMPLE_POOL_SIZE / sizeof(ULONG)];
 static ULONG sample_pool_size = sizeof(sample_pool);
+static ULONG sample_ip_stack[SAMPLE_IP_STACK_SIZE / sizeof(ULONG)];
 
 /* Define the prototypes for sample thread.  */
 static void sample_helper_thread_entry(ULONG parameter);
@@ -105,9 +106,6 @@ UINT  status;
     /* Initialize the NetX system.  */
     nx_system_initialize();
     
-    /* Initialize Wi-Fi. */
-    nx_wifi_initialize(&ip_0, &pool_0);
-
     /* Create a packet pool.  */
     status = nx_packet_pool_create(&pool_0, "NetX Main Packet Pool", SAMPLE_PACKET_SIZE,
                                    (UCHAR *)sample_pool , sample_pool_size);
@@ -116,13 +114,14 @@ UINT  status;
     if (status)
         error_counter++;
 
+
     /* Create sample helper thread. */
     status = tx_thread_create(&sample_helper_thread, "Demo Thread",
                               sample_helper_thread_entry, 0,
                               sample_helper_thread_stack, SAMPLE_HELPER_STACK_SIZE,
                               SAMPLE_HELPER_THREAD_PRIORITY, SAMPLE_HELPER_THREAD_PRIORITY,
                               TX_NO_TIME_SLICE, TX_AUTO_START);
-        
+
     /* Check for helper thread creation error.  */
     if (status)
         error_counter++;
@@ -176,18 +175,18 @@ void sample_helper_thread_entry(ULONG parameter)
            (ip_cfg.gateway >> 8 & 0xFF),
            (ip_cfg.gateway & 0xFF));
 
-    /* Create an IP instance.  */
-    status = nx_ip_create(&ip_0, "NetX IP Instance 0",
-                          0, 0,
-                          &pool_0, NULL,
-                          NULL, NULL,
-                          0u);
+	/* Create an IP instance.  */
+	status = nx_ip_create(&ip_0, "NetX IP Instance 0",
+						  0, 0xFFFFFFFF,
+						  &pool_0, nx_driver_rx671_rsk,
+						  (UCHAR*)sample_ip_stack, sizeof(sample_ip_stack),
+						  SAMPLE_IP_THREAD_PRIORITY);
 
-    /* Check for IP create errors.  */
-    if (status)
-    {
-        demo_printf("nx_ip_create fail: %u\r\n", status);
-        return;
-    }
+	/* Check for IP create errors.  */
+	if (status)
+	{
+		printf("IP CREATE FAIL.\r\n");
+		return;
+	}
 
 }
