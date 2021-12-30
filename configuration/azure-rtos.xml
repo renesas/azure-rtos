@@ -647,6 +647,7 @@
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
@@ -754,6 +755,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
