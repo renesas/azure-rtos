@@ -296,6 +296,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -400,6 +406,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
@@ -559,10 +566,15 @@
 					<file>configuration/samples/iot_sdk/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -632,6 +644,13 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -736,6 +755,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
@@ -782,10 +802,15 @@
 					<file>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -855,6 +880,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1005,10 +1036,15 @@
 					<file>configuration/samples/temperature_pnp/rx72n-envision-kit/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
+				<!-- copy readme common -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy readme and pdf for RSK RX671-->
 				<impdir>
 					<board>RSKRX671</board>
-					<file>configuration/samples/ping/rsk-rx671/README.md</file>
+					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -1078,6 +1114,12 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- exclude build files -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1684,11 +1726,11 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
 					<value>true</value>
 				</option>
-				<option>
+				<!--option>
 					<toolchain>GNURX</toolchain>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
-				</option>
+				</option-->
 			</app>
 		</apps>
 		<!-- Setting for all sample projects -->

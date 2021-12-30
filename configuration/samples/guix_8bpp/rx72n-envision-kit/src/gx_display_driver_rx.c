@@ -20,10 +20,6 @@
 #include    "gx_display.h"
 #include    "gx_utility.h"
 
-/* Header files for RSKRX65N-2MB board output by QE for Display [RX] */
-//#include "r_image_config_RX65N_RSK.h"
-//#include "r_lcd_timing_RX65N_RSK.h"
-
 #define IMAGE_WIDTH          (480u)  /* Width of image used in this sample. */
 #define IMAGE_HEIGHT         (272u)  /* Height of image used in this sample. */
 #define IMAGE_PIXEL_SIZE     (2u)    /* Graphic format: RGB565, 2 bytes per pixel */
@@ -382,10 +378,6 @@ static VOID gx_flip_canvas_to_working_32bpp(GX_CANVAS  *canvas, GX_RECTANGLE * c
 }
 
 
-
-/* Header files for RSKRX65N-2MB board output by QE for Display [RX] */
-//#include "r_image_config_RX65N_RSK.h"
-//#include "r_lcd_timing_RX65N_RSK.h"
 
 static void glcdc_initialize (void);
 void qe_for_display_parameter_set (glcdc_cfg_t * glcdc_qe_cfg);

@@ -45,8 +45,26 @@
         </configuration>
         <configuration inuse="true" name="r_ether_rx">
             <component description="Dependency : r_bsp version(s) 5.50&#10;The Ethernet fit module provides a method to send and receive Ethernet / IEEE802.3 frame using Ethernet controller (ETHERC), Ethernet DMA controller (EDMAC)." display="r_ether_rx" id="r_ether_rx1.21" version="1.21">
+                <gridItem id="CLKOUT25M" selectedIndex="1"/>
+                <gridItem id="ET0_TX_CLK" selectedIndex="1"/>
+                <gridItem id="ET0_RX_CLK" selectedIndex="1"/>
+                <gridItem id="ET0_TX_EN" selectedIndex="1"/>
+                <gridItem id="ET0_ETXD3" selectedIndex="1"/>
+                <gridItem id="ET0_ETXD2" selectedIndex="1"/>
+                <gridItem id="ET0_ETXD1" selectedIndex="1"/>
+                <gridItem id="ET0_ETXD0" selectedIndex="1"/>
+                <gridItem id="ET0_TX_ER" selectedIndex="1"/>
+                <gridItem id="ET0_RX_DV" selectedIndex="1"/>
+                <gridItem id="ET0_ERXD3" selectedIndex="1"/>
+                <gridItem id="ET0_ERXD2" selectedIndex="1"/>
+                <gridItem id="ET0_ERXD1" selectedIndex="1"/>
+                <gridItem id="ET0_ERXD0" selectedIndex="1"/>
+                <gridItem id="ET0_RX_ER" selectedIndex="1"/>
+                <gridItem id="ET0_CRS" selectedIndex="1"/>
+                <gridItem id="ET0_COL" selectedIndex="1"/>
+                <gridItem id="ET0_MDC" selectedIndex="1"/>
+                <gridItem id="ET0_MDIO" selectedIndex="1"/>
                 <gridItem id="ETHERC0_MII" selectedIndex="1"/>
-                <gridItem id="ETHERC1_MII" selectedIndex="0"/>
                 <gridItem id="ETHER_CFG_CH0_PHY_ADDRESS" selectedIndex="0"/>
                 <gridItem id="ETHER_CFG_EMAC_RX_DESCRIPTORS" selectedIndex="8"/>
                 <gridItem id="ETHER_CFG_EMAC_TX_DESCRIPTORS" selectedIndex="16"/>
