@@ -12,11 +12,9 @@
 #include "nx_api.h"
 #include "nxd_dns.h"
 #include "nx_secure_tls_api.h"
-#include <nx_wifi.h>
+#include "nx_driver_rx671_rsk.h"
 
 #include <demo_printf.h>
-
-#include <r_wifi_sx_ulpgn_if.h>
 
 /* Include the sample.  */
 extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_ptr, UINT (*unix_time_callback)(ULONG *unix_time));
@@ -69,37 +67,35 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 */
 
 #ifndef SAMPLE_TIME_SERVER_NAME
-//#define SAMPLE_TIME_SERVER_NAME           "utcnist.colorado.edu"    /* Time Server.  */
-#define SAMPLE_TIME_SERVER_NAME           "time4.nrc.ca"
+//#define SAMPLE_TIME_SERVER_NAME     "utcnist.colorado.edu"    /* Time Server.  */
+#define SAMPLE_TIME_SERVER_NAME       "time4.nrc.ca"
 #endif /* SAMPLE_TIME_SERVER_NAME */
 
-/* Default time. GMT: Friday, Jan 1, 2021 12:00:00 AM. Epoch timestamp: 1609459200.  */
+/* Default time. GMT: Saturday, January 1, 2022 12:00:00 AM. Epoch timestamp: 1640995200.  */
 #ifndef SAMPLE_SYSTEM_TIME 
-#define SAMPLE_SYSTEM_TIME                1609459200
+#define SAMPLE_SYSTEM_TIME            1640995200
 #endif /* SAMPLE_SYSTEM_TIME  */
 
 static TX_THREAD        sample_helper_thread;
 static NX_PACKET_POOL   pool_0;
 static NX_IP            ip_0;
 static NX_DNS           dns_0;
+static NX_TCP_SOCKET 	time_socket;
+wifi_ip_configuration_t ip_cfg = {0};
 
 /* System clock time for UTC.  */
 static ULONG            unix_time_base;
 
 /* Define the stack/cache for ThreadX.  */
 static ULONG sample_pool[SAMPLE_POOL_SIZE / sizeof(ULONG)];
-static ULONG sample_pool_size = sizeof(sample_pool);
+static ULONG sample_ip_stack[SAMPLE_IP_STACK_SIZE / sizeof(ULONG)];
 
 static ULONG sample_helper_thread_stack[SAMPLE_HELPER_STACK_SIZE / sizeof(ULONG)];
-
-/* Define an error counter.  */
-
-ULONG             error_counter;
-
 
 /* Define the prototypes for sample thread.  */
 static void sample_helper_thread_entry(ULONG parameter);
 
+static UINT wifi_connect();
 static UINT time_sync(void);
 static UINT unix_time_get(ULONG *unix_time);
 
@@ -124,25 +120,6 @@ UINT  status;
     /* Initialize the demo printf implementation. */
     demo_printf_init();
 
-    /* Initialize the NetX system.  */
-    nx_system_initialize();
-
-    /* Initialize Wi-Fi. */
-    nx_wifi_initialize(&ip_0, &pool_0);
-
-    /* Create a packet pool.  */
-    status = nx_packet_pool_create(&pool_0, "NetX Main Packet Pool", SAMPLE_PACKET_SIZE,
-                                   (UCHAR *)sample_pool , sample_pool_size);
-
-    /* Check for pool creation error.  */
-    if (status)
-    {
-        return;
-    }
-
-    /* Initialize TLS.  */
-    nx_secure_tls_initialize();
-
     /* Create sample helper thread. */
     status = tx_thread_create(&sample_helper_thread, "Demo Thread",
                               sample_helper_thread_entry, 0,
@@ -161,7 +138,106 @@ UINT  status;
 void sample_helper_thread_entry(ULONG parameter)
 {
 UINT    status;
-wifi_ip_configuration_t ip_cfg =  {0};
+
+	/* Connect to Wifi.  */
+	if (wifi_connect())
+	{
+		return;
+	}
+
+	/* Initialize the NetX system.  */
+	nx_system_initialize();
+
+	/* Create a packet pool.  */
+	status = nx_packet_pool_create(&pool_0, "NetX Main Packet Pool", SAMPLE_PACKET_SIZE,
+								   (UCHAR *)sample_pool , sizeof(sample_pool));
+
+	/* Check for pool creation error.  */
+	if (status)
+	{
+		printf("PACKET POOL CREATE FAIL.\r\n");
+		return;
+	}
+
+	/* Create an IP instance.  */
+	status = nx_ip_create(&ip_0, "NetX IP Instance 0",
+						  0, 0xFFFFFFFF,
+						  &pool_0, nx_driver_rx671_rsk,
+						  (UCHAR*)sample_ip_stack, sizeof(sample_ip_stack),
+						  SAMPLE_IP_THREAD_PRIORITY);
+
+	/* Check for IP create errors.  */
+	if (status)
+	{
+		printf("IP CREATE FAIL.\r\n");
+		return;
+	}
+
+	/* Enable TCP.  */
+	status = nx_tcp_enable(&ip_0);
+
+	/* Check for TCP enable errors.  */
+	if (status)
+	{
+		printf("TCP ENABLE FAIL.\r\n");
+		return;
+	}
+
+	/* Enable UDP.  */
+	status = nx_udp_enable(&ip_0);
+
+	/* Check for UDP enable errors.  */
+	if (status)
+	{
+		printf("UDP ENABLE FAIL.\r\n");
+		return;
+	}
+
+	/* Set IP address.  */
+    status = nx_ip_address_set(&ip_0, ip_cfg.ipaddress, ip_cfg.subnetmask);
+
+    /* Check for IP address set errors.  */
+    if (status)
+    {
+	  	printf("IP ADDRESS SET FAIL.\r\n");
+        return;
+    }
+
+	/* Set gateway address.  */
+    status = nx_ip_gateway_address_set(&ip_0, ip_cfg.gateway);
+
+    /* Check for gateway address set errors.  */
+    if (status)
+    {
+	  	printf("IP GATEWAY ADDRESS SET FAIL.\r\n");
+        return;
+    }
+
+	/* Initialize TLS.  */
+	nx_secure_tls_initialize();
+
+	/* Start to sync the local time.  */
+	status = time_sync();
+
+    /* Check status.  */
+    if (status)
+    {
+        printf("Time Sync failed.\r\n");
+        printf("Set Time to default value: SAMPLE_SYSTEM_TIME.\r\n");
+        unix_time_base = SAMPLE_SYSTEM_TIME;
+    }
+    else
+    {
+        printf("Time Sync successful.\r\n");
+    }
+
+    /* Start sample.  */
+    sample_entry(&ip_0, &pool_0, &dns_0, unix_time_get);
+}
+
+static UINT wifi_connect()
+{
+UINT    status;
 
 
 	printf("Initializing Wi-Fi\r\n");
@@ -170,24 +246,31 @@ wifi_ip_configuration_t ip_cfg =  {0};
 
 	/* Check for wi-fi module open error. */
 	if (status)
-		error_counter++;
-
-	status = R_WIFI_SX_ULPGN_Connect (WIFI_SSID, WIFI_PASSWORD, WIFI_SECURITY_WPA2, 1, &ip_cfg);
-
-	/* Check for wi-fi connect error. */
-	if (status)
-		error_counter++;
-
-	if(status) {
+	{
 		printf("Error connecting to Wi-Fi network.\r\n");
-	} else {
+		return(status);
+	}
+
+	status = R_WIFI_SX_ULPGN_Connect(WIFI_SSID, WIFI_PASSWORD, WIFI_SECURITY_WPA2, 1, &ip_cfg);
+
+	if(status)
+	{
+		printf("Error connecting to Wi-Fi network.\r\n");
+		return(status);
+	}
+	else
+	{
 		printf("Wi-Fi connected.\r\n");
 	}
+
 	status = R_WIFI_SX_ULPGN_GetIpAddress(&ip_cfg);
 
 	/* Check for API error. */
 	if (status)
-		error_counter++;
+	{
+		printf("No IP Address.\r\n");
+		return(status);
+	}
 
 	/* Output IP address and gateway address. */
 	printf("IP address: %lu.%lu.%lu.%lu\r\n",
@@ -205,129 +288,98 @@ wifi_ip_configuration_t ip_cfg =  {0};
 		   (ip_cfg.gateway >> 16 & 0xFF),
 		   (ip_cfg.gateway >> 8 & 0xFF),
 		   (ip_cfg.gateway & 0xFF));
-
-    /* Create an IP instance.  */
-    status = nx_ip_create(&ip_0, "NetX IP Instance 0",
-                          0, 0,
-                          &pool_0, NULL,
-                          NULL, NULL,
-                          0u);
-
-    /* Check for IP create errors.  */
-    if (status)
-    {
-        demo_printf("nx_ip_create fail: %u\r\n", status);
-        return;
-    }
-
-	/* Start to sync the local time.  */
-	status = time_sync();
-
-    /* Check status.  */
-    if (status)
-    {
-        printf("Time Sync failed.\r\n");
-        printf("Set Time to default value: SAMPLE_SYSTEM_TIME.");
-        unix_time_base = SAMPLE_SYSTEM_TIME;
-    }
-    else
-    {
-        printf("Time Sync successful.\r\n");
-    }
-
-    /* Start sample.  */
-    sample_entry(&ip_0, &pool_0, &dns_0, unix_time_get);
+	return(status);
 }
 
 static UINT time_sync(void)
 {
-    NXD_ADDRESS host_address;
-    UINT ret;
-    NX_TCP_SOCKET socket;
-    NX_PACKET *p_packet;
-    ULONG time;
-    ULONG len;
+UINT status;
+NXD_ADDRESS host_address;
+NX_PACKET *packet;
+ULONG time;
+ULONG len;
+ULONG system_time_in_second;
 
-    printf("Syncing time\r\n");
+    printf("Time Sync...\r\n");
 
-    ret = _nxde_dns_host_by_name_get(NULL, SAMPLE_TIME_SERVER_NAME, &host_address, 5000, 0);
-    if(ret != NX_SUCCESS) {
+    status = nxd_dns_host_by_name_get(NULL, SAMPLE_TIME_SERVER_NAME, &host_address, 5000, 0);
+
+    if(status != NX_SUCCESS)
+    {
         return(NX_NOT_SUCCESSFUL);
     }
 
     demo_printf("Time server IP address: %lu.%lu.%lu.%lu\r\n",
-           (host_address.nxd_ip_address.v4 >> 24),
-           (host_address.nxd_ip_address.v4 >> 16 & 0xFF),
-           (host_address.nxd_ip_address.v4 >> 8 & 0xFF),
-           (host_address.nxd_ip_address.v4 & 0xFF));
+			    (host_address.nxd_ip_address.v4 >> 24),
+			    (host_address.nxd_ip_address.v4 >> 16 & 0xFF),
+			    (host_address.nxd_ip_address.v4 >> 8 & 0xFF),
+			    (host_address.nxd_ip_address.v4 & 0xFF));
 
-    ret = nx_tcp_socket_create(&ip_0, &socket, "socket", NX_IP_NORMAL, NX_DONT_FRAGMENT, 127u, 2048u, NULL, NULL);
-    if(ret != NX_SUCCESS) {
-        return ret;
+    status = nx_tcp_socket_create(&ip_0, &time_socket, "socket", NX_IP_NORMAL, NX_DONT_FRAGMENT, 127u, 2048u, NULL, NULL);
+
+
+    if(status != NX_SUCCESS)
+    {
+        return(status);
     }
 
-    ret = nx_tcp_client_socket_bind(&socket, NX_ANY_PORT, TX_WAIT_FOREVER);
-    if(ret != NX_SUCCESS) {
-        return ret;
+    status = nx_tcp_client_socket_bind(&time_socket, NX_ANY_PORT, TX_WAIT_FOREVER);
+    if(status != NX_SUCCESS)
+    {
+        nx_tcp_socket_delete(&time_socket);
+        return(status);
     }
 
-    ret = nx_tcp_client_socket_connect(&socket, host_address.nxd_ip_address.v4, 37u, TX_WAIT_FOREVER);
-    if(ret != NX_SUCCESS) {
-        return ret;
+    status = nx_tcp_client_socket_connect(&time_socket, host_address.nxd_ip_address.v4, 37u, TX_WAIT_FOREVER);
+    if(status != NX_SUCCESS)
+    {
+        nx_tcp_client_socket_unbind(&time_socket);
+        nx_tcp_socket_delete(&time_socket);
+        return(status);
     }
 
-    ret = nx_packet_allocate(&pool_0, &p_packet, NX_IPv4_TCP_PACKET, 5000u);
-    if(ret != NX_SUCCESS) {
+    /* Wait for response.  */
+    status = nx_tcp_socket_receive(&time_socket, &packet, TX_WAIT_FOREVER);
+    if(status != NX_SUCCESS)
+    {
+        nx_tcp_socket_disconnect(&time_socket, NX_NO_WAIT);
+        nx_tcp_client_socket_unbind(&time_socket);
+        nx_tcp_socket_delete(&time_socket);
+        return(status);
     }
 
-    ret = nx_tcp_socket_send(&socket, p_packet, 5000u);
-    if(ret != NX_SUCCESS) {
-    	return ret;
-    }
-
-    ret = nx_tcp_socket_receive(&socket, &p_packet, 5000u);
-    if(ret != NX_SUCCESS) {
-        return ret;
-    }
-
-    if(p_packet->nx_packet_length != 4u) {
+    if(packet -> nx_packet_length != 4)
+    {
+    	nx_packet_release(packet);
+        nx_tcp_socket_disconnect(&time_socket, NX_NO_WAIT);
+        nx_tcp_client_socket_unbind(&time_socket);
+        nx_tcp_socket_delete(&time_socket);
         return (NX_NOT_SUCCESSFUL);
     }
 
-    ret = _nxe_packet_data_extract_offset(p_packet, 0u, &time, sizeof(time), &len);
-    if(ret != NX_SUCCESS) {
-        return ret;
-    }
-
-    if(len != 4u) {
-    	return (NX_NOT_SUCCESSFUL);
+    status = nx_packet_data_extract_offset(packet, 0u, &time, sizeof(time), &len);
+    if ((status != NX_SUCCESS) || (len != 4))
+    {
+    	nx_packet_release(packet);
+        nx_tcp_socket_disconnect(&time_socket, NX_NO_WAIT);
+        nx_tcp_client_socket_unbind(&time_socket);
+        nx_tcp_socket_delete(&time_socket);
+        return (NX_NOT_SUCCESSFUL);
     }
 
     NX_CHANGE_ULONG_ENDIAN(time);
 
     demo_printf("Time: %u\r\n", time - 2208988800ul);
 
-    ULONG system_time_in_second;
-
     system_time_in_second = tx_time_get() / TX_TIMER_TICKS_PER_SECOND;
     unix_time_base = (time - (system_time_in_second + 2208988800ul));
 
-    ret = nx_tcp_socket_disconnect(&socket, 5000u);
-    if(ret != NX_SUCCESS) {
-        return ret;
-    }
+	nx_packet_release(packet);
+    nx_tcp_socket_disconnect(&time_socket, NX_NO_WAIT);
+    nx_tcp_client_socket_unbind(&time_socket);
+    nx_tcp_socket_delete(&time_socket);
 
-    ret = nx_tcp_client_socket_unbind(&socket);
-    if(ret != NX_SUCCESS) {
-    	return ret;
-    }
-
-    ret = nx_tcp_socket_delete(&socket);
-    if(ret != NX_SUCCESS) {
-    	return ret;
-    }
-
-	return NX_SUCCESS;
+	return(NX_SUCCESS);
 }
 
 static UINT unix_time_get(ULONG *unix_time)

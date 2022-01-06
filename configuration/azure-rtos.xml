@@ -714,6 +714,22 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C_8</name>
+						<name>C$*</name>
+						<name>D*</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>P*</name>
+						<address>0xFFF00000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B_ETHERNET_BUFFERS*</name>
@@ -883,6 +899,7 @@
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
@@ -949,6 +966,22 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C_8</name>
+						<name>C$*</name>
+						<name>D*</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>P*</name>
+						<address>0xFFF00000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B_ETHERNET_BUFFERS*</name>
@@ -990,6 +1023,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
@@ -1117,6 +1151,7 @@
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
@@ -1183,6 +1218,22 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C_8</name>
+						<name>C$*</name>
+						<name>D*</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>P*</name>
+						<address>0xFFF00000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<section>
 						<name>B_ETHERNET_BUFFERS*</name>
@@ -1224,6 +1275,7 @@
 				</macrodefinition>
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
+					<board>RSKRX671</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
