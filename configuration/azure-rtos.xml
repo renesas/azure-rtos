@@ -1267,6 +1267,14 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- additional setting for RX671 with GNURX -->
+				<option>
+					<toolchain>GNURX</toolchain>
+					<board>RSKRX671</board>
+					<toolid>com.renesas.cdt.managedbuild.gcc.rx.tool.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.linker.other.userDefinedOptions</optionid>
+					<value>-Wl,--no-gc-sections</value>
+				</option>
 				<!-- macro definition -->
 				<macrodefinition>
 					<board>RSKRX65N-2MB</board>
