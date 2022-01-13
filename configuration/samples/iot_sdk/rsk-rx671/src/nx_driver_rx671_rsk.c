@@ -40,6 +40,8 @@
 #define NX_DRIVER_STACK_SIZE                    1024
 #endif /* NX_DRIVER_STACK_SIZE  */
 
+#define NX_DRIVER_THREAD_INTERVAL               1
+
 /* Interval to receive packets when there is no packet. The default value is 100 ticks which is 1s.  */
 #ifndef NX_DRIVER_THREAD_INTERVAL
 #define NX_DRIVER_THREAD_INTERVAL               NX_IP_PERIODIC_RATE
