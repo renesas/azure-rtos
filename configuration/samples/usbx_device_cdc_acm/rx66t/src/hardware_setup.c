@@ -26,6 +26,7 @@ void usb0_setup(void)
     /* Enable writing to registers related to operating modes, LPC, CGC and software reset */
     SYSTEM.PRCR.WORD = 0xA50BU;
 
+    SYSTEM.VOLSR.BIT.USBVON = 1;
     /* enable USB0 module */
     MSTP(USB0) = 0;
 
@@ -54,6 +55,13 @@ void platform_setup(void)
 
     /* Setup SCIx for printf output. */
     //R_Config_SCIx_Start();
+    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
+
+    /* Set USB0_VBUS pin */
+    MPC.PD2PFS.BYTE = 0x11U;
+    PORTD.PMR.BIT.B2 = 1U;
+
+    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 
     /* Create periodic timer for the system tick. */
     R_CMT_CreatePeriodic(100u, timer_callback, &chan);

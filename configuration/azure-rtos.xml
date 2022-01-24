@@ -1674,8 +1674,10 @@
 				<board>RSKRX65N-2MB</board>
 				<board>RX65NCloudKit</board>
 				<board>RSKRX671</board>
-				<board>RX72NEnvisionKit</board>
+				<!-- RX72N EK not support USB function -->
+				<!--board>RX72NEnvisionKit</board--> 
 				<memoryreq>
+					<toolchain>RXC</toolchain>
 					<group>RX66T</group>
 					<RAM>128</RAM>
 				</memoryreq>
