@@ -13,8 +13,10 @@
 	</toolchain>
 	<target>
 		<toolchain>RXC</toolchain>
+		<board>TargetBoardRX130</board>
 		<board>RSKRX65N-2MB</board>
 		<board>RX65NCloudKit</board>
+		<board>RSKRX66T</board>
 		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
@@ -30,8 +32,10 @@
 	</target>
 	<target>
 		<toolchain>GNURX</toolchain>
+		<board>TargetBoardRX130</board>
 		<board>RSKRX65N-2MB</board>
 		<board>RX65NCloudKit</board>
+		<board>RSKRX66T</board>
 		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
 		<family>RX</family>
