@@ -66,6 +66,34 @@
 #include <string.h>
 
 
+#if !defined(UX_STANDALONE)
+#include "tx_api.h"
+#else
+
+/* VAR types used in UX,
+   if TX still used, expects tx_api.h included before include this.  */
+#if !defined(TX_API_H) && !defined(TX_PORT_H)
+
+#include <stdint.h>
+typedef void                                    VOID;
+typedef char                                    CHAR;
+typedef unsigned char                           UCHAR;
+typedef int                                     INT;
+typedef unsigned int                            UINT;
+typedef long                                    LONG;
+typedef unsigned long                           ULONG;
+typedef short                                   SHORT;
+typedef unsigned short                          USHORT;
+typedef uint64_t                                ULONG64;
+
+#ifndef ALIGN_TYPE_DEFINED
+#define ALIGN_TYPE                              ULONG
+#endif
+
+#endif
+#endif
+
+
 /* CPU definition for X86 systems without preemptive timer function.
    This will make USBX uses the controller for the timer. */
 
