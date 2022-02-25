@@ -11,27 +11,15 @@
 		<product>GNURX</product>
 		<version>8.3.0</version>
 	</toolchain>
+	<toolchain>
+		<brand>IAR</brand>
+		<product>ICCRX</product>
+		<version>4.20</version>
+	</toolchain>
 	<target>
 		<toolchain>RXC</toolchain>
-		<board>TargetBoardRX130</board>
-		<board>RSKRX65N-2MB</board>
-		<board>RX65NCloudKit</board>
-		<board>RSKRX66T</board>
-		<board>RSKRX671</board>
-		<board>RX72NEnvisionKit</board>
-		<family>RX</family>
-		<series>RX100</series>
-		<series>RX600</series>
-		<series>RX700</series>
-		<group>RX130</group>
-		<group>RX65N</group>
-		<group>RX651</group>
-		<group>RX66T</group>
-		<group>RX671</group>
-		<group>RX72N</group>
-	</target>
-	<target>
 		<toolchain>GNURX</toolchain>
+		<toolchain>ICCRX</toolchain>
 		<board>TargetBoardRX130</board>
 		<board>RSKRX65N-2MB</board>
 		<board>RX65NCloudKit</board>
@@ -72,6 +60,42 @@
 				<impdir>
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX130, RX65N, RX66T, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX66T</group>
+					<file>configuration/samples/bare/rx66t/lnkr5f566te.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX671</group>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
@@ -145,6 +169,42 @@
 					<group>RX72N</group>
 					<file>configuration/samples/ramdisk/rx72n/README.md</file>
 					<path>.</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX130, RX65N, RX66T, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX66T</group>
+					<file>configuration/samples/bare/rx66t/lnkr5f566te.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX671</group>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
@@ -300,6 +360,26 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
+				</impdir>
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
@@ -454,6 +534,19 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
@@ -647,6 +740,26 @@
 					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- exclude build files -->
 				<excludebuild>
@@ -900,6 +1013,26 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
+				</impdir>
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
@@ -1152,6 +1285,26 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
+				</impdir>
 				<!-- exclude build files -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
@@ -1331,6 +1484,19 @@
 					<file>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_config/r_sci_iic_rx_pin_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix.icf</file>
+					<path>src</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1447,6 +1613,19 @@
 				<impdir>
 					<file>rx-driver-package/source/r_sci_iic_rx/r_sci_iic_rx_vx.xx/r_config/r_sci_iic_rx_pin_config.h</file>
 					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
@@ -1588,6 +1767,19 @@
 					<folder>rx-driver-package/source/r_drw2d_rx/r_drw2d_rx_vx.xx/r_drw2d_rx</folder>
 					<path>src/smc_gen/r_drw2d_rx</path>
 				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix.icf</file>
+					<path>src</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1723,6 +1915,33 @@
 				<impdir>
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX66T, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<!--impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX66T</group>
+					<file>configuration/samples/bare/rx66t/lnkr5f566te.icf</file>
+					<path>src</path>
+				</impdir-->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
 				</impdir>
 				<!-- include -->
 				<incdir>
