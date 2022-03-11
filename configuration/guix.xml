@@ -23,6 +23,7 @@
 		</impdir>
 		<impdir>
 			<toolchain>GNURX</toolchain>
+			<toolchain>ICCRX</toolchain>
 			<file>guix/ports/generic/inc/gx_port.h</file>
 			<path>libs/guix/ports/generic/inc</path>
 		</impdir>
@@ -46,6 +47,7 @@
 		</incdir>
 		<incdir>
 			<toolchain>GNURX</toolchain>
+			<toolchain>ICCRX</toolchain>
 			<path>libs/guix/ports/generic/inc</path>
 		</incdir>
 		<!-- app setting -->
