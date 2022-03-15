@@ -27,6 +27,11 @@
 			<path>libs/netxduo/ports/rxv2/ccrx/inc</path>
 		</impdir>
 		<impdir>
+			<toolchain>ICCRX</toolchain>
+			<folder>netxduo/ports/rxv2/iar/inc</folder>
+			<path>libs/netxduo/ports/rxv2/iar/inc</path>
+		</impdir>
+		<impdir>
 			<folder>netxduo/common</folder>
 			<path>libs/netxduo/common</path>
 		</impdir>
@@ -42,6 +47,10 @@
 		<incdir>
 			<toolchain>RXC</toolchain>
 			<path>libs/netxduo/ports/rxv2/ccrx/inc</path>
+		</incdir>
+		<incdir>
+			<toolchain>ICCRX</toolchain>
+			<path>libs/netxduo/ports/rxv2/iar/inc</path>
 		</incdir>
 		<incdir>
 			<path>libs/netxduo</path>

@@ -149,6 +149,12 @@
 			<file>netxduo/utility/iperf/nx_iperf.h</file>
 			<path>libs/netxduo_addons/utility/iperf</path>
 		</impdir>
+		<!-- patch file -->
+		<impdir>
+			<toolchain>ICCRX</toolchain>
+			<file>configuration/libs/netxduo/patch_iar/pendian_detect.h</file>
+			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable</path>
+		</impdir>
 		<!-- include header -->
 		<incdir>
 			<path>libs/netxduo_addons/addons/azure_iot</path>
