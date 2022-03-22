@@ -64,7 +64,7 @@ void platform_setup(void)
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 
     /* Create periodic timer for the system tick. */
-    R_CMT_CreatePeriodic(100u, timer_callback, &chan);
+    R_CMT_CreatePeriodic(TX_TIMER_TICKS_PER_SECOND, timer_callback, &chan);
 
     usb0_setup();
 }

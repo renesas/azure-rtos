@@ -48,7 +48,7 @@
 			<description></description>
 		</property>
 		<!-- TX_TIMER_TICKS_PER_SECOND -->
-		<property id="USE_TX_TIMER_TICKS_PER_SECOND" display="Enable threadx timer sticks per second" default="0" type="checkbox">
+		<property id="USE_TX_TIMER_TICKS_PER_SECOND" display="Enable threadx timer ticks per second" default="0" type="checkbox">
 			<option id="USE_TX_TIMER_TICKS_PER_SECOND.0" display="Disable" value="0"/>
 			<option id="USE_TX_TIMER_TICKS_PER_SECOND.1" display="Enable" value="1"/>
 			<description></description>
