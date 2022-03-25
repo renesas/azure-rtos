@@ -14,7 +14,7 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2021 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 * File Name    : r_sci_rx_pinset.c
@@ -35,47 +35,47 @@ Global variables and functions
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* Function Name: R_SCI_PinSet_SCI6
+* Function Name: R_SCI_PinSet_SCI0
 * Description  : This function initializes pins for r_sci_rx module
 * Arguments    : none
 * Return Value : none
 ***********************************************************************************************************************/
-void R_SCI_PinSet_SCI6()
+void R_SCI_PinSet_SCI0()
 {
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
 
-    /* Set SCK6 pin */
-    MPC.P02PFS.BYTE = 0x0AU;
-    PORT0.PMR.BIT.B2 = 1U;
+    /* Set RXD0/SMISO0/SSCL0 pin */
+    MPC.P33PFS.BYTE = 0x0BU;
+    PORT3.PMR.BIT.B3 = 1U;
 
-    /* Set RXD6/SMISO6/SSCL6 pin */
-    MPC.P01PFS.BYTE = 0x0AU;
-    PORT0.PMR.BIT.B1 = 1U;
-
-    /* Set TXD6/SMOSI6/SSDA6 pin */
-    MPC.P00PFS.BYTE = 0x0AU;
-    PORT0.PMR.BIT.B0 = 1U;
+    /* Set TXD0/SMOSI0/SSDA0 pin */
+    MPC.P32PFS.BYTE = 0x0BU;
+    PORT3.PMR.BIT.B2 = 1U;
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 }
 
 /***********************************************************************************************************************
-* Function Name: R_SCI_PinSet_SCI11
+* Function Name: R_SCI_PinSet_SCI2
 * Description  : This function initializes pins for r_sci_rx module
 * Arguments    : none
 * Return Value : none
 ***********************************************************************************************************************/
-void R_SCI_PinSet_SCI11()
+void R_SCI_PinSet_SCI2()
 {
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
 
-    /* Set RXD11/SMISO11/SSCL11 pin */
-    MPC.P76PFS.BYTE = 0x0AU;
-    PORT7.PMR.BIT.B6 = 1U;
+    /* Set RXD2/SMISO2/SSCL2 pin */
+    MPC.P12PFS.BYTE = 0x0AU;
+    PORT1.PMR.BIT.B2 = 1U;
 
-    /* Set TXD11/SMOSI11/SSDA11 pin */
-    MPC.P77PFS.BYTE = 0x0AU;
-    PORT7.PMR.BIT.B7 = 1U;
+    /* Set TXD2/SMOSI2/SSDA2 pin */
+    MPC.P13PFS.BYTE = 0x0AU;
+    PORT1.PMR.BIT.B3 = 1U;
+
+    /* Set CTS2#/RTS2#/SS2# pin */
+    MPC.PJ5PFS.BYTE = 0x0BU;
+    PORTJ.PMR.BIT.B5 = 1U;
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 }

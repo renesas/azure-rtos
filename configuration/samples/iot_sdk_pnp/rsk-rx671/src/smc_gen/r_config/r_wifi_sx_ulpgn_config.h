@@ -1,3 +1,4 @@
+/* Generated configuration header file - do not edit */
 /**********************************************************************************************************************
  * DISCLAIMER
  * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
@@ -36,11 +37,11 @@
 #ifndef R_WIFI_SX_ULPGN_CONFIG_H
 #define R_WIFI_SX_ULPGN_CONFIG_H
 
-#define WIFI_CFG_SCI_CHANNEL                  (6)
+#define WIFI_CFG_SCI_CHANNEL                  (2)
 
 #define WIFI_CFG_SCI_INTERRUPT_LEVEL          (4)
 
-#define WIFI_CFG_SCI_SECOND_CHANNEL           (11)
+#define WIFI_CFG_SCI_SECOND_CHANNEL           (0)
 
 #define WIFI_CFG_SCI_PCLK_HZ                  (60000000)  // peripheral clock speed; e.g. 60000000 is 60MHz
 
@@ -48,11 +49,11 @@
 
 #define WIFI_CFG_SCI_USE_FLOW_CONTROL         (1)
 
-#define WIFI_CFG_RESET_PORT                    7
-#define WIFI_CFG_RESET_PIN                     4
+#define WIFI_CFG_RESET_PORT                    9
+#define WIFI_CFG_RESET_PIN                     0
 
-#define WIFI_CFG_RTS_PORT                      0
-#define WIFI_CFG_RTS_PIN                       2
+#define WIFI_CFG_RTS_PORT                      5
+#define WIFI_CFG_RTS_PIN                       1
 
 #define WIFI_CFG_CREATABLE_SOCKETS            (4)
 

@@ -1,3 +1,4 @@
+/* Generated configuration header file - do not edit */
 /***********************************************************************************************************************
 * DISCLAIMER
 * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No 
@@ -102,18 +103,18 @@ Configuration Options
  * CH12  X   X   X   X   X    X                X   X   Xs  X   X   X   X   X   X   X     X     X
 */
                                    
-#define SCI_CFG_CH0_INCLUDED    (0)
+#define SCI_CFG_CH0_INCLUDED    (1)
 #define SCI_CFG_CH1_INCLUDED    (0)
-#define SCI_CFG_CH2_INCLUDED    (0)
+#define SCI_CFG_CH2_INCLUDED    (1)
 #define SCI_CFG_CH3_INCLUDED    (0)
 #define SCI_CFG_CH4_INCLUDED    (0)
 #define SCI_CFG_CH5_INCLUDED    (0)
-#define SCI_CFG_CH6_INCLUDED    (1)
+#define SCI_CFG_CH6_INCLUDED    (0)
 #define SCI_CFG_CH7_INCLUDED    (0)
 #define SCI_CFG_CH8_INCLUDED    (0)
 #define SCI_CFG_CH9_INCLUDED    (0)
 #define SCI_CFG_CH10_INCLUDED   (0)
-#define SCI_CFG_CH11_INCLUDED   (1)
+#define SCI_CFG_CH11_INCLUDED   (0)
 #define SCI_CFG_CH12_INCLUDED   (0)
 
 /* SPECIFY ASYNC MODE TX QUEUE BUFFER SIZES (will not allocate if chan not enabled */
@@ -132,18 +133,18 @@ Configuration Options
 #define SCI_CFG_CH12_TX_BUFSIZ  (80)
 
 /* SPECIFY ASYNC MODE RX QUEUE BUFFER SIZES (will not allocate if chan not enabled */
-#define SCI_CFG_CH0_RX_BUFSIZ   (80)
+#define SCI_CFG_CH0_RX_BUFSIZ   (3000)
 #define SCI_CFG_CH1_RX_BUFSIZ   (80)
-#define SCI_CFG_CH2_RX_BUFSIZ   (80)
+#define SCI_CFG_CH2_RX_BUFSIZ   (3000)
 #define SCI_CFG_CH3_RX_BUFSIZ   (80)
 #define SCI_CFG_CH4_RX_BUFSIZ   (80)
 #define SCI_CFG_CH5_RX_BUFSIZ   (80)
-#define SCI_CFG_CH6_RX_BUFSIZ   (3000)
+#define SCI_CFG_CH6_RX_BUFSIZ   (80)
 #define SCI_CFG_CH7_RX_BUFSIZ   (80)
 #define SCI_CFG_CH8_RX_BUFSIZ   (80)
 #define SCI_CFG_CH9_RX_BUFSIZ   (80)
 #define SCI_CFG_CH10_RX_BUFSIZ  (80)
-#define SCI_CFG_CH11_RX_BUFSIZ  (3000)
+#define SCI_CFG_CH11_RX_BUFSIZ  (80)
 #define SCI_CFG_CH12_RX_BUFSIZ  (80)
 
 /* 
