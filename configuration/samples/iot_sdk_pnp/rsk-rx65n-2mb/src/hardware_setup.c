@@ -8,6 +8,8 @@
 #include <r_ether_rx_if.h>
 #include <r_ether_rx_pinset.h>
 
+#include "tx_api.h"
+
 #include "hardware_setup.h"
 
 void _tx_timer_interrupt(void);
@@ -28,7 +30,7 @@ void platform_setup(void)
     R_Config_SCI8_Start();
     
     /* Create periodic timer for the system tick. */
-    R_CMT_CreatePeriodic(100u, timer_callback, &chan);
+    R_CMT_CreatePeriodic(TX_TIMER_TICKS_PER_SECOND, timer_callback, &chan);
     
     /* Setup Ethernet hardware. */
     R_ETHER_Initial();

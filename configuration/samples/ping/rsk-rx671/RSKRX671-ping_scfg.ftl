@@ -58,36 +58,37 @@
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
-		<configuration inuse="true" name="r_byteq">
+        <configuration inuse="true" name="r_byteq">
             <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq1.90" version="1.90">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-		<configuration inuse="true" name="r_sci_rx">
+        <configuration inuse="true" name="r_sci_rx">
             <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx3.90" version="3.90">
-			<gridItem id="SCK6" selectedIndex="1"/>
-            <gridItem id="RXD6/SMISO6/SSCL6" selectedIndex="1"/>
-            <gridItem id="TXD6/SMOSI6/SSDA6" selectedIndex="1"/>
-            <gridItem id="SCI6" selectedIndex="1"/>
-            <gridItem id="RXD11/SMISO11/SSCL11" selectedIndex="1"/>
-            <gridItem id="TXD11/SMOSI11/SSDA11" selectedIndex="1"/>
-            <gridItem id="SCI11" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
-			<gridItem id="SCI_CFG_CH6_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH11_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH6_RX_BUFSIZ" selectedIndex="3000"/>
-			<gridItem id="SCI_CFG_CH11_RX_BUFSIZ" selectedIndex="3000"/>
+            <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
+            <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
+            <gridItem id="SCI0" selectedIndex="1"/>
+            <gridItem id="RXD2/SMISO2/SSCL2" selectedIndex="1"/>
+            <gridItem id="TXD2/SMOSI2/SSDA2" selectedIndex="1"/>
+            <gridItem id="CTS2#/RTS2#/SS2#" selectedIndex="1"/>
+            <gridItem id="SCI2" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
+            <gridItem id="SCI_CFG_CH2_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="3000"/>
+            <gridItem id="SCI_CFG_CH2_RX_BUFSIZ" selectedIndex="3000"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-		<configuration inuse="true" name="r_wifi_sx_ulpgn">
+        <configuration inuse="true" name="r_wifi_sx_ulpgn">
             <component detailDescription="WI-FI Module control functions for Renesas MCUs." display="r_wifi_sx_ulpgn" id="r_wifi_sx_ulpgn1.13" version="1.13">
-			<gridItem id="WIFI_CFG_SCI_CHANNEL" selectedIndex="6"/>
-			<gridItem id="WIFI_CFG_SCI_SECOND_CHANNEL" selectedIndex="11"/>
-			<gridItem id="WIFI_CFG_RESET_PORT" selectedIndex="7"/>
-			<gridItem id="WIFI_CFG_RESET_PIN" selectedIndex="4"/>
-			<gridItem id="WIFI_CFG_RTS_PORT" selectedIndex="0"/>
+            <gridItem id="WIFI_CFG_SCI_CHANNEL" selectedIndex="2"/>
+            <gridItem id="WIFI_CFG_SCI_SECOND_CHANNEL" selectedIndex="0"/>
+            <gridItem id="WIFI_CFG_RESET_PORT" selectedIndex="9"/>
+            <gridItem id="WIFI_CFG_RESET_PIN" selectedIndex="0"/>
+            <gridItem id="WIFI_CFG_RTS_PORT" selectedIndex="5"/>
+            <gridItem id="WIFI_CFG_RTS_PIN" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
