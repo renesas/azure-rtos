@@ -1,0 +1,17 @@
+------------------------
+1. Caution / Known Issue
+------------------------
+The device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
+However, when creating new project with old board version (v1.11 and older),
+the project is created with R5F572ND device (Flash memory 2MB).
+You can go to [Board] tab of Smart Configurator editor to check the correctness of the device.
+In case the device is R5F572ND, at Board tab, you can click [...] button behind the Board combo-box
+to quickly go to Change Device dialog and change target device to R5F572NN.
+
+This issue will be fixed at newer version of board.
+
+---------------
+2. Usage Notes
+---------------
+This demonstration requires some information for the connection to IoTHub
+Please define HOST_NAME, DEVICE_ID, DEVICE_SYMMETRIC_KEY in src\sample_config.h

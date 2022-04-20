@@ -812,10 +812,16 @@
 					<file>configuration/samples/iot_sdk/README.md</file>
 					<path>.</path>
 				</impdir>
-				<!-- copy readme and pdf for RSK RX671-->
+				<!-- copy readme for RSK RX671 and RX72N Envision Kit -->
 				<impdir>
 					<board>RSKRX671</board>
 					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_sdk/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -1118,10 +1124,16 @@
 					<file>configuration/samples/iot_sdk/README.md</file>
 					<path>.</path>
 				</impdir>
-				<!-- copy readme and pdf for RSK RX671-->
+				<!-- copy readme for RSK RX671 and RX72N Envision Kit -->
 				<impdir>
 					<board>RSKRX671</board>
 					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_sdk/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -1424,10 +1436,16 @@
 					<file>configuration/samples/iot_sdk/README.md</file>
 					<path>.</path>
 				</impdir>
-				<!-- copy readme and pdf for RSK RX671-->
+				<!-- copy readme for RSK RX671 and RX72N Envision Kit -->
 				<impdir>
 					<board>RSKRX671</board>
 					<file>configuration/samples/iot_sdk/rsk-rx671/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_sdk/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -1706,6 +1724,10 @@
 					<folder>configuration/samples/guix_8bpp/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
+				<impdir>
+					<file>configuration/samples/guix_8bpp/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -1852,6 +1874,12 @@
 				</impdir>
 				<impdir>
 					<file>configuration/samples/guix_16bpp/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -2017,7 +2045,13 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/guix_16bpp_draw2d/README.md</file>
+					<file>configuration/samples/guix_16bpp/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->

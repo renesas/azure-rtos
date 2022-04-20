@@ -17,7 +17,17 @@ https://docs.microsoft.com/azure/rtos/guix/about-guix
 ------------------------
 2. Caution / Known Issue
 ------------------------
-If you are using project with GCC RX compiler, please take note on following issue.
+2.1. The device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
+However, when creating new project with old board version (v1.11 and older),
+the project is created with R5F572ND device (Flash memory 2MB).
+You can go to [Board] tab of Smart Configurator editor to check the correctness of the device.
+In case the device is R5F572ND, at Board tab, you can click [...] button behind the Board combo-box
+to quickly go to Change Device dialog and change target device to R5F572NN.
+
+This issue will be fixed at newer version of board.
+
+
+2.2. If you are using project with GCC RX compiler, please take note on following issue.
 
 For this GUIX 16bpp sample project, RAM2 should be used for sections in src/linker_script.ld
 However, the section setting is changed to RAM in linker_script.ld when first build and after code generated.
