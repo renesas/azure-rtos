@@ -68,7 +68,8 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 
 #ifndef SAMPLE_TIME_SERVER_NAME
 //#define SAMPLE_TIME_SERVER_NAME     "utcnist.colorado.edu"    /* Time Server.  */
-#define SAMPLE_TIME_SERVER_NAME       "time4.nrc.ca"
+//#define SAMPLE_TIME_SERVER_NAME     "time4.nrc.ca"
+#define SAMPLE_TIME_SERVER_NAME       "0.pool.ntp.org"
 #endif /* SAMPLE_TIME_SERVER_NAME */
 
 /* Default time. GMT: Saturday, January 1, 2022 12:00:00 AM. Epoch timestamp: 1640995200.  */
