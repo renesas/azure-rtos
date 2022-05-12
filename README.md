@@ -11,7 +11,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 
 ## For development phase
 * You can configure any settings: cpu board = any
-  * en
+  * en (same contents on both of Renesas website and YouTube)
     * https://www.renesas.com/jp/en/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
-  * ja
+    * https://www.youtube.com/watch?v=97C1stpNFig
+  * ja (same contents on both of Renesas website and YouTube)
     * https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
+    * https://www.youtube.com/watch?v=TKUFraKUSpQ
