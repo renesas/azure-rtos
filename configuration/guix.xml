@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>guix</name>
-		<version>6.1.10_rel-rx-1.0.0</version>
+		<version>6.1.11_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure RTOS GUIX</desc>

@@ -14,13 +14,13 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp6.20" version="6.20">
+            <component display="r_bsp" id="r_bsp7.10" version="7.10">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx4.90" version="4.90">
+            <component display="r_cmt_rx" id="r_cmt_rx5.10" version="5.10">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -44,7 +44,7 @@
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
         <configuration inuse="true" name="r_ether_rx">
-            <component description="Dependency : r_bsp version(s) 5.50&#10;The Ethernet fit module provides a method to send and receive Ethernet / IEEE802.3 frame using Ethernet controller (ETHERC), Ethernet DMA controller (EDMAC)." display="r_ether_rx" id="r_ether_rx1.21" version="1.21">
+            <component description="Dependency : r_bsp version(s) 5.50&#10;The Ethernet fit module provides a method to send and receive Ethernet / IEEE802.3 frame using Ethernet controller (ETHERC), Ethernet DMA controller (EDMAC)." display="r_ether_rx" id="r_ether_rx1.22" version="1.22">
                 <gridItem id="CLKOUT25M" selectedIndex="1"/>
                 <gridItem id="ET0_TX_CLK" selectedIndex="1"/>
                 <gridItem id="ET0_RX_CLK" selectedIndex="1"/>
