@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>threadx</name>
-		<version>6.1.10_rel-rx-1.0.0</version>
+		<version>6.1.11_rel-rx-1.0.0</version>
 		<application>AzureRTOSKernel</application>
 		<category>rtos.kernel</category>
 		<desc>Azure RTOS ThreadX</desc>
@@ -93,6 +93,10 @@
 			<path>libs/threadx/common</path>
 		</impdir>
 		<impdir>
+			<folder>threadx/utility/low_power</folder>
+			<path>libs/threadx/utility/low_power</path>
+		</impdir>
+		<impdir>
 			<file>configuration/config_files/tx_user.h</file>
 			<path>libs/threadx</path>
 		</impdir>
@@ -166,6 +170,7 @@
 		<incdir>
 			<path>libs/threadx</path>
 			<path>libs/threadx/common/inc</path>
+			<path>libs/threadx/utility/low_power</path>
 		</incdir>
 		<!-- app setting -->
 		<apps>
