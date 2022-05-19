@@ -17,3 +17,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * ja (same contents on both of Renesas website and YouTube)
     * https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.youtube.com/watch?v=TKUFraKUSpQ
+  * zh (same contents on both of Renesas website and bilibili)
+    * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
+    * https://www.bilibili.com/video/BV1K34y1E76k
