@@ -22,3 +22,212 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * zh (same contents on both of Renesas website and bilibili)
     * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.bilibili.com/video/BV1K34y1E76k
+
+# Supported boards/devices and applications
+## The latest software package (coming release 6.1.11_rel-rx-1.0.0)
+<table>
+  <tr>
+    <th align="left">Device</th>
+    <th colspan="4">RX65N</th>
+    <th>RX651</th>
+    <th>RX130</th>
+    <th>RX140</th>
+    <th>RX660</th>
+    <th>RX66T</th>
+    <th>RX72N</th>
+    <th>RX671</th>
+  </tr>
+  <tr>
+    <th align="left">Board</th>
+    <th>RSK</th>
+    <th>Cloud Kit</th>
+    <th>New CK</th>
+    <th>New CK</th>
+    <th>RSK RX65N</th>
+    <th>Target Board</th>
+    <th>RSK</th>
+    <th>RSK</th>
+    <th>RSK</th>
+    <th>Envision Kit</th>
+    <th>RSK</th>
+  </tr>
+  <tr>
+    <th align="left">Connectivity</th>
+    <th>Ethernet</th>
+    <th>Wi-Fi</th>
+    <th>Ethernet</th>
+    <th>Cat M1</th>
+    <th>-</th>
+    <th>-</th>
+    <th>-</th>
+    <th>-</th>
+    <th>-</th>
+    <th>Ethernet</th>
+    <th>Wi-Fi</th>
+  </tr>
+  <tr align="center">
+    <td align="left">ThreadX sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">FileX sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Ping sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Iperf sample</td>
+    <td>O</td>
+    <td>-</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>-</td>
+  </tr>
+  <tr align="center">
+    <td align="left">SDK sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">SDK PnP sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">PnP Temperature sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>-</td>
+  </tr>
+  <tr align="center">
+    <td align="left">USBX sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Threadx Low Power sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+</table>
+
+## History
+* 6.1.11_rel-rx-1.0.0
+  * Update Azure RTOS libraries to 6.1.11_rel
+  * Update RX Driver Package to 1.34
+  * Support RX65N New Cloud Kit, RX140 RSK, RX660 RSK
+  * Support ThreadX Low Power sample
+  * Update USBX sample to use Renesas USB driver
+* 6.1.10_rel-rx-1.0.0
+  * Update Azure RTOS libraries to 6.1.10_rel
+  * Support IAR
+  * Update for new board name of Envision Kit and Cloud Kit
+  * Update RSKRX671 to use PMOD2
+  * Update to use TX_TIMER_TICKS_PER_SECOND macro in sample code
+  * Update to unify default time server to 0.pool.ntp.org in sample code
+* 6.1.9_rel-rx-1.0.0
+  * Update Azure RTOS libraries to 6.1.9_rel
+  * Update RX Driver Package to 1.32-with-wifi
+  * Support RX651, RX130, RX66T, RX671, RX72N
+  * Support GUIX sample
+* 6.1.6_rel-rx-1.0.*
+  * Azure RTOS libraries to 6.1.6_rel
+  * RX Driver Package to 1.32
+  * Support RX65N
+  * Support ThreadX, FileX, Ping, Iperf, SDK, SDK PnP, PnP Temperature, USBX sample
