@@ -216,6 +216,23 @@
 					<file>configuration/samples/ramdisk/rx72n/README.md</file>
 					<path>.</path>
 				</impdir>
+				<!-- post SC code generate to copy linker_script.ld file -->
+				<postscgen>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<series>RX100</series>
+						<group>RX130</group>
+						<file>configuration/samples/ramdisk/rx130/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<series>RX700</series>
+						<group>RX72N</group>
+						<file>configuration/samples/ramdisk/rx72n/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+				</postscgen>
 				<!-- copy ICCRX linker script for RX130, RX65N, RX651, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -2061,6 +2078,22 @@
 					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
+				<!-- post SC code generate to copy linker_script.ld file -->
+				<postscgen>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<board>RSKRX65N-2MB</board>
+						<file>configuration/samples/guix_16bpp/rsk-rx65n-2mb/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<board>RX72NEnvisionKit</board>
+						<board>EnvisionKitRX72N</board>
+						<file>configuration/samples/guix_16bpp/rx72n-envision-kit/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+				</postscgen>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -2233,6 +2266,22 @@
 					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
 					<path>.</path>
 				</impdir>
+				<!-- post SC code generate to copy linker_script.ld file -->
+				<postscgen>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<board>RSKRX65N-2MB</board>
+						<file>configuration/samples/guix_16bpp_draw2d/rsk-rx65n-2mb/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<board>RX72NEnvisionKit</board>
+						<board>EnvisionKitRX72N</board>
+						<file>configuration/samples/guix_16bpp_draw2d/rx72n-envision-kit/linker_script.ld</file>
+						<path>src</path>
+				</impdir>
+				</postscgen>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
