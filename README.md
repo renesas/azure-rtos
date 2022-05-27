@@ -22,6 +22,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * zh (same contents on both of Renesas website and bilibili)
     * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.bilibili.com/video/BV1K34y1E76k
+* How to create Azure RTOS sample project for IAR EW
+  * en: https://en-support.renesas.com/knowledgeBase/20533128
+  * ja: https://ja-support.renesas.com/knowledgeBase/20533124
 
 # Supported boards/devices and applications
 ## The latest software package (coming release 6.1.11_rel-rx-1.0.0)
