@@ -58,27 +58,32 @@
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
-		<configuration inuse="true" name="r_byteq">
+        <configuration inuse="true" name="r_byteq">
             <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.00" version="2.00">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-		<configuration inuse="true" name="r_sci_rx">
+        <configuration inuse="true" name="r_sci_rx">
             <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.30" version="4.30">
+            <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
+            <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
+            <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
             <gridItem id="SCI0" selectedIndex="1"/>
+            <gridItem id="RXD1/SMISO1/SSCL1" selectedIndex="1"/>
+            <gridItem id="TXD1/SMOSI1/SSDA1" selectedIndex="1"/>
             <gridItem id="SCI1" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
-			<gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="3000"/>
-			<gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="3000"/>
+            <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="3000"/>
+            <gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="3000"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-		<configuration inuse="true" name="r_wifi_sx_ulpgn">
+        <configuration inuse="true" name="r_wifi_sx_ulpgn">
             <component detailDescription="WI-FI Module control functions for Renesas MCUs." display="r_wifi_sx_ulpgn" id="r_wifi_sx_ulpgn1.14" version="1.14">
-			<gridItem id="WIFI_CFG_SCI_INTERRUPT_LEVEL" selectedIndex="14"/>
-			<gridItem id="WIFI_CFG_SOCKETS_RECEIVE_BUFFER_SIZE" selectedIndex="4096"/>
+            <gridItem id="WIFI_CFG_SCI_INTERRUPT_LEVEL" selectedIndex="14"/>
+            <gridItem id="WIFI_CFG_SOCKETS_RECEIVE_BUFFER_SIZE" selectedIndex="4096"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

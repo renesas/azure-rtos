@@ -22,3 +22,5 @@ If you are using project with GCC RX compiler, please take note on following iss
 For this GUIX 16bpp sample project, RAM2 should be used for sections in src/linker_script.ld
 However, the section setting is changed to RAM in linker_script.ld when first build and after code generated.
 You can simply copy src/linker_script_sample.ld to src/linker_script.ld, and build project again
+
+Note: this issue is fixed from e2 studio 2022-07.

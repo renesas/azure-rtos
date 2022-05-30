@@ -30,3 +30,5 @@ If you are using other RX72N devices, please open linker_script.ld and move the 
 	_ebss = .;
 	_end = .;
 } > RAM
+
+Note: this issue is fixed from e2 studio 2022-07.
