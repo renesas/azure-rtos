@@ -1,21 +1,23 @@
 //-----------------------------------------------------------------------------
-// Linker configuration file template for the Renesas RX microcontroller R5F565NE
+// Linker configuration file template for the Renesas RX microcontroller R5F572NN
 //-----------------------------------------------------------------------------
 // Compatibility check
 define exported symbol __link_file_version_4 = 1;
 
 define memory mem with size = 4G;
 
+define region RAM_region1  = mem:[from 0x00000004 to 0x0007FFFF];
+define region RAM_region2  = mem:[from 0x0083fc00 to 0x0087FFFF];
 
-define region RAM_region1  = mem:[from 0x00000004 to 0x003FFFF];
-define region RAM_region2  = mem:[from 0x00800000 to 0x0085FFFF];
-
+define region RAM_region16 = mem:[from 0x0083fc00 to 0x00847BFF];
+define region RAM_region24 = RAM_region2;
+define region RAM_region32 = RAM_region2;
 
 define region STANDBY_RAM  = mem:[from 0x000A4000 to 0x000A5FFF];
 
 define region ROM_region16 = mem:[from 0xFFFF8000 to 0xFFFFFFFF];
-define region ROM_region24 = mem:[from 0xFFE00000 to 0xFFFFFFFF];
-define region ROM_region32 = mem:[from 0xFFE00000 to 0xFFFFFFFF];
+define region ROM_region24 = mem:[from 0xFFC00000 to 0xFFFFFFFF];
+define region ROM_region32 = mem:[from 0xFFC00000 to 0xFFFFFFFF];
 
 define region DATA_FLASH   = mem:[from 0x00100000 to 0x00107FFF];
 
@@ -31,33 +33,34 @@ define block ISTACK   with alignment = 4, size = _ISTACK_SIZE { };
 define block STACKS with fixed order { block USTACK,
                                        block ISTACK };
 
-
 place at address mem:0xFE7F5D00      { ro section .option_mem };
 place at address mem:0xFFFFFFFC      { ro section .resetvect };
 place at address mem:0xFFFFFF80      { ro section .exceptvect };
 
 "ROM16":place in ROM_region16        { ro section .code16*,
                                        ro section .data16* };
-place in RAM_region1        { rw section .data16*,
+"RAM16":place in RAM_region16        { rw section .data16*,
                                        rw section __DLIB_PERTHREAD };
 "ROM24":place in ROM_region24        { ro section .code24*,
                                        ro section .data24* };
-place in RAM_region1        { rw section .data24* };
+"RAM24":place in RAM_region24        { rw section .data24* };
 "ROM32":place in ROM_region32        { ro };
-place in RAM_region1        { rw,
+"RAM32":place in RAM_region32        { rw,
                                        ro section D,
                                        ro section D_1,
                                        ro section D_2,
                                        block HEAP };
 
-"STACKS":place in RAM_region1 { block STACKS };
+"STACKS":place in RAM_region2 { block STACKS };
 
 
 "STDBY":place in STANDBY_RAM
                                      { rw section .stdby*};
 
-
 "DATAFLASH":place in DATA_FLASH
                                      { ro section .dataflash* };
 
-place in RAM_region1              { last section FREEMEM };
+place in RAM_region2              { last section FREEMEM };
+
+
+

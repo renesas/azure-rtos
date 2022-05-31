@@ -1962,13 +1962,13 @@
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<file>src/lnkr5f565ne_guix.icf</file>
+					<file>src/lnkr5f565ne_guix_8bpp.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>src/lnkr5f572nn_guix.icf</file>
+					<file>src/lnkr5f572nn_guix_8bpp.icf</file>
 				</linkerscript>
 				<!-- include -->
 				<incdir>
@@ -2119,26 +2119,26 @@
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix.icf</file>
+					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix_16bpp.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix.icf</file>
+					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix_16bpp.icf</file>
 					<path>src</path>
 				</impdir>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<file>src/lnkr5f565ne_guix.icf</file>
+					<file>src/lnkr5f565ne_guix_16bpp.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>src/lnkr5f572nn_guix.icf</file>
+					<file>src/lnkr5f572nn_guix_16bpp.icf</file>
 				</linkerscript>
 				<!-- include -->
 				<incdir>
@@ -2311,26 +2311,26 @@
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix.icf</file>
+					<file>configuration/samples/guix_8bpp/rsk-rx65n-2mb/lnkr5f565ne_guix_16bpp.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix.icf</file>
+					<file>configuration/samples/guix_8bpp/rx72n-envision-kit/lnkr5f572nn_guix_16bpp.icf</file>
 					<path>src</path>
 				</impdir>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RSKRX65N-2MB</board>
-					<file>src/lnkr5f565ne_guix.icf</file>
+					<file>src/lnkr5f565ne_guix_16bpp.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>src/lnkr5f572nn_guix.icf</file>
+					<file>src/lnkr5f572nn_guix_16bpp.icf</file>
 				</linkerscript>
 				<!-- include -->
 				<incdir>
