@@ -44,14 +44,14 @@
 #include "r_cmt_rx_if.h"
 
 /* Supported Low Power Mode for devices */
-#if defined(BSP_MCU_RX110) || defined(BSP_MCU_111) || defined(BSP_MCU_RX113) || defined(BSP_MCU_RX130) || \
+#if defined(BSP_MCU_RX110) || defined(BSP_MCU_RX111) || defined(BSP_MCU_RX113) || defined(BSP_MCU_RX130) || \
 	defined(BSP_MCU_RX140) || defined(BSP_MCU_RX230) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX23W)
 
 	#define DEMO_LP_SLEEP		(1)
 	#define DEMO_LP_DEEP_SLEEP	(1)
 	#define DEMO_LP_SW_STANDBY	(1)
 
-#elif defined(BSP_MCU_RX64M) || defined(BSP_MCU_RX65N) || defined(BSP_MCU_66N) || defined(BSP_MCU_RX671) || \
+#elif defined(BSP_MCU_RX64M) || defined(BSP_MCU_RX65N) || defined(BSP_MCU_RX66N) || defined(BSP_MCU_RX671) || \
 	  defined(BSP_MCU_RX71M) || defined(BSP_MCU_RX72M) || defined(BSP_MCU_RX72N)
 
 	#define DEMO_LP_SLEEP			(1)
@@ -67,64 +67,80 @@
  * Need to define for your board
  */
 
-#define DEMO_BOARD_RSKRX65N2MB	(0)	/* RSKRX65N-2MB RSK board */
-#if DEMO_BOARD_RSKRX65N2MB
-	#define DEMO_LED_PIN	(GPIO_PORT_7_PIN_3)
-	#define DEMO_IRQ_NUM	(IRQ_NUM_11)
+#if defined(DEMO_BOARD_RX130TB)			/* RX130 Target Board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_D_PIN_6)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_4)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
-#endif
 
-#define DEMO_BOARD_RX65NCK	(0)	/* RX65N Cloud Kit */
-#if DEMO_BOARD_RX65NCK
-	#define DEMO_LED_PIN	(GPIO_PORT_B_PIN_0)
-	#define DEMO_IRQ_NUM	(IRQ_NUM_1)
+#elif defined(DEMO_BOARD_RSKRX65N2MB)	/* RSKRX65N-2MB RSK board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_7_PIN_3)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_11)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
-#endif
 
-#define DEMO_BOARD_CKRX65N	(1)	/* RX65N Cloud Kit */
-#if DEMO_BOARD_CKRX65N
-	#define DEMO_LED_PIN	(GPIO_PORT_1_PIN_7)
-	#define DEMO_IRQ_NUM	(IRQ_NUM_1)
+    /* Definitions for RTC */
+    #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_USE_MAINCLOCK                  (0)
+    #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
+    #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
+    void Demo_Init_RTC_For_Deep_SW_Standby(void);
+
+#elif defined(DEMO_BOARD_RX65NCK)		/* RX65N Cloud Kit */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_B_PIN_0)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_1)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
-#endif
 
-#define DEMO_BOARD_RSKRX671	(0)	/* RSKRX671 RSK board */
-#if DEMO_BOARD_RSKRX671
-	#define DEMO_LED_PIN	(GPIO_PORT_1_PIN_7)
-	#define DEMO_IRQ_NUM	(IRQ_NUM_9)
+#elif defined(DEMO_BOARD_CKRX65N)		/* CK RX65N */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_2_PIN_2)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_1)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
-#endif
 
-#define DEMO_BOARD_RX130TB	(0)	/* RX130 Target Board */
-#if DEMO_BOARD_RX130TB
-	#define DEMO_LED_PIN	(GPIO_PORT_D_PIN_6)
-	#define DEMO_IRQ_NUM	(IRQ_NUM_4)
+    /* Definitions for RTC */
+    #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_USE_MAINCLOCK                  (0)
+    #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
+    #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
+    void Demo_Init_RTC_For_Deep_SW_Standby(void);
+
+#elif defined(DEMO_BOARD_RSKRX671)		/* RSKRX671 RSK board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_1_PIN_7)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_9)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
-#endif
 
-#define DEMO_BOARD_RX72NEK	(0)	/* RX72N Envision Kit */
-#if DEMO_BOARD_RX72NEK
-	#define DEMO_LED_PIN							(GPIO_PORT_4_PIN_0)
-	#define DEMO_IRQ_NUM							(IRQ_NUM_15)
+    /* Definitions for RTC */
+    #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_USE_MAINCLOCK                  (0)
+    #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
+    #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
+    void Demo_Init_RTC_For_Deep_SW_Standby(void);
+
+#elif defined(DEMO_BOARD_RX72NEK)		/* RX72N Envision Kit */
+
+    #define DEMO_LED_PIN							(GPIO_PORT_4_PIN_0)
+    #define DEMO_IRQ_NUM							(IRQ_NUM_15)
     #define DEMO_LED_ON							    (GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF							(GPIO_LEVEL_HIGH)
 
     /* Definitions for RTC */
     #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_USE_MAINCLOCK                  (1)
     #define DEMO_RTC_RFRH                           (1)
     #define DEMO_RTC_RFRL                           (0xe847)
     #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
     #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
     void Demo_Init_RTC_For_Deep_SW_Standby(void);
-#endif
 
-#if !defined(DEMO_LED_PIN) || !defined(DEMO_IRQ_NUM)
-#error "Pin number for LED or IRQ number for User Switch is not defined."
+#else
+	#error "Pin number for LED and IRQ number for User Switch are not defined."
 #endif
 
 /*
@@ -349,7 +365,7 @@ void Demo_LowPower_Enter(void)
 		R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_LPC_CGC_SWR);
 
         #if DEMO_DEEP_SW_STANDBY_USE_RTC
-		/* RTC Alarm for RX72N Envision Kit */
+		/* RTC Alarm */
     	SYSTEM.DPSIFR2.BIT.DRTCAIF = 0;		/* Clear RTC Alarm request for Deep SW Standby */
     	SYSTEM.DPSIER2.BIT.DRTCAIE = 1;		/* Enable RTC Alarm interrupt for Deep SW Standby */
         #else
@@ -472,6 +488,7 @@ void Demo_Init_RTC_For_Deep_SW_Standby(void)
 
 	int i;
 
+#if DEMO_RTC_USE_MAINCLOCK
 	/* Main clock oscillator is forcedly oscillated for RTC. */
 	R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_LPC_CGC_SWR);
 	SYSTEM.MOFCR.BIT.MOFXIN = 1;
@@ -488,6 +505,21 @@ void Demo_Init_RTC_For_Deep_SW_Standby(void)
 
 	RTC.RFRH.BIT.RFC = DEMO_RTC_RFRH;	/* Set value on main clock 16MHz described in Hardware Manual 33.2.21 */
 	RTC.RFRL.BIT.RFC = DEMO_RTC_RFRL;
+#else
+	/* Setup RTC for binary counter mode */
+	RTC.RCR4.BIT.RCKSEL = 0;	/* Select sub clock */
+	RTC.RCR3.BIT.RTCDV = 0x6;	/* Select standard clock drive */
+	RTC.RCR3.BIT.RTCEN = 1;	    /* Start subclock */
+	for (i = 0; i < 6; i++)
+	{
+		R_BSP_NOP();			/* Wait for over 6 clocks */
+	}
+
+	RTC.RCR2.BIT.START = 0;
+	DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
+#endif
+
+
 	RTC.RCR2.BIT.CNTMD = 1;	/* binary count mode */
 	DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.CNTMD, 1);
 
