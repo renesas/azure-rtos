@@ -18,6 +18,7 @@
 		</property>
 		<property id="TX_MAX_PRIORITIES" display="Max priority" default="32" type="textbox">
 			<constraint display="default disable" actionOnFail="disable">("${USE_TX_MAX_PRIORITIES}" == 1)</constraint>
+			<description></description>
 		</property>
 		<!-- TX_MINIMUM_STACK -->
 		<property id="USE_TX_MINIMUM_STACK" display="Enable threadx minimum stack" default="0" type="checkbox">
@@ -27,6 +28,7 @@
 		</property>
 		<property id="TX_MINIMUM_STACK" display="Minimun stack" default="0" type="textbox">
 			<constraint display="default disable" actionOnFail="disable">("${USE_TX_MINIMUM_STACK}" == 1)</constraint>
+			<description></description>
 		</property>
 		<!-- TX_TIMER_THREAD_STACK_SIZE -->
 		<property id="USE_TX_TIMER_THREAD_STACK_SIZE" display="Enable threadx stack size" default="0" type="checkbox">
@@ -36,6 +38,7 @@
 		</property>
 		<property id="TX_TIMER_THREAD_STACK_SIZE" display="Timer stack size" default="128" type="textbox">
 			<constraint display="default disable" actionOnFail="disable">("${USE_TX_TIMER_THREAD_STACK_SIZE}" == 1)</constraint>
+			<description></description>
 		</property>
 		<!-- TX_TIMER_THREAD_PRIORITY -->
 		<property id="USE_TX_TIMER_THREAD_PRIORITY" display="Enable threadx timer priority" default="0" type="checkbox">
@@ -218,19 +221,19 @@ Case 4: TX_LOW_POWER == 1 and TX_ENABLE_WAIT == 1: execute tx_low_power_enter, W
 </description>
 		</property>
 		<!-- TX_LOW_POWER_USER_ENTER -->
-		<property id="TX_LOW_POWER_USER_ENTER" display="Enter low power function" default="Demo_LowPower_Enter" type="textbox">
+		<property id="TX_LOW_POWER_USER_ENTER" display="Enter low power function" default="Demo_LowPower_Enter()" type="textbox">
 			<constraint display="default disable" actionOnFail="disable">("${TX_LOW_POWER}" == 1)</constraint>
 			<description>Define the name of the low power preprocessing function</description>
 		</property>
 		<!-- TX_LOW_POWER_USER_EXIT -->
-		<property id="TX_LOW_POWER_USER_EXIT" display="Exit low power function" default="Demo_LowPower_Exit" type="textbox">
+		<property id="TX_LOW_POWER_USER_EXIT" display="Exit low power function" default="Demo_LowPower_Exit()" type="textbox">
 			<constraint display="default disable" actionOnFail="disable">("${TX_LOW_POWER}" == 1)</constraint>
 			<description>Define the name of the resuming processing function</description>
 		</property>
 		<!-- TX_LOW_POWER_TICKLESS -->
-		<property id="TX_LOW_POWER_TICKLESS" display="Enable tickless operation in low power mode" default="0" type="checkbox">
-			<option id="TX_LOW_POWER_TICKLESS.0" display="Disable" value="0"/>
-			<option id="TX_LOW_POWER_TICKLESS.1" display="Enable" value="1"/>
+		<property id="USE_TX_LOW_POWER_TICKLESS" display="Enable tickless operation in low power mode" default="0" type="checkbox">
+			<option id="USE_TX_LOW_POWER_TICKLESS.0" display="Disable" value="0"/>
+			<option id="USE_TX_LOW_POWER_TICKLESS.1" display="Enable" value="1"/>
 			<constraint display="default disable" actionOnFail="disable">("${TX_LOW_POWER}" == 1)</constraint>
 			<description>Define whether threadX's system timer needs to be corrected when returning from low power mode or not.
 If TX_LOW_POWER_TICKLESS macro is defined, ThreadX's system timer does not need to be corrected, otherwise, functions defined by 
@@ -240,24 +243,24 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 		<property id="USE_TX_LOW_POWER_TIMER_SETUP" display="Enable threadx timer setup" default="0" type="checkbox">
 			<option id="USE_TX_LOW_POWER_TIMER_SETUP.0" display="Disable" value="0"/>
 			<option id="USE_TX_LOW_POWER_TIMER_SETUP.1" display="Enable" value="1"/>
-			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${TX_LOW_POWER}" == 1))</constraint>
+			<constraint display="default disable" actionOnFail="disable">(("${USE_TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${TX_LOW_POWER}" == 1))</constraint>
 			<description>Define whether TX_LOW_POWER_TIMER_SETUP macro function is needed or not</description>
 		</property>
 		<!-- TX_LOW_POWER_TIMER_SETUP -->
 		<property id="TX_LOW_POWER_TIMER_SETUP" display="Low power timer setup function" default="Demo_LowPower_Timer_Setup" type="textbox">
-			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER}" == 1) &amp;&amp; ("${TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${USE_TX_LOW_POWER_TIMER_SETUP}" == 1))</constraint>
+			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER}" == 1) &amp;&amp; ("${USE_TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${USE_TX_LOW_POWER_TIMER_SETUP}" == 1))</constraint>
 			<description>Defines the setting function name of the timer operating in low power mode</description>
 		</property>
 		<!-- USE_TX_LOW_POWER_USER_TIMER_ADJUST -->
 		<property id="USE_TX_LOW_POWER_USER_TIMER_ADJUST" display="Enable threadx user timer adjust" default="0" type="checkbox">
 			<option id="USE_TX_LOW_POWER_USER_TIMER_ADJUST.0" display="Disable" value="0"/>
 			<option id="USE_TX_LOW_POWER_USER_TIMER_ADJUST.1" display="Enable" value="1"/>
-			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${TX_LOW_POWER}" == 1))</constraint>
+			<constraint display="default disable" actionOnFail="disable">(("${USE_TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${TX_LOW_POWER}" == 1))</constraint>
 			<description>Define whether TX_LOW_POWER_USER_TIMER_ADJUST macro function is needed or not</description>
 		</property>
 		<!-- TX_LOW_POWER_USER_TIMER_ADJUST -->
-		<property id="TX_LOW_POWER_USER_TIMER_ADJUST" display="Low power user timer adjust function" default="Demo_LowPower_User_Timer_Adjust" type="textbox">
-			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER}" == 1) &amp;&amp; ("${TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${USE_TX_LOW_POWER_USER_TIMER_ADJUST}" == 1))</constraint>
+		<property id="TX_LOW_POWER_USER_TIMER_ADJUST" display="Low power user timer adjust function" default="Demo_LowPower_User_Timer_Adjust()" type="textbox">
+			<constraint display="default disable" actionOnFail="disable">(("${TX_LOW_POWER}" == 1) &amp;&amp; ("${USE_TX_LOW_POWER_TICKLESS}" == 0) &amp;&amp; ("${USE_TX_LOW_POWER_USER_TIMER_ADJUST}" == 1))</constraint>
 			<description>Defines a function name that corrects threadx system timer after returning from low power mode</description>
 		</property>
 		<!-- TX_ENABLE_WAIT -->
@@ -272,6 +275,32 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 		<!--support RXC & GCCRX compiler-->
 		<builderSetting>
 			<toolchain value="GNURX"/>
+			<targetBoard value=""/>
+			<targetDevice group="RX130"/>
+			<targetDevice group="RX65N"/>
+			<targetDevice group="RX651"/>
+			<targetDevice group="RX671"/>
+			<targetDevice group="RX72N"/>
+			<buildOptionSetting optionId="com.renesas.cdt.managedbuild.gcc.core.option.assembler.source.userDefinedOptions">
+				<buildOptionInfo>
+					<buildOptionValue value="-DTX_LOW_POWER=1"/>
+					<preCondition propertyId="TX_LOW_POWER" value="1"/>
+				</buildOptionInfo>
+				<buildOptionInfo>
+					<buildOptionValue value="-DTX_LOW_POWER=0"/>
+					<preCondition propertyId="TX_LOW_POWER" value="0"/>
+				</buildOptionInfo>
+				<buildOptionInfo>
+					<buildOptionValue value="-DTX_ENABLE_WAIT=1"/>
+					<preCondition propertyId="TX_ENABLE_WAIT" value="1"/>
+				</buildOptionInfo>
+				<buildOptionInfo>
+					<buildOptionValue value="-DTX_ENABLE_WAIT=0"/>
+					<preCondition propertyId="TX_ENABLE_WAIT" value="0"/>
+				</buildOptionInfo>
+			</buildOptionSetting>
+		</builderSetting>
+		<builderSetting>
 			<toolchain value="RXC"/>
 			<targetBoard value=""/>
 			<targetDevice group="RX130"/>
@@ -279,24 +308,6 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 			<targetDevice group="RX651"/>
 			<targetDevice group="RX671"/>
 			<targetDevice group="RX72N"/>
-			<buildOptionSetting optionId="com.renesas.cdt.managedbuild.gcc.core.option.assembler.includes.symbolDefines">
-				<buildOptionInfo>
-					<buildOptionValue value="TX_LOW_POWER=1"/>
-					<preCondition propertyId="TX_LOW_POWER" value="1"/>
-				</buildOptionInfo>
-				<buildOptionInfo>
-					<buildOptionValue value="TX_LOW_POWER=0"/>
-					<preCondition propertyId="TX_LOW_POWER" value="0"/>
-				</buildOptionInfo>
-				<buildOptionInfo>
-					<buildOptionValue value="TX_ENABLE_WAIT=1"/>
-					<preCondition propertyId="TX_ENABLE_WAIT" value="1"/>
-				</buildOptionInfo>
-				<buildOptionInfo>
-					<buildOptionValue value="TX_ENABLE_WAIT=0"/>
-					<preCondition propertyId="TX_ENABLE_WAIT" value="0"/>
-				</buildOptionInfo>
-			</buildOptionSetting>
 			<!--CCRX compiler-->
 			<buildOptionSetting optionId="com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.define">
 				<buildOptionInfo>

@@ -4,4 +4,6 @@
 
 void platform_setup(void);
 
+#define DEMO_BOARD_RSKRX671
+
 #endif // HARDWARE_SETUP_H
