@@ -21,10 +21,12 @@
 		<toolchain>GNURX</toolchain>
 		<toolchain>ICCRX</toolchain>
 		<board>TargetBoardRX130</board>
+		<board>RSKRX140</board>
 		<board>RSKRX65N-2MB</board>
 		<board>RX65NCloudKit</board>
 		<board>CloudKitRX65N</board>
 		<board>CK-RX65N</board>
+		<board>RSKRX660</board>
 		<board>RSKRX66T</board>
 		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
@@ -34,8 +36,10 @@
 		<series>RX600</series>
 		<series>RX700</series>
 		<group>RX130</group>
+		<group>RX140</group>
 		<group>RX65N</group>
 		<group>RX651</group>
+		<group>RX660</group>
 		<group>RX66T</group>
 		<group>RX671</group>
 		<group>RX72N</group>
@@ -64,12 +68,19 @@
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
-				<!-- copy ICCRX linker script for RX130, RX65N, RX651, RX66T, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
 					<group>RX130</group>
 					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -84,6 +95,13 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>configuration/samples/bare/rx651/lnkr5f5651e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>configuration/samples/bare/rx660/lnkr5f56609h.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -115,6 +133,12 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>src/lnkr5f51406.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
 					<series>RX600</series>
 					<group>RX65N</group>
 					<file>src/lnkr5f565ne.icf</file>
@@ -124,6 +148,12 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>src/lnkr5f5651e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>src/lnkr5f56609h.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -233,12 +263,19 @@
 						<path>src</path>
 					</impdir>
 				</postscgen>
-				<!-- copy ICCRX linker script for RX130, RX65N, RX651, RX66T, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
 					<group>RX130</group>
 					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -253,6 +290,13 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>configuration/samples/bare/rx651/lnkr5f5651e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>configuration/samples/bare/rx660/lnkr5f56609h.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -284,6 +328,12 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>src/lnkr5f51406.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
 					<series>RX600</series>
 					<group>RX65N</group>
 					<file>src/lnkr5f565ne.icf</file>
@@ -293,6 +343,12 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>src/lnkr5f5651e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>src/lnkr5f56609h.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -2658,10 +2714,12 @@
 			</app>
 			<app id="application" value="low_power" name="ThreadX Low Power sample project" description="This demonstration illustrates how to use ThreadX with low power mode">
 				<board>TargetBoardRX130</board>
+				<board>RSKRX140</board>
 				<board>RSKRX65N-2MB</board>
 				<board>RX65NCloudKit</board>
 				<board>CloudKitRX65N</board>
 				<board>CK-RX65N</board>
+				<board>RSKRX660</board>
 				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
@@ -2673,6 +2731,11 @@
 				<impdir>
 					<board>TargetBoardRX130</board>
 					<folder>configuration/samples/low_power/targetboard-rx130/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<folder>configuration/samples/low_power/rsk-rx140/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2689,6 +2752,11 @@
 				<impdir>
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/low_power/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX660</board>
+					<folder>configuration/samples/low_power/rsk-rx660/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2735,12 +2803,19 @@
 					<file>rx-driver-package/source/r_lpc_rx/r_lpc_rx_vx.xx/r_config/r_lpc_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
-				<!-- copy ICCRX linker script for RX130, RX65N, RX651, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX65N, RX651, RX660, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
 					<group>RX130</group>
 					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2755,6 +2830,13 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>configuration/samples/bare/rx651/lnkr5f5651e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>configuration/samples/bare/rx660/lnkr5f56609h.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2779,6 +2861,12 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>src/lnkr5f51406.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
 					<series>RX600</series>
 					<group>RX65N</group>
 					<file>src/lnkr5f565ne.icf</file>
@@ -2788,6 +2876,12 @@
 					<series>RX600</series>
 					<group>RX651</group>
 					<file>src/lnkr5f5651e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>src/lnkr5f56609h.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -2815,6 +2909,10 @@
 					<path>configuration/samples/low_power/targetboard-rx130/TB-RX130-low_power_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
+					<board>RSKRX140</board>
+					<path>configuration/samples/low_power/rsk-rx140/RSK-RX140-low_power_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<path>configuration/samples/low_power/rsk-rx65n-2mb/RSKRX65N-2MB-low_power_scfg.ftl</path>
 				</scfgtemplate>
@@ -2826,6 +2924,10 @@
 				<scfgtemplate>
 					<board>CK-RX65N</board>
 					<path>configuration/samples/low_power/ck-rx65n/CK-RX65N-low_power_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/low_power/rsk-rx660/RSK-RX660-low_power_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX671</board>
@@ -2843,8 +2945,10 @@
 					<series>RX600</series>
 					<series>RX700</series>
 					<group>RX130</group>
+					<group>RX140</group>
 					<group>RX65N</group>
 					<group>RX651</group>
+					<group>RX660</group>
 					<group>RX671</group>
 					<group>RX72N</group>
 					<section>

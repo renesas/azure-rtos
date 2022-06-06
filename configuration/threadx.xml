@@ -36,7 +36,9 @@
 		</impdir>
 		<impdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/gnu</folder>
@@ -44,7 +46,9 @@
 		</impdir>
 		<impdir>
 			<toolchain>RXC</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/ccrx</folder>
@@ -52,7 +56,9 @@
 		</impdir>
 		<impdir>
 			<toolchain>ICCRX</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/iar</folder>
@@ -63,6 +69,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<folder>threadx/ports/rxv3/gnu</folder>
@@ -73,6 +80,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<folder>threadx/ports/rxv3/ccrx</folder>
@@ -83,6 +91,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<folder>threadx/ports/rxv3/iar</folder>
@@ -121,21 +130,27 @@
 		</incdir>
 		<incdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/gnu/inc</path>
 		</incdir>
 		<incdir>
 			<toolchain>RXC</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/ccrx/inc</path>
 		</incdir>
 		<incdir>
 			<toolchain>ICCRX</toolchain>
+			<series>RX100</series>
 			<series>RX600</series>
+			<group>RX140</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/iar/inc</path>
@@ -145,6 +160,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<path>libs/threadx/ports/rxv3/gnu/inc</path>
@@ -154,6 +170,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<path>libs/threadx/ports/rxv3/ccrx/inc</path>
@@ -163,6 +180,7 @@
 			<series>RX600</series>
 			<series>RX700</series>
 			<group>RX66T</group>
+			<group>RX660</group>
 			<group>RX671</group>
 			<group>RX72N</group>
 			<path>libs/threadx/ports/rxv3/iar/inc</path>

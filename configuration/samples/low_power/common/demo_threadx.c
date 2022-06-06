@@ -51,8 +51,8 @@
 	#define DEMO_LP_DEEP_SLEEP	(1)
 	#define DEMO_LP_SW_STANDBY	(1)
 
-#elif defined(BSP_MCU_RX64M) || defined(BSP_MCU_RX65N) || defined(BSP_MCU_RX66N) || defined(BSP_MCU_RX671) || \
-	  defined(BSP_MCU_RX71M) || defined(BSP_MCU_RX72M) || defined(BSP_MCU_RX72N)
+#elif defined(BSP_MCU_RX64M) || defined(BSP_MCU_RX65N) || defined(BSP_MCU_RX66N) || defined(BSP_MCU_RX660) || \
+	  defined(BSP_MCU_RX671) || defined(BSP_MCU_RX71M) || defined(BSP_MCU_RX72M) || defined(BSP_MCU_RX72N)
 
 	#define DEMO_LP_SLEEP			(1)
 	#define DEMO_LP_SW_STANDBY		(1)
@@ -71,6 +71,13 @@
 
     #define DEMO_LED_PIN	(GPIO_PORT_D_PIN_6)
     #define DEMO_IRQ_NUM	(IRQ_NUM_4)
+    #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
+    #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
+
+#elif defined(DEMO_BOARD_RSKRX140)		/* RSKRX140 RSK Board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_2_PIN_1)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_1)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
 
@@ -108,6 +115,13 @@
     #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
     #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
     void Demo_Init_RTC_For_Deep_SW_Standby(void);
+
+#elif defined(DEMO_BOARD_RSKRX660)		/* RSKRX660 RSK board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_1_PIN_7)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_9)
+    #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
+    #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
 
 #elif defined(DEMO_BOARD_RSKRX671)		/* RSKRX671 RSK board */
 
