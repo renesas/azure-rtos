@@ -123,6 +123,13 @@
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
 
+    /* Definitions for RTC */
+    #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_USE_MAINCLOCK                  (0)
+    #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
+    #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
+    void Demo_Init_RTC_For_Deep_SW_Standby(void);
+
 #elif defined(DEMO_BOARD_RSKRX671)		/* RSKRX671 RSK board */
 
     #define DEMO_LED_PIN	(GPIO_PORT_1_PIN_7)
