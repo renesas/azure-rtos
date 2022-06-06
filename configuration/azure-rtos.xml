@@ -2855,8 +2855,15 @@
 				</sections>
 				<!-- macro definition -->
 				<macrodefinition>
+					<toolchain>RXC</toolchain>
+					<toolchain>ICCRX</toolchain>
 					<assembler>TX_LOW_POWER=1</assembler>
 					<assembler>TX_ENABLE_WAIT=0</assembler>
+				</macrodefinition>
+				<macrodefinition>
+					<toolchain>GNURX</toolchain>
+					<assembler>-DTX_LOW_POWER=1</assembler>
+					<assembler>-DTX_ENABLE_WAIT=0</assembler>
 				</macrodefinition>
 			</app>
 		</apps>
