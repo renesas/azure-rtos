@@ -43,6 +43,8 @@
         <configuration enable="true" exclude="false" inuse="true" name="threadx">
             <component display="Azure RTOS ThreadX" id="threadx${packageVersion}" version="${packageVersion}">
                 <gridItem id="TX_LOW_POWER" selectedIndex="1"/>
+                <gridItem id="USE_TX_LOW_POWER_TIMER_SETUP" selectedIndex="1"/>
+                <gridItem id="USE_TX_LOW_POWER_USER_TIMER_ADJUST" selectedIndex="1"/>
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
