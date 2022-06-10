@@ -161,7 +161,22 @@
     void Demo_Init_RTC_For_Deep_SW_Standby(void);
 
 #else
-	#error "Pin number for LED and IRQ number for User Switch are not defined."
+/* The following macro definitions have to be modified appropriately for your boards.
+ * Please modify these definitions according to your board design.
+ *   DEMO_LED_PIN: LED Pin number
+ *   DEMO_IRQ_NUM: User switch IRQ number
+ *   DEMO_LED_ON:  GPIO_LEVEL to turn on LED (GPIO_LEVEL_LOW or GPIO_LEVEL_HIGH)
+ *   DEMO_LED_OFF: GPIO LEVEL to turn off LED (GPIO_LEVEL_LOW or GPIO_LEVEL_HIGH)
+ *
+ * Please note that in addition to above, please enable IRQ pin of DEMO_IRQ_NUM
+ * for r_irq_rx component in Software component configuration.
+ */
+#warning "Please modify board depend macro definitions for LED and User Switch according to your board design."
+#define DEMO_LED_PIN	(GPIO_PORT_7_PIN_3)
+#define DEMO_IRQ_NUM	(IRQ_NUM_11)
+#define DEMO_LED_ON		(GPIO_LEVEL_LOW)
+#define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
+
 #endif
 
 /*
