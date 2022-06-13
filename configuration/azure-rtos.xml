@@ -180,6 +180,10 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/bare/rx660_bare_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<path>configuration/samples/bare/bare_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
@@ -374,6 +378,10 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<!-- scfg template -->
+				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/ramdisk/rx660_ramdisk_scfg.ftl</path>
+				</scfgtemplate>
 				<scfgtemplate>
 					<path>configuration/samples/ramdisk/ramdisk_scfg.ftl</path>
 				</scfgtemplate>
