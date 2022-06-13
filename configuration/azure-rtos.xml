@@ -180,6 +180,10 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/bare/rx660_bare_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<path>configuration/samples/bare/bare_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
@@ -374,6 +378,10 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<!-- scfg template -->
+				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/ramdisk/rx660_ramdisk_scfg.ftl</path>
+				</scfgtemplate>
 				<scfgtemplate>
 					<path>configuration/samples/ramdisk/ramdisk_scfg.ftl</path>
 				</scfgtemplate>
@@ -2791,6 +2799,9 @@
 				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
+				<memoryreq>
+					<group>RX651</group>
+				</memoryreq>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/low_power/common</folder>
@@ -2821,6 +2832,11 @@
 				<impdir>
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/low_power/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX651</group>
+					<folder>configuration/samples/low_power/rx651/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2994,6 +3010,10 @@
 				<scfgtemplate>
 					<board>CK-RX65N</board>
 					<path>configuration/samples/low_power/ck-rx65n/CK-RX65N-low_power_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<group>RX651</group>
+					<path>configuration/samples/low_power/rx651/RX651-low_power_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX660</board>
