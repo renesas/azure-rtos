@@ -26,6 +26,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * en: https://en-support.renesas.com/knowledgeBase/20533128
   * ja: https://ja-support.renesas.com/knowledgeBase/20533124
 
+# versioning
+* https://github.com/renesas/amazon-freertos/issues/8
+
 # Supported boards/devices and applications
 ## The latest software package (coming release 6.1.11_rel-rx-1.0.0)
 <table>
