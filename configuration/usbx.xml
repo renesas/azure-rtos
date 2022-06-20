@@ -7,57 +7,144 @@
 		<version>6.1.11_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
-		<desc>Azure RTOS USBX</desc>
+		<desc>Azure RTOS USBX PCDC</desc>
 		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX</details>
 		<function>RTOS</function>
 		<dependency>
 			<module>threadx</module>
 		</dependency>
 		<dependency>
-			<module>filex</module>
+			<module>r_usb_basic</module>
+			<version>1.40</version>
 		</dependency>
 		<dependency>
-			<module>netxduo</module>
+			<module>r_usb_pcdc</module>
+			<version>1.40</version>
 		</dependency>
-		<configgenpath>
-			<path>libs/usbx/ux_user.h</path>
-		</configgenpath>
 		<!-- Copy resources to project -->
 		<impdir>
-			<folder>usbx/common</folder>
-			<path>libs/usbx/common</path>
+			<file>usbx/common/core/src/ux_device_stack_alternate_setting_get.c</file>
+			<file>usbx/common/core/src/ux_device_stack_alternate_setting_set.c</file>
+			<file>usbx/common/core/src/ux_device_stack_class_register.c</file>
+			<file>usbx/common/core/src/ux_device_stack_class_unregister.c</file>
+			<file>usbx/common/core/src/ux_device_stack_clear_feature.c</file>
+			<file>usbx/common/core/src/ux_device_stack_configuration_get.c</file>
+			<file>usbx/common/core/src/ux_device_stack_configuration_set.c</file>
+			<file>usbx/common/core/src/ux_device_stack_control_request_process.c</file>
+			<file>usbx/common/core/src/ux_device_stack_descriptor_send.c</file>
+			<file>usbx/common/core/src/ux_device_stack_disconnect.c</file>
+			<file>usbx/common/core/src/ux_device_stack_endpoint_stall.c</file>
+			<file>usbx/common/core/src/ux_device_stack_get_status.c</file>
+			<file>usbx/common/core/src/ux_device_stack_host_wakeup.c</file>
+			<file>usbx/common/core/src/ux_device_stack_initialize.c</file>
+			<file>usbx/common/core/src/ux_device_stack_interface_delete.c</file>
+			<file>usbx/common/core/src/ux_device_stack_interface_get.c</file>
+			<file>usbx/common/core/src/ux_device_stack_interface_set.c</file>
+			<file>usbx/common/core/src/ux_device_stack_interface_start.c</file>
+			<file>usbx/common/core/src/ux_device_stack_microsoft_extension_register.c</file>
+			<file>usbx/common/core/src/ux_device_stack_set_feature.c</file>
+			<file>usbx/common/core/src/ux_device_stack_tasks_run.c</file>
+			<file>usbx/common/core/src/ux_device_stack_transfer_abort.c</file>
+			<file>usbx/common/core/src/ux_device_stack_transfer_all_request_abort.c</file>
+			<file>usbx/common/core/src/ux_device_stack_transfer_request.c</file>
+			<file>usbx/common/core/src/ux_device_stack_transfer_run.c</file>
+			<file>usbx/common/core/src/ux_device_stack_uninitialize.c</file>
+			<file>usbx/common/core/src/ux_system_error_handler.c</file>
+			<file>usbx/common/core/src/ux_system_initialize.c</file>
+			<file>usbx/common/core/src/ux_system_tasks_run.c</file>
+			<file>usbx/common/core/src/ux_system_uninitialize.c</file>
+			<file>usbx/common/core/src/ux_trace_event_insert.c</file>
+			<file>usbx/common/core/src/ux_trace_event_update.c</file>
+			<file>usbx/common/core/src/ux_trace_object_register.c</file>
+			<file>usbx/common/core/src/ux_trace_object_unregister.c</file>
+			<file>usbx/common/core/src/ux_utility_debug_callback_register.c</file>
+			<file>usbx/common/core/src/ux_utility_debug_log.c</file>
+			<file>usbx/common/core/src/ux_utility_delay_ms.c</file>
+			<file>usbx/common/core/src/ux_utility_descriptor_pack.c</file>
+			<file>usbx/common/core/src/ux_utility_descriptor_parse.c</file>
+			<file>usbx/common/core/src/ux_utility_error_callback_register.c</file>
+			<file>usbx/common/core/src/ux_utility_event_flags_create.c</file>
+			<file>usbx/common/core/src/ux_utility_event_flags_delete.c</file>
+			<file>usbx/common/core/src/ux_utility_event_flags_get.c</file>
+			<file>usbx/common/core/src/ux_utility_event_flags_set.c</file>
+			<file>usbx/common/core/src/ux_utility_long_get_big_endian.c</file>
+			<file>usbx/common/core/src/ux_utility_long_get.c</file>
+			<file>usbx/common/core/src/ux_utility_long_put_big_endian.c</file>
+			<file>usbx/common/core/src/ux_utility_long_put.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_allocate_add_safe.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_allocate_mulc_safe.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_allocate_mulv_safe.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_allocate.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_compare.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_copy.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_free_block_best_get.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_free.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_set.c</file>
+			<file>usbx/common/core/src/ux_utility_mutex_create.c</file>
+			<file>usbx/common/core/src/ux_utility_mutex_delete.c</file>
+			<file>usbx/common/core/src/ux_utility_mutex_off.c</file>
+			<file>usbx/common/core/src/ux_utility_mutex_on.c</file>
+			<file>usbx/common/core/src/ux_utility_pci_class_scan.c</file>
+			<file>usbx/common/core/src/ux_utility_pci_read.c</file>
+			<file>usbx/common/core/src/ux_utility_pci_write.c</file>
+			<file>usbx/common/core/src/ux_utility_physical_address.c</file>
+			<file>usbx/common/core/src/ux_utility_semaphore_create.c</file>
+			<file>usbx/common/core/src/ux_utility_semaphore_delete.c</file>
+			<file>usbx/common/core/src/ux_utility_semaphore_get.c</file>
+			<file>usbx/common/core/src/ux_utility_semaphore_put.c</file>
+			<file>usbx/common/core/src/ux_utility_set_interrupt_handler.c</file>
+			<file>usbx/common/core/src/ux_utility_short_get_big_endian.c</file>
+			<file>usbx/common/core/src/ux_utility_short_get.c</file>
+			<file>usbx/common/core/src/ux_utility_short_put_big_endian.c</file>
+			<file>usbx/common/core/src/ux_utility_short_put.c</file>
+			<file>usbx/common/core/src/ux_utility_string_length_check.c</file>
+			<file>usbx/common/core/src/ux_utility_string_length_get.c</file>
+			<file>usbx/common/core/src/ux_utility_string_to_unicode.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_create.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_delete.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_identify.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_relinquish.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_resume.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_schedule_other.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_sleep.c</file>
+			<file>usbx/common/core/src/ux_utility_thread_suspend.c</file>
+			<file>usbx/common/core/src/ux_utility_timer_create.c</file>
+			<file>usbx/common/core/src/ux_utility_timer_delete.c</file>
+			<file>usbx/common/core/src/ux_utility_unicode_to_string.c</file>
+			<file>usbx/common/core/src/ux_utility_virtual_address.c</file>
+			<path>libs/usbx/common/core/src</path>
 		</impdir>
 		<impdir>
-			<folder>configuration/libs/usbx/ports/ccrx_gnu</folder>
-			<path>libs/usbx/ports/ccrx_gnu</path>
+			<folder>usbx/common/core/inc</folder>
+			<path>libs/usbx/common/core/inc</path>
 		</impdir>
 		<impdir>
-			<folder>configuration/libs/usbx/usbx_device_controllers</folder>
-			<path>libs/usbx/usbx_device_controllers</path>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_activate.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_bulkin_thread.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_bulkout_thread.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_control_request.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_deactivate.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_entry.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_initialize.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_ioctl.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_read.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_read_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_tasks_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_unitialize.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write_with_callback.c</file>
+			<path>libs/usbx/common/usbx_device_classes/src</path>
 		</impdir>
 		<impdir>
-			<file>configuration/config_files/ux_user.h</file>
-			<path>libs/usbx</path>
+			<folder>usbx/common/usbx_device_classes/inc</folder>
+			<path>libs/usbx/common/usbx_device_classes/inc</path>
 		</impdir>
 		<!-- include header-->
 		<incdir>
 			<path>libs/usbx</path>
 			<path>libs/usbx/common/core/inc</path>
 			<path>libs/usbx/common/usbx_device_classes/inc</path>
-			<path>libs/usbx/common/usbx_host_classes/inc</path>
-			<path>libs/usbx/common/usbx_host_controllers/inc</path>
-			<path>libs/usbx/common/usbx_network/inc</path>
-			<path>libs/usbx/common/usbx_pictbridge/inc</path>
-			<path>libs/usbx/usbx_device_controllers</path>
-			<path>libs/usbx/ports/ccrx_gnu/inc</path>
 		</incdir>
-		<!-- app setting -->
-		<apps>
-			<app id="userconfig">
-				<macrodefinition>
-					<compiler>UX_INCLUDE_USER_DEFINE_FILE</compiler>
-				</macrodefinition>
-			</app>
-		</apps>
 	</package>
 </refinfo>

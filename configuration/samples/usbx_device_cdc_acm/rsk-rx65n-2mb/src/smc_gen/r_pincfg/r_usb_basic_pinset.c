@@ -17,18 +17,37 @@
 * Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
-* File Name    : r_pinset.h.h
-* Version      : 1.0.1
-* Description  : Declares all pin code headers into a single file
+* File Name    : r_usb_basic_pinset.c
+* Version      : 1.0.2
+* Device(s)    : R5F565NEDxFC
+* Tool-Chain   : RXC toolchain
+* Description  : Setting of port and mpc registers
 ***********************************************************************************************************************/
-
-#ifndef R_PINSET_H
-#define R_PINSET_H
 
 /***********************************************************************************************************************
 Includes
 ***********************************************************************************************************************/
-#include "r_sci_rx_pinset.h"
 #include "r_usb_basic_pinset.h"
+#include "platform.h"
 
-#endif /* R_PINSET_H */
+/***********************************************************************************************************************
+Global variables and functions
+***********************************************************************************************************************/
+
+/***********************************************************************************************************************
+* Function Name: R_USB_PinSet_USB0_PERI
+* Description  : This function initializes pins for r_usb_basic module
+* Arguments    : none
+* Return Value : none
+***********************************************************************************************************************/
+void R_USB_PinSet_USB0_PERI()
+{
+    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
+
+    /* Set USB0_VBUS pin */
+    MPC.P16PFS.BYTE = 0x11U;
+    PORT1.PMR.BIT.B6 = 1U;
+
+    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
+}
+

@@ -125,6 +125,7 @@
 
     /* Definitions for RTC */
     #define DEMO_DEEP_SW_STANDBY_USE_RTC            (1)
+    #define DEMO_RTC_IS_RTCC                        (1)
     #define DEMO_RTC_USE_MAINCLOCK                  (0)
     #define DEMO_DEEP_SW_STANDBY_TIMEOUT_SECONDS	(30)
     #define DEMO_WAIT_FOR_COMPLETION(reg, value)	{ while ((reg) != (value)) ; }
@@ -232,7 +233,7 @@ int main()
 void    tx_application_define(void *first_unused_memory)
 {
     /* Create the Low Power DEMO thread.  */
-    tx_thread_create(&thread_0, "thread 0", thread_0_entry, 0,  
+    tx_thread_create(&thread_0, "thread 0", thread_0_entry, 0,
             thread_0_stack, DEMO_STACK_SIZE,
             1, 1, TX_NO_TIME_SLICE, TX_AUTO_START);
 }
@@ -524,37 +525,55 @@ void Demo_Init_RTC_For_Deep_SW_Standby(void)
 
 	int i;
 
-#if DEMO_RTC_USE_MAINCLOCK
-	/* Main clock oscillator is forcedly oscillated for RTC. */
-	R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_LPC_CGC_SWR);
-	SYSTEM.MOFCR.BIT.MOFXIN = 1;
-	R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_LPC_CGC_SWR);
+    #if DEMO_RTC_IS_RTCC  /* RTCC supports only sub-clock as count source. */
+    /* Setup RTC for binary counter mode */
+    RTC.RCR4.BIT.RCKSEL = 0;	/* Select sub clock */
 
-	/* Setup RTC for binary counter mode */
-	RTC.RCR4.BIT.RCKSEL = 1;	/* Select main clock */
-	for (i = 0; i < 6; i++)
-	{
-		R_BSP_NOP();			/* Wait for over 6 clocks */
-	}
-	RTC.RCR2.BIT.START = 0;
-	DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
+    /* No need to initialize SOSCCR and SOFCR which are already enabled
+     * in mcu_clocks.c by BSP's clock configuration.
+     */
 
-	RTC.RFRH.BIT.RFC = DEMO_RTC_RFRH;	/* Set value on main clock 16MHz described in Hardware Manual 33.2.21 */
-	RTC.RFRL.BIT.RFC = DEMO_RTC_RFRL;
-#else
-	/* Setup RTC for binary counter mode */
-	RTC.RCR4.BIT.RCKSEL = 0;	/* Select sub clock */
-	RTC.RCR3.BIT.RTCDV = 0x6;	/* Select standard clock drive */
-	RTC.RCR3.BIT.RTCEN = 1;	    /* Start subclock */
-	for (i = 0; i < 6; i++)
-	{
-		R_BSP_NOP();			/* Wait for over 6 clocks */
-	}
+    RTC.RCR3.BIT.RTCEN = 1;	    /* Start subclock */
+    DEMO_WAIT_FOR_COMPLETION(RTC.RCR3.BIT.RTCEN, 1);
+    for (i = 0; i < 6; i++)
+    {
+        R_BSP_NOP();			/* Wait for over 6 clocks */
+    }
 
-	RTC.RCR2.BIT.START = 0;
-	DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
-#endif
+    RTC.RCR2.BIT.START = 0;
+    DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
+    #else  /* RTCd supports main clock & sub-clock. */
+        #if DEMO_RTC_USE_MAINCLOCK
+	    /* Main clock oscillator is forcedly oscillated for RTC. */
+	    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_LPC_CGC_SWR);
+	    SYSTEM.MOFCR.BIT.MOFXIN = 1;
+	    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_LPC_CGC_SWR);
 
+	    /* Setup RTC for binary counter mode */
+	    RTC.RCR4.BIT.RCKSEL = 1;	/* Select main clock */
+	    for (i = 0; i < 6; i++)
+	    {
+		    R_BSP_NOP();			/* Wait for over 6 clocks */
+	    }
+	    RTC.RCR2.BIT.START = 0;
+	    DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
+
+	    RTC.RFRH.BIT.RFC = DEMO_RTC_RFRH;	/* Set value on main clock 16MHz described in Hardware Manual 33.2.21 */
+	    RTC.RFRL.BIT.RFC = DEMO_RTC_RFRL;
+        #else
+	    /* Setup RTC for binary counter mode */
+	    RTC.RCR4.BIT.RCKSEL = 0;	/* Select sub clock */
+	    RTC.RCR3.BIT.RTCDV = 0x6;	/* Select standard clock drive */
+	    RTC.RCR3.BIT.RTCEN = 1;	    /* Start subclock */
+	    for (i = 0; i < 6; i++)
+	    {
+	        R_BSP_NOP();			/* Wait for over 6 clocks */
+	    }
+
+	    RTC.RCR2.BIT.START = 0;
+	    DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.START, 0);
+        #endif /* DEMO_RTC_USE_MAINCLOCK */
+    #endif /* DEMO_RTC_IS_RTCC */
 
 	RTC.RCR2.BIT.CNTMD = 1;	/* binary count mode */
 	DEMO_WAIT_FOR_COMPLETION(RTC.RCR2.BIT.CNTMD, 1);
