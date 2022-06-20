@@ -193,6 +193,7 @@
 					<series>RX600</series>
 					<series>RX700</series>
 					<group>RX130</group>
+					<group>RX140</group>
 					<group>RX65N</group>
 					<group>RX651</group>
 					<group>RX66T</group>
@@ -393,6 +394,7 @@
 					<series>RX600</series>
 					<series>RX700</series>
 					<group>RX130</group>
+					<group>RX140</group>
 					<group>RX65N</group>
 					<group>RX651</group>
 					<group>RX66T</group>
@@ -2556,15 +2558,15 @@
 				<board>RX65NCloudKit</board>
 				<board>CloudKitRX65N</board>
 				<board>CK-RX65N</board>
-				<board>RSKRX671</board>
+				<!--board>RSKRX671</board-->
 				<!-- RX72N EK not support USB function -->
 				<!--board>RX72NEnvisionKit</board--> 
-				<memoryreq>
+				<!--memoryreq>
 					<toolchain>RXC</toolchain>
 					<toolchain>ICCRX</toolchain>
 					<group>RX66T</group>
 					<RAM>128</RAM>
-				</memoryreq>
+				</memoryreq-->
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/usbx_device_cdc_acm/common</folder>
@@ -2644,6 +2646,14 @@
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_usb_pcdc/r_usb_pcdc_vx.xx/r_usb_pcdc</folder>
+					<path>src/smc_gen/r_usb_pcdc</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_usb_basic/r_usb_basic_vx.xx/r_usb_basic</folder>
+					<path>src/smc_gen/r_usb_basic</path>
+				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -2693,6 +2703,11 @@
 				<incdir>
 					<path>src</path>
 					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_usb_pcdc</path>
+					<path>src/smc_gen/r_usb_pcdc/src/inc</path>
+					<path>src/smc_gen/r_usb_basic</path>
+					<path>src/smc_gen/r_usb_basic/src/driver/inc</path>
+					<path>src/smc_gen/r_usb_basic/src/hw/inc</path>
 				</incdir>
 				<incdir>
 					<board>CK-RX65N</board>

@@ -33,20 +33,24 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="filex">
-            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="netxduo">
-            <component display="Azure RTOS NetX Duo" id="netxduo${packageVersion}" version="${packageVersion}">
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="usbx">
-            <component display="Azure RTOS UsbX" id="usbx${packageVersion}" version="${packageVersion}">
+            <component display="Azure RTOS USBX PCDC" id="usbx${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_usb_pcdc">
+            <component display="r_usb_pcdc" id="r_usb_pcdc1.40" version="1.40">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_usb_basic">
+            <component display="r_usb_basic" id="r_usb_basic1.40" version="1.40">
+                <gridItem id="USB0_DP" selectedIndex="1"/>
+                <gridItem id="USB0_DM" selectedIndex="1"/>
+                <gridItem id="USB0_VBUS" selectedIndex="1"/>
+                <gridItem id="USB0_PERI" selectedIndex="1"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="Config_SCI5">
             <allocatable id="SCI5">

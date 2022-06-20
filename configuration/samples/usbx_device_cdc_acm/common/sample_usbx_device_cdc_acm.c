@@ -12,10 +12,11 @@
 #include "ux_api.h"
 #include "ux_system.h"
 #include "ux_utility.h"
-#include "ux_dcd_rx.h"
 #include "ux_device_class_cdc_acm.h"
 #include "ux_device_stack.h"
 #include "platform.h"
+#include "r_usb_basic_if.h"
+#include "r_usb_basic_config.h"
 
 
 #define SAMPLE_DEBUG_SIZE                  (4096*8)
@@ -237,6 +238,7 @@ unsigned char language_id_framework[] = {
 
 
 VOID platform_setup(void);
+void R_USB_PinSet_USB0_PERI();
 
 /* Define main entry point.  */
 int main(void)
@@ -304,13 +306,18 @@ void    sample_thread_entry(ULONG arg)
 ULONG   status;
 ULONG   actual_length;
 ULONG   requested_length;
+usb_ctrl_t  ctrl;
+usb_cfg_t   cfg;
 
 
     /* Register the USB device controllers available in this system */
-    status =  _ux_dcd_rx_initialize(0);
+    R_USB_PinSet_USB0_PERI();
 
-    if (status != UX_SUCCESS)
-        return;
+    ctrl.module     = USB_IP0;
+    ctrl.type       = USB_PCDC;
+    cfg.usb_speed   = USB_FS; /* USB_HS/USB_FS */
+    cfg.usb_mode    = USB_PERI;
+    R_USB_Open(&ctrl, &cfg);
 
     while(1)
     {
@@ -371,13 +378,4 @@ ULONG   requested_length;
                 break;
         }
     }
-}
-
-
-VOID  _ux_dcd_rx_interrupt_handler(VOID);
-
-R_BSP_PRAGMA_STATIC_INTERRUPT (usb0_isr,VECT(PERIB, INTB185))	/* INTB185 is pre-assinged for USBI0 in r_bsp */
-R_BSP_ATTRIB_STATIC_INTERRUPT void usb0_isr (void)
-{
-	_ux_dcd_rx_interrupt_handler();
 }
