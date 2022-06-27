@@ -2605,6 +2605,10 @@
 					<folder>configuration/samples/usbx_device_cdc_acm/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
+				<impdir>
+					<file>configuration/samples/usbx_device_cdc_acm/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>

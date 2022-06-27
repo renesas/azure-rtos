@@ -276,11 +276,7 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 		<builderSetting>
 			<toolchain value="GNURX"/>
 			<targetBoard value=""/>
-			<targetDevice group="RX130"/>
-			<targetDevice group="RX65N"/>
-			<targetDevice group="RX651"/>
-			<targetDevice group="RX671"/>
-			<targetDevice group="RX72N"/>
+			<targetDevice group=""/>
 			<buildOptionSetting optionId="com.renesas.cdt.managedbuild.gcc.core.option.assembler.source.userDefinedOptions">
 				<buildOptionInfo>
 					<buildOptionValue value="-DTX_LOW_POWER=1"/>
@@ -303,11 +299,7 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 		<builderSetting>
 			<toolchain value="RXC"/>
 			<targetBoard value=""/>
-			<targetDevice group="RX130"/>
-			<targetDevice group="RX65N"/>
-			<targetDevice group="RX651"/>
-			<targetDevice group="RX671"/>
-			<targetDevice group="RX72N"/>
+			<targetDevice group=""/>
 			<!--CCRX compiler-->
 			<buildOptionSetting optionId="com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.define">
 				<buildOptionInfo>
@@ -332,11 +324,7 @@ TX_LOW_POWER_TIMER_SETUP and TX_LOW_POWER_USER_TIMER_ADJUST macros are used to c
 		<builderSetting>
 			<toolchain value="ICCRX"/>
 			<targetBoard value=""/>
-			<targetDevice group="RX130"/>
-			<targetDevice group="RX65N"/>
-			<targetDevice group="RX651"/>
-			<targetDevice group="RX671"/>
-			<targetDevice group="RX72N"/>
+			<targetDevice group=""/>
 			<!--update by append macro into ipcf file-->
 			<buildOptionSetting optionId="ipcf.asmDefines">
 				<buildOptionInfo>
