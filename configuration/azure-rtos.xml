@@ -224,7 +224,7 @@
 					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
-				<!-- copy sample ld and readme for RX130, RX72N -->
+				<!-- copy sample ld and readme for RX130, RX140, RX72N -->
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<series>RX100</series>
@@ -237,6 +237,20 @@
 					<series>RX100</series>
 					<group>RX130</group>
 					<file>configuration/samples/ramdisk/rx130/README.md</file>
+					<path>.</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/ramdisk/rx140/linker_script_sample.ld</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/ramdisk/rx140/README.md</file>
 					<path>.</path>
 				</impdir>
 				<impdir>
@@ -260,6 +274,13 @@
 						<series>RX100</series>
 						<group>RX130</group>
 						<file>configuration/samples/ramdisk/rx130/linker_script.ld</file>
+						<path>src</path>
+					</impdir>
+					<impdir>
+						<toolchain>GNURX</toolchain>
+						<series>RX100</series>
+						<group>RX140</group>
+						<file>configuration/samples/ramdisk/rx140/linker_script.ld</file>
 						<path>src</path>
 					</impdir>
 					<impdir>
@@ -3077,10 +3098,11 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
 			<value>true</value>
 		</option>
-		<!-- Open readme file if it exists -->
+		<!-- Open readme and AN file -->
 		<openfile>
 			<path>README.md</path>
 		</openfile>
+		<!-- Update ewp file for IAR project setting -->
 		<sourceedit>
 			<toolchain>ICCRX</toolchain>
 			<board>RSKRX65N-2MB</board>
