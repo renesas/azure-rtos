@@ -62,7 +62,7 @@ void demo_printf(char *format, ...)
 
     len = (size_t)vsnprintf(&demo_printf_buf[0], sizeof(demo_printf_buf), format, v_args);
 
-    R_SCI_Send(Console,&demo_printf_buf,len);
+    R_SCI_Send(Console,(uint8_t *)demo_printf_buf,len);
 
     va_end(v_args);
 
