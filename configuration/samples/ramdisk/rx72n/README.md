@@ -8,15 +8,15 @@ You can go to [Board] tab of Smart Configurator editor to check the correctness 
 In case the device is R5F572ND, at Board tab, you can click [...] button behind the Board combo-box
 to quickly go to Change Device dialog and change target device to R5F572NN.
 
-This issue will be fixed at newer version of board.
+This issue is fixed from board version v1.12.
 
 
-1.2. The "_end" section in src/linker_script.ld should be at the end.
+1.2. If you are using e2 studio 2022-04 or earlier version with GCC RX compiler,
+please take note on the following issue.
 
+The "_end" section in src/linker_script.ld should be at the end.
 However, the section order in linker_script.ld is changed when first build and after code generated.
-
-If you are using RX72N Envision Kit or RSK RX72N, you can simply copy src/linker_script_sample.ld to current src/linker_script.ld, and build project again
-
+If you are using RX72N Envision Kit, you can simply copy src/linker_script_sample.ld to current src/linker_script.ld, and build project again.
 If you are using other RX72N devices, please open linker_script.ld and move the below section to the end, and build project again
 .bss :
 {
@@ -31,4 +31,8 @@ If you are using other RX72N devices, please open linker_script.ld and move the 
 	_end = .;
 } > RAM
 
-Note: this issue is fixed from e2 studio 2022-07.
+---------------
+2. Usage Notes
+---------------
+For more information about how to use this sample project, 
+please refer to section 2.2 of r01an6455ej0100-rx-azure-rtos.pdf

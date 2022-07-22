@@ -2,6 +2,9 @@ USBX device CDC-ACM Class sample project
 ========================================
 This demonstration illustrates the setup and use of USBX device CDC-ACM Class to communicate with the host as a serial device.
 
+For more information about how to use this sample project, 
+please refer to section 2.9 of r01an6455ej0100-rx-azure-rtos.pdf
+
 
 Changes of sample project
 =========================

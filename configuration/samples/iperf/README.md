@@ -2,4 +2,4 @@
 1. Usage Notes
 ---------------
 For more information about how to use this sample project, 
-please refer to section 2.5 of r01an6455ej0100-rx-azure-rtos.pdf
+please refer to section 2.4 of r01an6455ej0100-rx-azure-rtos.pdf
