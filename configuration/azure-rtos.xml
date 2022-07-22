@@ -597,6 +597,14 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy patch file for wifi -->
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -1139,6 +1147,14 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy patch file for wifi -->
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -1490,6 +1506,14 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy patch file for wifi -->
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -1839,6 +1863,14 @@
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
+				<!-- copy patch file for wifi -->
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
