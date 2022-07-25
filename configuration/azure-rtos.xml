@@ -843,6 +843,10 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
