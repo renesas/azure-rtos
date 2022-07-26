@@ -8,10 +8,14 @@ You can go to [Board] tab of Smart Configurator editor to check the correctness 
 In case the device is R5F572ND, at Board tab, you can click [...] button behind the Board combo-box
 to quickly go to Change Device dialog and change target device to R5F572NN.
 
-This issue will be fixed at newer version of board.
+This issue is fixed from board version v1.12.
 
 ---------------
 2. Usage Notes
 ---------------
-This demonstration requires some information for the connection to IoTHub
-Please define HOST_NAME, DEVICE_ID, DEVICE_SYMMETRIC_KEY in src\sample_config.h
+For more information about how to use this sample project, 
+please refer to section 2.5 of r01an6455ej0100-rx-azure-rtos.pdf
+
+Please also take note that the sample project is verified with C project.
+If you create new project with C++ option, please confirm its behaviour by yourself.
+For example, if you create project with C++ option and CCRX compiler, you will need to add abort() function manually.

@@ -14,13 +14,13 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.10" version="7.10">
+            <component display="r_bsp" id="r_bsp7.20" version="7.20">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.10" version="5.10">
+            <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -64,7 +64,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.30" version="4.30">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.40" version="4.40">
             <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
             <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
             <gridItem id="SCI0" selectedIndex="1"/>
@@ -82,7 +82,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_wifi_sx_ulpgn">
-            <component detailDescription="WI-FI Module control functions for Renesas MCUs." display="r_wifi_sx_ulpgn" id="r_wifi_sx_ulpgn1.14" version="1.14">
+            <component detailDescription="WI-FI Module control functions for Renesas MCUs." display="r_wifi_sx_ulpgn" id="r_wifi_sx_ulpgn1.16" version="1.16">
             <gridItem id="WIFI_CFG_SCI_CHANNEL" selectedIndex="2"/>
             <gridItem id="WIFI_CFG_SCI_SECOND_CHANNEL" selectedIndex="0"/>
             <gridItem id="WIFI_CFG_RESET_PORT" selectedIndex="9"/>

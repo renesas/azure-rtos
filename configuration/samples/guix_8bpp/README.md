@@ -1,7 +1,7 @@
 ---------------
 1. Usage Notes
 ---------------
-To configure/change the current graphical display on LCD, please use Azure RTOS GUIX Studio
+1.1. To configure/change the current graphical display on LCD, please use Azure RTOS GUIX Studio
 (The Azure RTOS GUIX Studio installer is available here: https://aka.ms/azrtos-guix-installer)
 - Open Azure RTOS GUIX Studio
 - Select "Open Project"
@@ -12,3 +12,11 @@ https://docs.microsoft.com/azure/rtos/guix/about-guix-studio
 
 For more information about GUIX in general, please refer to the following page
 https://docs.microsoft.com/azure/rtos/guix/about-guix
+
+
+1.2. For more information about how to use this sample project, 
+please refer to section 2.8 of r01an6455ej0100-rx-azure-rtos.pdf
+
+Please also take note that the sample project is verified with C project.
+If you create new project with C++ option, please confirm its behaviour by yourself.
+For example, if you create project with C++ option and CCRX compiler, you will need to add abort() function manually.

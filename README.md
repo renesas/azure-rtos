@@ -30,7 +30,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * https://github.com/renesas/amazon-freertos/issues/8
 
 # Supported boards/devices and applications
-## The latest software package (coming release 6.1.11_rel-rx-1.0.0)
+## The latest software package
 <table>
   <tr>
     <th align="left">Device</th>
@@ -38,6 +38,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>RX651</th>
     <th>RX130</th>
     <th>RX140</th>
+    <th>RX660</th>
     <th>RX66T</th>
     <th>RX72N</th>
     <th>RX671</th>
@@ -49,6 +50,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>New CK</th>
     <th>RSK RX65N</th>
     <th>Target Board</th>
+    <th>RSK</th>
     <th>RSK</th>
     <th>RSK</th>
     <th>Envision Kit</th>
@@ -63,11 +65,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>-</th>
     <th>-</th>
     <th>-</th>
+    <th>-</th>
     <th>Ethernet</th>
     <th>Wi-Fi</th>
   </tr>
   <tr align="center">
     <td align="left">ThreadX sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -89,12 +93,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">Ping sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -111,6 +117,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>-</td>
   </tr>
@@ -119,6 +126,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -135,6 +143,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -147,12 +156,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -173,9 +184,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">Threadx Low Power sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -192,7 +205,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * 6.1.11_rel-rx-1.0.0
   * Update Azure RTOS libraries to 6.1.11_rel
   * Update RX Driver Package to 1.34
-  * Support RX65N New Cloud Kit, RX140 RSK
+  * Support RX65N New Cloud Kit, RX140 RSK, RX660 RSK
   * Support ThreadX Low Power sample
   * Update USBX sample to use Renesas USB driver
 * 6.1.10_rel-rx-1.0.0
