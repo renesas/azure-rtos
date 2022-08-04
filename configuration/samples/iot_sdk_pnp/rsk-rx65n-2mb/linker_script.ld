@@ -27,7 +27,7 @@ SECTIONS
 	.rvectors ALIGN(4):
 	{
 		_rvectors_start = .;
-		INCLUDE ..\src\smc_gen\r_bsp\mcu\all\linker_script_rvectors.inc
+		INCLUDE ../src/smc_gen/r_bsp/mcu/all/linker_script_rvectors.inc
 		_rvectors_end = .;
 	} > ROM
 	.init :
