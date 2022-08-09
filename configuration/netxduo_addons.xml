@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>netxduo_addons</name>
-		<version>6.1.11_rel-rx-1.0.0</version>
+		<version>6.1.12_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<desc>Azure RTOS NetX Duo Addons</desc>
 		<details>Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc.</details>
@@ -148,12 +148,6 @@
 			<file>netxduo/utility/iperf/nx_iperf.c</file>
 			<file>netxduo/utility/iperf/nx_iperf.h</file>
 			<path>libs/netxduo_addons/utility/iperf</path>
-		</impdir>
-		<!-- patch file -->
-		<impdir>
-			<toolchain>ICCRX</toolchain>
-			<file>configuration/libs/netxduo/patch_iar/pendian_detect.h</file>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable</path>
 		</impdir>
 		<!-- include header -->
 		<incdir>

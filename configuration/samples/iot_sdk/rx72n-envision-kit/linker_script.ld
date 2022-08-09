@@ -134,7 +134,7 @@ SECTIONS
 		*(B_2)
 		_ebss = .;
 		_end = .;
-	} > RAM2
+	} > RAM2 AT>RAM2
 	.ofs1 0xFE7F5D00: AT(0xFE7F5D00)
 	{
 		KEEP(*(.ofs1))
@@ -171,11 +171,11 @@ SECTIONS
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
-	} >RAM
+	} >RAM AT>RAM
 .r_bsp_istack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
-	} >RAM
+	} >RAM AT>RAM
 .istack :
 	{
 		"_istack" = .;
@@ -183,7 +183,7 @@ SECTIONS
 .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
-	} >RAM
+	} >RAM AT>RAM
 .ustack :
 	{
 		"_ustack" = .;

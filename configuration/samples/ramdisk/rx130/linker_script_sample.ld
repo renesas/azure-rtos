@@ -19,7 +19,7 @@ SECTIONS
 	.rvectors ALIGN(4):
 	{
 		_rvectors_start = .;
-		INCLUDE ..\src\smc_gen\r_bsp\mcu\all\linker_script_rvectors.inc
+		INCLUDE ../src/smc_gen/r_bsp/mcu/all/linker_script_rvectors.inc
 		_rvectors_end = .;
 	} > ROM
 	.init :
@@ -101,11 +101,11 @@ SECTIONS
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
-	} >RAM
+	} >RAM AT>RAM
 .r_bsp_istack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
-	} >RAM
+	} >RAM AT>RAM
 .istack :
 	{
 		"_istack" = .;
@@ -113,7 +113,7 @@ SECTIONS
 .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
-	} >RAM
+	} >RAM AT>RAM
 .ustack :
 	{
 		"_ustack" = .;
@@ -129,5 +129,5 @@ SECTIONS
 		*(B_2)
 		_ebss = .;
 		_end = .;
-	} > RAM
+	} > RAM AT>RAM
 }
