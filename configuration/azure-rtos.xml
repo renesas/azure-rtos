@@ -3155,6 +3155,12 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
 			<value>true</value>
 		</option>
+		<option>
+			<toolchain>RXC</toolchain>
+			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+			<value>true</value>
+		</option>
 		<!-- Open readme and AN file -->
 		<impdir>
 			<file>threadx/LICENSE.txt</file>
