@@ -122,7 +122,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
   </tr>
   <tr align="center">
-    <td align="left">SDK sample</td>
+    <td align="left">IoT Embedded SDK sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -135,7 +135,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
   </tr>
   <tr align="center">
-    <td align="left">SDK PnP sample</td>
+    <td align="left">IoT Embedded SDK PnP sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -148,7 +148,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
   </tr>
   <tr align="center">
-    <td align="left">PnP Temperature sample</td>
+    <td align="left">IoT Embedded SDK with IoT Plug and Play sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -202,9 +202,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.1.12_rel-rx-1.0.0
+  * Update Azure RTOS libraries to 6.1.12_rel
+  * Improve sample linker script file
+  * Set "-dbl_size=8" as default build option for CC-RX project
+  * Rename PnP Temperature Control sample project to IoT Embedded SDK with IoT Plug and Play sample project
 * 6.1.11_rel-rx-1.0.0
   * Update Azure RTOS libraries to 6.1.11_rel
-  * Update RX Driver Package to 1.34
+  * Update RX Driver Package to 1.36
   * Support RX65N New Cloud Kit, RX140 RSK, RX660 RSK
   * Support ThreadX Low Power sample
   * Update USBX sample to use Renesas USB driver

@@ -1714,7 +1714,7 @@
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="temperature-pnp" name="PnP Temperature Control sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
+			<app id="application" value="temperature-pnp" name="IoT Embedded SDK with IoT Plug and Play sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
@@ -3153,6 +3153,12 @@
 			<toolchain>RXC</toolchain>
 			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
+			<value>true</value>
+		</option>
+		<option>
+			<toolchain>RXC</toolchain>
+			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
 			<value>true</value>
 		</option>
 		<!-- Open readme and AN file -->

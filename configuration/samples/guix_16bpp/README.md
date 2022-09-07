@@ -13,10 +13,14 @@ https://docs.microsoft.com/azure/rtos/guix/about-guix-studio
 For more information about GUIX in general, please refer to the following page
 https://docs.microsoft.com/azure/rtos/guix/about-guix
 
+
 1.2. For more information about how to use this sample project, 
 please refer to section 2.8 of r01an6455ej0100-rx-azure-rtos.pdf
 
-Please also take note that the sample project is verified with C project.
+1.3. From software package v6.1.12_rel-rx.1.0.0, "-dbl_size=8" compiler build option is set as default for CC-RX project 
+to keep 8 bytes size for double type.
+
+1.4. Please also take note that the sample project is verified with C project.
 If you create new project with C++ option, please confirm its behaviour by yourself.
 For example, if you create project with C++ option and CCRX compiler, you will need to add abort() function manually.
 
