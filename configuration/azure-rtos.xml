@@ -3190,5 +3190,39 @@
 			<remove>1</remove>
 			<data>                      &lt;state&gt;2&lt;/state&gt;</data>
 		</sourceedit>
+		<sourceedit>
+			<toolchain>ICCRX</toolchain>
+			<board>RSKRX65N-2MB</board>
+			<board>RSKRX65N-2MB(TSIP)</board>
+			<board>RX65NCloudKit</board>
+			<board>CloudKitRX65N</board>
+			<board>CK-RX65N</board>
+			<board>RX72NEnvisionKit</board>
+			<board>EnvisionKitRX72N</board>
+			<file>*.ewp</file>
+			<key>&lt;name&gt;Release&lt;/name&gt;</key>
+			<key>option</key>
+			<key>GenDataModel</key>
+			<remove>1</remove>
+			<data>                      &lt;state&gt;2&lt;/state&gt;</data>
+		</sourceedit>
+		<sourceedit>
+			<toolchain>ICCRX</toolchain>
+			<file>*.ewp</file>
+			<key>&lt;name&gt;Debug&lt;/name&gt;</key>
+			<key>option</key>
+			<key>GenDoubleSize</key>
+			<remove>1</remove>
+			<data>                      &lt;state&gt;1&lt;/state&gt;</data>
+		</sourceedit>
+		<sourceedit>
+			<toolchain>ICCRX</toolchain>
+			<file>*.ewp</file>
+			<key>&lt;name&gt;Release&lt;/name&gt;</key>
+			<key>option</key>
+			<key>GenDoubleSize</key>
+			<remove>1</remove>
+			<data>                      &lt;state&gt;1&lt;/state&gt;</data>
+		</sourceedit>
 	</package>
 </refinfo>

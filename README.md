@@ -206,6 +206,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * Update Azure RTOS libraries to 6.1.12_rel
   * Improve sample linker script file
   * Set "-dbl_size=8" as default build option for CC-RX project
+  * Set "64 bits" for size of type 'double' as default build option for IAR project
   * Rename PnP Temperature Control sample project to IoT Embedded SDK with IoT Plug and Play sample project
 * 6.1.11_rel-rx-1.0.0
   * Update Azure RTOS libraries to 6.1.11_rel
