@@ -15,7 +15,7 @@ https://docs.microsoft.com/azure/rtos/guix/about-guix
 
 
 1.2. For more information about how to use this sample project, 
-please refer to section 2.8 of r01an6455ej0100-rx-azure-rtos.pdf
+please refer to section 2.8 of r01an6455ej0101-rx-azure-rtos.pdf
 
 1.3. From software package v6.1.12_rel-rx.1.0.0, to keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project

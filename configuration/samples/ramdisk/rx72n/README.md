@@ -35,7 +35,7 @@ If you are using other RX72N devices, please open linker_script.ld and move the 
 2. Usage Notes
 ---------------
 2.1. For more information about how to use this sample project, 
-please refer to section 2.2 of r01an6455ej0100-rx-azure-rtos.pdf
+please refer to section 2.2 of r01an6455ej0101-rx-azure-rtos.pdf
 
 2.2. From software package v6.1.12_rel-rx.1.0.0, to keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
