@@ -3,8 +3,22 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 
 # Tutorial Video
 ## Just demos
+### playlist on YouTube
+* https://www.youtube.com/playlist?list=PLgUXqPkOStPsB9yh-XZ7BNv0J6UtAERO1
+
+### RX65N Cloud Kit (new: CK-RX65N)
 * Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
-* You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit
+* You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (new: ether(available)/cellular(now preparing))
+* same contents on both of Renesas website and YouTube/bilibili
+  * en
+    * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
+    * https://www.youtube.com/watch?v=7aIfCr7xYno&list=PLgUXqPkOStPsB9yh-XZ7BNv0J6UtAERO1&index=1
+  * ja
+    * none
+### RX65N Cloud Kit (old)
+* Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
+* You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (old: wifi)
+* same contents on both of Renesas website and YouTube/bilibili
   * en
     * https://www.renesas.com/jp/en/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
   * ja
@@ -13,13 +27,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 ## For development phase
 * Getting started for Azure RTOS using Smart Configurator in e2 studio
 * You can configure any settings: cpu board = any
-  * en (same contents on both of Renesas website and YouTube)
+* same contents on both of Renesas website and YouTube/bilibili
+  * en 
     * https://www.renesas.com/jp/en/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.youtube.com/watch?v=97C1stpNFig
-  * ja (same contents on both of Renesas website and YouTube)
+  * ja
     * https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.youtube.com/watch?v=TKUFraKUSpQ
-  * zh (same contents on both of Renesas website and bilibili)
+  * zh
     * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.bilibili.com/video/BV1K34y1E76k
 * How to create Azure RTOS sample project for IAR EW
