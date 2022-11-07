@@ -246,3 +246,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * RX Driver Package to 1.32
   * Support RX65N
   * Support ThreadX, FileX, Ping, Iperf, SDK, SDK PnP, PnP Temperature, USBX sample
+
+# Reference Video
+* Azure ADU (Firmware Update on the air) 
+  * https://www.youtube.com/watch?v=gxODyzvWSYs
