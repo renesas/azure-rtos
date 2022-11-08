@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>filex</name>
-		<version>6.1.12_rel-rx-1.0.0</version>
+		<version>6.1.12_rel-rx-1.0.1</version>
 		<application>AzureRTOSLibrary</application>
 		<desc>Azure RTOS FileX</desc>
 		<details>Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX</details>
