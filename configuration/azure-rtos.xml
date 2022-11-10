@@ -49,7 +49,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.1.12_rel-rx-1.0.0</version>
+		<version>6.1.12_rel-rx-1.0.1</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
@@ -708,20 +708,6 @@
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>CK-RX65N</board>
-					<section>
-						<name>B_ETHERNET_BUFFERS*</name>
-						<name>B_TX_DESC*</name>
-						<name>B_RX_DESC*</name>
-						<name>B</name>
-						<name>FREEMEM</name>
-						<address>0x00004000</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
@@ -733,6 +719,9 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
@@ -946,17 +935,6 @@
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
-					<section>
-						<name>B_ETHERNET_BUFFERS*</name>
-						<name>B_TX_DESC*</name>
-						<name>B_RX_DESC*</name>
-						<name>B</name>
-						<name>FREEMEM</name>
-						<address>0x00004000</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
@@ -1263,20 +1241,6 @@
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>CK-RX65N</board>
-					<section>
-						<name>B_ETHERNET_BUFFERS*</name>
-						<name>B_TX_DESC*</name>
-						<name>B_RX_DESC*</name>
-						<name>B</name>
-						<name>FREEMEM</name>
-						<address>0x00004000</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
@@ -1304,6 +1268,9 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
@@ -1622,20 +1589,6 @@
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>CK-RX65N</board>
-					<section>
-						<name>B_ETHERNET_BUFFERS*</name>
-						<name>B_TX_DESC*</name>
-						<name>B_RX_DESC*</name>
-						<name>B</name>
-						<name>FREEMEM</name>
-						<address>0x00004000</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
@@ -1663,6 +1616,9 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
@@ -1981,20 +1937,6 @@
 				<!-- set RXC linker section -->
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>CK-RX65N</board>
-					<section>
-						<name>B_ETHERNET_BUFFERS*</name>
-						<name>B_TX_DESC*</name>
-						<name>B_RX_DESC*</name>
-						<name>B</name>
-						<name>FREEMEM</name>
-						<address>0x00004000</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
@@ -2022,6 +1964,9 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
