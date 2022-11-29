@@ -67,6 +67,9 @@
 		<impdir>
 			<file>netxduo/addons/azure_iot/nx_azure_iot.c</file>
 			<file>netxduo/addons/azure_iot/nx_azure_iot.h</file>
+			<file>netxduo/addons/azure_iot/nx_azure_iot_adu_agent.c</file>
+			<file>netxduo/addons/azure_iot/nx_azure_iot_adu_agent.h</file>
+			<file>netxduo/addons/azure_iot/nx_azure_iot_adu_root_key.c</file>
 			<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client.c</file>
 			<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client.h</file>
 			<file>netxduo/addons/azure_iot/nx_azure_iot_json_reader.c</file>
