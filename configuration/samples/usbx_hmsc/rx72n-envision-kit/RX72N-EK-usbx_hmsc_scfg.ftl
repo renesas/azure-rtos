@@ -13,18 +13,28 @@
         <platform id="${targetDevice}"/>
     </general>
     <tool id="Interrupt">
-        <Item currentVect="90" id="USB0_USBR0" priority="2" usedState="Not Use"/>
-        <Item currentVect="181" defaultVect="181" id="USB0_USBI0" priority="3" usedState="Not Use"/>
+        <Item currentVect="185" defaultVect="185" id="USB0_USBI0" priority="3" usedState="Not Use"/>
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp7.20" version="7.20">
-                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
             <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="r_usb_basic">
+            <component display="r_usb_basic" id="r_usb_basic1.41" version="1.41">
+				<gridItem id="USB0_DP" selectedIndex="1"/>
+                <gridItem id="USB0_DM" selectedIndex="1"/>
+                <gridItem id="USB0_VBUSEN" selectedIndex="1"/>
+                <gridItem id="USB0_OVRCURA" selectedIndex="1"/>
+                <gridItem id="USB0_HOST" selectedIndex="1"/>
+				<gridItem id="USB_CFG_MODE" selectedIndex="0"/>
+                <gridItem id="USB_CFG_DEVICE_CLASS" selectedIndex="2"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -38,35 +48,39 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="netxduo">
-            <component display="Azure RTOS NetX Duo" id="netxduo${packageVersion}" version="${packageVersion}">
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="usbx">
             <component display="Azure RTOS UsbX Common" id="usbx${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-		<configuration enable="true" exclude="false" inuse="true" name="usbx_pcdc">
-            <component display="Azure RTOS UsbX PCDC" id="usbx_pcdc${packageVersion}" version="${packageVersion}">
+		<configuration enable="true" exclude="false" inuse="true" name="usbx_hmsc">
+            <component display="Azure RTOS UsbX HMSC" id="usbx_hmsc${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI10">
-            <allocatable id="SCI10">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
+		<configuration enable="true" exclude="false" inuse="true" name="azurertos_object">
+            <allocatable id="" name="" type="">
+                <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
+                    <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="usb_thread0"/>
+                        <option defaultValue="New Thread" id="threadname" value="New Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="usb_thread0_func"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="2048"/>
+                        <option defaultValue="1" id="priority" value="21"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="21"/>
+                        <option defaultValue="0" id="timeslice" value="1"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                </allocatable>
+                <allocatable id="QUEUE" name="QUEUE" type="TABALLOCATABLE"/>
+                <allocatable id="SEMAPHORE" name="SEMAPHORE" type="TABALLOCATABLE"/>
+                <allocatable id="MUTEX" name="MUTEX" type="TABALLOCATABLE"/>
+                <allocatable id="EVENT" name="EVENT" type="TABALLOCATABLE"/>
+                <allocatable id="TIMER" name="TIMER" type="TABALLOCATABLE"/>
             </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.11.0"/>
-            <allocator channelLevel0="10" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" display="SCI10" id="com.renesas.smc.swc.cg.rx.sciasync.rx671.sci10" type="">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+            <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.111"/>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
     </tool>
 </smc>

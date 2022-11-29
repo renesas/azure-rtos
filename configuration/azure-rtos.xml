@@ -2826,6 +2826,173 @@
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option-->
 			</app>
+			<app id="application" value="usbx_host_mass_storage_class" name="USBX Host Mass Storage Class sample project" description="This demonstration illustrates the setup and use of USBX host mass storage class to provide physical access to a data storage device.">
+				<board>RSKRX65N-2MB</board>
+				<board>RSKRX65N-2MB(TSIP)</board>
+				<board>RX65NCloudKit</board>
+				<board>CloudKitRX65N</board>
+				<board>CK-RX65N</board>
+				<board>RSKRX671</board>
+				<board>RX72NEnvisionKit</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<folder>configuration/samples/usbx_hmsc/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/usbx_hmsc/rsk-rx65n-2mb/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/usbx_hmsc/rx65n-cloudkit/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/usbx_hmsc/ck-rx65n/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/usbx_hmsc/rsk-rx671/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<folder>configuration/samples/usbx_hmsc/rx72n-envision-kit/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- TODO copy r_usb_basic driver sources later -->
+				<!--impdir>
+					<folder>rx-driver-package/source/r_usb_basic/r_usb_basic_vx.xx/r_usb_basic</folder>
+					<path>src/smc_gen/r_usb_basic</path>
+				</impdir-->
+				<!-- copy ICCRX linker script for RX65N, RX66T, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
+				</impdir>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>src/lnkr5f565ne.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>RSKRX671</board>
+					<file>src/lnkr5f5671e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>src/lnkr5f572nn.icf</file>
+				</linkerscript>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_usb_basic</path>
+					<path>src/smc_gen/r_usb_basic/src/driver/inc</path>
+					<path>src/smc_gen/r_usb_basic/src/hw/inc</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<path>configuration/samples/usbx_hmsc/rsk-rx65n-2mb/RSKRX65N-2MB-usbx_hmsc_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<path>configuration/samples/usbx_hmsc/rx65n-cloudkit/RX65N_Cloudkit-usbx_hmsc_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>CK-RX65N</board>
+					<path>configuration/samples/usbx_hmsc/ck-rx65n/CK-RX65N-usbx_hmsc_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/usbx_hmsc/rsk-rx671/RSKRX671-usbx_hmsc_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<path>configuration/samples/usbx_hmsc/rx72n-envision-kit/RX72N-EK-usbx_hmsc_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00004000</address>
+					</section>
+				</sections>
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<!--option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option-->
+			</app>
 			<app id="application" value="low_power" name="ThreadX Low Power sample project" description="This demonstration illustrates how to use ThreadX with low power mode">
 				<board>TargetBoardRX130</board>
 				<board>RSKRX140</board>
