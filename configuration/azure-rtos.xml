@@ -3867,6 +3867,11 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
 			<value>true</value>
 		</option>
+		<additionaloption>
+			<toolchain>GNURX</toolchain>
+			<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+			<value>true</value>
+		</additionaloption>
 		<!-- Open readme and AN file -->
 		<impdir>
 			<file>threadx/LICENSE.txt</file>
