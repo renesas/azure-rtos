@@ -974,7 +974,7 @@
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200">
+			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
@@ -1322,7 +1322,135 @@
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200">
+			<app id="application" value="iot-sdk-ewf" name="IoT Embedded SDK sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>GNURX</toolchain>
+				<board>CK-RX65N</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<file>configuration/samples/iot_sdk/common/demo_printf.h</file>
+					<file>configuration/samples/iot_sdk/common/hardware_setup.h</file>
+					<file>configuration/samples/iot_sdk/common/nx_azure_iot_cert.c</file>
+					<file>configuration/samples/iot_sdk/common/nx_azure_iot_cert.h</file>
+					<file>configuration/samples/iot_sdk/common/nx_azure_iot_ciphersuites.c</file>
+					<file>configuration/samples/iot_sdk/common/nx_azure_iot_ciphersuites.h</file>
+					<file>configuration/samples/iot_sdk/common/sample_device_identity.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk/ck-rx65n/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- TODO: copy readme common -->
+				<!--impdir>
+					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<path>.</path>
+				</impdir-->
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>src/lnkr5f565ne.icf</file>
+				</linkerscript>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<board>CK-RX65N</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<board>CK-RX65N</board>
+					<path>configuration/samples/iot_sdk_ewf/ck-rx65n/CK-RX65N-iot-sdk-ewf_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+			</app>
+			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
@@ -1670,7 +1798,133 @@
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
 			</app>
-			<app id="application" value="temperature-pnp" name="IoT Embedded SDK with IoT Plug and Play sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200">
+			<app id="application" value="iot-sdk-pnp-ewf" name="IoT Embedded SDK PNP sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK PnP sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>GNURX</toolchain>
+				<board>CK-RX65N</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<file>configuration/samples/iot_sdk_pnp/common/demo_printf.h</file>
+					<file>configuration/samples/iot_sdk_pnp/common/hardware_setup.h</file>
+					<file>configuration/samples/iot_sdk_pnp/common/nx_azure_iot_ciphersuites.c</file>
+					<file>configuration/samples/iot_sdk_pnp/common/nx_azure_iot_ciphersuites.h</file>
+					<file>configuration/samples/iot_sdk_pnp/common/sample_device_identity.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- TODO: copy readme common -->
+				<!--impdir>
+					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<path>.</path>
+				</impdir-->
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>src/lnkr5f565ne.icf</file>
+				</linkerscript>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<board>CK-RX65N</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<board>CK-RX65N</board>
+					<path>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/CK-RX65N-iot-sdk-pnp-ewf_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
+			</app>
+			<app id="application" value="temperature-pnp" name="IoT Embedded SDK with IoT Plug and Play sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
@@ -2025,6 +2279,136 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+			</app>
+			<app id="application" value="temperature-pnp-ewf" name="IoT Embedded SDK with IoT Plug and Play sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK with IoT Plug and Play sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>GNURX</toolchain>
+				<board>CK-RX65N</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<file>configuration/samples/temperature_pnp/common/demo_printf.h</file>
+					<file>configuration/samples/temperature_pnp/common/hardware_setup.h</file>
+					<file>configuration/samples/temperature_pnp/common/nx_azure_iot_pnp_helpers.c</file>
+					<file>configuration/samples/temperature_pnp/common/nx_azure_iot_pnp_helpers.h</file>
+					<file>configuration/samples/temperature_pnp/common/sample_device_identity.c</file>
+					<file>configuration/samples/temperature_pnp/common/sample_pnp_deviceinfo_component.c</file>
+					<file>configuration/samples/temperature_pnp/common/sample_pnp_deviceinfo_component.h</file>
+					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.c</file>
+					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/temperature_pnp_ewf/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/temperature_pnp_ewf/ck-rx65n/linker_script.ld</file>
+					<path>src</path>
+				</impdir>
+				<!-- TODO: copy readme common -->
+				<!--impdir>
+					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<path>.</path>
+				</impdir-->
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX65N, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>src/lnkr5f565ne.icf</file>
+				</linkerscript>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</incdir>
+				<incdir>
+					<board>CK-RX65N</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<board>CK-RX65N</board>
+					<path>configuration/samples/temperature_pnp_ewf/ck-rx65n/CK-RX65N-temperature-pnp-ewf_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<!-- enable remove unused code -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
+					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
+				</option>
 			</app>
 			<app id="application" value="guix_8bpp" name="GUIX 8bpp sample project" description="This demonstration illustrates GUIX sample project with 8 bits color look-up table">
 				<board>RSKRX65N-2MB</board>

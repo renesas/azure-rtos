@@ -897,6 +897,28 @@ Removing these packets from previous DNS queries prevents the DNS Client socket 
          <description>The lowest level (highest numeric stratum level) SNTP Server stratum the Client will accept.
 The NetX Duo SNTP Client default is 2.</description>
       </property>
+	  <!-- NX_SNTP_CLIENT_MAX_ROOT_DISPERSION -->
+      <property id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" display="Enable maximum server clock dispersion option" default="0" type="checkbox">
+         <option id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION.0" display="Disable" value="0" />
+         <option id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" display="Define maximum server clock dispersion" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION}" == 1)</constraint>
+         <description>The maximum server clock dispersion (microseconds), the Client will accept.
+To disable this requirement, set the maximum root dispersion to 0x0. The NetX Duo SNTP Client default is set to 50000.</description>
+      </property>
+	  <!-- NX_SNTP_CURRENT_YEAR -->
+      <property id="USE_NX_SNTP_CURRENT_YEAR" display="Enable SNTP current year option" default="0" type="checkbox">
+         <option id="USE_NX_SNTP_CURRENT_YEAR.0" display="Disable" value="0" />
+         <option id="USE_NX_SNTP_CURRENT_YEAR.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_SNTP_CURRENT_YEAR" display="Define SNTP current year" default="2022" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_SNTP_CURRENT_YEAR}" == 1)</constraint>
+         <description>Set this value to equal or less than current year (need not be same year as in NTP time being evaluated). 
+The default value is 2015.</description>
+      </property>
       <!-- NX_AZURE_DISABLE_IOT_SECURITY_MODULE -->
       <property id="USE_NX_AZURE_DISABLE_IOT_SECURITY_MODULE" display="Enable extra message sent disable option when connnecting to IoT Hub" default="0" type="checkbox">
          <option id="USE_NX_AZURE_DISABLE_IOT_SECURITY_MODULE.0" display="Disable" value="0" />
