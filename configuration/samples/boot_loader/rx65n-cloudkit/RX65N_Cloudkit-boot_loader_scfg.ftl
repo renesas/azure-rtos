@@ -13,6 +13,7 @@
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp7.20" version="7.20">
+				<gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="1"/>
 				<gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
 				<gridItem id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" selectedIndex="1"/>
 				<gridItem id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" selectedIndex="5"/>
@@ -34,7 +35,8 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
 		<configuration inuse="true" name="r_fwup">
-            <component display="r_fwup" id="r_fwup1.04" version="1.04">
+            <component display="r_fwup" id="r_fwup1.06" version="1.06">
+				<gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="0"/>
 				<gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>

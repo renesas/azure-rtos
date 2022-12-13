@@ -20,6 +20,22 @@
 #include <r_ether_rx_if.h>
 
 #include <demo_printf.h>
+
+/* Defined, HTTP proxy is enabled.  */
+/*
+#define SAMPLE_HTTP_PROXY_ENABLE
+*/
+
+#ifdef SAMPLE_HTTP_PROXY_ENABLE
+#ifndef NX_ENABLE_HTTP_PROXY
+#error "SYMBOL NX_ENABLE_HTTP_PROXY must be defined. "
+#endif /* NX_ENABLE_HTTP_PROXY */
+#endif /* SAMPLE_HTTP_PROXY_ENABLE */
+
+#if defined(SAMPLE_HTTP_PROXY_ENABLE)
+#include "nx_http_proxy_client.h"
+#endif /* SAMPLE_HTTP_PROXY_ENABLE */
+
 /* Include the sample.  */
 extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_ptr, UINT (*unix_time_callback)(ULONG *unix_time));
 
@@ -105,6 +121,24 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 /* Seconds between Unix Epoch (1/1/1970) and NTP Epoch (1/1/1999) */
 #define SAMPLE_UNIX_TO_NTP_EPOCH_SECOND 0x83AA7E80
 
+#if defined(SAMPLE_HTTP_PROXY_ENABLE)
+#ifndef SAMPLE_HTTP_PROXY_SERVER
+#define SAMPLE_HTTP_PROXY_SERVER        IP_ADDRESS(192, 168, 100, 6)
+#endif /* SAMPLE_HTTP_PROXY_SERVER  */
+
+#ifndef SAMPLE_HTTP_PROXY_SERVER_PORT
+#define SAMPLE_HTTP_PROXY_SERVER_PORT   8888
+#endif /* SAMPLE_HTTP_PROXY_SERVER_PORT  */
+
+#ifndef SAMPLE_HTTP_PROXY_USER_NAME
+#define SAMPLE_HTTP_PROXY_USER_NAME     ""
+#endif /* SAMPLE_HTTP_PROXY_USER_NAME  */
+
+#ifndef SAMPLE_HTTP_PROXY_PASSWORD
+#define SAMPLE_HTTP_PROXY_PASSWORD      ""
+#endif /* SAMPLE_HTTP_PROXY_PASSWORD  */
+#endif /* SAMPLE_HTTP_PROXY_ENABLE  */
+
 #ifndef SAMPLE_NETWORK_DRIVER
 #define SAMPLE_NETWORK_DRIVER           nx_driver_rx_fit
 #endif /* SAMPLE_NETWORK_DRIVER */
@@ -112,6 +146,22 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #ifndef SAMPLE_BOARD_SETUP
 #define SAMPLE_BOARD_SETUP           platform_setup
 #endif /* SAMPLE_BOARD_SETUP */
+
+#ifndef SAMPLE_DEVICE_MANUFACTURER
+#define SAMPLE_DEVICE_MANUFACTURER          "RENESAS"
+#endif /* SAMPLE_DEVICE_MANUFACTURER */
+
+#ifndef SAMPLE_DEVICE_MODEL
+#define SAMPLE_DEVICE_MODEL          		"RX72N-EK"
+#endif /* SAMPLE_DEVICE_MODEL */
+
+#ifndef SAMPLE_LEAF_DEVICE_MANUFACTURER
+#define SAMPLE_LEAF_DEVICE_MANUFACTURER      "RENESAS"
+#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
+
+#ifndef SAMPLE_LEAF_DEVICE_MODEL
+#define SAMPLE_LEAF_DEVICE_MODEL      		 "RX72N-EK-Leaf"
+#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
 
 static TX_THREAD        sample_helper_thread;
 static NX_PACKET_POOL   pool_0;
@@ -299,6 +349,25 @@ ULONG   dns_server_address[3];
 #ifndef SAMPLE_DHCP_DISABLE
 UINT    dns_server_address_size = sizeof(dns_server_address);
 #endif
+#if defined(SAMPLE_HTTP_PROXY_ENABLE)
+NXD_ADDRESS proxy_server_address;
+#endif /* SAMPLE_HTTP_PROXY_ENABLE */
+
+#if defined(SAMPLE_HTTP_PROXY_ENABLE)
+
+    /* Enabled HTTP proxy.  */
+    proxy_server_address.nxd_ip_version = NX_IP_VERSION_V4;
+    proxy_server_address.nxd_ip_address.v4 = SAMPLE_HTTP_PROXY_SERVER;
+    status = nx_http_proxy_client_enable(&ip_0, &proxy_server_address, SAMPLE_HTTP_PROXY_SERVER_PORT,
+                                         SAMPLE_HTTP_PROXY_USER_NAME, sizeof(SAMPLE_HTTP_PROXY_USER_NAME) - 1,
+                                         SAMPLE_HTTP_PROXY_PASSWORD, sizeof(SAMPLE_HTTP_PROXY_PASSWORD) - 1);
+    if (status)
+    {
+        printf("Failed to enable HTTP proxy!\r\n");
+        return;
+    }
+#endif /* SAMPLE_HTTP_PROXY_ENABLE  */
+
 UINT    link_try;
 ether_return_t ether_status;
 

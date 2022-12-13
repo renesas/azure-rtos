@@ -80,8 +80,8 @@ static netx_driver_rx_fit_data_t netx_driver_rx_fit_data[1];
 /* Driver instance MAC address. MAC address should be set prior to
    initializing the driver by calling 'nx_ip_interface_physical_address_set()'
    otherwise the default address will be used.*/
-static UCHAR _netx_driver_rx_fit_mac_address[] = {0x0,0x04,0x00,0x00,0x00,0x00};
-
+extern uint8_t df__netx_driver_rx_fit_mac_address[6];
+uint8_t _netx_driver_rx_fit_mac_address[6];
 
 VOID nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr)
 {
@@ -182,6 +182,11 @@ static VOID _netx_driver_initialize(NX_IP_DRIVER *driver_req_ptr)
     netx_driver_rx_fit_data[chan].deferred_events_flags = 0u;
 
     /* Save the MAC address. */
+    for (UINT i = 0; i < 5 ; i++)
+    {
+    	_netx_driver_rx_fit_mac_address[i] = df__netx_driver_rx_fit_mac_address[i];
+    }
+
     interface_ptr->nx_interface_physical_address_msw =
             (ULONG)((_netx_driver_rx_fit_mac_address[0] << 8) | (_netx_driver_rx_fit_mac_address[1]));
     interface_ptr->nx_interface_physical_address_lsw =

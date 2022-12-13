@@ -1,8 +1,8 @@
 MEMORY
 {
 	RAM : ORIGIN = 0x4, LENGTH = 0x5fffc
-	ROM : ORIGIN = 0xFFE00000, LENGTH = 2097152
-	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 256
+	ROM : ORIGIN = 0xFFF00000, LENGTH = 1048576
+	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
 {
@@ -19,7 +19,7 @@ SECTIONS
 	{
 	*( P_NEW_FIRMWARE )
 	} > ROM
-	.text 0xFFFC0000: AT(0xFFFC0000)
+	.text 0xFFFF0000: AT(0xFFFF0000)
 	{
 		*(.text)
 		*(.text.*)
@@ -167,7 +167,7 @@ SECTIONS
 	{
 		KEEP(*(.ofs8))
 	} > OFS
-	.r_bsp_NULL :
+.r_bsp_NULL :
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;

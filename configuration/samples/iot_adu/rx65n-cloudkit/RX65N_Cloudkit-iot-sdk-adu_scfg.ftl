@@ -73,6 +73,8 @@
 		<configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx4.90" version="4.90">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
+				<gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
+				<gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
 				<gridItem id="FLASH_CFG_CODE_FLASH_RUN_FROM_ROM" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -98,6 +100,7 @@
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="4096"/>
 				<gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+				<gridItem id="SCI_CFG_ERI_TEI_PRIORITY" selectedIndex="3"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -110,6 +113,17 @@
                 <gridItem id="WIFI_CFG_RTS_PORT" selectedIndex="2"/>
                 <gridItem id="WIFI_CFG_RTS_PIN" selectedIndex="2"/>
             </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="r_fwup">
+            <component display="r_fwup" id="r_fwup1.06" version="1.06">
+                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="3"/>
+                <gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="r_sys_time_rx">
+            <component display="r_sys_time_rx" id="r_sys_time_rx1.01" version="1.01"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>

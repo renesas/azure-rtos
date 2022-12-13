@@ -2,7 +2,7 @@ MEMORY
 {
 	RAM : ORIGIN = 0x4, LENGTH = 0x3fffc
 	RAM2 : ORIGIN = 0x00800000, LENGTH = 393216
-	ROM : ORIGIN = 0xFFE00000, LENGTH = 2097152
+	ROM : ORIGIN = 0xFFF00000, LENGTH = 1048576
 	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
@@ -20,7 +20,7 @@ SECTIONS
 	{
 	*( P_NEW_FIRMWARE )
 	} > ROM
-	.text 0xFFFC0000: AT(0xFFFC0000)
+	.text 0xFFFF0000: AT(0xFFFF0000)
 	{
 		*(.text)
 		*(.text.*)
@@ -135,7 +135,7 @@ SECTIONS
 		_ebss = .;
 		. = ALIGN(128);
 		_end = .;
-	} > RAM AT>RAM
+	} > RAM2 AT>RAM2
 	.ofs1 0xFE7F5D00: AT(0xFE7F5D00)
 	{
 		KEEP(*(.ofs1))

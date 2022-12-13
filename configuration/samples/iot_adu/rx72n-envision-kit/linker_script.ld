@@ -1,26 +1,29 @@
 MEMORY
 {
 	RAM : ORIGIN = 0x4, LENGTH = 0x7fffc
+	DATAFLASH : ORIGIN = 0x00100000, LENGTH = 0x7FFF
 	RAM2 : ORIGIN = 0x00800000, LENGTH = 524288
-	ROM : ORIGIN = 0xFFC00000, LENGTH = 4194304
+	ROM : ORIGIN = 0xFFF00000, LENGTH = 1048576
 	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
 {
-	.exvectors 0xFFFBFF80: AT(0xFFFBFF80)
+	.exvectors 0xFFFEFF80: AT(0xFFFEFF80)
 	{
 		"_exvectors_start" = .;
 		KEEP(*(.exvectors))
 	"_exvectors_end" = .;
 	} >ROM
-	.fvectors 0xFFFBFFFC: AT(0xFFFBFFFC)
+	.fvectors 0xFFFEFFFC: AT(0xFFFEFFFC)
 	{
 		KEEP(*(.fvectors))
-	} > ROM P_NEW_FIRMWARE 0xFFE00300 : AT(0xFFE00300)
+	} > ROM 
+	P_NEW_FIRMWARE 0xFFF00300 : AT(0xFFF00300)
     {
 	*( P_NEW_FIRMWARE )
 	} > ROM
-	.text 0xFFE00300: AT(0xFFE00300)
+	
+	.text 0xFFF00300: AT(0xFFF00300)
 	{
 		*(.text)
 		*(.text.*)
@@ -30,7 +33,7 @@ SECTIONS
 	.rvectors ALIGN(4):
 	{
 		_rvectors_start = .;
-		INCLUDE ..\src\smc_gen\r_bsp\mcu\all\linker_script_rvectors.inc
+		INCLUDE ../src/smc_gen/r_bsp/mcu/all/linker_script_rvectors.inc
 		_rvectors_end = .;
 	} > ROM
 	.init :
@@ -108,24 +111,17 @@ SECTIONS
         *(B_ETHERNET_BUFFERS_1)
         _B_ETHERNET_BUFFERS_1_end = .;
     } >RAM
-    B_RX_DESC_1 (NOLOAD) :
+        B_RX_DESC_1 (NOLOAD) :
     {
         _B_RX_DESC_1_start = .;
         *(B_RX_DESC_1)
         _B_RX_DESC_1_end = .;
     } >RAM
-    B_TX_DESC_1 (NOLOAD) :
+        B_TX_DESC_1 (NOLOAD) :
     {
         _B_TX_DESC_1_start = .;
         *(B_TX_DESC_1)
         _B_TX_DESC_1_end = .;
-    } >RAM
-    B_FRAME_BUFFER_1 (NOLOAD) :
-    {
-    	. = ALIGN(64);
-        _FRAME_BUFFER_start = .;
-        *(B_FRAME_BUFFER_1)
-        _FRAME_BUFFER_end = .;
     } >RAM
 	.data : AT(_mdata)
 	{
@@ -148,6 +144,7 @@ SECTIONS
 	{
 		*(.gcc_exc)
 	} > RAM
+	
 	.bss :
 	{
 		_bss = .;
@@ -159,7 +156,7 @@ SECTIONS
 		*(B_2)
 		_ebss = .;
 		_end = .;
-	} > RAM2
+	} > RAM2 AT>RAM2
 	.ofs1 0xFE7F5D00: AT(0xFE7F5D00)
 	{
 		KEEP(*(.ofs1))
@@ -192,24 +189,31 @@ SECTIONS
 	{
 		KEEP(*(.ofs8))
 	} > OFS
+	.system_config :
+	{
+		. = ALIGN(4);
+		*(system_config)
+		*(system_config.*)
+		. = ALIGN(4);
+	} >DATAFLASH
 	.r_bsp_NULL :
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
-	} >RAM
-.r_bsp_istack BLOCK(0x4) (NOLOAD) :
+	} >RAM AT>RAM
+    .r_bsp_istack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
-	} >RAM
-.istack :
+	} >RAM AT>RAM
+    .istack :
 	{
 		"_istack" = .;
 	} >RAM
-.r_bsp_ustack BLOCK(0x4) (NOLOAD) :
+    .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
-	} >RAM
-.ustack :
+	} >RAM AT>RAM
+    .ustack :
 	{
 		"_ustack" = .;
 	} >RAM

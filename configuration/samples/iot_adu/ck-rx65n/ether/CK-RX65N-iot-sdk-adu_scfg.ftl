@@ -93,6 +93,8 @@
 		<configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx4.90" version="4.90">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
+				<gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
+				<gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
 				<gridItem id="FLASH_CFG_CODE_FLASH_RUN_FROM_ROM" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -100,6 +102,17 @@
 		<configuration inuse="true" name="r_byteq">
             <component display="r_byteq" id="r_byteq2.00" version="2.00">
             </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="r_fwup">
+            <component display="r_fwup" id="r_fwup1.06" version="1.06">
+                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="3"/>
+                <gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="r_sys_time_rx">
+            <component display="r_sys_time_rx" id="r_sys_time_rx1.01" version="1.01"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>

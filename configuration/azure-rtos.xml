@@ -3658,13 +3658,6 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_azure_iot_adu_agent_rx65n_driver.c</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
@@ -3816,6 +3809,23 @@
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
+					<path>src/smc_gen/r_sys_time_rx</path>
+				</impdir>
+				<!-- TODO: copy r_fwup driver sources 
+				<impdir>
+					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
+					<path>src/smc_gen/r_fwup</path>
+				</impdir> -->
+				<!-- copy patch file for wifi -->
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
+					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -3829,6 +3839,10 @@
 					<path>src/smc_gen/r_flash_rx/src</path>
 					<path>src/smc_gen/r_byteq</path>
 					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sys_time_rx</path>
+					<path>src/smc_gen/r_sys_time_rx/src</path>
+					<path>src/smc_gen/r_fwup</path>
+					<path>src/smc_gen/r_fwup/src</path>
 				</incdir>
 				<incdir>
 					<board>RSKRX65N-2MB</board>
@@ -3883,11 +3897,27 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
+						<name>RPFRAM</name>
 						<name>RPFRAM2</name>
 						<name>FREEMEM</name>
 						<address>0x00000004</address>
 					</section>
 					<mappedramrom>PFRAM2=RPFRAM2</mappedramrom>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<section>
+						<name>C_CONNECT_INFO*</name>
+						<address>0x00100000</address>
+					</section>
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
@@ -3925,6 +3955,8 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<section>
 						<name>C_1</name>
 						<name>C_2</name>
@@ -3940,23 +3972,6 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
-					<section>
-						<name>C_1</name>
-						<name>C_2</name>
-						<name>C</name>
-						<name>C_8</name>
-						<name>C$*</name>
-						<name>D*</name>
-						<name>W*</name>
-						<name>L</name>
-						<name>P*</name>
-						<address>0xFFE00300</address>
-					</section>
-				</sections>
-				<sections>
-					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
@@ -3967,7 +3982,7 @@
 					<board>EnvisionKitRX72N</board>
 					<section>
 						<name>EXCEPTVECT</name>
-						<address>0xFFFBFF80</address>
+						<address>0xFFFEFF80</address>
 					</section>
 				</sections>
 				<sections>
@@ -3982,7 +3997,7 @@
 					<board>EnvisionKitRX72N</board>
 					<section>
 						<name>RESETVECT</name>
-						<address>0xFFFBFFFC</address>
+						<address>0xFFFEFFFC</address>
 					</section>
 				</sections>
 				<!-- define macro -->
@@ -3994,6 +4009,8 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
@@ -4069,14 +4086,14 @@
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
-					<file>configuration/samples/boot_loader/ck-rx65n/linker_script.ld</file>
-					<file>configuration/samples/boot_loader/ck-rx65n/linker_script_sample.ld</file>
+					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_script.ld</file>
+					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_script_sample.ld</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>CK-RX65N</board>
-					<file>configuration/samples/boot_loader/ck-rx65n/linker_section_sample.esi</file>
+					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -4143,10 +4160,11 @@
 					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
 					<path>src/smc_gen/r_sys_time_rx</path>
 				</impdir>
+				<!-- TODO: copy r_fwup driver sources 
 				<impdir>
 					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
 					<path>src/smc_gen/r_fwup</path>
-				</impdir>
+				</impdir> -->
 				<!-- include -->
 				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
@@ -4220,13 +4238,36 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
+					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C$*</name>
+						<name>D*</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>PFRAM</name>
+						<name>PFRAM2</name>
+						<address>0xFFFF0000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C_8</name>
+						<name>C</name>
+						<name>C$*</name>
+						<name>D*</name>
+						<name>W*</name>
+						<name>L</name>
 						<name>PFRAM</name>
 						<name>PFRAM2</name>
-						<address>0xFFFC0000</address>
+						<address>0xFFFF0000</address>
 					</section>
 				</sections>
 				<!-- set option converter  -->
