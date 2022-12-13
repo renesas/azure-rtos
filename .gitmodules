@@ -16,3 +16,6 @@
 [submodule "usbx"]
 	path = usbx
 	url = https://github.com/azure-rtos/usbx/
+[submodule "embedded-wireless-framework"]
+	path = embedded-wireless-framework
+	url = https://github.com/Azure/embedded-wireless-framework
