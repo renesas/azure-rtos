@@ -922,7 +922,7 @@
 /* Defined, the Azure Device Update settings  */
 #define USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT				0
 #if USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT
-#define NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT					1
+#define NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT					0
 #endif
 
 /* Defined, the device information for Azure IoT  */

@@ -1344,7 +1344,7 @@
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
-					<file>configuration/samples/iot_sdk/ck-rx65n/linker_script.ld</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- TODO: copy readme common -->
@@ -4226,10 +4226,12 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
-						<name>RPFRAM2</name>
+						<name>RPFRAM</name>
+						<!--name>RPFRAM2</name-->
 						<address>0x00000004</address>
 					</section>
-					<mappedramrom>PFRAM2=RPFRAM2</mappedramrom>
+					<mappedramrom>PFRAM=RPFRAM</mappedramrom>
+					<!--mappedramrom>PFRAM2=RPFRAM2</mappedramrom-->
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
@@ -4239,6 +4241,7 @@
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
 					<section>
+						<!--name>PResetPRG</name>
 						<name>C_1</name>
 						<name>C_2</name>
 						<name>C</name>
@@ -4246,8 +4249,9 @@
 						<name>D*</name>
 						<name>W*</name>
 						<name>L</name>
+						<name>P</name-->
 						<name>PFRAM</name>
-						<name>PFRAM2</name>
+						<!--name>PFRAM2</name-->
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
@@ -4257,6 +4261,7 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
+						<!--name>PResetPRG</name>
 						<name>C_1</name>
 						<name>C_2</name>
 						<name>C_8</name>
@@ -4265,8 +4270,9 @@
 						<name>D*</name>
 						<name>W*</name>
 						<name>L</name>
+						<name>P</name-->
 						<name>PFRAM</name>
-						<name>PFRAM2</name>
+						<!--name>PFRAM2</name-->
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>

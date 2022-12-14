@@ -931,7 +931,7 @@ The default value is 2015.</description>
          <option id="USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT.1" display="Enable" value="1" />
          <description />
       </property>
-      <property id="NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT" display="Azure IoT ADU agent proxy update count" default="1" type="textbox">
+      <property id="NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT" display="Azure IoT ADU agent proxy update count" default="0" type="textbox">
          <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT}" == 1)</constraint>
          <description />
       </property>
