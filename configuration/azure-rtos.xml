@@ -989,6 +989,10 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src</folder>
@@ -1329,11 +1333,11 @@
 				<impdir>
 					<file>configuration/samples/iot_sdk/common/demo_printf.h</file>
 					<file>configuration/samples/iot_sdk/common/hardware_setup.h</file>
-					<file>configuration/samples/iot_sdk/common/nx_azure_iot_cert.c</file>
-					<file>configuration/samples/iot_sdk/common/nx_azure_iot_cert.h</file>
-					<file>configuration/samples/iot_sdk/common/nx_azure_iot_ciphersuites.c</file>
-					<file>configuration/samples/iot_sdk/common/nx_azure_iot_ciphersuites.h</file>
 					<file>configuration/samples/iot_sdk/common/sample_device_identity.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1462,6 +1466,10 @@
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iot_sdk_pnp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1805,9 +1813,11 @@
 				<impdir>
 					<file>configuration/samples/iot_sdk_pnp/common/demo_printf.h</file>
 					<file>configuration/samples/iot_sdk_pnp/common/hardware_setup.h</file>
-					<file>configuration/samples/iot_sdk_pnp/common/nx_azure_iot_ciphersuites.c</file>
-					<file>configuration/samples/iot_sdk_pnp/common/nx_azure_iot_ciphersuites.h</file>
 					<file>configuration/samples/iot_sdk_pnp/common/sample_device_identity.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1936,6 +1946,10 @@
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/temperature_pnp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2294,6 +2308,10 @@
 					<file>configuration/samples/temperature_pnp/common/sample_pnp_deviceinfo_component.h</file>
 					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.c</file>
 					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -3655,6 +3673,10 @@
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iot_adu/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
