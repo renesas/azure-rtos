@@ -1,8 +1,10 @@
 ---------------
 1. Usage Notes
 ---------------
+Please note that this sample project is using preliminary version of Embedded Wireless Framework (EWF).
+
 1.1. For more information about how to use this sample project, 
-please refer to section 2.5 of r01an6455ej0101-rx-azure-rtos.pdf
+please refer to section 2.x of r01an6455ej010x-rx-azure-rtos.pdf
 
 1.2. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project

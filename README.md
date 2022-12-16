@@ -319,7 +319,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * Support USBX HMSC sample
   * Support IoT Embedded SDK sample using EWF (Preliminary version).
     Note: only support GCC RX for this preliminary version
-  * Support ADU and bootloader sample
+  * Support ADU and bootloader sample.
+    Note: only support CC-RX and GCC RX
   * Set "-m64bit-doubles" as default build option for GCC RX project
   * Update IoT samples to use the latest azure_iot cert from NetXDuo
 * 6.1.12_rel-rx-1.0.1

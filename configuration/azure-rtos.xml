@@ -230,13 +230,6 @@
 				</impdir>
 				<!-- copy sample ld and readme for RX130, RX140, RX72N -->
 				<impdir>
-					<toolchain>GNURX</toolchain>
-					<series>RX100</series>
-					<group>RX130</group>
-					<file>configuration/samples/ramdisk/rx130/linker_script_sample.ld</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
 					<file>configuration/samples/ramdisk/README.md</file>
 					<path>.</path>
 				</impdir>
@@ -244,8 +237,8 @@
 					<toolchain>GNURX</toolchain>
 					<series>RX100</series>
 					<group>RX130</group>
-					<file>configuration/samples/ramdisk/rx130/README.md</file>
-					<path>.</path>
+					<file>configuration/samples/ramdisk/rx130/linker_script_sample.ld</file>
+					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -256,24 +249,10 @@
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
-					<series>RX100</series>
-					<group>RX140</group>
-					<file>configuration/samples/ramdisk/rx140/README.md</file>
-					<path>.</path>
-				</impdir>
-				<impdir>
-					<toolchain>GNURX</toolchain>
 					<series>RX700</series>
 					<group>RX72N</group>
 					<file>configuration/samples/ramdisk/rx72n/linker_script_sample.ld</file>
 					<path>src</path>
-				</impdir>
-				<impdir>
-					<toolchain>GNURX</toolchain>
-					<series>RX700</series>
-					<group>RX72N</group>
-					<file>configuration/samples/ramdisk/rx72n/README.md</file>
-					<path>.</path>
 				</impdir>
 				<!-- post SC code generate to copy linker_script.ld file -->
 				<postscgen>
@@ -1351,11 +1330,11 @@
 					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
-				<!-- TODO: copy readme common -->
-				<!--impdir>
+				<!-- copy readme common -->
+				<impdir>
 					<file>configuration/samples/iot_sdk_ewf/README.md</file>
 					<path>.</path>
-				</impdir-->
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -1831,11 +1810,11 @@
 					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
-				<!-- TODO: copy readme common -->
-				<!--impdir>
+				<!-- copy readme common -->
+				<impdir>
 					<file>configuration/samples/iot_sdk_ewf/README.md</file>
 					<path>.</path>
-				</impdir-->
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -2325,11 +2304,11 @@
 					<file>configuration/samples/temperature_pnp_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
-				<!-- TODO: copy readme common -->
-				<!--impdir>
+				<!-- copy readme common -->
+				<impdir>
 					<file>configuration/samples/iot_sdk_ewf/README.md</file>
 					<path>.</path>
-				</impdir-->
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -2606,13 +2585,7 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/guix_16bpp/README.md</file>
-					<path>.</path>
-				</impdir>
-				<impdir>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
+					<file>configuration/samples/guix_8bpp/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- post SC code generate to copy linker_script.ld file -->
@@ -2802,13 +2775,7 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/guix_16bpp/README.md</file>
-					<path>.</path>
-				</impdir>
-				<impdir>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/guix_16bpp/rx72n-envision-kit/README.md</file>
+					<file>configuration/samples/guix_8bpp/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- post SC code generate to copy linker_script.ld file -->
@@ -3268,6 +3235,10 @@
 					<folder>configuration/samples/usbx_hmsc/rx72n-envision-kit/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
+				<impdir>
+					<file>configuration/samples/usbx_hmsc/README.md</file>
+					<path>.</path>
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -3662,6 +3633,8 @@
 				</sections>
 			</app>
 			<app id="application" value="iot_adu" name="Azure Device Update (ADU) sample project" description="This demonstration illustrates OTA firmware update. Note: this project requires bootloader project.">
+				<toolchain>RXC</toolchain>
+				<toolchain>GNURX</toolchain>
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
@@ -3787,10 +3760,10 @@
 					<path>src</path>
 				</impdir>
 				<!-- copy readme file -->
-				<!--impdir>
-					<file>configuration/samples/low_power/README.md</file>
+				<impdir>
+					<file>configuration/samples/boot_loader/README.md</file>
 					<path>.</path>
-				</impdir-->
+				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
@@ -4045,6 +4018,8 @@
 				</option>
 			</app>
 			<app id="application" value="boot_loader" name="Secure bootloader sample project" description="This sample is used together with ADU sample project to provide a secure boot">
+				<toolchain>RXC</toolchain>
+				<toolchain>GNURX</toolchain>
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
