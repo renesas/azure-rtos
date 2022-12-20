@@ -846,5 +846,114 @@
          <option id="USE_NX_ENABLE_TCPIP_OFFLOAD.1" display="Enable" value="1" />
          <description />
       </property>
+      <!-- NX_SECURE_TLS_DISABLE_TLS_1_1 -->
+      <property id="USE_NX_SECURE_TLS_DISABLE_TLS_1_1" display="Disable secure TLS version 1.1" default="0" type="checkbox">
+         <option id="USE_NX_SECURE_TLS_DISABLE_TLS_1_1.0" display="Disable" value="0" />
+         <option id="USE_NX_SECURE_TLS_DISABLE_TLS_1_1.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_DNS_CLIENT_USER_CREATE_PACKET_POOL -->
+      <property id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL" display="Define creating packet pool for DNS client" default="0" type="checkbox">
+         <option id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL.0" display="Disable" value="0" />
+         <option id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL.1" display="Enable" value="1" />
+         <description>This macro allows the DNS Client application to create the packet pool for the DNS Client.
+This packet pool is used for allocating packets for sending DNS messages.</description>
+      </property>
+      <!-- NX_DNS_CLIENT_CLEAR_QUEUE -->
+      <property id="USE_NX_DNS_CLIENT_CLEAR_QUEUE" display="Enable DNS client to clear old DNS messages" default="0" type="checkbox">
+         <option id="USE_NX_DNS_CLIENT_CLEAR_QUEUE.0" display="Disable" value="0" />
+         <option id="USE_NX_DNS_CLIENT_CLEAR_QUEUE.1" display="Enable" value="1" />
+         <description>This enables the DNS Client to clear old DNS messages off the receive queue before sending a new query. 
+Removing these packets from previous DNS queries prevents the DNS Client socket queue from overflowing and dropping valid packets.</description>
+      </property>
+      <!-- NXD_MQTT_PING_TIMEOUT_DELAY -->
+      <property id="USE_NXD_MQTT_PING_TIMEOUT_DELAY" display="Enable MQTT client timeout for PINGRESP from broker modification" default="0" type="checkbox">
+         <option id="USE_NXD_MQTT_PING_TIMEOUT_DELAY.0" display="Disable" value="0" />
+         <option id="USE_NXD_MQTT_PING_TIMEOUT_DELAY.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NXD_MQTT_PING_TIMEOUT_DELAY" display="Define the time MQTT client waits for PINGRESP from broker" default="500" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NXD_MQTT_SOCKET_TIMEOUT}" == 1)</constraint>
+         <description>Defines the time the MQTT client waits for PINGRESP from the broker after it sends out MQTT PINGREQ</description>
+      </property>
+      <!-- NXD_MQTT_SOCKET_TIMEOUT -->
+      <property id="USE_NXD_MQTT_SOCKET_TIMEOUT" display="Enable TCP socket disconnect call timeout modification" default="0" type="checkbox">
+         <option id="USE_NXD_MQTT_SOCKET_TIMEOUT.0" display="Disable" value="0" />
+         <option id="USE_NXD_MQTT_SOCKET_TIMEOUT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NXD_MQTT_SOCKET_TIMEOUT" display="Define TCP socket disconnect call timeout from MQTT server" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NXD_MQTT_SOCKET_TIMEOUT}" == 1)</constraint>
+         <description>Defines the time out in the TCP socket disconnect call when disconnecting from the MQTT server in timer ticks</description>
+      </property>
+      <!-- NX_SNTP_CLIENT_MIN_SERVER_STRATUM -->
+      <property id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM" display="Enable lowest level SNTP Server stratum option" default="0" type="checkbox">
+         <option id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM.0" display="Disable" value="0" />
+         <option id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_SNTP_CLIENT_MIN_SERVER_STRATUM" display="Define lowest level SNTP Server stratum" default="3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM}" == 1)</constraint>
+         <description>The lowest level (highest numeric stratum level) SNTP Server stratum the Client will accept.
+The NetX Duo SNTP Client default is 2.</description>
+      </property>
+	  <!-- NX_SNTP_CLIENT_MAX_ROOT_DISPERSION -->
+      <property id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" display="Enable maximum server clock dispersion option" default="0" type="checkbox">
+         <option id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION.0" display="Disable" value="0" />
+         <option id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" display="Define maximum server clock dispersion" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION}" == 1)</constraint>
+         <description>The maximum server clock dispersion (microseconds), the Client will accept.
+To disable this requirement, set the maximum root dispersion to 0x0. The NetX Duo SNTP Client default is set to 50000.</description>
+      </property>
+	  <!-- NX_SNTP_CURRENT_YEAR -->
+      <property id="USE_NX_SNTP_CURRENT_YEAR" display="Enable SNTP current year option" default="0" type="checkbox">
+         <option id="USE_NX_SNTP_CURRENT_YEAR.0" display="Disable" value="0" />
+         <option id="USE_NX_SNTP_CURRENT_YEAR.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_SNTP_CURRENT_YEAR" display="Define SNTP current year" default="2022" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_SNTP_CURRENT_YEAR}" == 1)</constraint>
+         <description>Set this value to equal or less than current year (need not be same year as in NTP time being evaluated). 
+The default value is 2015.</description>
+      </property>
+      <!-- NX_AZURE_DISABLE_IOT_SECURITY_MODULE -->
+      <property id="USE_NX_AZURE_DISABLE_IOT_SECURITY_MODULE" display="Enable extra message sent disable option when connnecting to IoT Hub" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_DISABLE_IOT_SECURITY_MODULE.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_DISABLE_IOT_SECURITY_MODULE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT -->
+      <property id="USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT" display="Enable Azure IoT ADU agent proxy update count" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT" display="Azure IoT ADU agent proxy update count" default="0" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_ADU_AGENT_PROXY_UPDATE_COUNT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR -->
+      <property id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR" display="Enable Azure IoT Hub client user agent device vendor" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR" display="Azure IoT Hub client user agent device vendor" default="4" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE -->
+      <property id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" display="Enable Azure IoT Hub client user agent device type" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" display="Azure IoT Hub client user agent device type" default="" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE}" == 1)</constraint>
+         <description />
+      </property>
    </configuration>
 </module>

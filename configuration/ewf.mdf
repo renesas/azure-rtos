@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+/***********************************************************************************************************************
+  Purpose: Module Description File (MDF) Example (Schema Version 2.0)
+           This is a description of a sample FIT module configuration file
+***********************************************************************************************************************/
+-->
+<module xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="2.0" xs:noNamespaceSchemaLocation="schema_mdf_2.00.xsd">
+    <fileVersion>1.00</fileVersion>
+    <formatVersion>2.00</formatVersion>
+    <fileTemplate></fileTemplate>
+    <configuration>
+    <!-- EWF_DEBUG -->
+      <property id="USE_EWF_DEBUG" display="Enable compilation of debug code" default="1" type="checkbox">
+         <option id="USE_EWF_DEBUG.0" display="Disable" value="0" />
+         <option id="USE_EWF_DEBUG.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- USE_EWF_LOG_VERBOSE -->
+      <property id="USE_EWF_LOG_VERBOSE" display="Enable verbose logging" default="0" type="checkbox">
+         <option id="USE_EWF_LOG_VERBOSE.0" display="Disable" value="0" />
+         <option id="USE_EWF_LOG_VERBOSE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <!-- EWF_PARAMETER_CHECKING -->
+      <property id="USE_EWF_PARAMETER_CHECKING" display="Enable checking of function parameters" default="1" type="checkbox">
+         <option id="USE_EWF_PARAMETER_CHECKING.0" display="Disable" value="0" />
+         <option id="USE_EWF_PARAMETER_CHECKING.1" display="Enable" value="1" />
+         <description />
+      </property>
+    </configuration>
+</module>

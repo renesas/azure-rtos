@@ -44,7 +44,12 @@
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="usbx">
-            <component display="Azure RTOS UsbX" id="usbx${packageVersion}" version="${packageVersion}">
+            <component display="Azure RTOS UsbX Common" id="usbx${packageVersion}" version="${packageVersion}">
+            </component>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+		<configuration enable="true" exclude="false" inuse="true" name="usbx_pcdc">
+            <component display="Azure RTOS UsbX PCDC" id="usbx_pcdc${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>

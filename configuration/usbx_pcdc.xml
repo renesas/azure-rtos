@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>usbx_pcdc</name>
+		<version>6.2.0_rel-rx-1.0.0</version>
+		<application>AzureRTOSLibrary</application>
+		<category>rtos.library</category>
+		<desc>Azure RTOS USBX PCDC</desc>
+		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. This package provides USB Peripheral Communications Device Class.</details>
+		<function>RTOS</function>
+		<dependency>
+			<module>usbx</module>
+		</dependency>
+		<dependency>
+			<module>r_usb_pcdc</module>
+			<version>1.40</version>
+		</dependency>
+		<!-- Copy resources to project -->
+		<impdir>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_activate.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_bulkin_thread.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_bulkout_thread.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_control_request.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_deactivate.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_entry.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_initialize.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_ioctl.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_read.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_read_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_tasks_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_unitialize.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write_run.c</file>
+			<file>usbx/common/usbx_device_classes/src/ux_device_class_cdc_acm_write_with_callback.c</file>
+			<path>libs/usbx/common/usbx_device_classes/src</path>
+		</impdir>
+		<!-- include header-->
+	</package>
+</refinfo>

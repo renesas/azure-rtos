@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<smc>
+    <general version="2.0.0.0">
+        <configuration active="true" id="${configurationTypeReleaseID}">
+            <property id="com.renesas.smc.service.project.buildArtefactType" values="com.renesas.smc.service.project.buildArtefactType.exe"/>
+            <toolchain id="${toolChainID}">
+                <option id="com.renesas.smc.toolchain.option.buildArtefactType" key="com.renesas.smc.toolchain.option.buildArtefactType.exe"/>
+                <option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.azurertos">
+                    <item id="com.renesas.smc.toolchain.option.rtos.azurertos" value="${packageVersion}"/>
+                </option>
+            </toolchain>
+        </configuration>
+        <platform id="${targetDevice}"/>
+    </general>
+    <tool id="SWComponent" version="1.0.0.0">
+        <configuration inuse="true" name="r_bsp">
+            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_ROM_CACHE_ENABLE" selectedIndex="1"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_cmt_rx">
+            <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration enable="true" exclude="false" inuse="true" name="threadx">
+            <component display="Azure RTOS ThreadX" id="threadx${packageVersion}" version="${packageVersion}">
+            </component>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration enable="true" exclude="false" inuse="true" name="netxduo_addons">
+            <component display="Azure RTOS NetX Duo Addons" id="netxduo_addons${packageVersion}" version="${packageVersion}"/>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration enable="true" exclude="false" inuse="true" name="netxduo">
+            <component display="Azure RTOS NetX Duo" id="netxduo${packageVersion}" version="${packageVersion}">
+	    	<gridItem id="USE_NX_ENABLE_TCPIP_OFFLOAD" selectedIndex="1"/>
+		<gridItem id="USE_NX_ENABLE_INTERFACE_CAPABILITY" selectedIndex="1"/>
+		<gridItem id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL" selectedIndex="1"/>
+		<gridItem id="USE_NX_DNS_CLIENT_CLEAR_QUEUE" selectedIndex="1"/>
+		<gridItem id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM" selectedIndex="1"/>
+		<gridItem id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" selectedIndex="1"/>
+		<gridItem id="USE_NX_SNTP_CURRENT_YEAR" selectedIndex="1"/>
+            </component>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration enable="true" exclude="false" inuse="true" name="filex">
+            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
+            </component>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+		<configuration enable="true" exclude="false" inuse="true" name="ewf">
+            <component display="Azure Embedded Wireless Framework" id="ewf${packageVersion}" version="${packageVersion}">
+            </component>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+		<configuration enable="true" exclude="false" inuse="true" name="azurertos_object">
+            <allocatable id="" name="" type="">
+                <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
+                    <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="application_thread"/>
+                        <option defaultValue="New Thread" id="threadname" value="Application Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="application_thread_entry"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="4096"/>
+                        <option defaultValue="1" id="priority" value="5"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="5"/>
+                        <option defaultValue="0" id="timeslice" value="0"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                </allocatable>
+                <allocatable id="QUEUE" name="QUEUE" type="TABALLOCATABLE"/>
+                <allocatable id="SEMAPHORE" name="SEMAPHORE" type="TABALLOCATABLE"/>
+                <allocatable id="MUTEX" name="MUTEX" type="TABALLOCATABLE"/>
+                <allocatable id="EVENT" name="EVENT" type="TABALLOCATABLE"/>
+                <allocatable id="TIMER" name="TIMER" type="TABALLOCATABLE"/>
+            </allocatable>
+            <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.111"/>
+            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_byteq">
+            <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.00" version="2.00">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_sci_rx">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.40" version="4.40">
+                <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
+                <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
+                <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
+                <gridItem id="SCI0" selectedIndex="1"/>
+		<gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
+                <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
+                <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="8192"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+		<configuration inuse="true" name="Config_SCI5">
+            <allocatable id="SCI5">
+                <option enabled="true" id="Bitrate" selection="FreeValue">
+                    <item id="FreeValue" input="115200" vlaue="115200"/>
+                </option>
+            </allocatable>
+            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.12.0"/>
+            <allocator channelLevel0="5" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 5" display="SCI5" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci5" type="SCI">
+                <context>
+                    <option enabled="true" id="Mode" selection="BothMode">
+                    </option>
+                </context>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+    </tool>
+</smc>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>usbx_hmsc</name>
+		<version>6.2.0_rel-rx-1.0.0</version>
+		<application>AzureRTOSLibrary</application>
+		<category>rtos.library</category>
+		<desc>Azure RTOS USBX HMSC</desc>
+		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. This package provides USB Host Mass Storage Class.</details>
+		<function>RTOS</function>
+		<dependency>
+			<module>usbx</module>
+		</dependency>
+		<dependency>
+			<module>filex</module>
+		</dependency>
+		<!-- Copy resources to project -->
+		<impdir>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_activate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_cbw_initialize.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_check_run.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_configure.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_deactivate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_device_initialize.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_device_reset.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_device_support_check.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_driver_entry.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_endpoints_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_entry.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_lock.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_max_lun_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_capacity_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_characteristics_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_check.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_format_capacity_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_lock.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_mount.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_open.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_protection_check.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_read.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_recovery_sense_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_media_write.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_partition_read.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_read_write_run.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_request_sense.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_sense_code_translate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_start_stop.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_tasks_run.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_thread_entry.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_transport.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_transport_bo.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_transport_cb.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_transport_cbi.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_transport_run.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_unit_ready_test.c</file>
+			<path>libs/usbx/common/usbx_host_classes/src</path>
+		</impdir>
+		<impdir>
+			<folder>usbx/common/usbx_host_classes/inc</folder>
+			<path>libs/usbx/common/usbx_host_classes/inc</path>
+		</impdir>
+		<!-- include header-->
+		<incdir>
+			<path>libs/usbx/common/usbx_host_classes/inc</path>
+		</incdir>
+	</package>
+</refinfo>
