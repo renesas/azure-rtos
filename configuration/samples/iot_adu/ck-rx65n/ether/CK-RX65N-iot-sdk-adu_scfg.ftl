@@ -70,6 +70,8 @@
                 <gridItem id="ETHERC0_RMII" selectedIndex="1"/>
                 <gridItem id="ETHER_CFG_MODE_SEL" selectedIndex="1"/>
                 <gridItem id="ETHER_CFG_CH0_PHY_ADDRESS" selectedIndex="5"/>
+                <gridItem id="ETHER_CFG_EMAC_RX_DESCRIPTORS" selectedIndex="8"/>
+                <gridItem id="ETHER_CFG_EMAC_TX_DESCRIPTORS" selectedIndex="16"/>
                 <gridItem id="ETHER_CFG_CH0_PHY_ACCESS" selectedIndex="0"/>
                 <gridItem id="ETHER_CFG_LINK_PRESENT" selectedIndex="1"/>
                 <gridItem id="ETHER_CFG_USE_PHY_ICS1894_32" selectedIndex="1"/>
