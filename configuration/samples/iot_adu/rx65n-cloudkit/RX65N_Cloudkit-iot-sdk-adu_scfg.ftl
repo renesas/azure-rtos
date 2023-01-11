@@ -116,7 +116,8 @@
         </configuration>
         <configuration inuse="true" name="r_fwup">
             <component display="r_fwup" id="r_fwup1.06" version="1.06">
-                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="3"/>
+                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="4"/>
+                <gridItem id="FWUP_CFG_COMMUNICATION_FUNCTION" selectedIndex="1"/>
                 <gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
