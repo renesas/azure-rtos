@@ -210,6 +210,12 @@
 						<address>0x00004000</address>
 					</section>
 				</sections>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="ramdisk" name="FileX RAM Disk sample project" description="Project includes ThreadX, FileX, BSP, CMT. This sample illustrates the use of the FileX embedded FAT file system. The example creates a small RAM-disk with a sample file and data, and reads the file data back into memory">
 				<!-- Copy resources to project -->
@@ -427,6 +433,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
@@ -751,6 +763,12 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
@@ -952,6 +970,12 @@
 				<macrodefinition>
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -1304,6 +1328,12 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-ewf" name="IoT Embedded SDK sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -1432,6 +1462,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -1784,6 +1820,12 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-pnp-ewf" name="IoT Embedded SDK PNP sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK PnP sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -1912,6 +1954,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="temperature-pnp" name="IoT Embedded SDK with IoT Plug and Play sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -2272,6 +2320,12 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="temperature-pnp-ewf" name="IoT Embedded SDK with IoT Plug and Play sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK with IoT Plug and Play sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -2406,6 +2460,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_8bpp" name="GUIX 8bpp sample project" description="This demonstration illustrates GUIX sample project with 8 bits color look-up table">
 				<board>RSKRX65N-2MB</board>
@@ -2544,6 +2604,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_16bpp" name="GUIX 16bpp sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565">
 				<board>RSKRX65N-2MB</board>
@@ -2734,6 +2800,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_16bpp_draw2d" name="GUIX 16bpp draw 2d sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565 and drawing 2d engine driver">
 				<board>RSKRX65N-2MB</board>
@@ -2938,6 +3010,12 @@
 					<board>EnvisionKitRX72N</board>
 					<compiler>GX_USE_DAVE2D_DRAW=1</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="usbx_device_cdc_acm" name="USBX device CDC-ACM Class sample project" description="This demonstration illustrates the setup and use of USBX device CDC-ACM Class to communicate with the host as a serial device.">
 				<board>RSKRX65N-2MB</board>
@@ -3194,6 +3272,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option-->
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="usbx_host_mass_storage_class" name="USBX Host Mass Storage Class sample project" description="This demonstration illustrates the setup and use of USBX host mass storage class to provide physical access to a data storage device.">
 				<board>RSKRX65N-2MB</board>
@@ -3365,6 +3449,12 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option-->
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="low_power" name="ThreadX Low Power sample project" description="This demonstration illustrates how to use ThreadX with low power mode">
 				<board>TargetBoardRX130</board>
@@ -3631,6 +3721,12 @@
 						<address>0x00004000</address>
 					</section>
 				</sections>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot_adu" name="Azure Device Update (ADU) sample project" description="This demonstration illustrates OTA firmware update. Note: this project requires bootloader project.">
 				<toolchain>RXC</toolchain>
@@ -4016,6 +4112,12 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
 					<value>true</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="boot_loader" name="Secure bootloader sample project" description="This sample is used together with ADU sample project to provide a secure boot">
 				<toolchain>RXC</toolchain>
@@ -4295,11 +4397,6 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
 			<value>true</value>
 		</option>
-		<additionaloption>
-			<toolchain>GNURX</toolchain>
-			<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
-			<value>true</value>
-		</additionaloption>
 		<!-- Open readme and AN file -->
 		<impdir>
 			<file>threadx/LICENSE.txt</file>
