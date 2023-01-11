@@ -3917,6 +3917,39 @@
 					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy scripts for ADU -->
+				<impdir>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/common</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/CK-RX65N</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_RSK</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_Cloudkit</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX671_RSK</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX72N_EnvisionKit</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
