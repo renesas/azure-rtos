@@ -635,12 +635,6 @@
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
 				<!-- exclude build files -->
-				<excludebuild>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1182,14 +1176,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
-				<excludebuild>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1674,14 +1660,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
-				<excludebuild>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -2166,14 +2144,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
-				<excludebuild>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
