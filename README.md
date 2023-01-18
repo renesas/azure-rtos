@@ -257,7 +257,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   <tr align="center">
     <td align="left">USBX HMSC sample</td>
     <td>O</td>
-    <td>O</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
     <td>-</td>
