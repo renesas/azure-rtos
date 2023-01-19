@@ -16,11 +16,12 @@ SECTIONS
 	.fvectors 0xFFFFFFFC: AT(0xFFFFFFFC)
 	{
 		KEEP(*(.fvectors))
-	} > ROM P_NEW_FIRMWARE 0xFFF00000 : AT(0xFFF00000)
+	} > ROM
+	P_NEW_FIRMWARE 0xFFF00000 : AT(0xFFF00000)
 	{
 	*( P_NEW_FIRMWARE )
 	} > ROM
-	.text 0xFFF00000: AT(0xFFF00000)
+	.text 0xFFFF0000: AT(0xFFFF0000)
 	{
 		*(.text)
 		*(.text.*)
@@ -123,6 +124,10 @@ SECTIONS
 		. = ALIGN(4);
 		_RPFRAM2_end = .;
 	} >RAM
+	.gcc_exc :
+	{
+		*(.gcc_exc)
+	} > RAM
 	.bss :
 	{
 		_bss = .;
@@ -135,7 +140,7 @@ SECTIONS
 		_ebss = .;
 		. = ALIGN(128);
 		_end = .;
-	} > RAM2 AT>RAM2
+	} > RAM2
 	.ofs1 0xFE7F5D00: AT(0xFE7F5D00)
 	{
 		KEEP(*(.ofs1))

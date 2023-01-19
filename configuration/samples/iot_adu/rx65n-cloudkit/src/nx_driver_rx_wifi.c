@@ -15,14 +15,14 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet driver for RX671 RSK family of microprocessors       */
+/**  Wi-Fi IoT module (SX-ULPGN) driver for RX family of microprocessors  */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
 
 /* Indicate that driver source is being compiled.  */
 
-#include "nx_driver_rx671_rsk.h"
+#include <nx_driver_rx_wifi.h>
 
 #ifndef NX_ENABLE_TCPIP_OFFLOAD
 #error "NX_ENABLE_TCPIP_OFFLOAD must be defined to use this driver"
@@ -37,18 +37,18 @@
 #endif /* NX_DRIVER_RECEIVE_QUEUE_SIZE */
 
 #ifndef NX_DRIVER_STACK_SIZE
-#define NX_DRIVER_STACK_SIZE                    1024
+#define NX_DRIVER_STACK_SIZE                    2048
 #endif /* NX_DRIVER_STACK_SIZE  */
-
+#define NX_DRIVER_THREAD_INTERVAL               5
 /* Interval to receive packets when there is no packet. The default value is 100 ticks which is 1s.  */
 #ifndef NX_DRIVER_THREAD_INTERVAL
 #define NX_DRIVER_THREAD_INTERVAL               NX_IP_PERIODIC_RATE
 #endif /* NX_DRIVER_THREAD_INTERVAL */
 
-/* Define the maximum sockets at the same time. This is limited by hardware TCP/IP on RX671.  */
+/* Define the maximum sockets at the same time. This is limited by hardware TCP/IP on RX.  */
 #define NX_DRIVER_SOCKETS_MAXIMUM               4
 
-/* Define the maximum wait timeout in ms for socket send. This is limited by hardware TCP/IP on RX671.  */
+/* Define the maximum wait timeout in ms for socket send. This is limited by hardware TCP/IP on RX.  */
 #define NX_DRIVER_SOCKET_SEND_TIMEOUT_MAXIMUM   3000
 
 #define NX_DRIVER_CAPABILITY                    (NX_INTERFACE_CAPABILITY_TCPIP_OFFLOAD)
@@ -129,7 +129,7 @@ static UINT         _nx_driver_hardware_capability_set(NX_IP_DRIVER *driver_req_
 /*                                                                        */ 
 /*  FUNCTION                                               RELEASE        */ 
 /*                                                                        */ 
-/*    nx_driver_rx671_rsk                                 PORTABLE C      */ 
+/*    nx_driver_rx_wifi                           PORTABLE C      */
 /*                                                           6.x          */
 /*  AUTHOR                                                                */
 /*                                                                        */
@@ -175,7 +175,7 @@ static UINT         _nx_driver_hardware_capability_set(NX_IP_DRIVER *driver_req_
 /*  xx-xx-xxxx     Yuxin Zhou               Initial Version 6.x           */
 /*                                                                        */
 /**************************************************************************/
-VOID  nx_driver_rx671_rsk(NX_IP_DRIVER *driver_req_ptr)
+VOID  nx_driver_rx_wifi(NX_IP_DRIVER *driver_req_ptr)
 {
     
     /* Default to successful return.  */

@@ -142,7 +142,7 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #endif /* SAMPLE_DHCP_DISABLE */
 
 #ifndef SAMPLE_NETWORK_DRIVER
-#define SAMPLE_NETWORK_DRIVER           	nx_driver_rx65n_cloud_kit
+#define SAMPLE_NETWORK_DRIVER           	nx_driver_rx_wifi
 #endif /* SAMPLE_NETWORK_DRIVER */
 
 #ifndef SAMPLE_BOARD_SETUP
@@ -152,22 +152,6 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #ifndef SAMPLE_NETWORK_CONFIGURE
 #define SAMPLE_NETWORK_CONFIGURE           sample_network_configure
 #endif /* SAMPLE_NETWORK_CONFIGURE */
-
-#ifndef SAMPLE_DEVICE_MANUFACTURER
-#define SAMPLE_DEVICE_MANUFACTURER          "RENESAS"
-#endif /* SAMPLE_DEVICE_MANUFACTURER */
-
-#ifndef SAMPLE_DEVICE_MODEL
-#define SAMPLE_DEVICE_MODEL          		"RX65N-CK"
-#endif /* SAMPLE_DEVICE_MODEL */
-
-#ifndef SAMPLE_LEAF_DEVICE_MANUFACTURER
-#define SAMPLE_LEAF_DEVICE_MANUFACTURER      "RENESAS"
-#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
-
-#ifndef SAMPLE_LEAF_DEVICE_MODEL
-#define SAMPLE_LEAF_DEVICE_MODEL      		 "RX65N-CK-Leaf"
-#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
 
 static TX_THREAD        sample_helper_thread;
 static NX_PACKET_POOL   pool_0;

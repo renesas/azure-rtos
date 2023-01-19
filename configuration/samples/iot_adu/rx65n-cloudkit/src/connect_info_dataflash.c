@@ -19,25 +19,25 @@
 
 #include "connect_info_dataflash.h"
 
-#if defined(__CCRX__)
-R_BSP_ATTRIB_SECTION_CHANGE(C, _CONNECT_INFO , 1)
-volatile const uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] = HOST_NAME;
-volatile const uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] = DEVICE_ID;
-volatile const uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] = DEVICE_SYMMETRIC_KEY;
-volatile const uint8_t df_wifi_ssid[WIFI_SSID_MAX_LENGTH + 1] = "";
-volatile const uint8_t df_wifi_password[WIFI_PASSWORD_MAX_LENGTH + 1] = "";
-volatile const uint8_t df__netx_driver_rx_fit_mac_address[6] = {0x00,0x04,0x0,0x00,0x00,0x00};
-#elif defined(__GNUC__)
-volatile const uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] __attribute__((section("system_config"))) = HOST_NAME;
-volatile const uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] __attribute__((section("system_config"))) = DEVICE_ID;
-volatile const uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] __attribute__((section("system_config"))) = DEVICE_SYMMETRIC_KEY;
-volatile const uint8_t df__netx_driver_rx_fit_mac_address[6] __attribute__((section("system_config")))= {0x00,0x04,0x0,0x00,0x00,0x00};
+#if (defined(__CCRX__) || defined(__GNUC__))
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+#ifndef ENABLE_DPS_SAMPLE
+volatile uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] = HOST_NAME;
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] = DEVICE_ID;
+#endif
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] = DEVICE_SYMMETRIC_KEY;
+#ifndef ENABLE_WIFI
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df__netx_driver_rx_fit_mac_address[6] = {0x00,0x04,0x0,0x00,0x00,0x00};
+#endif
+R_BSP_ATTRIB_SECTION_CHANGE_END
 #else
 volatile const uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] = "dummy";
 volatile const uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] = "dummy";
 volatile const uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] = "dummy";
-volatile const uint8_t df_wifi_ssid[WIFI_SSID_MAX_LENGTH + 1] = "dummy";
-volatile const uint8_t df_wifi_password[WIFI_PASSWORD_MAX_LENGTH + 1] = "dummy";
+volatile const uint8_t df__netx_driver_rx_fit_mac_address[6] = {0x00,0x04,0x0,0x00,0x00,0x00};
 #endif
 
 void connect_info_flash_callback_function(void *event);
@@ -46,20 +46,20 @@ bool flash_operation_done = false;
 
 uint32_t connect_info_length[CONNECT_INFO_MAX_NUM] =
 {
+#ifndef ENABLE_DPS_SAMPLE
 	sizeof(HOST_NAME),
 	sizeof(DEVICE_ID),
+#endif
 	sizeof(DEVICE_SYMMETRIC_KEY),
-	sizeof("TP-Link_Extender"),
-	sizeof("ZJ3EK6Zuuay7p")
 };
 
 uint8_t  * connect_info_pdata[CONNECT_INFO_MAX_NUM] =
 {
+#ifndef ENABLE_DPS_SAMPLE
 	(uint8_t *)(HOST_NAME),
 	(uint8_t *)(DEVICE_ID),
+#endif
 	(uint8_t *)(DEVICE_SYMMETRIC_KEY),
-	(uint8_t *)("TP-Link_Extender"),
-	(uint8_t *)("ZJ3EK6Zuuay7p")
 };
 
 bool connect_info_write_to_dataflash (void)

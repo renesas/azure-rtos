@@ -646,7 +646,23 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1200,6 +1216,23 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -1696,6 +1729,23 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -2192,6 +2242,23 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -3810,6 +3877,17 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/compat.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/connect_info_dataflash.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_azure_iot_embedded_sdk_connect.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_network.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/iot_adu/rsk-rx65n-2mb/src</folder>
@@ -4003,6 +4081,55 @@
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX72N_EnvisionKit</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
+				<!-- copy flash project for ADU -->
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/CK-RX65N</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_RSK</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_Cloudkit</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX671_RSK</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX72N_EnvisionKit</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
+				<excludebuild>
+					<path>libs/netxduo_addons/utility</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -4092,7 +4219,7 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
-						<name>C_CONNECT_INFO*</name>
+						<name>D_CONNECT_INFO_1</name>
 						<address>0x00100000</address>
 					</section>
 				</sections>
@@ -4122,7 +4249,10 @@
 						<name>C_2</name>
 						<name>C</name>
 						<name>C$*</name>
-						<name>D*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>D_8</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
@@ -4140,11 +4270,14 @@
 						<name>C</name>
 						<name>C_8</name>
 						<name>C$*</name>
-						<name>D*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>D_8</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
-						<address>0xFFF00300</address>
+						<address>0xFFE00300</address>
 					</section>
 				</sections>
 				<sections>
@@ -4228,10 +4361,21 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/boot_loader.c</file>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_version.c</file>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_application_version.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<folder>configuration/samples/boot_loader/rsk-rx65n-2mb/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<folder>configuration/samples/boot_loader/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -4289,8 +4433,8 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
-					<folder>configuration/samples/boot_loader/rsk-rx671/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<folder>configuration/samples/boot_loader/rsk-rx671/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>

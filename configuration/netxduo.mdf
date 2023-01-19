@@ -955,5 +955,81 @@ The default value is 2015.</description>
          <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE}" == 1)</constraint>
          <description />
       </property>
+      <!-- SAMPLE_DEVICE_MANUFACTURER -->
+      <property id="SAMPLE_DEVICE_MANUFACTURER" display="Define sample device manufacturer" default="RENESAS" type="textbox">
+         <description />
+      </property>
+      <!-- SAMPLE_DEVICE_MODEL -->
+      <property id="SAMPLE_DEVICE_MODEL" display="Define sample device model" default="" type="textbox">
+         <description />
+      </property>
+      <!-- SAMPLE_DEVICE_MODEL -->
+      <property id="SAMPLE_LEAF_DEVICE_MANUFACTURER" display="Define sample leaf device manufacturer" default="RENESAS" type="textbox">
+         <description />
+      </property>
+      <!-- SAMPLE_LEAF_DEVICE_MODEL -->
+      <property id="SAMPLE_LEAF_DEVICE_MODEL" display="Define sample leaf device model" default="" type="textbox">
+         <description />
+      </property>
+     <!-- NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE -->
+      <property id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" display="Enable window size of HTTP for downloading firmware" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" display="Define window size of HTTP for downloading firmware" default="16*1024" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT -->
+      <property id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" display="Enable timeout configuration of HTTP for connecting" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" display="Define timeout of HTTP for connecting" default="30" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT -->
+      <property id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" display="Enable total timeout configuration of HTTP for downloading the whole firmware" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" display="Define total timeout of HTTP for downloading the whole firmware" default="300" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT -->
+      <property id="USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" display="Enable default timeout configuration for DNS query" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" display="Define default timeout configuration for DNS query" default="5 * NX_IP_PERIODIC_RATE" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC -->
+      <property id="USE_NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" display="Enable maximum backoff amount of time between tries configuration" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" display="Define maximum backoff amount of time between tries" default="10 * 60" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT}" == 1)</constraint>
+         <description />
+      </property>
+      <!-- NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC -->
+      <property id="USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" display="Enable initial backoff amount of time configuration" default="0" type="checkbox">
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC.0" display="Disable" value="0" />
+         <option id="USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC.1" display="Enable" value="1" />
+         <description />
+      </property>
+      <property id="NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" display="Define initial backoff amount of time" default="3" type="textbox">
+         <constraint display="default disable" actionOnFail="disable">("${USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC}" == 1)</constraint>
+         <description />
+      </property>
    </configuration>
 </module>

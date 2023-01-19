@@ -57,7 +57,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
 
             ret = R_FWUP_Initialize();
 
-            if (FWUP_SUCCESS != ret)
+            if (FWUP_IN_PROGRESS != ret)
             {
                 driver_req_ptr -> nx_azure_iot_adu_agent_driver_status =  NX_AZURE_IOT_FAILURE;
             }
@@ -107,7 +107,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
         {
 
             /* Apply the new firmware, and reboot device from that.*/
-        
+
             /* step4: software reset */
             /* close all peripherals before software reset */
             R_FWUP_SoftwareReset();

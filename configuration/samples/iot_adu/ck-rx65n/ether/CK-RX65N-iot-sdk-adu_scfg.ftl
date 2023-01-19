@@ -15,6 +15,8 @@
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp7.20" version="7.20">
+                <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
+                <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="1"/>
             </component>
@@ -46,6 +48,10 @@
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR" selectedIndex="1"/>
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="1"/>
                 <gridItem id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="&quot;CK-RX65N&quot;"/>
+                <gridItem id="SAMPLE_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
+                <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex="&quot;CK-RX65N&quot;"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex="&quot;CK-RX65N-Leaf&quot;"/>
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>

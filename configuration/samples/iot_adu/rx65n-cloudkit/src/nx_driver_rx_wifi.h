@@ -15,13 +15,13 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet driver for RX65N Cloud Kit family of microprocessors       */
+/**  Wi-Fi IoT module (SX-ULPGN) driver for RX family of microprocessors  */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
 
-#ifndef NX_DRIVER_RX65N_CLOUD_KIT_H
-#define NX_DRIVER_RX65N_CLOUD_KIT_H
+#ifndef NX_DRIVER_RX_WIFI_H
+#define NX_DRIVER_RX_WIFI_H
 
 
 #ifdef   __cplusplus
@@ -43,7 +43,7 @@ extern   "C" {
     
 /* Define global driver entry function. */
 
-VOID  nx_driver_rx65n_cloud_kit(NX_IP_DRIVER *driver_req_ptr);
+VOID  nx_driver_rx_wifi(NX_IP_DRIVER *driver_req_ptr);
 
 #ifdef   __cplusplus
 /* Yes, C++ compiler is present.  Use standard C.  */

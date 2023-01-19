@@ -1,7 +1,7 @@
 #include "nx_api.h"
-#include "nx_driver_rx65n_cloud_kit.h"
+#include "demo_printf.h"
+#include "nx_driver_rx_wifi.h"
 
-#include <demo_printf.h>
 wifi_ip_configuration_t ip_cfg = {0};
 
 /* Define the Wi-Fi network parameters. Only WPA2 security is supported.  */

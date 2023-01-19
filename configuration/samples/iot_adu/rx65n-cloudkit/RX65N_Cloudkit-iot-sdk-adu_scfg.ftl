@@ -15,6 +15,8 @@
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp7.20" version="7.20">
+                <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
+                <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="1"/>
             </component>
@@ -46,6 +48,22 @@
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR" selectedIndex="1"/>
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="1"/>
                 <gridItem id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="&quot;RX65N-RSK&quot;"/>
+                <gridItem id="SAMPLE_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
+                <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex="&quot;RX65N-CK&quot;"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex="&quot;RX65N-CK-Leaf&quot;"/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="10*1024"/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" selectedIndex="60"/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" selectedIndex="600"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" selectedIndex="100 * NX_IP_PERIODIC_RATE"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" selectedIndex="10 * 60"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" selectedIndex="1"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" selectedIndex="10"/>
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
@@ -107,7 +125,7 @@
             <component display="r_wifi_sx_ulpgn" id="r_wifi_sx_ulpgn1.16" version="1.16">
                 <gridItem id="WIFI_CFG_SCI_CHANNEL" selectedIndex="0"/>
                 <gridItem id="WIFI_CFG_SCI_SECOND_CHANNEL" selectedIndex="1"/>
-                <gridItem id="WIFI_CFG_SCI_INTERRUPT_LEVEL" selectedIndex="2"/>
+                <gridItem id="WIFI_CFG_SCI_INTERRUPT_LEVEL" selectedIndex="14"/>
                 <gridItem id="WIFI_CFG_RESET_PORT" selectedIndex="13"/>
                 <gridItem id="WIFI_CFG_RTS_PORT" selectedIndex="2"/>
                 <gridItem id="WIFI_CFG_RTS_PIN" selectedIndex="2"/>

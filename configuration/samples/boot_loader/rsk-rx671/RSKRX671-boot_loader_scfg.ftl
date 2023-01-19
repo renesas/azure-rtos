@@ -15,6 +15,7 @@
             <component display="r_bsp" id="r_bsp7.20" version="7.20">
                 <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_ROM_CACHE_ENABLE" selectedIndex="0"/>
                 <gridItem id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" selectedIndex="10"/>
             </component>
