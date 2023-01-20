@@ -31,7 +31,9 @@
  *                              Select data area from DF/CF
  *                              Added support for RX140-256KB
  *           31.05.2022 1.05    Added support for RX660
- *           30.09.2022 1.06    Added support for Azure ADU
+ *           05.12.2022 1.06    Added support for Azure ADU
+ *                              Added support for excluding communication drivers
+ *                              Added support for unbuffered FW updates
  *********************************************************************************************************************/
 #ifndef FWUP_CONFIG_H
 #define FWUP_CONFIG_H
@@ -44,10 +46,11 @@ Configuration Options
 /* Select the implementation environment.
     0 = Bootloader. (default)
     1 = Firmware update w/o OS.
-    2 = Firmware update with Amazon FreeRTOS(OTA).
-    3 = Firmware update with Azure ADU.
+    2 = Firmware update w/o OS and Driver.
+    3 = Firmware update with Amazon FreeRTOS(OTA).
+    4 = Firmware update with Azure ADU.
 */
-#define FWUP_CFG_IMPLEMENTATION_ENVIRONMENT     (3)
+#define FWUP_CFG_IMPLEMENTATION_ENVIRONMENT     (4)
 
 /* Select the communication function.
     0 = SCI connection. (default)
@@ -56,7 +59,7 @@ Configuration Options
     3 = SDHI connection.
     4 = QSPI connection.
 */
-#define FWUP_CFG_COMMUNICATION_FUNCTION        (0)
+#define FWUP_CFG_COMMUNICATION_FUNCTION        (1)
 
 /* Enable Boot Protect Setting.
     0 = Disable.(Prohibit) (default)
@@ -81,6 +84,12 @@ Configuration Options
    This setting is valid only when the implementation environment is a Amazon FreeRTOS(OTA).
  */
 #define FWUP_CFG_OTA_DATA_STORAGE      (0)
+
+/* Set direct firmware update mode that does not use the buffer area.
+    0 = Use buffer area.     (default)
+    1 = Not use buffer area.
+ */
+#define FWUP_CFG_NO_USE_BUFFER      (0)
 
 /* Disable Log Output Setting of Bootloader.
    Disables the log output of bootloader to the terminal software.

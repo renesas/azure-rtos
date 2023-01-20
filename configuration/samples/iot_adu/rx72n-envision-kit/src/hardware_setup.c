@@ -6,7 +6,7 @@
 #include <r_cmt_rx_if.h>
 #include <r_ether_rx_if.h>
 #include <r_ether_rx_pinset.h>
-#include <Config_SCI2.h>
+
 #include <tx_api.h>
 
 #include "hardware_setup.h"
@@ -25,13 +25,10 @@ void platform_setup(void)
 {
     uint32_t chan;
     ether_param_t eth_param = {0};
-    
-    /* Setup SCI2 for printf output. */  
-    R_Config_SCI2_Start();
-    
+
     /* Create periodic timer for the system tick. */
-    R_CMT_CreatePeriodic(100u, timer_callback, &chan);
-    
+    R_CMT_CreatePeriodic(TX_TIMER_TICKS_PER_SECOND, timer_callback, &chan);
+
     /* Setup Ethernet hardware. */
     R_ETHER_Initial();
 

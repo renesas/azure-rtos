@@ -10,6 +10,7 @@
   <sections name="R_2"/>
   <sections name="B"/>
   <sections name="R"/>
+  <sections name="RPFRAM"/>
   <sections name="RPFRAM2"/>
   <sections name="PResetPRG">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="4294901760"/>
@@ -21,9 +22,9 @@
   <sections name="D*"/>
   <sections name="W*"/>
   <sections name="L"/>
-  <sections name="P"/>
   <sections name="PFRAM"/>
   <sections name="PFRAM2"/>
+  <sections name="P"/>
   <sections name="EXCEPTVECT">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="4294967168"/>
   </sections>

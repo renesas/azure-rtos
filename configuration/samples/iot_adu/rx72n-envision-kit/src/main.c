@@ -147,22 +147,6 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #define SAMPLE_BOARD_SETUP           platform_setup
 #endif /* SAMPLE_BOARD_SETUP */
 
-#ifndef SAMPLE_DEVICE_MANUFACTURER
-#define SAMPLE_DEVICE_MANUFACTURER          "RENESAS"
-#endif /* SAMPLE_DEVICE_MANUFACTURER */
-
-#ifndef SAMPLE_DEVICE_MODEL
-#define SAMPLE_DEVICE_MODEL          		"RX72N-EK"
-#endif /* SAMPLE_DEVICE_MODEL */
-
-#ifndef SAMPLE_LEAF_DEVICE_MANUFACTURER
-#define SAMPLE_LEAF_DEVICE_MANUFACTURER      "RENESAS"
-#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
-
-#ifndef SAMPLE_LEAF_DEVICE_MODEL
-#define SAMPLE_LEAF_DEVICE_MODEL      		 "RX72N-EK-Leaf"
-#endif /* SAMPLE_LEAF_DEVICE_MANUFACTURER */
-
 static TX_THREAD        sample_helper_thread;
 static NX_PACKET_POOL   pool_0;
 static NX_IP            ip_0;

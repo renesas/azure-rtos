@@ -35,7 +35,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
         case NX_AZURE_IOT_ADU_AGENT_DRIVER_UPDATE_CHECK:
         {
 
-            /* Read the version of leaf device and compare the verion in update_id to check if the update is installed or not.
+            /* Compare the installed_criteria (such as: version) to check if the update is installed or not.
                If installed, return NX_TRUE, else return NX_FALSE.  */
             *(driver_req_ptr -> nx_azure_iot_adu_agent_driver_return_ptr) = NX_FALSE;
 

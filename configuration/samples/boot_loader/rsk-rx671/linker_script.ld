@@ -15,9 +15,6 @@ SECTIONS
 	.fvectors 0xFFFFFFFC: AT(0xFFFFFFFC)
 	{
 		KEEP(*(.fvectors))
-	} > ROM P_NEW_FIRMWARE 0xFFF00000 : AT(0xFFF00000)
-	{
-	*( P_NEW_FIRMWARE )
 	} > ROM
 	.text 0xFFFF0000: AT(0xFFFF0000)
 	{

@@ -3,7 +3,7 @@ MEMORY
 	RAM : ORIGIN = 0x4, LENGTH = 0x7fffc
 	DATAFLASH : ORIGIN = 0x00100000, LENGTH = 0x7FFF
 	RAM2 : ORIGIN = 0x00800000, LENGTH = 524288
-	ROM : ORIGIN = 0xFFF00000, LENGTH = 1048576
+	ROM : ORIGIN = 0xFFE00000, LENGTH = 2097152
 	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
@@ -18,12 +18,12 @@ SECTIONS
 	{
 		KEEP(*(.fvectors))
 	} > ROM 
-	P_NEW_FIRMWARE 0xFFF00300 : AT(0xFFF00300)
+	P_NEW_FIRMWARE 0xFFE00300 : AT(0xFFE00300)
     {
 	*( P_NEW_FIRMWARE )
 	} > ROM
 	
-	.text 0xFFF00300: AT(0xFFF00300)
+	.text 0xFFE00300: AT(0xFFE00300)
 	{
 		*(.text)
 		*(.text.*)
@@ -156,7 +156,7 @@ SECTIONS
 		*(B_2)
 		_ebss = .;
 		_end = .;
-	} > RAM2 AT>RAM2
+	} > RAM2
 	.ofs1 0xFE7F5D00: AT(0xFE7F5D00)
 	{
 		KEEP(*(.ofs1))
@@ -189,22 +189,24 @@ SECTIONS
 	{
 		KEEP(*(.ofs8))
 	} > OFS
-	.system_config :
+	D_CONNECT_INFO_1 :
 	{
 		. = ALIGN(4);
-		*(system_config)
-		*(system_config.*)
+		_D_CONNECT_INFO_1_start = .;
+		*(D_CONNECT_INFO_1)
+		_D_CONNECT_INFO_1_end = .;
 		. = ALIGN(4);
 	} >DATAFLASH
+
 	.r_bsp_NULL :
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
-	} >RAM AT>RAM
+	} >RAM
     .r_bsp_istack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
-	} >RAM AT>RAM
+	} >RAM
     .istack :
 	{
 		"_istack" = .;
@@ -212,7 +214,7 @@ SECTIONS
     .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
-	} >RAM AT>RAM
+	} >RAM
     .ustack :
 	{
 		"_ustack" = .;

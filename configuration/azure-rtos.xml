@@ -210,6 +210,18 @@
 						<address>0x00004000</address>
 					</section>
 				</sections>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="ramdisk" name="FileX RAM Disk sample project" description="Project includes ThreadX, FileX, BSP, CMT. This sample illustrates the use of the FileX embedded FAT file system. The example creates a small RAM-disk with a sample file and data, and reads the file data back into memory">
 				<!-- Copy resources to project -->
@@ -427,6 +439,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="ping" name="NetX Duo Ping sample project" description="This sample project illustrates the setup and use of NetX Duo IPv4/IPv6 TCP/IP stack via ping from another node on the local network. By default, this demonstration requests an IP Address via DHCP, and displays the status and assigned IP Address via terminal I/O window. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
@@ -622,11 +646,21 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
+					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
 				<!-- include -->
@@ -751,6 +785,18 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iperf" name="NetX Duo Iperf sample project" description="This demonstration illustrates TCP and UDP network throughput, using Express Logic’s NetX Duo IPv4/IPv6 TCP/IP stack, and the industry-standard Iperf network throughput benchmark, with Jperf GUI. Note: default baudrate setting is 115200">
 				<board>RSKRX65N-2MB</board>
@@ -952,6 +998,18 @@
 				<macrodefinition>
 					<compiler>NX_ENABLE_DHCP</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk" name="IoT Embedded SDK sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -1158,12 +1216,21 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
 				<!-- include -->
@@ -1304,6 +1371,18 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-ewf" name="IoT Embedded SDK sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -1332,7 +1411,7 @@
 				</impdir>
 				<!-- copy readme common -->
 				<impdir>
-					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<file>configuration/samples/iot_sdk/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -1432,6 +1511,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-pnp" name="IoT Embedded SDK PnP sample project" description="This sample project illustrates the connection to Azure IoT Hub using Azure IoT Middleware for Azure RTOS via IoT Plug and Play. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -1638,12 +1729,21 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
 				<!-- include -->
@@ -1784,6 +1884,18 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-pnp-ewf" name="IoT Embedded SDK PNP sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK PnP sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -1812,7 +1924,7 @@
 				</impdir>
 				<!-- copy readme common -->
 				<impdir>
-					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<file>configuration/samples/iot_sdk_pnp/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -1912,6 +2024,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="temperature-pnp" name="IoT Embedded SDK with IoT Plug and Play sample project" description="This sample project with IoT Plug and Play using multiple components. Note: default baudrate setting is 115200 and connection is ethernet/WiFi.">
 				<board>RSKRX65N-2MB</board>
@@ -2118,12 +2242,21 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- exclude build files -->
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<path>libs/netxduo_addons/addons/dns/nxd_dns.c</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
 				<!-- include -->
@@ -2272,6 +2405,18 @@
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="temperature-pnp-ewf" name="IoT Embedded SDK with IoT Plug and Play sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK with IoT Plug and Play sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
 				<toolchain>GNURX</toolchain>
@@ -2306,7 +2451,7 @@
 				</impdir>
 				<!-- copy readme common -->
 				<impdir>
-					<file>configuration/samples/iot_sdk_ewf/README.md</file>
+					<file>configuration/samples/temperature_pnp/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
@@ -2406,6 +2551,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_8bpp" name="GUIX 8bpp sample project" description="This demonstration illustrates GUIX sample project with 8 bits color look-up table">
 				<board>RSKRX65N-2MB</board>
@@ -2544,6 +2701,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_16bpp" name="GUIX 16bpp sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565">
 				<board>RSKRX65N-2MB</board>
@@ -2734,6 +2903,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="guix_16bpp_draw2d" name="GUIX 16bpp draw 2d sample project" description="This demonstration illustrates GUIX sample project with 16 bits RGB 565 and drawing 2d engine driver">
 				<board>RSKRX65N-2MB</board>
@@ -2938,6 +3119,18 @@
 					<board>EnvisionKitRX72N</board>
 					<compiler>GX_USE_DAVE2D_DRAW=1</compiler>
 				</macrodefinition>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="usbx_device_cdc_acm" name="USBX device CDC-ACM Class sample project" description="This demonstration illustrates the setup and use of USBX device CDC-ACM Class to communicate with the host as a serial device.">
 				<board>RSKRX65N-2MB</board>
@@ -3194,15 +3387,26 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option-->
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="usbx_host_mass_storage_class" name="USBX Host Mass Storage Class sample project" description="This demonstration illustrates the setup and use of USBX host mass storage class to provide physical access to a data storage device.">
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
-				<board>RX65NCloudKit</board>
-				<board>CloudKitRX65N</board>
 				<board>CK-RX65N</board>
 				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
+				<board>EnvisionKitRX72N</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/usbx_hmsc/common</folder>
@@ -3212,12 +3416,6 @@
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/usbx_hmsc/rsk-rx65n-2mb/src/smc_gen</folder>
-					<path>src/smc_gen</path>
-				</impdir>
-				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<folder>configuration/samples/usbx_hmsc/rx65n-cloudkit/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
@@ -3232,6 +3430,7 @@
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>configuration/samples/usbx_hmsc/rx72n-envision-kit/src/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
@@ -3306,11 +3505,6 @@
 					<path>configuration/samples/usbx_hmsc/rsk-rx65n-2mb/RSKRX65N-2MB-usbx_hmsc_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<path>configuration/samples/usbx_hmsc/rx65n-cloudkit/RX65N_Cloudkit-usbx_hmsc_scfg.ftl</path>
-				</scfgtemplate>
-				<scfgtemplate>
 					<board>CK-RX65N</board>
 					<path>configuration/samples/usbx_hmsc/ck-rx65n/CK-RX65N-usbx_hmsc_scfg.ftl</path>
 				</scfgtemplate>
@@ -3329,8 +3523,6 @@
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
@@ -3365,6 +3557,18 @@
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel</optionid>
 					<value>com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.speedCodeSize</value>
 				</option-->
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="low_power" name="ThreadX Low Power sample project" description="This demonstration illustrates how to use ThreadX with low power mode">
 				<board>TargetBoardRX130</board>
@@ -3631,6 +3835,18 @@
 						<address>0x00004000</address>
 					</section>
 				</sections>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="iot_adu" name="Azure Device Update (ADU) sample project" description="This demonstration illustrates OTA firmware update. Note: this project requires bootloader project.">
 				<toolchain>RXC</toolchain>
@@ -3658,6 +3874,17 @@
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
 					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/compat.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/connect_info_dataflash.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_azure_iot_embedded_sdk_connect.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_network.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -3821,6 +4048,88 @@
 					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
+				<!-- copy scripts for ADU -->
+				<impdir>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/common</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/CK-RX65N</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_RSK</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_Cloudkit</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX671_RSK</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX72N_EnvisionKit</folder>
+					<path>tools/AzureDeviceUpdateScripts</path>
+				</impdir>
+				<!-- copy flash project for ADU -->
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/CK-RX65N</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_RSK</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_Cloudkit</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX671_RSK</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX72N_EnvisionKit</folder>
+					<path>tools/FlashProjects</path>
+				</impdir>
+				<!-- bypass dns library for Wifi driver -->
+				<postscgen>
+					<impdir>
+						<board>RX65NCloudKit</board>
+						<board>CloudKitRX65N</board>
+						<board>RSKRX671</board>
+						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
+						<path>libs/netxduo_addons/addons/dns</path>
+					</impdir>
+				</postscgen>
+				<!-- exclude netxduo_addons library -->
+				<excludebuild>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
+				</excludebuild>
+				<excludebuild>
+					<path>libs/netxduo_addons/utility</path>
+				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -3910,7 +4219,7 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
-						<name>C_CONNECT_INFO*</name>
+						<name>D_CONNECT_INFO_1</name>
 						<address>0x00100000</address>
 					</section>
 				</sections>
@@ -3940,7 +4249,10 @@
 						<name>C_2</name>
 						<name>C</name>
 						<name>C$*</name>
-						<name>D*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>D_8</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
@@ -3958,11 +4270,14 @@
 						<name>C</name>
 						<name>C_8</name>
 						<name>C$*</name>
-						<name>D*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>D_8</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
-						<address>0xFFF00300</address>
+						<address>0xFFE00300</address>
 					</section>
 				</sections>
 				<sections>
@@ -4016,6 +4331,18 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
 					<value>true</value>
 				</option>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
 			</app>
 			<app id="application" value="boot_loader" name="Secure bootloader sample project" description="This sample is used together with ADU sample project to provide a secure boot">
 				<toolchain>RXC</toolchain>
@@ -4034,10 +4361,21 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/boot_loader.c</file>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_version.c</file>
+					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_application_version.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<folder>configuration/samples/boot_loader/rsk-rx65n-2mb/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<folder>configuration/samples/boot_loader/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -4095,8 +4433,8 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
-					<folder>configuration/samples/boot_loader/rsk-rx671/smc_gen</folder>
-					<path>src/smc_gen</path>
+					<folder>configuration/samples/boot_loader/rsk-rx671/src</folder>
+					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -4131,6 +4469,11 @@
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/boot_loader/rx72n-envision-kit/linker_section_sample.esi</file>
 					<path>src</path>
+				</impdir>
+				<!-- copy readme file -->
+				<impdir>
+					<file>configuration/samples/boot_loader/README.md</file>
+					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
@@ -4289,28 +4632,17 @@
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
 			<value>true</value>
 		</option>
-		<option>
-			<toolchain>RXC</toolchain>
-			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
-			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
-			<value>true</value>
-		</option>
-		<additionaloption>
-			<toolchain>GNURX</toolchain>
-			<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
-			<value>true</value>
-		</additionaloption>
 		<!-- Open readme and AN file -->
 		<impdir>
 			<file>threadx/LICENSE.txt</file>
 			<file>threadx/LICENSED-HARDWARE.txt</file>
 			<file>threadx/SECURITY.md</file>
-			<file>configuration/samples/r01an6455ej0101-rx-azure-rtos.pdf</file>
+			<file>configuration/samples/r01an6455ej0102-rx-azure-rtos.pdf</file>
 			<path>.</path>
 		</impdir>
 		<openfile>
 			<path>README.md</path>
-			<path>r01an6455ej0101-rx-azure-rtos.pdf</path>
+			<path>r01an6455ej0102-rx-azure-rtos.pdf</path>
 		</openfile>
 		<!-- Update ewp file for IAR project setting -->
 		<sourceedit>
