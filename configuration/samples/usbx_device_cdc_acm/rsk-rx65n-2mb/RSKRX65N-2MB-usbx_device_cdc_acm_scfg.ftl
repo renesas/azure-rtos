@@ -18,13 +18,13 @@
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
+            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -49,7 +49,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_usb_basic">
-            <component display="r_usb_basic" id="r_usb_basic1.40" version="1.40">
+            <component display="r_usb_basic" id="r_usb_basic1.41" version="1.41">
                 <gridItem id="USB0_DP" selectedIndex="1"/>
                 <gridItem id="USB0_DM" selectedIndex="1"/>
                 <gridItem id="USB0_VBUS" selectedIndex="1"/>

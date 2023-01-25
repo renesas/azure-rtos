@@ -18,14 +18,14 @@
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_ROM_CACHE_ENABLE" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
+            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -50,7 +50,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_usb_basic">
-            <component display="r_usb_basic" id="r_usb_basic1.40" version="1.40">
+            <component display="r_usb_basic" id="r_usb_basic1.41" version="1.41">
                 <gridItem id="USB0_DP" selectedIndex="1"/>
                 <gridItem id="USB0_DM" selectedIndex="1"/>
                 <gridItem id="USB0_VBUS" selectedIndex="1"/>
@@ -59,12 +59,12 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_byteq">
-            <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.00" version="2.00">
+            <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.10" version="2.10">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.40" version="4.40">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
                 <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
                 <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
                 <gridItem id="SCI5" selectedIndex="1"/>

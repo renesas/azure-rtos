@@ -14,7 +14,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
@@ -24,7 +24,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.20" version="5.20">
+            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -89,7 +89,7 @@
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
         <configuration inuse="true" name="r_flash_rx">
-            <component display="r_flash_rx" id="r_flash_rx4.90" version="4.90">
+            <component display="r_flash_rx" id="r_flash_rx4.91" version="4.91">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
@@ -98,12 +98,12 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_byteq">
-            <component display="r_byteq" id="r_byteq2.00" version="2.00">
+            <component display="r_byteq" id="r_byteq2.10" version="2.10">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component display="r_sci_rx" id="r_sci_rx4.40" version="4.40">
+            <component display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
                 <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
                 <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
                 <gridItem id="SCI0" selectedIndex="1"/>
