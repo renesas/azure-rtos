@@ -132,6 +132,11 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #define SAMPLE_HTTP_PROXY_USER_NAME     ""
 #endif /* SAMPLE_HTTP_PROXY_USER_NAME  */
 
+#ifndef SAMPLE_HTTP_PROXY_PASSWORD
+#define SAMPLE_HTTP_PROXY_PASSWORD      ""
+#endif /* SAMPLE_HTTP_PROXY_PASSWORD  */
+#endif /* SAMPLE_HTTP_PROXY_ENABLE  */
+
 #ifndef SAMPLE_NETWORK_DRIVER
 #define SAMPLE_NETWORK_DRIVER           nx_driver_rx_fit
 #endif /* SAMPLE_NETWORK_DRIVER */
@@ -139,11 +144,6 @@ extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_pt
 #ifndef SAMPLE_BOARD_SETUP
 #define SAMPLE_BOARD_SETUP           platform_setup
 #endif /* SAMPLE_BOARD_SETUP */
-
-#ifndef SAMPLE_HTTP_PROXY_PASSWORD
-#define SAMPLE_HTTP_PROXY_PASSWORD      ""
-#endif /* SAMPLE_HTTP_PROXY_PASSWORD  */
-#endif /* SAMPLE_HTTP_PROXY_ENABLE  */
 
 static TX_THREAD        sample_helper_thread;
 static NX_PACKET_POOL   pool_0;
