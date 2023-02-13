@@ -12,7 +12,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * same contents on both of Renesas website and YouTube/bilibili
   * en
     * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
-    * https://www.youtube.com/watch?v=7aIfCr7xYno&list=PLgUXqPkOStPsB9yh-XZ7BNv0J6UtAERO1&index=1
+    * https://www.youtube.com/watch?v=OyuIXlles8Q
   * ja
     * none
 ### RX65N Cloud Kit (old)
