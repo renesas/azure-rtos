@@ -1026,6 +1026,11 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk.c</file>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_connect.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
@@ -1392,6 +1397,11 @@
 					<file>configuration/samples/iot_sdk/common/demo_printf.h</file>
 					<file>configuration/samples/iot_sdk/common/hardware_setup.h</file>
 					<file>configuration/samples/iot_sdk/common/sample_device_identity.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk.c</file>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_connect.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
