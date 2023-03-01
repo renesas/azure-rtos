@@ -1553,6 +1553,11 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_pnp.c</file>
+					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_connect.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src</folder>
