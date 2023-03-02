@@ -2438,15 +2438,7 @@
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
 				<impdir>
-					<file>configuration/samples/temperature_pnp/common/demo_printf.h</file>
-					<file>configuration/samples/temperature_pnp/common/hardware_setup.h</file>
-					<file>configuration/samples/temperature_pnp/common/nx_azure_iot_pnp_helpers.c</file>
-					<file>configuration/samples/temperature_pnp/common/nx_azure_iot_pnp_helpers.h</file>
-					<file>configuration/samples/temperature_pnp/common/sample_device_identity.c</file>
-					<file>configuration/samples/temperature_pnp/common/sample_pnp_deviceinfo_component.c</file>
-					<file>configuration/samples/temperature_pnp/common/sample_pnp_deviceinfo_component.h</file>
-					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.c</file>
-					<file>configuration/samples/temperature_pnp/common/sample_pnp_thermostat_component.h</file>
+					<folder>configuration/samples/temperature_pnp/common</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
