@@ -217,6 +217,30 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
 					<value>true</value>
 				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
 				<additionaloption>
 					<toolchain>GNURX</toolchain>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
@@ -432,6 +456,24 @@
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.optimize</optionid>
 					<value>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.optimize.level0</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
 				</option>
 				<!-- enable remove unused code -->
 				<option>
@@ -754,14 +796,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -979,14 +1027,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -1345,14 +1399,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -1506,14 +1566,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -1868,14 +1934,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2024,14 +2096,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2381,14 +2459,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2543,14 +2627,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2693,14 +2783,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2895,14 +2991,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -3103,14 +3205,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<!--option>
@@ -3379,14 +3487,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<!--option>
@@ -3548,14 +3662,20 @@
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
-					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.custom</value>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
 				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.symbolDelete</optionid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<!--option>
@@ -3841,6 +3961,30 @@
 						<address>0x00004000</address>
 					</section>
 				</sections>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
 				<!-- set 64-bit double data type -->
 				<option>
 					<toolchain>RXC</toolchain>
@@ -4398,6 +4542,30 @@
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
 					<value>true</value>
 				</option>
 				<!-- set 64-bit double data type -->
