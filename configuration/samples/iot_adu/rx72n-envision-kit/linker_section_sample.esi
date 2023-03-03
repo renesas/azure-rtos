@@ -23,6 +23,14 @@
   </sections>
   <sections name="B_RX_DESC*"/>
   <sections name="B_TX_DESC*"/>
+  <sections name="BEXRAM_1"/>
+  <sections name="REXRAM_1"/>
+  <sections name="BEXRAM_2"/>
+  <sections name="REXRAM_2"/>
+  <sections name="BEXRAM"/>
+  <sections name="REXRAM"/>
+  <sections name="BEXRAM_8"/>
+  <sections name="REXRAM_8"/>
   <sections name="C_1">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="4292870912"/>
   </sections>
@@ -34,6 +42,10 @@
   <sections name="D_1"/>
   <sections name="D_2"/>
   <sections name="D_8"/>
+  <sections name="DEXRAM"/>
+  <sections name="DEXRAM_1"/>
+  <sections name="DEXRAM_2"/>
+  <sections name="DEXRAM_8"/>
   <sections name="W*"/>
   <sections name="L"/>
   <sections name="P*"/>

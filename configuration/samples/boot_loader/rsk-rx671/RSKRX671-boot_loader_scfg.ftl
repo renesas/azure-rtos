@@ -12,7 +12,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_ROM_CACHE_ENABLE" selectedIndex="0"/>

@@ -16,11 +16,14 @@
   <sections name="D_CONNECT_INFO_1">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="1048576"/>
   </sections>
-  <sections name="B_ETHERNET_BUFFERS*">
+  <sections name="BEXRAM_1">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="8388608"/>
   </sections>
-  <sections name="B_RX_DESC*"/>
-  <sections name="B_TX_DESC*"/>
+  <sections name="REXRAM_1"/>
+  <sections name="BEXRAM_2"/>
+  <sections name="REXRAM_2"/>
+  <sections name="BEXRAM"/>
+  <sections name="REXRAM"/>
   <sections name="C_1">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="4293919488"/>
   </sections>
@@ -30,7 +33,9 @@
   <sections name="D"/>
   <sections name="D_1"/>
   <sections name="D_2"/>
-  <sections name="D_8"/>
+  <sections name="DEXRAM"/>
+  <sections name="DEXRAM_1"/>
+  <sections name="DEXRAM_2"/>
   <sections name="W*"/>
   <sections name="L"/>
   <sections name="P*"/>

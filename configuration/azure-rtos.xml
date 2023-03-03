@@ -4246,6 +4246,46 @@
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<section>
+						<name>BEXRAM_1</name>
+						<name>REXRAM_1</name>
+						<name>BEXRAM_2</name>
+						<name>REXRAM_2</name>
+						<name>BEXRAM</name>
+						<name>REXRAM</name>
+						<address>0x00800000</address>
+					</section>
+					<mappedramrom>DEXRAM=REXRAM</mappedramrom>
+					<mappedramrom>DEXRAM_1=REXRAM_1</mappedramrom>
+					<mappedramrom>DEXRAM_2=REXRAM_2</mappedramrom>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<section>
+						<name>BEXRAM_1</name>
+						<name>REXRAM_1</name>
+						<name>BEXRAM_2</name>
+						<name>REXRAM_2</name>
+						<name>BEXRAM</name>
+						<name>REXRAM</name>
+						<name>BEXRAM_8</name>
+						<name>REXRAM_8</name>
+						<address>0x00800000</address>
+					</section>
+					<mappedramrom>DEXRAM=REXRAM</mappedramrom>
+					<mappedramrom>DEXRAM_1=REXRAM_1</mappedramrom>
+					<mappedramrom>DEXRAM_2=REXRAM_2</mappedramrom>
+					<mappedramrom>DEXRAM_8=REXRAM_8</mappedramrom>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
@@ -4257,7 +4297,9 @@
 						<name>D</name>
 						<name>D_1</name>
 						<name>D_2</name>
-						<name>D_8</name>
+						<name>DEXRAM</name>
+						<name>DEXRAM_1</name>
+						<name>DEXRAM_2</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
@@ -4267,6 +4309,24 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<section>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C_8</name>
+						<name>C$*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>D_8</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>P*</name>
+						<address>0xFFE00300</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
@@ -4279,6 +4339,10 @@
 						<name>D_1</name>
 						<name>D_2</name>
 						<name>D_8</name>
+						<name>DEXRAM</name>
+						<name>DEXRAM_1</name>
+						<name>DEXRAM_2</name>
+						<name>DEXRAM_8</name>
 						<name>W*</name>
 						<name>L</name>
 						<name>P*</name>
@@ -4581,13 +4645,77 @@
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<section>
+						<name>BEXRAM_1</name>
+						<name>REXRAM_1</name>
+						<name>BEXRAM_2</name>
+						<name>REXRAM_2</name>
+						<name>BEXRAM</name>
+						<name>REXRAM</name>
+						<address>0x00800000</address>
+					</section>
+					<mappedramrom>DEXRAM=REXRAM</mappedramrom>
+					<mappedramrom>DEXRAM_1=REXRAM_1</mappedramrom>
+					<mappedramrom>DEXRAM_2=REXRAM_2</mappedramrom>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<section>
+						<name>BEXRAM_1</name>
+						<name>REXRAM_1</name>
+						<name>BEXRAM_2</name>
+						<name>REXRAM_2</name>
+						<name>BEXRAM</name>
+						<name>REXRAM</name>
+						<name>BEXRAM_8</name>
+						<name>REXRAM_8</name>
+						<address>0x00800000</address>
+					</section>
+					<mappedramrom>DEXRAM=REXRAM</mappedramrom>
+					<mappedramrom>DEXRAM_1=REXRAM_1</mappedramrom>
+					<mappedramrom>DEXRAM_2=REXRAM_2</mappedramrom>
+					<mappedramrom>DEXRAM_8=REXRAM_8</mappedramrom>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
 					<section>
+						<name>PResetPRG</name>
+						<name>C_1</name>
+						<name>C_2</name>
+						<name>C</name>
+						<name>C$*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>DEXRAM</name>
+						<name>DEXRAM_1</name>
+						<name>DEXRAM_2</name>
+						<name>W*</name>
+						<name>L</name>
+						<name>P</name>
+						<name>PFRAM</name>
+						<!--name>PFRAM2</name-->
+						<address>0xFFFF0000</address>
+					</section>
+				</sections>
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>RSKRX671</board>
+					<section>
 						<!--name>PResetPRG</name>
 						<name>C_1</name>
 						<name>C_2</name>
+						<name>C_8</name>
 						<name>C</name>
 						<name>C$*</name>
 						<name>D*</name>
@@ -4601,20 +4729,25 @@
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
-					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<section>
-						<!--name>PResetPRG</name>
+						<name>PResetPRG</name>
 						<name>C_1</name>
 						<name>C_2</name>
 						<name>C_8</name>
 						<name>C</name>
 						<name>C$*</name>
-						<name>D*</name>
+						<name>D</name>
+						<name>D_1</name>
+						<name>D_2</name>
+						<name>DEXRAM</name>
+						<name>DEXRAM_1</name>
+						<name>DEXRAM_2</name>
+						<name>DEXRAM_8</name>
 						<name>W*</name>
 						<name>L</name>
-						<name>P</name-->
+						<name>P</name>
 						<name>PFRAM</name>
 						<!--name>PFRAM2</name-->
 						<address>0xFFFF0000</address>
