@@ -537,6 +537,15 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -1117,6 +1126,15 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -1652,6 +1670,15 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -2174,6 +2201,15 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<folder>configuration/samples/temperature_pnp/rx72n-envision-kit/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
