@@ -14,7 +14,7 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2023 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 * File Name    : r_sci_rx_pinset.c
@@ -76,6 +76,27 @@ void R_SCI_PinSet_SCI2()
     /* Set CTS2#/RTS2#/SS2# pin */
     MPC.PJ5PFS.BYTE = 0x0BU;
     PORTJ.PMR.BIT.B5 = 1U;
+
+    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
+}
+
+/***********************************************************************************************************************
+* Function Name: R_SCI_PinSet_SCI10
+* Description  : This function initializes pins for r_sci_rx module
+* Arguments    : none
+* Return Value : none
+***********************************************************************************************************************/
+void R_SCI_PinSet_SCI10()
+{
+    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
+
+    /* Set RXD10/SMISO10/SSCL10 pin */
+    MPC.P86PFS.BYTE = 0x0AU;
+    PORT8.PMR.BIT.B6 = 1U;
+
+    /* Set TXD10/SMOSI10/SSDA10 pin */
+    MPC.P87PFS.BYTE = 0x0AU;
+    PORT8.PMR.BIT.B7 = 1U;
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 }

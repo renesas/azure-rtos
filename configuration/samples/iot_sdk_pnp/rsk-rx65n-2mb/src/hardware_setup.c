@@ -3,7 +3,6 @@
 
 #include <platform.h>
 
-#include <Config_SCI8.h>
 #include <r_cmt_rx_if.h>
 #include <r_ether_rx_if.h>
 #include <r_ether_rx_pinset.h>
@@ -25,9 +24,6 @@ void platform_setup(void)
 {
     uint32_t chan;
     ether_param_t eth_param = {0};
-    
-    /* Setup SCI8 for printf output. */
-    R_Config_SCI8_Start();
     
     /* Create periodic timer for the system tick. */
     R_CMT_CreatePeriodic(TX_TIMER_TICKS_PER_SECOND, timer_callback, &chan);

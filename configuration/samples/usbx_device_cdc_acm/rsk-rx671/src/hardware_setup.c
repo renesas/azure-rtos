@@ -3,7 +3,6 @@
 
 #include <platform.h>
 
-#include <Config_SCI10.h>
 #include <r_cmt_rx_if.h>
 
 #include <tx_api.h>
@@ -55,9 +54,6 @@ void usb0_setup(void)
 void platform_setup(void)
 {
     uint32_t chan;
-
-    /* Setup SCI10 for printf output. */
-    R_Config_SCI10_Start();
 
     /* Create periodic timer for the system tick. */
     R_CMT_CreatePeriodic(TX_TIMER_TICKS_PER_SECOND, timer_callback, &chan);

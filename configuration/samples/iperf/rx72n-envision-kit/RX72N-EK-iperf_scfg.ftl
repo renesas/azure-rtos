@@ -75,20 +75,23 @@
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI2">
-            <allocatable id="SCI2">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.9.2"/>
-            <allocator channelLevel0="2" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 2" display="SCI2" id="com.renesas.smc.swc.cg.rx.sciasync.rx72n.sci2" type="SCI">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        <configuration inuse="true" name="r_byteq">
+            <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.10" version="2.10">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_sci_rx">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
+                <gridItem id="RXD2/SMISO2/SSCL2" selectedIndex="1"/>
+                <gridItem id="TXD2/SMOSI2/SSDA2" selectedIndex="1"/>
+                <gridItem id="SCI2" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
+                <gridItem id="SCI_CFG_CH2_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH2_TX_BUFSIZ" selectedIndex="2180"/>
+                <gridItem id="SCI_CFG_CH2_RX_BUFSIZ" selectedIndex="4096"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>
 </smc>

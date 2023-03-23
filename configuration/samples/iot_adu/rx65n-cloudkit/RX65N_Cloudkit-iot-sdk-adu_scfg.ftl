@@ -72,21 +72,6 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI5">
-            <allocatable id="SCI5">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.11.0"/>
-            <allocator channelLevel0="5" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 5" display="SCI5" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci5" type="SCI">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
-        </configuration>
         <configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx4.91" version="4.91">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
@@ -110,12 +95,18 @@
                 <gridItem id="RXD1/SMISO1/SSCL1" selectedIndex="1"/>
                 <gridItem id="TXD1/SMOSI1/SSDA1" selectedIndex="1"/>
                 <gridItem id="SCI1" selectedIndex="1"/>
+                <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
+                <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
+                <gridItem id="SCI5" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="2180"/>
                 <gridItem id="SCI_CFG_CH1_TX_BUFSIZ" selectedIndex="2180"/>
+                <gridItem id="SCI_CFG_CH5_TX_BUFSIZ" selectedIndex="2180"/>
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="4096"/>
+                <gridItem id="SCI_CFG_CH5_RX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_ERI_TEI_PRIORITY" selectedIndex="3"/>
             </component>

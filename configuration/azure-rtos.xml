@@ -594,18 +594,10 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
@@ -615,6 +607,8 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
@@ -622,10 +616,12 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -636,10 +632,6 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -720,22 +712,18 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<incdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<path>src/smc_gen/r_ether_rx</path>
-				</incdir>
-				<incdir>
-					<board>RSKRX671</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<path>src/smc_gen/r_byteq</path>
-					<path>src/smc_gen/r_byteq/src</path>
-					<path>src/smc_gen/r_sci_rx</path>
-					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
 				<incdir>
 					<board>RSKRX671</board>
@@ -922,22 +910,27 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
-					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
-					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
-					<board>CK-RX65N</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -948,7 +941,6 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
-					<board>CK-RX65N</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -989,7 +981,6 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</incdir>
 				<incdir>
-					<board>CK-RX65N</board>
 					<path>src/smc_gen/r_byteq</path>
 					<path>src/smc_gen/r_byteq/src</path>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -1190,18 +1181,10 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
@@ -1211,6 +1194,8 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
@@ -1218,10 +1203,12 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -1232,10 +1219,6 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -1316,22 +1299,18 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<incdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<path>src/smc_gen/r_ether_rx</path>
-				</incdir>
-				<incdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
-					<path>src/smc_gen/r_byteq</path>
-					<path>src/smc_gen/r_byteq/src</path>
-					<path>src/smc_gen/r_sci_rx</path>
-					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
 				<incdir>
 					<board>RX65NCloudKit</board>
@@ -1734,18 +1713,10 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
@@ -1755,6 +1726,8 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
@@ -1762,10 +1735,12 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -1776,10 +1751,6 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -1860,22 +1831,18 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<incdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<path>src/smc_gen/r_ether_rx</path>
-				</incdir>
-				<incdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
-					<path>src/smc_gen/r_byteq</path>
-					<path>src/smc_gen/r_byteq/src</path>
-					<path>src/smc_gen/r_sci_rx</path>
-					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
 				<incdir>
 					<board>RX65NCloudKit</board>
@@ -2268,18 +2235,10 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
@@ -2289,6 +2248,8 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
@@ -2296,10 +2257,12 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -2310,10 +2273,6 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -2394,22 +2353,18 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</incdir>
 				<incdir>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<incdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<path>src/smc_gen/r_ether_rx</path>
-				</incdir>
-				<incdir>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX671</board>
-					<path>src/smc_gen/r_byteq</path>
-					<path>src/smc_gen/r_byteq/src</path>
-					<path>src/smc_gen/r_sci_rx</path>
-					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
 				<incdir>
 					<board>RX65NCloudKit</board>
@@ -3350,22 +3305,55 @@
 					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -3376,7 +3364,14 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -3445,7 +3440,14 @@
 					<path>src/smc_gen/r_usb_basic/src/hw/inc</path>
 				</incdir>
 				<incdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<path>src/smc_gen/r_byteq</path>
 					<path>src/smc_gen/r_byteq/src</path>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -4200,10 +4202,42 @@
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
 				<impdir>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
-					<board>RSKRX671</board>
-					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx</folder>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
@@ -4332,6 +4366,8 @@
 					<path>src/smc_gen/r_sys_time_rx/src</path>
 					<path>src/smc_gen/r_fwup</path>
 					<path>src/smc_gen/r_fwup/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
 				<incdir>
 					<board>RSKRX65N-2MB</board>
@@ -4345,8 +4381,6 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<path>src/smc_gen/r_sci_rx</path>
-					<path>src/smc_gen/r_sci_rx/src</path>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
@@ -4762,7 +4796,42 @@
 					<path>src/smc_gen/r_flash_rx</path>
 				</impdir>
 				<impdir>
-					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx</folder>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
