@@ -1089,6 +1089,19 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>CK-RX65N</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/iot_sdk/rsk-rx65n-2mb/src</folder>
@@ -1111,6 +1124,12 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/compat.c</file>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/sample_network.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<folder>configuration/samples/iot_sdk/rx72n-envision-kit/src</folder>
@@ -1123,6 +1142,15 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1276,16 +1304,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- bypass dns library for Wifi driver -->
-				<postscgen>
-					<impdir>
-						<board>RX65NCloudKit</board>
-						<board>CloudKitRX65N</board>
-						<board>RSKRX671</board>
-						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
-						<path>libs/netxduo_addons/addons/dns</path>
-					</impdir>
-				</postscgen>
 				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
@@ -1621,6 +1639,19 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>CK-RX65N</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/iot_sdk_pnp/rsk-rx65n-2mb/src</folder>
@@ -1643,6 +1674,14 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/compat.c</file>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/sample_network.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<folder>configuration/samples/iot_sdk_pnp/rx72n-envision-kit/src</folder>
@@ -1655,6 +1694,15 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1808,16 +1856,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- bypass dns library for Wifi driver -->
-				<postscgen>
-					<impdir>
-						<board>RX65NCloudKit</board>
-						<board>CloudKitRX65N</board>
-						<board>RSKRX671</board>
-						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
-						<path>libs/netxduo_addons/addons/dns</path>
-					</impdir>
-				</postscgen>
 				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
@@ -2143,6 +2181,19 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>CK-RX65N</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/temperature_pnp/rsk-rx65n-2mb/src</folder>
@@ -2165,6 +2216,14 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/compat.c</file>
+					<file>configuration/samples/iot_sdk/rx65n-cloudkit/src/sample_network.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<folder>configuration/samples/temperature_pnp/rx72n-envision-kit/src</folder>
@@ -2177,6 +2236,15 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>RSKRX671</board>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2330,16 +2398,6 @@
 					<board>EnvisionKitRX72N</board>
 					<file>src/lnkr5f572nn.icf</file>
 				</linkerscript>
-				<!-- bypass dns library for Wifi driver -->
-				<postscgen>
-					<impdir>
-						<board>RX65NCloudKit</board>
-						<board>CloudKitRX65N</board>
-						<board>RSKRX671</board>
-						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
-						<path>libs/netxduo_addons/addons/dns</path>
-					</impdir>
-				</postscgen>
 				<!-- exclude netxduo_addons library -->
 				<excludebuild>
 					<board>RX65NCloudKit</board>
