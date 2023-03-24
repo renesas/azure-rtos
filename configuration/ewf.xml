@@ -103,6 +103,12 @@ Package version 6.2.1_rel-rx-1.0.0</moduleinfo>
 			<file>embedded-wireless-framework/src/ewf_tokenizer.h</file>
 			<path>libs/ewf/src</path>
 		</impdir>
+		<!-- copy patch file for Packet data protocol type IP -->
+		<impdir>
+			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_adapter_api_modem_packet_domain.h</file>
+			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_lib.c</file>
+			<path>libs/ewf/src</path>
+		</impdir>
 		<!-- Build setting -->
 		<incdir>
 			<path>libs/ewf</path>

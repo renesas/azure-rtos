@@ -36,13 +36,13 @@
         </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="netxduo">
             <component display="Azure RTOS NetX Duo" id="netxduo${packageVersion}" version="${packageVersion}">
-				<gridItem id="USE_NX_ENABLE_TCPIP_OFFLOAD" selectedIndex="1"/>
-				<gridItem id="USE_NX_ENABLE_INTERFACE_CAPABILITY" selectedIndex="1"/>
-				<gridItem id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL" selectedIndex="1"/>
-				<gridItem id="USE_NX_DNS_CLIENT_CLEAR_QUEUE" selectedIndex="1"/>
-				<gridItem id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM" selectedIndex="1"/>
-				<gridItem id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" selectedIndex="1"/>
-				<gridItem id="USE_NX_SNTP_CURRENT_YEAR" selectedIndex="1"/>
+                <gridItem id="USE_NX_ENABLE_TCPIP_OFFLOAD" selectedIndex="1"/>
+                <gridItem id="USE_NX_ENABLE_INTERFACE_CAPABILITY" selectedIndex="1"/>
+                <gridItem id="USE_NX_DNS_CLIENT_USER_CREATE_PACKET_POOL" selectedIndex="1"/>
+                <gridItem id="USE_NX_DNS_CLIENT_CLEAR_QUEUE" selectedIndex="1"/>
+                <gridItem id="USE_NX_SNTP_CLIENT_MIN_SERVER_STRATUM" selectedIndex="1"/>
+                <gridItem id="USE_NX_SNTP_CLIENT_MAX_ROOT_DISPERSION" selectedIndex="1"/>
+                <gridItem id="USE_NX_SNTP_CURRENT_YEAR" selectedIndex="1"/>
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
@@ -51,12 +51,12 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-		<configuration enable="true" exclude="false" inuse="true" name="ewf">
+        <configuration enable="true" exclude="false" inuse="true" name="ewf">
             <component display="Azure Embedded Wireless Framework" id="ewf${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-		<configuration enable="true" exclude="false" inuse="true" name="azurertos_object">
+        <configuration enable="true" exclude="false" inuse="true" name="azurertos_object">
             <allocatable id="" name="" type="">
                 <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
                     <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
@@ -91,14 +91,14 @@
                 <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
                 <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
                 <gridItem id="SCI0" selectedIndex="1"/>
-				<gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
+                <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
                 <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
                 <gridItem id="SCI5" selectedIndex="1"/>
-				<gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
-				<gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
-				<gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
+                <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH5_TX_BUFSIZ" selectedIndex="2048"/>
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="8192"/>
             </component>

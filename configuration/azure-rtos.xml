@@ -1465,6 +1465,7 @@
 				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-ewf" name="IoT Embedded SDK sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
@@ -1487,6 +1488,18 @@
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/port/gnu/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/port/ccrx/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -1572,6 +1585,16 @@
 					<path>configuration/samples/iot_sdk_ewf/ck-rx65n/CK-RX65N-iot-sdk-ewf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
+					</section>
+				</sections>
 				<!-- enable remove unused code -->
 				<option>
 					<toolchain>RXC</toolchain>
@@ -1595,6 +1618,12 @@
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.headCtype</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2017,6 +2046,7 @@
 				</additionaloption>
 			</app>
 			<app id="application" value="iot-sdk-pnp-ewf" name="IoT Embedded SDK PNP sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK PnP sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
@@ -2034,6 +2064,18 @@
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/port/gnu/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/port/ccrx/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2119,6 +2161,16 @@
 					<path>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/CK-RX65N-iot-sdk-pnp-ewf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
+					</section>
+				</sections>
 				<!-- enable remove unused code -->
 				<option>
 					<toolchain>RXC</toolchain>
@@ -2142,6 +2194,12 @@
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.headCtype</optionid>
 					<value>true</value>
 				</option>
 				<option>
@@ -2567,6 +2625,7 @@
 				</additionaloption>
 			</app>
 			<app id="application" value="temperature-pnp-ewf" name="IoT Embedded SDK with IoT Plug and Play sample project with EWF library (Preliminary version)" description="This sample project is similar as IoT Embedded SDK with IoT Plug and Play sample project, however, it uses Embedded Wireless Framework library and Cat M1 for the connection.">
+				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
@@ -2582,6 +2641,18 @@
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/temperature_pnp_ewf/ck-rx65n/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/temperature_pnp_ewf/ck-rx65n/port/gnu/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/temperature_pnp_ewf/ck-rx65n/port/ccrx/application_thread_entry.c</file>
+					<path>src/rtos_skeleton</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2667,6 +2738,16 @@
 					<path>configuration/samples/temperature_pnp_ewf/ck-rx65n/CK-RX65N-temperature-pnp-ewf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
+				<!-- set RXC linker section -->
+				<sections>
+					<toolchain>RXC</toolchain>
+					<board>CK-RX65N</board>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00800000</address>
+					</section>
+				</sections>
 				<!-- enable remove unused code -->
 				<option>
 					<toolchain>RXC</toolchain>
@@ -2690,6 +2771,12 @@
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.headCtype</optionid>
 					<value>true</value>
 				</option>
 				<option>

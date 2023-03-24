@@ -91,28 +91,18 @@
                 <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
                 <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
                 <gridItem id="SCI0" selectedIndex="1"/>
-		<gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+                <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
+                <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
+                <gridItem id="SCI5" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
+                <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="8192"/>
+                <gridItem id="SCI_CFG_CH5_TX_BUFSIZ" selectedIndex="2048"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-        </configuration>
-		<configuration inuse="true" name="Config_SCI5">
-            <allocatable id="SCI5">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.12.0"/>
-            <allocator channelLevel0="5" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 5" display="SCI5" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci5" type="SCI">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
     </tool>
 </smc>

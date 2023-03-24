@@ -59,3 +59,23 @@ void R_SCI_PinSet_SCI0()
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 }
 
+/***********************************************************************************************************************
+* Function Name: R_SCI_PinSet_SCI5
+* Description  : This function initializes pins for r_sci_rx module
+* Arguments    : none
+* Return Value : none
+***********************************************************************************************************************/
+void R_SCI_PinSet_SCI5()
+{
+    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
+
+    /* Set RXD5/SMISO5/SSCL5 pin */
+    MPC.PC2PFS.BYTE = 0x0AU;
+    PORTC.PMR.BIT.B2 = 1U;
+
+    /* Set TXD5/SMOSI5/SSDA5 pin */
+    MPC.PC3PFS.BYTE = 0x0AU;
+    PORTC.PMR.BIT.B3 = 1U;
+
+    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
+}

@@ -91,14 +91,14 @@
                 <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
                 <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
                 <gridItem id="SCI0" selectedIndex="1"/>
-				<gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
+                <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
                 <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
                 <gridItem id="SCI5" selectedIndex="1"/>
-				<gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
-				<gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
-				<gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
+                <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH5_TX_BUFSIZ" selectedIndex="2048"/>
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="8192"/>
             </component>

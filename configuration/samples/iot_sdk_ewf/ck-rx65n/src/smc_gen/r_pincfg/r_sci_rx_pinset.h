@@ -36,5 +36,6 @@ Global variables and functions
 ***********************************************************************************************************************/
 
 void R_SCI_PinSet_SCI0();
+void R_SCI_PinSet_SCI5();
 
 #endif
