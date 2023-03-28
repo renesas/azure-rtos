@@ -1080,6 +1080,10 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk.c</file>
 					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_connect.c</file>
 					<path>src</path>
@@ -1659,6 +1663,10 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
@@ -2232,6 +2240,10 @@
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/temperature_pnp/common</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
