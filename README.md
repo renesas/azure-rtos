@@ -313,6 +313,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.2.1_rel-rx-1.0.0
+  * Update Azure RTOS libraries to 6.2.1_rel
+  * Support CC-RX for IoT Embedded SDK samples using EWF
+  * Update SDK samples with EWF to support SCI channel configuration
+  * Enable optimizaton for CC-RX projects
+  * Update bsp version from 7.20 to 7.21
+  * Change SCI driver code style from CG to FIT
+  * Improve codes related to ethernet and Wifi for SDK samples
 * 6.2.0_rel-rx-1.0.0
   * Update Azure RTOS libraries to 6.2.0_rel
   * Update RX Driver Package to 1.37

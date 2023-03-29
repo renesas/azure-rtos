@@ -18,7 +18,7 @@
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -57,20 +57,23 @@
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI8">
-            <allocatable id="SCI8">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.11.0"/>
-            <allocator channelLevel0="8" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 8" display="SCI8" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci8" type="">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        <configuration inuse="true" name="r_byteq">
+            <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.10" version="2.10">
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_sci_rx">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
+                <gridItem id="RXD8/SMISO8/SSCL8" selectedIndex="1"/>
+                <gridItem id="TXD8/SMOSI8/SSDA8" selectedIndex="1"/>
+                <gridItem id="SCI8" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
+                <gridItem id="SCI_CFG_CH8_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH8_TX_BUFSIZ" selectedIndex="2180"/>
+                <gridItem id="SCI_CFG_CH8_RX_BUFSIZ" selectedIndex="4096"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>
 </smc>

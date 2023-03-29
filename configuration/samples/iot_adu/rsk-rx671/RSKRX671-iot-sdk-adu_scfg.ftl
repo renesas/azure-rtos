@@ -14,7 +14,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
@@ -73,21 +73,6 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI10">
-            <allocatable id="SCI10">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.11.0"/>
-            <allocator channelLevel0="10" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 10" display="SCI10" id="com.renesas.smc.swc.cg.rx.sciasync.rx671.sci10" type="SCI">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
-        </configuration>
         <configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx4.91" version="4.91">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
@@ -111,13 +96,19 @@
                 <gridItem id="TXD2/SMOSI2/SSDA2" selectedIndex="1"/>
                 <gridItem id="CTS2#/RTS2#/SS2#" selectedIndex="1"/>
                 <gridItem id="SCI2" selectedIndex="1"/>
+                <gridItem id="RXD10/SMISO10/SSCL10" selectedIndex="1"/>
+                <gridItem id="TXD10/SMOSI10/SSDA10" selectedIndex="1"/>
+                <gridItem id="SCI10" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
                 <gridItem id="SCI_CFG_CH2_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH10_INCLUDED" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH0_TX_BUFSIZ" selectedIndex="2180"/>
                 <gridItem id="SCI_CFG_CH2_TX_BUFSIZ" selectedIndex="2180"/>
                 <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_CH2_RX_BUFSIZ" selectedIndex="4096"/>
+                <gridItem id="SCI_CFG_CH10_TX_BUFSIZ" selectedIndex="2180"/>
+                <gridItem id="SCI_CFG_CH10_RX_BUFSIZ" selectedIndex="4096"/>
                 <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>

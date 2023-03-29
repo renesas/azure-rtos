@@ -14,7 +14,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -43,21 +43,6 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration inuse="true" name="Config_SCI5">
-            <allocatable id="SCI5">
-                <option enabled="true" id="Bitrate" selection="FreeValue">
-                    <item id="FreeValue" input="115200" vlaue="115200"/>
-                </option>
-            </allocatable>
-            <component detailDescription="" display="SCI/SCIF Asynchronous Mode" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" version="1.9.1"/>
-            <allocator channelLevel0="5" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="SCI channel 5" display="SCI5" id="com.renesas.smc.tools.swcomponent.codegenerator.sciasync.rx651.sci5" type="">
-                <context>
-                    <option enabled="true" id="Mode" selection="BothMode">
-                    </option>
-                </context>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
-        </configuration>
         <configuration inuse="true" name="r_byteq">
             <component detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq2.10" version="2.10">
             </component>
@@ -72,11 +57,17 @@
             <gridItem id="RXD1/SMISO1/SSCL1" selectedIndex="1"/>
             <gridItem id="TXD1/SMOSI1/SSDA1" selectedIndex="1"/>
             <gridItem id="SCI1" selectedIndex="1"/>
+            <gridItem id="RXD5/SMISO5/SSCL5" selectedIndex="1"/>
+            <gridItem id="TXD5/SMOSI5/SSDA5" selectedIndex="1"/>
+            <gridItem id="SCI5" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="3000"/>
             <gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="3000"/>
+            <gridItem id="SCI_CFG_CH5_TX_BUFSIZ" selectedIndex="2180"/>
+            <gridItem id="SCI_CFG_CH5_RX_BUFSIZ" selectedIndex="4096"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

@@ -14,7 +14,7 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2023 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 * File Name    : r_sci_rx_pinset.h
@@ -37,5 +37,6 @@ Global variables and functions
 
 void R_SCI_PinSet_SCI0();
 void R_SCI_PinSet_SCI2();
+void R_SCI_PinSet_SCI10();
 
 #endif

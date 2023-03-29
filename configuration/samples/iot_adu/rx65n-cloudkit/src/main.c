@@ -17,7 +17,7 @@
 #include "nxd_sntp_client.h"
 #include "nx_secure_tls_api.h"
 
-#include <demo_printf.h>
+#include "demo_printf.h"
 
 /* Defined, HTTP proxy is enabled.  */
 /*
@@ -235,8 +235,8 @@ UINT  status;
 
     NX_PARAMETER_NOT_USED(first_unused_memory);
 
-    /* Initialize the demo printf implementation. */
-    demo_printf_init();
+    /* Initialize the demo LOG_TERMINAL implementation. */
+    LOG_TERMINAL_INIT();
 
     /* Initialize the NetX system.  */
     nx_system_initialize();
@@ -248,7 +248,7 @@ UINT  status;
     /* Check for pool creation error.  */
     if (status)
     {
-        printf("nx_packet_pool_create fail: %u\r\n", status);
+        LOG_TERMINAL("nx_packet_pool_create fail: %u\r\n", status);
         return;
     }
 
@@ -262,7 +262,7 @@ UINT  status;
     /* Check for IP create errors.  */
     if (status)
     {
-        printf("nx_ip_create fail: %u\r\n", status);
+        LOG_TERMINAL("nx_ip_create fail: %u\r\n", status);
         return;
     }
 
@@ -273,7 +273,7 @@ UINT  status;
     /* Check for ARP enable errors.  */
     if (status)
     {
-        printf("nx_arp_enable fail: %u\r\n", status);
+        LOG_TERMINAL("nx_arp_enable fail: %u\r\n", status);
         return;
     }
 
@@ -283,7 +283,7 @@ UINT  status;
     /* Check for ICMP enable errors.  */
     if (status)
     {
-        printf("nx_icmp_enable fail: %u\r\n", status);
+        LOG_TERMINAL("nx_icmp_enable fail: %u\r\n", status);
         return;
     }
 #endif
@@ -294,7 +294,7 @@ UINT  status;
     /* Check for TCP enable errors.  */
     if (status)
     {
-        printf("nx_tcp_enable fail: %u\r\n", status);
+        LOG_TERMINAL("nx_tcp_enable fail: %u\r\n", status);
         return;
     }
 
@@ -304,7 +304,7 @@ UINT  status;
     /* Check for UDP enable errors.  */
     if (status)
     {
-        printf("nx_udp_enable fail: %u\r\n", status);
+        LOG_TERMINAL("nx_udp_enable fail: %u\r\n", status);
         return;
     }
 
@@ -321,7 +321,7 @@ UINT  status;
     /* Check status.  */
     if (status)
     {
-        printf("Demo helper thread creation fail: %u\r\n", status);
+        LOG_TERMINAL("Demo helper thread creation fail: %u\r\n", status);
         return;
     }
 }
@@ -355,7 +355,7 @@ NXD_ADDRESS proxy_server_address;
                                          SAMPLE_HTTP_PROXY_PASSWORD, sizeof(SAMPLE_HTTP_PROXY_PASSWORD) - 1);
     if (status)
     {
-        printf("Failed to enable HTTP proxy!\r\n");
+        LOG_TERMINAL("Failed to enable HTTP proxy!\r\n");
         return;
     }
 #endif /* SAMPLE_HTTP_PROXY_ENABLE  */
@@ -363,7 +363,7 @@ NXD_ADDRESS proxy_server_address;
 #ifndef SAMPLE_DHCP_DISABLE
     if (dhcp_wait())
     {
-        printf("Failed to get the IP address!\r\n");
+        LOG_TERMINAL("Failed to get the IP address!\r\n");
         return;
     }
 #elif defined(SAMPLE_NETWORK_CONFIGURE)
@@ -377,17 +377,17 @@ NXD_ADDRESS proxy_server_address;
     nx_ip_gateway_address_get(&ip_0, &gateway_address);
 
     /* Output IP address and gateway address.  */
-    printf("IP address: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("IP address: %lu.%lu.%lu.%lu\r\n",
            (ip_address >> 24),
            (ip_address >> 16 & 0xFF),
            (ip_address >> 8 & 0xFF),
            (ip_address & 0xFF));
-    printf("Mask: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("Mask: %lu.%lu.%lu.%lu\r\n",
            (network_mask >> 24),
            (network_mask >> 16 & 0xFF),
            (network_mask >> 8 & 0xFF),
            (network_mask & 0xFF));
-    printf("Gateway: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("Gateway: %lu.%lu.%lu.%lu\r\n",
            (gateway_address >> 24),
            (gateway_address >> 16 & 0xFF),
            (gateway_address >> 8 & 0xFF),
@@ -407,7 +407,7 @@ NXD_ADDRESS proxy_server_address;
     /* Check for DNS create errors.  */
     if (status)
     {
-        printf("dns_create fail: %u\r\n", status);
+        LOG_TERMINAL("dns_create fail: %u\r\n", status);
         return;
     }
 
@@ -417,13 +417,13 @@ NXD_ADDRESS proxy_server_address;
     /* Check status.  */
     if (status)
     {
-        printf("SNTP Time Sync failed.\r\n");
-        printf("Set Time to default value: SAMPLE_SYSTEM_TIME.");
+        LOG_TERMINAL("SNTP Time Sync failed.\r\n");
+        LOG_TERMINAL("Set Time to default value: SAMPLE_SYSTEM_TIME.");
         unix_time_base = SAMPLE_SYSTEM_TIME;
     }
     else
     {
-        printf("SNTP Time Sync successfully.\r\n");
+        LOG_TERMINAL("SNTP Time Sync successfully.\r\n");
     }
 
     unix_time_get((ULONG *)&unix_time);
@@ -439,7 +439,7 @@ static UINT dhcp_wait()
 UINT    status;
 ULONG   actual_status;
 
-    printf("DHCP In Progress...\r\n");
+    LOG_TERMINAL("DHCP In Progress...\r\n");
 
     /* Create the DHCP instance.  */
     status = nx_dhcp_create(&dhcp_0, &ip_0, "DHCP Client");
@@ -519,7 +519,7 @@ UINT    status;
     }
 
     /* Output DNS Server address.  */
-    printf("DNS Server address: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("DNS Server address: %lu.%lu.%lu.%lu\r\n",
            (dns_server_address >> 24),
            (dns_server_address >> 16 & 0xFF),
            (dns_server_address >> 8 & 0xFF),
@@ -536,7 +536,7 @@ UINT    server_status;
 UINT    i;
 
     /* Create the SNTP Client to run in broadcast mode.. */
-    status =  nx_sntp_client_create(&sntp_client, &ip_0, 0, &pool_0,  
+    status =  nx_sntp_client_create(&sntp_client, &ip_0, 0, &pool_0,
                                     NX_NULL,
                                     NX_NULL,
                                     NX_NULL /* no random_number_generator callback */);
@@ -650,7 +650,7 @@ UINT  sntp_server_address_size = sizeof(sntp_server_address);
     {
         for (UINT i = 0; (i * 4) < sntp_server_address_size; i++)
         {
-            printf("SNTP Time Sync...%lu.%lu.%lu.%lu (DHCP)\r\n", 
+            LOG_TERMINAL("SNTP Time Sync...%lu.%lu.%lu.%lu (DHCP)\r\n",
                    (sntp_server_address[i] >> 24),
                    (sntp_server_address[i] >> 16 & 0xFF),
                    (sntp_server_address[i] >> 8 & 0xFF),
@@ -671,7 +671,7 @@ UINT  sntp_server_address_size = sizeof(sntp_server_address);
     /* Sync time by NTP server array.  */
     for (UINT i = 0; i < SAMPLE_SNTP_SYNC_MAX; i++)
     {
-        printf("SNTP Time Sync...%s\r\n", sntp_servers[sntp_server_index]);
+        LOG_TERMINAL("SNTP Time Sync...%s\r\n", sntp_servers[sntp_server_index]);
 
         /* Make sure the network is still valid.  */
         while (nx_ip_gateway_address_get(&ip_0, &gateway_address))

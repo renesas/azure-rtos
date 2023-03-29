@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>threadx</name>
-		<version>6.2.0_rel-rx-1.0.0</version>
+		<version>6.2.1_rel-rx-1.0.0</version>
 		<application>AzureRTOSKernel</application>
 		<category>rtos.kernel</category>
 		<desc>Azure RTOS ThreadX</desc>
@@ -196,6 +196,50 @@
 				<macrodefinition>
 					<compiler>TX_INCLUDE_USER_DEFINE_FILE</compiler>
 				</macrodefinition>
+			</app>
+			<app id="macroconfig" value="TX_LOW_POWER_USER_ENTER">
+				<sourceedit>
+					<file>libs/threadx/tx_user.h</file>
+					<key>#define TX_LOW_POWER</key>
+					<key>/* Define the Enter low power mode macro*/</key>
+					<key>#if TX_LOW_POWER</key>
+					<remove>1</remove>
+					<data>void %TX_LOW_POWER_USER_ENTER%(void);</data>
+					<javascript>if('${TX_LOW_POWER_USER_ENTER}'.indexOf("(") || '${TX_LOW_POWER_USER_ENTER}'.indexOf(")") ) { '${TX_LOW_POWER_USER_ENTER}'.split("(")[0].split(")")[0]; } else {'${TX_LOW_POWER_USER_ENTER}';}</javascript>
+				</sourceedit>
+			</app>
+			<app id="macroconfig" value="TX_LOW_POWER_USER_EXIT">
+				<sourceedit>
+					<file>libs/threadx/tx_user.h</file>
+					<key>#define TX_LOW_POWER</key>
+					<key>/* Define the Exist low power mode macro*/</key>
+					<key>#if TX_LOW_POWER</key>
+					<remove>1</remove>
+					<data>void %TX_LOW_POWER_USER_EXIT%(void);</data>
+					<javascript>if('${TX_LOW_POWER_USER_EXIT}'.indexOf("(") || '${TX_LOW_POWER_USER_EXIT}'.indexOf(")") ) { '${TX_LOW_POWER_USER_EXIT}'.split("(")[0].split(")")[0]; } else { '${TX_LOW_POWER_USER_EXIT}';}</javascript>
+				</sourceedit>
+			</app>
+			<app id="macroconfig" value="TX_LOW_POWER_TIMER_SETUP">
+				<sourceedit>
+					<file>libs/threadx/tx_user.h</file>
+					<key>#define TX_LOW_POWER</key>
+					<key>/* Define the TX_LOW_POWER_TIMER_SETUP macro*/</key>
+					<key>#if USE_TX_LOW_POWER_TIMER_SETUP</key>
+					<remove>1</remove>
+					<data>void %TX_LOW_POWER_TIMER_SETUP%(unsigned long tx_low_power_next_expiration); /* can not use ULONG */</data>
+					<!--javascript>if('${TX_LOW_POWER_TIMER_SETUP}'.indexOf("(") || '${TX_LOW_POWER_TIMER_SETUP}'.indexOf(")") ) { '${TX_LOW_POWER_TIMER_SETUP}'.split("(")[0].split(")")[0]; } else {'${TX_LOW_POWER_TIMER_SETUP}';}</javascript-->
+				</sourceedit>
+			</app>
+			<app id="macroconfig" value="TX_LOW_POWER_USER_TIMER_ADJUST">
+				<sourceedit>
+					<file>libs/threadx/tx_user.h</file>
+					<key>#define TX_LOW_POWER</key>
+					<key>/* Define the TX_LOW_POWER_USER_TIMER_ADJUST macro*/</key>
+					<key>#if USE_TX_LOW_POWER_USER_TIMER_ADJUST</key>
+					<remove>1</remove>
+					<data>unsigned long %TX_LOW_POWER_USER_TIMER_ADJUST%(void); /* can not use ULONG */</data>
+					<javascript>if('${TX_LOW_POWER_USER_TIMER_ADJUST}'.indexOf("(") || '${TX_LOW_POWER_USER_TIMER_ADJUST}'.indexOf(")") ) { '${TX_LOW_POWER_USER_TIMER_ADJUST}'.split("(")[0].split(")")[0]; } else {'${TX_LOW_POWER_USER_TIMER_ADJUST}';}</javascript>
+				</sourceedit>
 			</app>
 		</apps>
 	</package>

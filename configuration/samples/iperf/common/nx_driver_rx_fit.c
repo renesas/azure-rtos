@@ -38,7 +38,8 @@
 #define NX_DRIVER_ETHERNET_ARP (0x0806U)
 #define NX_DRIVER_ETHERNET_RARP (0x8035U)
 
-#define NX_DRIVER_ETHERNET_MTU (1514U)
+#define NX_DRIVER_ETHERNET_MIN_FLAME_SIZE_EXCEPT_FCS (60U)
+#define NX_DRIVER_ETHERNET_MAX_FLAME_SIZE_EXCEPT_FCS (1514U)
 #define NX_DRIVER_ETHERNET_FRAME_SIZE (14U)
 #define NX_DRIVER_PHYSICAL_ADDRESS_SIZE (6U)
 
@@ -125,6 +126,12 @@ VOID nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr)
         _netx_driver_get_status(driver_req_ptr);
         break;
 
+    case NX_LINK_GET_INTERFACE_TYPE:
+
+        /* Return the link's interface type in the supplied return pointer. */
+        *(driver_req_ptr -> nx_ip_driver_return_ptr) = NX_INTERFACE_TYPE_ETHERNET;
+        break;
+
     case NX_LINK_MULTICAST_JOIN:
     case NX_LINK_MULTICAST_LEAVE:
         /* Nothing to do here as multicast hash filtering is not supported. */
@@ -187,7 +194,8 @@ static VOID _netx_driver_initialize(NX_IP_DRIVER *driver_req_ptr)
     interface_ptr->nx_interface_address_mapping_needed = NX_TRUE;
 
     /* Save the MTU size. */
-    interface_ptr->nx_interface_ip_mtu_size = NX_DRIVER_ETHERNET_MTU;
+    interface_ptr->nx_interface_ip_mtu_size = 
+            NX_DRIVER_ETHERNET_MAX_FLAME_SIZE_EXCEPT_FCS - NX_DRIVER_ETHERNET_FRAME_SIZE;
 
     /* Set initial state to not initialized. */
     netx_driver_rx_fit_data[chan].driver_state = NX_DRIVER_STATE_INITIALIZED;
@@ -479,7 +487,7 @@ static VOID _netx_driver_packet_send(NX_IP_DRIVER *driver_req_ptr)
     NX_CHANGE_ULONG_ENDIAN(*(frame_ptr + 3));
 
     /* Determine if the packet exceeds the driver's MTU. */
-    if(packet_ptr->nx_packet_length > NX_DRIVER_ETHERNET_MTU)
+    if(packet_ptr->nx_packet_length > NX_DRIVER_ETHERNET_MAX_FLAME_SIZE_EXCEPT_FCS)
     {
         /* Remove the Ethernet header. */
         packet_ptr->nx_packet_prepend_ptr += NX_DRIVER_ETHERNET_FRAME_SIZE;
@@ -513,8 +521,10 @@ static VOID _netx_driver_packet_send(NX_IP_DRIVER *driver_req_ptr)
     /* Copy data. */
     memcpy(p_buf, packet_ptr->nx_packet_prepend_ptr, len);
 
-    if(len < 60u) {
-        len = 60u;
+    if(len < NX_DRIVER_ETHERNET_MIN_FLAME_SIZE_EXCEPT_FCS) {
+        /* Zero padding.  */
+        memset((CHAR*)p_buf + len, 0, NX_DRIVER_ETHERNET_MIN_FLAME_SIZE_EXCEPT_FCS - len);
+        len = NX_DRIVER_ETHERNET_MIN_FLAME_SIZE_EXCEPT_FCS;
     }
 
     ether_ret = R_ETHER_Write_ZC2_SetBuf(chan, len);
