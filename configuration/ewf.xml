@@ -21,6 +21,7 @@ Package version 6.2.1_rel-rx-1.0.0</moduleinfo>
 		</dependency>
 		<configgenpath>
 			<path>libs/ewf/ewf.config.h</path>
+			<path>src/ewf_cellular_config.h</path>
 		</configgenpath>
 		<!-- Copy resources to project -->
 		<impdir>
@@ -107,7 +108,14 @@ Package version 6.2.1_rel-rx-1.0.0</moduleinfo>
 		<impdir>
 			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_adapter_api_modem_packet_domain.h</file>
 			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_lib.c</file>
+			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_interface_rx_uart.h</file>
+			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_interface_rx_uart.c</file>
 			<path>libs/ewf/src</path>
+		</impdir>
+		<impdir>
+			<file>configuration/libs/ewf/ewf_cellular_private.h</file>
+			<file>configuration/libs/ewf/ewf_cellular_config.h</file>
+			<path>src</path>
 		</impdir>
 		<!-- Build setting -->
 		<incdir>

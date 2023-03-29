@@ -1474,7 +1474,10 @@
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
 				<impdir>
-					<file>configuration/samples/iot_sdk/common/demo_printf.h</file>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<file>configuration/samples/iot_sdk/common/hardware_setup.h</file>
 					<file>configuration/samples/iot_sdk/common/sample_device_identity.c</file>
 					<path>src</path>
@@ -2059,7 +2062,10 @@
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
 				<impdir>
-					<file>configuration/samples/iot_sdk_pnp/common/demo_printf.h</file>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<file>configuration/samples/iot_sdk_pnp/common/hardware_setup.h</file>
 					<file>configuration/samples/iot_sdk_pnp/common/sample_device_identity.c</file>
 					<path>src</path>
@@ -2072,6 +2078,11 @@
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
+					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2642,6 +2653,10 @@
 				<board>CK-RX65N</board>
 				<!-- Copy resources to project -->
 				<impdir>
+					<file>configuration/samples/iot_adu/common/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<folder>configuration/samples/temperature_pnp/common</folder>
 					<path>src</path>
 				</impdir>
@@ -2653,6 +2668,16 @@
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/temperature_pnp_ewf/ck-rx65n/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src/ewf_example.config.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
+					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>

@@ -63,6 +63,8 @@ Includes   <System Includes> , "Project Includes"
 
 #include "ewf_example.config.h"
 
+#include "ewf_cellular_private.h"
+
 /* Include the sample.  */
 extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_ptr, UINT (*unix_time_callback)(ULONG *unix_time));
 
@@ -163,10 +165,10 @@ void application_thread_entry(ULONG entry_input)
 
 
 	// Release the RYZ014A from reset
-	PORTA.PODR.BIT.B1= 1;
-	PORTA.PDR.BIT.B1= 1;
+	EWF_CELLULAR_SET_PODR(EWF_CELLULAR_CFG_RESET_PORT, EWF_CELLULAR_CFG_RESET_PIN) = EWF_CELLULAR_CFG_RESET_SIGNAL_ON;
+	EWF_CELLULAR_SET_PDR(EWF_CELLULAR_CFG_RESET_PORT, EWF_CELLULAR_CFG_RESET_PIN) = EWF_CELLULAR_PIN_DIRECTION_MODE_OUTPUT;
 	tx_thread_sleep (200);
-	PORTA.PODR.BIT.B1= 0;
+	EWF_CELLULAR_SET_PODR(EWF_CELLULAR_CFG_RESET_PORT, EWF_CELLULAR_CFG_RESET_PIN) = EWF_CELLULAR_CFG_RESET_SIGNAL_OFF;
 	printf("Waiting for the module to Power Reset!\r\n");
 	ewf_platform_sleep(300);
 	printf("Ready\r\n");
