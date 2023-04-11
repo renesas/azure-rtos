@@ -4528,9 +4528,6 @@
 					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
-				<excludebuild>
-					<path>libs/netxduo_addons/utility</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>

@@ -147,11 +147,11 @@
 			<folder>netxduo/nx_secure/src</folder>
 			<path>libs/netxduo_addons/nx_secure/src</path>
 		</impdir>
-		<impdir>
+		<!--impdir>
 			<file>netxduo/utility/iperf/nx_iperf.c</file>
 			<file>netxduo/utility/iperf/nx_iperf.h</file>
 			<path>libs/netxduo_addons/utility/iperf</path>
-		</impdir>
+		</impdir-->
 		<!-- include header -->
 		<incdir>
 			<path>libs/netxduo_addons/addons/azure_iot</path>
@@ -174,7 +174,7 @@
 			<path>libs/netxduo_addons/crypto_libraries/inc</path>
 			<path>libs/netxduo_addons/nx_secure/inc</path>
 			<path>libs/netxduo_addons/nx_secure/ports</path>
-			<path>libs/netxduo_addons/utility/iperf</path>
+			<!--path>libs/netxduo_addons/utility/iperf</path-->
 		</incdir>
 		<!-- macro -->
 		<macrodefinition>
