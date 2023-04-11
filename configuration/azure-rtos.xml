@@ -4792,12 +4792,6 @@
 				<!-- set option converter -->
 				<option>
 					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
-					<value>true</value>
-				</option>
-				<option>
-					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
 					<value>true</value>
@@ -5208,13 +5202,6 @@
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
-				<!-- set option converter  -->
-				<option>
-					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
-					<value>true</value>
-				</option>
 			</app>
 		</apps>
 		<!-- Setting for all sample projects -->
@@ -5222,6 +5209,12 @@
 			<toolchain>RXC</toolchain>
 			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
+			<value>true</value>
+		</option>
+		<option>
+			<toolchain>RXC</toolchain>
+			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
+			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
 			<value>true</value>
 		</option>
 		<!-- Open readme and AN file -->
