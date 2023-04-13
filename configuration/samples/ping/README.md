@@ -16,11 +16,17 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 ------------------------
 2. Caution / Known Issue
 ------------------------
-After the project generation is completed, please do the pin assignment check for SCI.
+2.1. After the project generation is completed, please do the pin assignment check for SCI.
 In Smart Configurator editor (<projectname>.scfg)
 - go to Pins tab
 - at Pin Function, select SCI channel being used on the left panel (channel with opened blue box)
 - on the right panel, check and change the pin function if it is incorrect: 
   RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
 
-This issue will be fixed at that next update of e2 studio.
+This issue is fixed from e2 studio 2023-04 and Smart Configurator for RX 2.17.
+
+2.2. When you use RX65N Cloud Kit or RSK RX671 with IAR EW,
+if you see build error related to duplicate symbol "_nxde_dns_host_by_name_get",
+please open libs\netxduo_addons\addons\dns\nxd_dns.c and comment out _nxde_dns_host_by_name_get function.
+
+This issue is fixed from Smart Configurator for RX 2.17.
