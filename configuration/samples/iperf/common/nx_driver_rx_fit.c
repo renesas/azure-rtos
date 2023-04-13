@@ -15,7 +15,7 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet device driver for the Renesas RX FIT driver.    */
+/**   Ethernet device driver for the Renesas RX FIT driver.               */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
@@ -62,6 +62,9 @@ typedef struct netx_driver_rx_fit_data {
     ULONG driver_state;
     ULONG deferred_events_flags;
     UINT rx_ether_chan;
+#if ETHER_CFG_USE_LINKSTA == 0
+    TX_TIMER link_preodic_timer;
+#endif
 } netx_driver_rx_fit_data_t;
 
 static VOID _netx_driver_interface_attach(NX_IP_DRIVER *driver_req_ptr);
@@ -71,6 +74,10 @@ static VOID _netx_driver_disable(NX_IP_DRIVER *driver_req_ptr);
 static VOID _netx_driver_deferred_processing(NX_IP_DRIVER *driver_req_ptr);
 static VOID _netx_driver_packet_send(NX_IP_DRIVER *driver_req_ptr);
 static VOID _netx_driver_get_status(NX_IP_DRIVER *driver_req_ptr);
+
+#if ETHER_CFG_USE_LINKSTA == 0
+static VOID _netx_driver_link_check_periodic_timer_entry(ULONG netx_driver_rx_fit_data_ptr);
+#endif
 
 static VOID _rx_ether_cb(VOID *p_arg);
 static VOID _rx_ether_int_cb(VOID *p_arg);
@@ -207,6 +214,10 @@ static VOID _netx_driver_enable(NX_IP_DRIVER *driver_req_ptr)
     ether_return_t rx_ether_ret;
     UINT chan;
     ether_param_t eth_param = {0};
+    UINT status;
+    TX_THREAD *ip_thread_ptr;
+    UINT ip_thread_priority;
+    UINT callback_LinkProcess_thread_priority = 0;
 
     chan = (UINT)driver_req_ptr->nx_ip_driver_interface->nx_interface_additional_link_info;
 
@@ -224,31 +235,70 @@ static VOID _netx_driver_enable(NX_IP_DRIVER *driver_req_ptr)
         return;
     }
 
-    eth_param.channel = chan;
+    /* Set callback function called by API function R_ETHER_LinkProcess. */
     eth_param.ether_callback.pcb_func = _rx_ether_cb;
-    eth_param.ether_int_hnd.pcb_int_hnd = _rx_ether_int_cb;
-
     rx_ether_ret = R_ETHER_Control(CONTROL_SET_CALLBACK, eth_param);
     if(rx_ether_ret != ETHER_SUCCESS) {
         driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
         return;
     }
 
-    eth_param.channel = chan;
-    eth_param.ether_callback.pcb_func = _rx_ether_cb;
+    /* Set callback function called by EINT status interrupts. */
     eth_param.ether_int_hnd.pcb_int_hnd = _rx_ether_int_cb;
-
     rx_ether_ret = R_ETHER_Control(CONTROL_SET_INT_HANDLER, eth_param);
     if(rx_ether_ret != ETHER_SUCCESS) {
         driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
         return;
     }
 
+    /* Open the Ethernet channel. 
+       Note that the API function R_ETHER_Initial must be called in advance. */
     rx_ether_ret = R_ETHER_Open_ZC2(chan, _netx_driver_rx_fit_mac_address, ETHER_FLAG_OFF);
     if(rx_ether_ret != ETHER_SUCCESS) {
         driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
         return;
     }
+
+    /* Get the IP helper thread's priority. */
+    ip_thread_ptr = &(netx_driver_rx_fit_data[chan].netx_ip_ptr->nx_ip_thread);
+    status = tx_thread_info_get(ip_thread_ptr, TX_NULL, TX_NULL, TX_NULL, 
+        &ip_thread_priority, TX_NULL, TX_NULL, TX_NULL, TX_NULL);
+    if(status  != TX_SUCCESS)
+    {
+        driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
+        return;
+    }
+
+    /* The priority of the thread that runs callback when changing link status is 
+       just one level higher than the IP helper thread. */
+    if(ip_thread_priority > 0)
+    {
+        callback_LinkProcess_thread_priority = ip_thread_priority - 1;
+    }
+    else
+    {
+        callback_LinkProcess_thread_priority = ip_thread_priority;
+    }
+
+    /* Initialize resources related to callback when changing link status. */
+    status = _initialize_resources_for_callback_LinkProcess(callback_LinkProcess_thread_priority);
+    if(status != TX_SUCCESS)
+    {
+        driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
+        return;
+    }
+
+#if ETHER_CFG_USE_LINKSTA == 0
+    /* Create periodic timer to detect change of link status. */
+    status = tx_timer_create(&(netx_driver_rx_fit_data[chan].link_preodic_timer), "Link Timer",
+                    _netx_driver_link_check_periodic_timer_entry, (ULONG)(&netx_driver_rx_fit_data[chan]),
+                    NX_IP_PERIODIC_RATE, NX_IP_PERIODIC_RATE, TX_AUTO_ACTIVATE);
+    if(status != TX_SUCCESS)
+    {
+        driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
+        return;
+    }
+#endif
 
     /* Set state to driver enabled. */
     netx_driver_rx_fit_data[chan].driver_state = NX_DRIVER_STATE_LINK_ENABLED;
@@ -262,12 +312,31 @@ static VOID _netx_driver_enable(NX_IP_DRIVER *driver_req_ptr)
 static VOID _netx_driver_disable(NX_IP_DRIVER *driver_req_ptr)
 {
     ether_return_t rx_ether_ret;
+    UINT status;
     UINT chan;
 
     chan = (UINT)driver_req_ptr->nx_ip_driver_interface->nx_interface_additional_link_info;
 
     /* Verify that initialization was done. */
     if(netx_driver_rx_fit_data[chan].driver_state < NX_DRIVER_STATE_INITIALIZED)
+    {
+        driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
+        return;
+    }
+
+#if ETHER_CFG_USE_LINKSTA == 0
+    /* Delete periodic timer to detect change of link status. */
+    status = tx_timer_delete(&(netx_driver_rx_fit_data[chan].link_preodic_timer));
+    if(status != TX_SUCCESS)
+    {
+        driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
+        return;
+    }
+#endif
+
+    /* Uninitialize resources related to callback when changing link status. */
+    status = _uninitialize_resources_for_callback_LinkProcess();
+    if(status != TX_SUCCESS)
     {
         driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
         return;
@@ -281,6 +350,8 @@ static VOID _netx_driver_disable(NX_IP_DRIVER *driver_req_ptr)
     }
 
     netx_driver_rx_fit_data[chan].driver_state = 0u;
+
+    netx_driver_rx_fit_data[chan].netx_interface_ptr->nx_interface_link_up = NX_FALSE;
 
     driver_req_ptr->nx_ip_driver_status = NX_SUCCESS;
 }
@@ -551,15 +622,89 @@ static VOID _netx_driver_packet_send(NX_IP_DRIVER *driver_req_ptr)
 
 static VOID _netx_driver_get_status(NX_IP_DRIVER *driver_req_ptr)
 {
+    NX_INTERFACE *interface_ptr;
+    UINT chan;
 
-    *(driver_req_ptr->nx_ip_driver_return_ptr) = driver_req_ptr->nx_ip_driver_interface->nx_interface_link_up;
+    interface_ptr = driver_req_ptr->nx_ip_driver_interface;
+
+    chan = (UINT)interface_ptr->nx_interface_additional_link_info;
+
+    if(ETHER_SUCCESS == R_ETHER_CheckLink_ZC(chan))
+        {
+            *(driver_req_ptr->nx_ip_driver_return_ptr) = NX_TRUE;
+        }
+        else
+        {
+            *(driver_req_ptr->nx_ip_driver_return_ptr) = NX_FALSE;
+    }
+
+    driver_req_ptr->nx_ip_driver_status = NX_SUCCESS;
 
     return;
 }
 
 
+#if ETHER_CFG_USE_LINKSTA == 0
+static VOID _netx_driver_link_check_periodic_timer_entry(ULONG netx_driver_rx_fit_data_ptr)
+{
+    netx_driver_rx_fit_data_t *rx_fit_data_ptr; 
+    
+    rx_fit_data_ptr = (netx_driver_rx_fit_data_t *)netx_driver_rx_fit_data_ptr;
+    if(rx_fit_data_ptr->netx_interface_ptr->nx_interface_link_up == NX_TRUE)
+    {
+        rx_fit_data_ptr->deferred_events_flags |= NX_DRIVER_DEFERRED_LINK_STATE_CHANGE;
+        _nx_ip_driver_deferred_processing(rx_fit_data_ptr->netx_ip_ptr);
+    }
+}
+#endif
+
+
 static VOID _rx_ether_cb(VOID *p_arg)
 {
+    ether_cb_arg_t *p_cb_arg;
+    ether_cb_arg_t *p_stored_cb_arg;
+    UINT chan;
+    UINT status;
+
+    p_cb_arg = (ether_cb_arg_t *)p_arg;
+
+    chan = p_cb_arg->channel;
+
+    switch (p_cb_arg->event_id)
+    {
+        /* Callback function that notifies user to have detected magic packet. */
+        case ETHER_CB_EVENT_ID_WAKEON_LAN:
+            /* Not supported. */
+            break;
+
+        /* Callback function that notifies user to have become Link up or down. */
+        case ETHER_CB_EVENT_ID_LINK_ON:
+        case ETHER_CB_EVENT_ID_LINK_OFF:
+            /* Store callback info to heap area. */
+            status = tx_block_allocate(&callback_LinkProcess_block_pool, (VOID **) &p_stored_cb_arg, TX_NO_WAIT);
+            if(status == TX_SUCCESS)
+            {
+                *p_stored_cb_arg = *p_cb_arg;
+                /* Send message of callback info to the queue. */
+                status = tx_queue_send(&callback_LinkProcess_queue, (VOID *)&p_stored_cb_arg, TX_NO_WAIT);
+                if(status != TX_SUCCESS)
+                {
+                    /* Error trap. */
+                    R_BSP_NOP();
+                }
+            }
+            else
+            {
+                /* Error trap. */
+                R_BSP_NOP();
+            }
+
+            _nx_ip_driver_link_status_event(netx_driver_rx_fit_data[chan].netx_ip_ptr, 0);
+            break;
+
+        default:
+            break;
+    }
 }
 
 
@@ -575,11 +720,13 @@ static VOID _rx_ether_int_cb(VOID *p_arg)
 
     signal = 0u;
 
+#if ETHER_CFG_USE_LINKSTA == 1
     if((p_cb_arg->status_ecsr & (1u << 2)) != 0u) {
         /* Link change detected, signal Ethernet processing thread. */
         netx_driver_rx_fit_data[chan].deferred_events_flags |= NX_DRIVER_DEFERRED_LINK_STATE_CHANGE;
         signal = 1u;
     }
+#endif
 
     if((p_cb_arg->status_eesr & (1u << 18)) != 0u) {
         netx_driver_rx_fit_data[chan].deferred_events_flags |= NX_DRIVER_DEFERRED_PACKET_RECEIVED;

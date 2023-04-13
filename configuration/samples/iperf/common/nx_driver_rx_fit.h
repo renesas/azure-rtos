@@ -15,7 +15,7 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet device driver for the Renesas RX FIT driver.    */
+/**   Ethernet device driver for the Renesas RX FIT driver.               */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
@@ -38,6 +38,12 @@ extern "C" {
 
 #ifndef NX_API_H
 #include "nx_api.h"
+#endif
+
+/* Include callback header file, if not already.  */
+
+#ifndef NX_DRIVER_RX_FIT_CALLBACK_H
+#include "nx_driver_rx_fit_callback.h"
 #endif
 
 

@@ -515,6 +515,12 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<file>configuration/samples/ping/ck-rx65n/ether/src/sample_netx_duo_ping.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<folder>configuration/samples/ping/rx65n-cloudkit/src</folder>
@@ -537,12 +543,21 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/ping/ck-rx65n/ether/src/sample_netx_duo_ping.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1145,7 +1160,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1733,7 +1751,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2316,7 +2337,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
