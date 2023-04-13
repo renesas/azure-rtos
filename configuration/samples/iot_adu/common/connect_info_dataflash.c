@@ -14,31 +14,48 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2023 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 #include "connect_info_dataflash.h"
-
 #if (defined(__CCRX__) || defined(__GNUC__))
-R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
 #ifndef ENABLE_DPS_SAMPLE
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
 volatile uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] = HOST_NAME;
 R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
 volatile uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] = DEVICE_ID;
-#endif
+#else /* ENABLE_DPS_SAMPLE */
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_endpoint[ENDPOINT_MAX_LENGTH + 1] = ENDPOINT;
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_id_scope[ID_SCOPE_MAX_LENGTH + 1] = ID_SCOPE;
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_registration_id[REGISTRATION_ID_MAX_LENGTH + 1] = REGISTRATION_ID;
+
+#endif /*End ENABLE_DPS_SAMPLE*/
 R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
 volatile uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] = DEVICE_SYMMETRIC_KEY;
-#ifndef ENABLE_WIFI
+#ifdef ENABLE_ETHER
 R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
-volatile uint8_t df__netx_driver_rx_fit_mac_address[6] = {0x00,0x04,0x0,0x00,0x00,0x00};
-#endif
+volatile uint8_t df__netx_driver_rx_fit_mac_address[MAC_ADDRESS_LENGTH] = MAC_ADDRESS;
+#endif /* End ENABLE_ETHER*/
+#ifdef ENABLE_WIFI
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_wifi_ssid[WIFI_SSID_MAX_LENGTH + 1] = WIFI_SSID;
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_wifi_password[WIFI_PASSWORD_MAX_LENGTH + 1] = WIFI_PASSWORD;
+#endif /*End ENABLE_WIFI*/
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_module_id[MODULE_ID_MAX_LENGTH + 1] = MODULE_ID;
+#if	USE_DEVICE_CERTIFICATE == 1
+volatile uint8_t df_device_cert[DEVICE_CER_MAX_LENGTH + 1] = DEVICE_CERT;
+volatile uint8_t df_device_private_key[PRIVATE_KEY_MAX_LENGTH + 1] = DEVICE_PRIVATE_KEY;
+#endif /* End USE_DEVICE_CERTIFICATE == 1*/
 R_BSP_ATTRIB_SECTION_CHANGE_END
-#else
-volatile const uint8_t df_host_name[HOST_NAME_MAX_LENGTH + 1] = "dummy";
-volatile const uint8_t df_device_id[DEVICE_ID_MAX_LENGTH + 1] = "dummy";
-volatile const uint8_t df_device_symmetric_key[DEVICE_SYMMETRIC_KEY_MAX_LENGTH + 1] = "dummy";
-volatile const uint8_t df__netx_driver_rx_fit_mac_address[6] = {0x00,0x04,0x0,0x00,0x00,0x00};
-#endif
+#else /* (defined(__CCRX__) || defined(__GNUC__)) */
+#error "Error! IAR compiler is not supported."
+#endif /* End (defined(__CCRX__) || defined(__GNUC__))*/
+
 
 void connect_info_flash_callback_function(void *event);
 
@@ -47,10 +64,26 @@ bool flash_operation_done = false;
 uint32_t connect_info_length[CONNECT_INFO_MAX_NUM] =
 {
 #ifndef ENABLE_DPS_SAMPLE
-	sizeof(HOST_NAME),
-	sizeof(DEVICE_ID),
+	HOST_NAME_MAX_LENGTH,
+	DEVICE_ID_MAX_LENGTH,
+#else
+	ENDPOINT_MAX_LENGTH,
+	ID_SCOPE_MAX_LENGTH,
+	REGISTRATION_ID_MAX_LENGTH,
 #endif
-	sizeof(DEVICE_SYMMETRIC_KEY),
+	DEVICE_SYMMETRIC_KEY_MAX_LENGTH,
+#ifdef ENABLE_ETHER
+	MAC_ADDRESS_LENGTH,
+#endif
+#ifdef ENABLE_WIFI
+	WIFI_SSID_MAX_LENGTH,
+	WIFI_PASSWORD_MAX_LENGTH,
+#endif
+	MODULE_ID_MAX_LENGTH,
+#if	USE_DEVICE_CERTIFICATE == 1
+	DEVICE_CER_MAX_LENGTH,
+	PRIVATE_KEY_MAX_LENGTH,
+#endif
 };
 
 uint8_t  * connect_info_pdata[CONNECT_INFO_MAX_NUM] =
@@ -58,8 +91,24 @@ uint8_t  * connect_info_pdata[CONNECT_INFO_MAX_NUM] =
 #ifndef ENABLE_DPS_SAMPLE
 	(uint8_t *)(HOST_NAME),
 	(uint8_t *)(DEVICE_ID),
+#else
+	(uint8_t *)(ENDPOINT),
+	(uint8_t *)(ID_SCOPE),
+	(uint8_t *)(REGISTRATION_ID),
 #endif
 	(uint8_t *)(DEVICE_SYMMETRIC_KEY),
+#ifdef ENABLE_ETHER
+	(uint8_t *)(df__netx_driver_rx_fit_mac_address),
+#endif
+#ifdef ENABLE_WIFI
+	(uint8_t *)(WIFI_SSID),
+	(uint8_t *)(WIFI_PASSWORD),
+#endif
+	(uint8_t *)(MODULE_ID),
+#if	USE_DEVICE_CERTIFICATE == 1
+	(uint8_t *)df_device_cert,
+	(uint8_t *)df_device_private_key,
+#endif
 };
 
 bool connect_info_write_to_dataflash (void)
@@ -67,13 +116,13 @@ bool connect_info_write_to_dataflash (void)
 	flash_interrupt_config_t cb_func_info;
 	flash_err_t flash_ret;
 	uint32_t current_data_size = 0;
-	uint8_t connect_info_data[DATA_FLASH_CONNECT_INFO_MAX_SIZE] = {0};
+	uint8_t connect_info_data[1024] = {0};
 
 	cb_func_info.pcallback = connect_info_flash_callback_function;
 	cb_func_info.int_priority = 15;
 	R_FLASH_Control(FLASH_CMD_SET_BGO_CALLBACK, (void *)&cb_func_info);
 
-	for (int i = 0; i < CONNECT_INFO_MAX_NUM  ; i++)
+	for (uint32_t i = 0; i < CONNECT_INFO_MAX_NUM  ; i++)
 	{
 		memcpy(&connect_info_data[current_data_size], &connect_info_length[i], sizeof(uint32_t));
 		current_data_size += sizeof(uint32_t);

@@ -10,6 +10,7 @@
 /**************************************************************************/
 
 #include "nx_azure_iot_adu_agent.h"
+#include "demo_printf.h"
 
 void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr);
 
@@ -28,7 +29,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
         {
 
             /* Process initialize requests.  */
-            printf("Proxy driver initalized successfully.\r\n");
+            LOG_TERMINAL("Proxy driver initalized successfully.\r\n");
             break;
         }
 
@@ -39,7 +40,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
                If installed, return NX_TRUE, else return NX_FALSE.  */
             *(driver_req_ptr -> nx_azure_iot_adu_agent_driver_return_ptr) = NX_FALSE;
 
-            printf("Proxy driver update check successfully.\r\n");
+            LOG_TERMINAL("Proxy driver update check successfully.\r\n");
             break;
         }
 
@@ -48,7 +49,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
         
             /* Process firmware preprocess requests before writing firmware.
                Such as: erase the flash at once to improve the speed.  */
-            printf("Proxy driver flash erased successfully.\r\n");
+            LOG_TERMINAL("Proxy driver flash erased successfully.\r\n");
     
             break;
         }
@@ -63,7 +64,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
                2. Write firmware contents into new bank.
                3. Decrypt and authenticate the firmware itself if needed.
             */
-            printf("Proxy driver firmware writing...\r\n");
+            LOG_TERMINAL("Proxy driver firmware writing...\r\n");
             
             break;
         } 
@@ -72,7 +73,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
         {
 
             /* Set the new firmware for next boot.  */
-            printf("Proxy driver firmware installed successfully.\r\n");
+            LOG_TERMINAL("Proxy driver firmware installed successfully.\r\n");
 
             break;
         } 
@@ -81,7 +82,7 @@ void nx_azure_iot_adu_agent_proxy_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_r
         {
 
             /* Apply the new firmware, and reboot device from there.*/
-            printf("Proxy driver firmware apply successfully.\r\n");
+            LOG_TERMINAL("Proxy driver firmware apply successfully.\r\n");
         
             break;
         } 

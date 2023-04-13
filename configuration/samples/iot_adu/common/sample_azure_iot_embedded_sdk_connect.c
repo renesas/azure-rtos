@@ -10,7 +10,7 @@
 /**************************************************************************/
 
 #include <stdio.h>
-
+#include "demo_printf.h"
 #include "nx_azure_iot_hub_client.h"
 
 #ifndef SAMPLE_MAX_EXPONENTIAL_BACKOFF_IN_SEC
@@ -148,7 +148,7 @@ ULONG gateway_address;
                 {
                     if (iothub_init_count++)
                     {
-                        printf("Re-initializing iothub connection, after backoff\r\n");
+                        LOG_TERMINAL("Re-initializing iothub connection, after backoff\r\n");
                         tx_thread_sleep(exponential_backoff_with_jitter());
                     }
 
@@ -174,13 +174,13 @@ ULONG gateway_address;
 
                 case NX_AZURE_IOT_SAS_TOKEN_EXPIRED:
                 {
-                    printf("SAS token expired\r\n");
+                    LOG_TERMINAL("SAS token expired\r\n");
                 }
                 /* fallthrough */
 
                 default :
                 {
-                    printf("Reconnecting iothub, after backoff\r\n");
+                    LOG_TERMINAL("Reconnecting iothub, after backoff\r\n");
 
                     tx_thread_sleep(exponential_backoff_with_jitter());
 

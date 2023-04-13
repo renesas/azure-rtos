@@ -15,7 +15,7 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet device driver for the Renesas RX FIT driver.    */
+/**   Ethernet device driver for the Renesas RX FIT driver.               */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
@@ -40,6 +40,12 @@ extern "C" {
 #include "nx_api.h"
 #endif
 
+/* Include callback header file, if not already.  */
+
+#ifndef NX_DRIVER_RX_FIT_CALLBACK_H
+#include "nx_driver_rx_fit_callback.h"
+#endif
+
 
 /* Define custom error code for unrecoverable driver errors. */
 #define NX_DRIVER_ERROR (99U)
@@ -53,3 +59,4 @@ VOID nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr);
 #endif
 
 #endif // #ifndef NX_DRIVER_RX_FIT_H
+

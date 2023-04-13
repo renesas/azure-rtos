@@ -4239,22 +4239,19 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<folder>configuration/samples/iot_adu/ether</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/compat.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/connect_info_dataflash.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_azure_iot_embedded_sdk_connect.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_network.c</file>
+					<folder>configuration/samples/iot_adu/wifi</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
