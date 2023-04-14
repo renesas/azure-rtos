@@ -515,6 +515,12 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<file>configuration/samples/ping/ck-rx65n/ether/src/sample_netx_duo_ping.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<folder>configuration/samples/ping/rx65n-cloudkit/src</folder>
@@ -537,12 +543,21 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/ping/ck-rx65n/ether/src/sample_netx_duo_ping.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1145,7 +1160,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1733,7 +1751,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2316,7 +2337,10 @@
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit.h</file>
 					<file>configuration/samples/iperf/common/nx_driver_rx_fit.c</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.h</file>
+					<file>configuration/samples/iperf/common/nx_driver_rx_fit_callback.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -4239,22 +4263,19 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.c</file>
-					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/src/nx_driver_rx_fit.h</file>
+					<folder>configuration/samples/iot_adu/ether</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/compat.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/connect_info_dataflash.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_azure_iot_embedded_sdk_connect.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/sample_network.c</file>
+					<folder>configuration/samples/iot_adu/wifi</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -4528,9 +4549,6 @@
 					<board>RSKRX671</board>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
-				<excludebuild>
-					<path>libs/netxduo_addons/utility</path>
-				</excludebuild>
 				<!-- include -->
 				<incdir>
 					<path>src</path>
@@ -4790,12 +4808,6 @@
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
 				<!-- set option converter -->
-				<option>
-					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
-					<value>true</value>
-				</option>
 				<option>
 					<toolchain>RXC</toolchain>
 					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
@@ -5208,13 +5220,6 @@
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
-				<!-- set option converter  -->
-				<option>
-					<toolchain>RXC</toolchain>
-					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
-					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
-					<value>true</value>
-				</option>
 			</app>
 		</apps>
 		<!-- Setting for all sample projects -->
@@ -5222,6 +5227,12 @@
 			<toolchain>RXC</toolchain>
 			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
 			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.nostuffB</optionid>
+			<value>true</value>
+		</option>
+		<option>
+			<toolchain>RXC</toolchain>
+			<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.converter</toolid>
+			<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.converter.option.separated.form.motorolaFile</optionid>
 			<value>true</value>
 		</option>
 		<!-- Open readme and AN file -->

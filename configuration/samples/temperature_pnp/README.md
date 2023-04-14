@@ -23,4 +23,4 @@ In Smart Configurator editor (<projectname>.scfg)
 - on the right panel, check and change the pin function if it is incorrect: 
   RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
 
-This issue will be fixed at that next update of e2 studio.
+This issue is fixed from e2 studio 2023-04 and Smart Configurator for RX 2.17.

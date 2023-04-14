@@ -80,7 +80,7 @@
       <property id="EWF_CELLULAR_CFG_RTS_PIN" display="Specify the pin of the RTS terminal" default="2" type="combobox">
         <option id="EWF_CELLULAR_CFG_RTS_PIN.0" display="0" value="0"/>
         <option id="EWF_CELLULAR_CFG_RTS_PIN.1" display="1" value="1"/>
-        <option id="EWF_CELLULAR_CFG_RTS_PIN.2" display="3" value="2"/>
+        <option id="EWF_CELLULAR_CFG_RTS_PIN.2" display="2" value="2"/>
         <option id="EWF_CELLULAR_CFG_RTS_PIN.3" display="3" value="3"/>
         <option id="EWF_CELLULAR_CFG_RTS_PIN.4" display="4" value="4"/>
         <option id="EWF_CELLULAR_CFG_RTS_PIN.5" display="5" value="5"/>
@@ -118,7 +118,7 @@
       <property id="EWF_CELLULAR_CFG_RESET_PIN" display="Specify the pin of the REST terminal" default="5" type="combobox">
         <option id="EWF_CELLULAR_CFG_RESET_PIN.0" display="0" value="0"/>
         <option id="EWF_CELLULAR_CFG_RESET_PIN.1" display="1" value="1"/>
-        <option id="EWF_CELLULAR_CFG_RESET_PIN.2" display="3" value="2"/>
+        <option id="EWF_CELLULAR_CFG_RESET_PIN.2" display="2" value="2"/>
         <option id="EWF_CELLULAR_CFG_RESET_PIN.3" display="3" value="3"/>
         <option id="EWF_CELLULAR_CFG_RESET_PIN.4" display="4" value="4"/>
         <option id="EWF_CELLULAR_CFG_RESET_PIN.5" display="5" value="5"/>
@@ -131,12 +131,12 @@
         <option id="EWF_CELLULAR_CFG_RESET_SIGNAL_LOGIC.1" display="Active high" value="1"/>        
         <description />
       </property>
-      <property id="EWF_CELLULAR_CFG_CTS_SW_CTRL" display="Sets the RTS pin control method of the Cellular module" default="0" type="combobox">
+      <!--property id="EWF_CELLULAR_CFG_CTS_SW_CTRL" display="Sets the RTS pin control method of the Cellular module" default="0" type="combobox">
         <option id="EWF_CELLULAR_CFG_CTS_SW_CTRL.0" display="CTS pin control" value="0" />
         <option id="EWF_CELLULAR_CFG_CTS_SW_CTRL.1" display="RTS pin control" value="1" />
         <description />
-      </property>
-      <property id="EWF_CELLULAR_CFG_CTS_PORT" display="Specify the port of the CTC" default="2" type="combobox">
+      </property-->
+      <!--property id="EWF_CELLULAR_CFG_CTS_PORT" display="Specify the port of the CTS" default="2" type="combobox">
         <option id="EWF_CELLULAR_CFG_CTS_PORT.0" display="Port0" value="0"/>
         <option id="EWF_CELLULAR_CFG_CTS_PORT.1" display="Port1" value="1"/>
         <option id="EWF_CELLULAR_CFG_CTS_PORT.2" display="Port2" value="2"/>
@@ -162,8 +162,8 @@
         <option id="EWF_CELLULAR_CFG_CTS_PORT.N" display="PortN" value="N"/>
         <option id="EWF_CELLULAR_CFG_CTS_PORT.Q" display="PortQ" value="Q"/>          
         <description />
-      </property>
-      <property id="EWF_CELLULAR_CFG_CTS_PIN" display="Specify the pin of the CTC" default="2" type="combobox">
+      </property-->
+      <!--property id="EWF_CELLULAR_CFG_CTS_PIN" display="Specify the pin of the CTC" default="2" type="combobox">
         <option id="EWF_CELLULAR_CFG_CTS_PIN.0" display="0" value="0"/>
         <option id="EWF_CELLULAR_CFG_CTS_PIN.1" display="1" value="1"/>
         <option id="EWF_CELLULAR_CFG_CTS_PIN.2" display="3" value="2"/>
@@ -173,25 +173,25 @@
         <option id="EWF_CELLULAR_CFG_CTS_PIN.6" display="6" value="6"/>
         <option id="EWF_CELLULAR_CFG_CTS_PIN.7" display="7" value="7"/>          
         <description />
-      </property>
-      <property id="EWF_CELLULAR_CFG_PFS_SET_VALUE" display="Pin function control register (PFS)" default="0x0BU" type="textbox">
-      	<constraint display="default disable" actionOnFail="disable">("${EWF_CELLULAR_CFG_CTS_SW_CTRL}" == 1)</constraint>
+      </property-->
+      <!--property id="EWF_CELLULAR_CFG_PFS_SET_VALUE" display="Pin function control register (PFS)" default="0x0BU" type="textbox">
+        <constraint display="default disable" actionOnFail="disable">("${EWF_CELLULAR_CFG_CTS_SW_CTRL}" == 1)</constraint>
         <description>Specifies the pin function control register (PFS) setting value 
 to select the peripheral function of the MCU pin used to control the RTS pin of 
 the Cellular module. Set this option to match the pin to be used.
 This option takes effect when EWF_CELLULAR_CFG_CTS_SW_CTRL is set to 1.</description>
-      </property>
-      <property id="EWF_CELLULAR_CFG_IRQ_NUM" display="Specify IRQ terminal for RING terminal" default="4" type="textbox">
+      </property-->
+      <!--property id="EWF_CELLULAR_CFG_IRQ_NUM" display="Specify IRQ terminal for RING terminal" default="4" type="textbox">
+        <description />
+      </property-->
+      <property id="EWF_CONFIG_SIM_PIN" display="The SIM PIN for the modem" default="&quot;0000&quot;" type="textbox">
         <description />
       </property>
-      <property id="EWF_CONFIG_SIM_PIN" display="The SIM PIN for the modem" default="&quot;0000&quot;" type="textbox">
-      	<description />
-      </property>
       <property id="EWF_CONFIG_SIM_APN" display="The SIM operator APN" default="&quot;globaldata.iot&quot;" type="textbox">
-      	<description />
+        <description />
       </property>
       <property id="EWF_CONFIG_CONTEXT_ID" display="The modem context ID used" default="1" type="textbox">
-      	<description />
+        <description />
       </property>
     </configuration>
 </module>

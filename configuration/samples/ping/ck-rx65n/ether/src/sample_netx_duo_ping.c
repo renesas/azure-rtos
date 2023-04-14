@@ -13,11 +13,11 @@ NX_PACKET_POOL    pool_0;
 NX_IP             ip_0;  
 #ifdef NX_ENABLE_DHCP
 NX_DHCP           dhcp_client;
+#endif
 UCHAR             ip_address[4];
 UCHAR             network_mask[4];
 TX_THREAD         thread_0;
 UCHAR             thread_0_stack[2048];
-#endif
 
 
 /* Define the IP thread's stack area.  */
@@ -36,18 +36,28 @@ ULONG             packet_pool_area[NX_PACKET_POOL_SIZE/4 + 4];
 
 ULONG             arp_space_area[512 / sizeof(ULONG)];
 
-                                                           
+
 /* Define an error counter.  */
 
 ULONG             error_counter;
 
-#ifdef NX_ENABLE_DHCP
 VOID    thread_0_entry(ULONG thread_input);
-#endif
 
 VOID  nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr);
 
 VOID platform_setup(void);
+
+
+#define RENESAS_TEST (0)
+#if RENESAS_TEST == 1
+#define IP_ADDRESS_FROM_ARRAY(array) IP_ADDRESS(array[0],array[1],array[2],array[3])
+#define DESTINATION_OF_PING_IP_ADDRESS 192,168,0,104
+
+UINT check_link_status(NX_IP *ip);
+UINT issue_ping_for_rx_fit(NX_IP *ip, UCHAR ip_address_dst_of_ping[4]);
+
+UCHAR ip_address_dst_of_ping[4] = {DESTINATION_OF_PING_IP_ADDRESS};
+#endif // #if RENESAS_TEST == 1
 
 int main(int argc, char ** argv)
 {
@@ -68,7 +78,7 @@ UINT  status;
     
     /* Initialize the demo printf implementation. */
     demo_printf_init();
-     
+    
     /* Initialize the NetX system.  */
     nx_system_initialize();
     
@@ -86,7 +96,11 @@ UINT  status;
                           IP_ADDRESS(0,0,0,0),
                           IP_ADDRESS(0,0,0,0), 
 #else
+#if RENESAS_TEST == 0
                           IP_ADDRESS(192, 168, 1, 211), 
+#else
+                          IP_ADDRESS(192, 168, 100, 100),
+#endif // #if RENESAS_TEST == 0
                           0xFFFFFF00UL, 
 #endif
                           &pool_0, nx_driver_rx_fit,
@@ -121,20 +135,16 @@ UINT  status;
 
     /* Enable ICMP.  */
     status =  nx_icmp_enable(&ip_0);
-   
+
     /* Check for errors.  */
     if (status)
         error_counter++;   
 
-#ifdef NX_ENABLE_DHCP
     /* Create the main thread.  */
     tx_thread_create(&thread_0, "thread 0", thread_0_entry, 0,  
                      thread_0_stack, sizeof(thread_0_stack), 
                      4, 4, TX_NO_TIME_SLICE, TX_AUTO_START); 
-#endif
 }
-
-#ifdef NX_ENABLE_DHCP
 
 /* Define the test threads.  */
 void    thread_0_entry(ULONG thread_input)
@@ -143,13 +153,36 @@ UINT    status;
 ULONG   actual_status;
 ULONG   temp;
 
+    /* Wait until link status is on. */
+    while(1)
+    {
+        
+        /* Check link status. */
+        status = nx_ip_status_check(&ip_0, NX_IP_INTERFACE_LINK_ENABLED, &actual_status, NX_NO_WAIT);
+
+        if (status == NX_SUCCESS)
+        {
+            
+            /* Go next process when link is on. */
+            break;
+        }
+        else
+        {
+            
+            /* Wait 10 ticks when link is not on. */
+            tx_thread_sleep(10u);
+        }
+    }
+
+#ifdef NX_ENABLE_DHCP
     /* Create the DHCP instance.  */
-    printf("DHCP In Progress...\r\n");
+    demo_printf("DHCP In Progress...\r\n");
 
     nx_dhcp_create(&dhcp_client, &ip_0, "dhcp_client");
 
     /* Start the DHCP Client.  */
     nx_dhcp_start(&dhcp_client);
+#endif
     
     /* Wait util address is solved. */
     status = nx_ip_status_check(&ip_0, NX_IP_ADDRESS_RESOLVED, &actual_status, 5000);
@@ -157,8 +190,9 @@ ULONG   temp;
     if (status)
     {
         
-        /* DHCP Failed...  no IP address! */
-        printf("Can't resolve address\r\n");
+        /* No IP address! */
+        demo_printf("Can't resolve address\r\n");
+        return;
     }
     else
     {
@@ -176,16 +210,98 @@ ULONG   temp;
         *((ULONG *) &network_mask[0]) =  temp;
 
         /* Output IP address. */
-        printf("IP address: %d.%d.%d.%d\r\nMask: %d.%d.%d.%d\r\n", 
+        demo_printf("IP address: %d.%d.%d.%d\r\nMask: %d.%d.%d.%d\r\n", 
                (UINT) (ip_address[0]),
                (UINT) (ip_address[1]),
                (UINT) (ip_address[2]),
-               (UINT) (ip_address[3]),               
+               (UINT) (ip_address[3]),
                (UINT) (network_mask[0]),
                (UINT) (network_mask[1]),
                (UINT) (network_mask[2]),
                (UINT) (network_mask[3]));
     }
+#if RENESAS_TEST == 1
+
+    while(1)
+    {
+        /* Check link status. */
+        check_link_status(&ip_0);
+        
+        /* Issue a ping. */
+        issue_ping_for_rx_fit(&ip_0, &ip_address_dst_of_ping[0]);
+
+        /* Wait 100 ticks. */
+        tx_thread_sleep(100u);
+    }
+#endif // #if RENESAS_TEST == 1
 }
-#endif
+
+#if RENESAS_TEST == 1
+UINT check_link_status(NX_IP *ip)
+{
+    UINT status;
+    ULONG   actual_status = 0;
+
+    demo_printf("Check link status.");
+
+    status = nx_ip_status_check(ip, NX_IP_INTERFACE_LINK_ENABLED, &actual_status, NX_NO_WAIT);
+    if (status == NX_SUCCESS)
+    {
+        demo_printf("  =>Link is enable.\r\n");
+    }
+    else if(status == NX_NOT_SUCCESSFUL)
+    {
+        demo_printf("  =>Link is disable.\r\n");
+    }
+    else
+    {
+        demo_printf("  =>Can't check link staus (Error status: 0x%x).\r\n", status);
+    }
+
+    return status;
+}
+
+UINT issue_ping_for_rx_fit(NX_IP *ip, UCHAR ip_address_dst_of_ping[4])
+{
+#define PING_MESSAGE "abcd"
+#define PING_MESSAGE_LEN (4)
+#define PING_TIMEOUT_TICK (4)
+
+    UINT status;
+    NX_PACKET *ping_response_ptr;
+
+    demo_printf("Issue a ping from %u.%u.%u.%u to %u.%u.%u.%u.",
+            (UINT) (ip_address[0]),
+            (UINT) (ip_address[1]),
+            (UINT) (ip_address[2]),
+            (UINT) (ip_address[3]),
+            (UINT) (ip_address_dst_of_ping[0]),
+            (UINT) (ip_address_dst_of_ping[1]),
+            (UINT) (ip_address_dst_of_ping[2]),
+            (UINT) (ip_address_dst_of_ping[3]));
+
+    /* Issue a ping to the IP address (Arg2) from the previously created IP Instance (Arg1). */
+    status = nx_icmp_ping(ip, IP_ADDRESS_FROM_ARRAY(ip_address_dst_of_ping),
+                          PING_MESSAGE, PING_MESSAGE_LEN, &ping_response_ptr, PING_TIMEOUT_TICK);
+
+    /* Check result of ping. */
+    if (status)
+    {
+        demo_printf("  =>Error of a ping (Error status: 0x%x).\r\n", status);
+    }
+    else
+    {
+        demo_printf("  =>Succeeded to be received a ping response.\r\n");
+
+        /* Release received ping packet. */
+        status = nx_packet_release(ping_response_ptr);
+        if (status != NX_SUCCESS)
+        {
+            demo_printf("    =>Error to release ping packet (Error status: 0x%x).\r\n", status);
+        }
+    }
+
+    return status;
+}
+#endif // #if RENESAS_TEST == 1
 

@@ -13,6 +13,16 @@
 #include <r_flash_rx_if.h>
 #include <stdio.h>
 #include "r_fwup_if.h"
+#include "demo_printf.h"
+
+/*
+#define ENABLE_SECURE_BOOT
+*/
+
+#if ((BSP_CFG_CODE_FLASH_BANK_MODE != 0) && !defined(DISABLE_ADU_SAMPLE))
+#error "Error! Need to define Dual mode in the bank mode of dual-bank function"
+#endif
+
 void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr);
 
 /****** DRIVER SPECIFIC ******/
@@ -40,7 +50,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
 
             uint32_t bank_info = 255;
             R_FLASH_Control(FLASH_CMD_BANK_GET, &bank_info);
-            printf("bank info = %d. (start bank = %d)\r\n", bank_info, (bank_info ^ 0x01));
+            LOG_TERMINAL("bank info = %d. (start bank = %d)\r\n", bank_info, (bank_info ^ 0x01));
             break;
         }
             
@@ -51,7 +61,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
 
             /* step1: erase all buffer bank */
             /* R_FLASH_Erase() arguments: specify "high address (low block number)" and process to "low address (high block number)" */
-            printf("erase all buffer bank = 0x%02x...", FLASH_CF_LO_BANK_LO_ADDR);
+            LOG_TERMINAL("erase all buffer bank = 0x%02x...", FLASH_CF_LO_BANK_LO_ADDR);
 
             fwup_err_t ret;
 
@@ -61,7 +71,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
             {
                 driver_req_ptr -> nx_azure_iot_adu_agent_driver_status =  NX_AZURE_IOT_FAILURE;
             }
-            printf("completed.\n");
+            LOG_TERMINAL("completed.\n");
             break;
         }
             
@@ -73,10 +83,10 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
         	uint32_t pr_surplus = (driver_req_ptr->nx_azure_iot_adu_agent_driver_firmware_data_size % FLASH_CF_MIN_PGM_SIZE);
         	uint32_t pr_eaddr   = (pr_saddr + (pr_blocks * FLASH_CF_MIN_PGM_SIZE));
 
-            printf("requested %4d bytes writing (address from %08x to %08x (128 byte block(s) = %2d)) are completed with %3d bytes are fragmented.\n",
+            LOG_TERMINAL("requested %4d bytes writing (address from %08x to %08x (128 byte block(s) = %2d)) are completed with %3d bytes are fragmented.\n",
                     driver_req_ptr->nx_azure_iot_adu_agent_driver_firmware_data_size,
 					pr_saddr, pr_eaddr, pr_blocks, pr_surplus);
-            printf("Azure ADU library puts these arguments: \n\
+            LOG_TERMINAL("Azure ADU library puts these arguments: \n\
                     nx_azure_iot_adu_agent_driver_firmware_size = %d,\n\
                     nx_azure_iot_adu_agent_driver_firmware_data_offset = 0x%x,\n\
                     nx_azure_iot_adu_agent_driver_firmware_data_size = %d\n",\
@@ -99,7 +109,7 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr
 
             /* Set the new firmware for next boot.  */
             /* step3: bankswap */
-            printf("starting software reset...\r\n");
+            LOG_TERMINAL("starting software reset...\r\n");
             break;
         } 
             

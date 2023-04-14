@@ -15,42 +15,41 @@
 /**                                                                       */
 /** NetX Component                                                        */
 /**                                                                       */
-/**   Ethernet device driver for the Renesas RX FIT driver.    */
+/**   Callback functions for the Renesas RX FIT driver.                   */
 /**                                                                       */
 /**************************************************************************/
 /**************************************************************************/
 
-#ifndef NX_DRIVER_RX_FIT_H
-#define NX_DRIVER_RX_FIT_H
+#ifndef NX_DRIVER_RX_FIT_CALLBACK_H
+#define NX_DRIVER_RX_FIT_CALLBACK_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/* Include ThreadX header file, if not already.  */
+#include <tx_api.h>
 
-#ifndef TX_API_H
-#include "tx_api.h"
-#endif
+#include <r_ether_rx_if.h>
 
 
-/* Include NetX header file, if not already.  */
+extern TX_THREAD callback_LinkProcess_thread;
+extern TX_BLOCK_POOL callback_LinkProcess_block_pool;
+extern TX_QUEUE callback_LinkProcess_queue;
+extern ether_cb_arg_t tmp_ether_cb_arg;
 
-#ifndef NX_API_H
-#include "nx_api.h"
-#endif
 
+UINT _initialize_resources_for_callback_LinkProcess(UINT priority);
+UINT _uninitialize_resources_for_callback_LinkProcess(VOID);
+VOID _callback_LinkProcess_entry(ULONG thread_input);
 
-/* Define custom error code for unrecoverable driver errors. */
-#define NX_DRIVER_ERROR (99U)
-#define NX_DRIVER_BUSY (100U)
+/* Callback, called when changing link status, that can be coded by users. */
+VOID _nx_driver_user_callback_link_on(ether_cb_arg_t *ether_cb_arg);
+VOID _nx_driver_user_callback_link_off(ether_cb_arg_t *ether_cb_arg);
 
-/* Define global driver entry function. */
-VOID nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // #ifndef NX_DRIVER_RX_FIT_H
+#endif // #ifndef NX_DRIVER_RX_FIT_CALLBACK_H
 

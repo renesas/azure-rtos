@@ -33,16 +33,23 @@ void demo_printf_init(void)
     config.async.clk_src = SCI_CLK_INT;
     config.async.data_size = SCI_DATA_8BIT;
     config.async.parity_en = SCI_PARITY_OFF;
-    config.async.parity_type = SCI_EVEN_PARITY; //
+    config.async.parity_type = SCI_EVEN_PARITY;
     config.async.stop_bits = SCI_STOPBITS_1;
-    config.async.int_priority = 15; //
+    config.async.int_priority = 15;
     err = R_SCI_Open(SCI_CH8, SCI_MODE_ASYNC, &config, demo_printf_transmit_end, &Console);
 
     R_SCI_PinSet_SCI8();
 
-    tx_mutex_create(&demo_printf_mutex, "Demo printf mutex", TX_INHERIT);
+    res = tx_mutex_create(&demo_printf_mutex, "Demo printf mutex", TX_INHERIT);
+    if(res != TX_SUCCESS) {
+        for(;;) {}
+    }
 
-    tx_semaphore_create(&demo_printf_semaphore, "Demo printf semaphore", 0u);
+    res = tx_semaphore_create(&demo_printf_semaphore, "Demo printf semaphore", 0u);
+    if(res != TX_SUCCESS) {
+        for(;;) {}
+    }
+
 }
 
 void demo_printf(char *format, ...)
@@ -56,7 +63,7 @@ void demo_printf(char *format, ...)
 
     len = (size_t)vsnprintf(&demo_printf_buf[0], sizeof(demo_printf_buf), format, v_args);
 
-    R_SCI_Send(Console, (uint8_t *)demo_printf_buf, len);
+    R_SCI_Send(Console, (uint8_t *)demo_printf_buf, (uint16_t)len);
 
     va_end(v_args);
 
@@ -74,11 +81,11 @@ void demo_printf_transmit_end(void * pArgs)
     }
 }
 
-void my_sw_charput_function(char c)
+void my_sw_charput_function(uint8_t c)
 {
     tx_mutex_get(&demo_printf_mutex, TX_WAIT_FOREVER);
     
-    R_SCI_Send(Console, &c, 1u);
+    R_SCI_Send(Console, &c, 1);
     
     tx_semaphore_get(&demo_printf_semaphore, TX_WAIT_FOREVER);
 
