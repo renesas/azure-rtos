@@ -18,7 +18,6 @@
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
-                <gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
