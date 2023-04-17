@@ -44,12 +44,26 @@
 #define SAMPLE_COMMAND_SUCCESS_STATUS                                   (200)
 #define SAMPLE_COMMAND_ERROR_STATUS                                     (500)
 
-#define SAMPLE_PNP_MODEL_ID                                             "dtmi:com:example:Thermostat;3"
+#define SAMPLE_PNP_MODEL_ID                                             "dtmi:com:example:Thermostat;4"
 #define SAMPLE_PNP_DPS_PAYLOAD                                          "{\"modelId\":\"" SAMPLE_PNP_MODEL_ID "\"}"
 
+/* Credential Information on DataFlash */
+#ifndef ENABLE_DPS_SAMPLE
 extern volatile const uint8_t df_host_name;
 extern volatile const uint8_t df_device_id;
+
+#else /* !ENABLE_DPS_SAMPLE */
+
+extern volatile const uint8_t df_endpoint;
+extern volatile const uint8_t df_id_scope;
+extern volatile const uint8_t df_registration_id;
+#endif /* ENABLE_DPS_SAMPLE */
 extern volatile const uint8_t df_device_symmetric_key;
+extern volatile const uint8_t df_module_id;
+#if (USE_DEVICE_CERTIFICATE == 1)
+extern volatile const uint8_t df_device_cert;
+extern volatile const uint8_t df_device_private_key;
+#endif /* USE_DEVICE_CERTIFICATE */
 
 /* Generally, IoTHub Client and DPS Client do not run at the same time, user can use union as below to
    share the memory between IoTHub Client and DPS Client.
@@ -389,6 +403,9 @@ UCHAR *iothub_device_id = (UCHAR *)&df_device_id;
 UINT iothub_hostname_length = strlen( (const char *)&df_host_name );
 UINT iothub_device_id_length = strlen( (const char *)&df_device_id );
 #endif /* ENABLE_DPS_SAMPLE */
+UCHAR *iothub_module_id = (UCHAR *)&df_module_id;
+UINT iothub_module_id_length = strlen( (const char *)&df_module_id );
+
 
 #ifdef ENABLE_DPS_SAMPLE
 
@@ -408,7 +425,7 @@ UINT iothub_device_id_length = strlen( (const char *)&df_device_id );
     if ((status = nx_azure_iot_hub_client_initialize(iothub_client_ptr, &nx_azure_iot,
                                                      iothub_hostname, iothub_hostname_length,
                                                      iothub_device_id, iothub_device_id_length,
-                                                     (const UCHAR *)MODULE_ID, sizeof(MODULE_ID) - 1,
+                                                     iothub_module_id, iothub_module_id_length,
                                                      _nx_azure_iot_tls_supported_crypto,
                                                      _nx_azure_iot_tls_supported_crypto_size,
                                                      _nx_azure_iot_tls_ciphersuite_map,
@@ -842,13 +859,22 @@ static UINT sample_dps_entry(NX_AZURE_IOT_PROVISIONING_CLIENT *prov_client_ptr,
 {
 UINT status;
 
+UCHAR *iothub_endpoint = (UCHAR *)&df_endpoint;
+UCHAR *iothub_id_scope = (UCHAR *)&df_id_scope;
+UCHAR *iothub_registration_id = (UCHAR *)&df_registration_id;
+
+UINT iothub_endpoint_len = strlen( (const char *)&df_endpoint );
+UINT iothub_id_scope_id_len = strlen( (const char *)&df_id_scope );
+UINT iothub_registration_id_len = strlen( (const char *)&df_registration_id );
+
+
     LOG_TERMINAL("Start Provisioning Client...\r\n");
 
     /* Initialize IoT provisioning client.  */
     if ((status = nx_azure_iot_provisioning_client_initialize(prov_client_ptr, &nx_azure_iot,
-                                                              (UCHAR *)ENDPOINT, sizeof(ENDPOINT) - 1,
-                                                              (UCHAR *)ID_SCOPE, sizeof(ID_SCOPE) - 1,
-                                                              (UCHAR *)REGISTRATION_ID, sizeof(REGISTRATION_ID) - 1,
+															iothub_endpoint, iothub_endpoint_len,
+															iothub_id_scope, iothub_id_scope_id_len,
+															iothub_registration_id, iothub_registration_id_len,
                                                               _nx_azure_iot_tls_supported_crypto,
                                                               _nx_azure_iot_tls_supported_crypto_size,
                                                               _nx_azure_iot_tls_ciphersuite_map,
@@ -892,8 +918,8 @@ UINT status;
 #else
 
     /* Set symmetric key.  */
-    else if ((status = nx_azure_iot_provisioning_client_symmetric_key_set(prov_client_ptr, (UCHAR *)DEVICE_SYMMETRIC_KEY,
-                                                                          sizeof(DEVICE_SYMMETRIC_KEY) - 1)))
+    else if ((status = nx_azure_iot_provisioning_client_symmetric_key_set(prov_client_ptr, (UCHAR *)&df_device_symmetric_key,
+    																					strlen( (const char *)&df_device_symmetric_key ))))
     {
         LOG_TERMINAL("Failed on nx_azure_iot_hub_client_symmetric_key_set!: error code = 0x%08x\r\n", status);
     }
