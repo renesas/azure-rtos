@@ -12,7 +12,6 @@
   <sections name="R"/>
   <sections name="B_8"/>
   <sections name="R_8"/>
-  <sections name="RPFRAM"/>
   <sections name="RPFRAM2"/>
   <sections name="BEXRAM_1">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="8388608"/>
