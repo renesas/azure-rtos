@@ -32,8 +32,8 @@
  * PEM-encoded code signer public key.
  *
  * Must include the PEM header and footer:
- * "-----BEGIN CERTIFICATE-----\n"\
- * "...base64 data...\n"\
+ * "-----BEGIN CERTIFICATE-----"\
+ * "...base64 data..."\
  * "-----END CERTIFICATE-----"
  */
 
