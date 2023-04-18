@@ -6,7 +6,6 @@
 #define LOG_TERMINAL demo_printf
 
 void demo_printf_init(void);
-
 void demo_printf(char *format, ...);
 
 #endif

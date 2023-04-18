@@ -9,18 +9,20 @@
 /*                                                                        */
 /**************************************************************************/
 
-#include "nx_azure_iot_adu_agent.h"
-#include <r_flash_rx_if.h>
 #include <stdio.h>
+#include "nx_azure_iot_adu_agent.h"
+#include "r_flash_rx_if.h"
 #include "r_fwup_if.h"
+#include "r_bsp_config.h"
 #include "demo_printf.h"
 
-/*
-#define ENABLE_SECURE_BOOT
-*/
+#if (BSP_CFG_CODE_FLASH_BANK_MODE != 0)
+#error "Error! Please set a device as dual bank device on the Smart Configurator."
+#endif
 
-#if ((BSP_CFG_CODE_FLASH_BANK_MODE != 0) && !defined(DISABLE_ADU_SAMPLE))
-#error "Error! Need to define Dual mode in the bank mode of dual-bank function"
+
+#if (BSP_CFG_RTOS_USED != 5)
+#error "Error! Need to define Azure RTOS in BSP configuration"
 #endif
 
 void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER *driver_req_ptr);
