@@ -49,9 +49,9 @@
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="1"/>
                 <gridItem id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="&quot;RX671-RSK&quot;"/>
                 <gridItem id="SAMPLE_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
-                <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex="&quot;RSK-RX671&quot;"/>
+                <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex="&quot;RX671-RSK&quot;"/>
                 <gridItem id="SAMPLE_LEAF_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
-                <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex="&quot;RSK-RX671-Leaf&quot;"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex="&quot;RX671-RSK-Leaf&quot;"/>
                 <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="1"/>
                 <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="10*1024"/>
                 <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" selectedIndex="1"/>
