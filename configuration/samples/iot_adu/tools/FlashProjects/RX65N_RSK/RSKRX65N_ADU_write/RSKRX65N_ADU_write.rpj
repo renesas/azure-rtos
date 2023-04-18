@@ -71,7 +71,7 @@
     <ToolConnectMode>RFPSet</ToolConnectMode>
     <ToolConnectPinOut>0</ToolConnectPinOut>
     <ToolConnectPinLvl>0</ToolConnectPinLvl>
-    <ToolDisconnectReset>Low</ToolDisconnectReset>
+    <ToolDisconnectReset>High</ToolDisconnectReset>
     <ToolResetSignalFlag>09000000</ToolResetSignalFlag>
     <ToolInterface>IFTYPE_FINE</ToolInterface>
     <ToolSpeed>1000000</ToolSpeed>
