@@ -1111,13 +1111,9 @@
 					<board>CK-RX65N</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<file>configuration/samples/iot_adu/ether/main.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1170,9 +1166,9 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
+					<file>configuration/samples/iot_adu/wifi/main.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1700,13 +1696,9 @@
 					<board>CK-RX65N</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<file>configuration/samples/iot_adu/ether/main.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -1761,9 +1753,9 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
+					<file>configuration/samples/iot_adu/wifi/main.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2103,7 +2095,7 @@
 				<impdir>
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
-					<path>src/smc_gen</path>
+					<path>src/smc_gen/r_pincfg</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2286,13 +2278,9 @@
 					<board>CK-RX65N</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
-					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/main.c</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
-					<file>configuration/samples/iot_adu/rx72n-envision-kit/src/main.c</file>
+					<file>configuration/samples/iot_adu/ether/main.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2347,9 +2335,9 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>RSKRX671</board>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/main.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.c</file>
-					<file>configuration/samples/iot_adu/rx65n-cloudkit/src/nx_driver_rx_wifi.h</file>
+					<file>configuration/samples/iot_adu/wifi/main.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.c</file>
+					<file>configuration/samples/iot_adu/wifi/nx_driver_rx_wifi.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2701,7 +2689,7 @@
 				<impdir>
 					<board>CK-RX65N</board>
 					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
-					<path>src/smc_gen</path>
+					<path>src/smc_gen/r_pincfg</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
