@@ -1,6 +1,21 @@
 # azure-rtos
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
 
+# Quick Start Steps
+* 1) Buy MCU board like CK-RX65N.
+  * https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group
+* 2) Install e2 studio
+  * https://www.renesas.com/software-tool/e-studio
+* 3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository.
+* 4) Input your credential info for your Azure account.
+* 5) Build
+* 6) Download built firmware to MCU.
+* 7) Run, MCU can connect to Azure severs.
+
+# For RA Family user
+* Please visit Flexible Software Package page.
+  * https://www.renesas.com/software-tool/flexible-software-package-fsp
+  
 # Tutorial Video
 ## Just demos
 ### playlist on YouTube
