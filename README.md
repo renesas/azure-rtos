@@ -7,6 +7,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * 2) Install e2 studio
   * https://www.renesas.com/software-tool/e-studio
 * 3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository.
+  * You can find guidebook on this URL:
+    * https://www.renesas.com/search?keywords=R01AN6455
 * 4) Input your credential info for your Azure account.
 * 5) Build
 * 6) Download built firmware to MCU.
