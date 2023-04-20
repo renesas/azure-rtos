@@ -5,15 +5,6 @@
 /* Wi-Fi is used to connect Azure cloud.*/
 #define ENABLE_WIFI
 
-/* Ether is used to connect Azure cloud.*/
-/*
-#define ENABLE_ETHER
-*/
-
-#if (BSP_CFG_RTOS_USED != 5)
-#error "Error! Need to define Azure RTOS in BSP configuration"
-#endif
-
 #ifndef WIFI_SSID
 #define WIFI_SSID                     ""
 #endif /* WIFI_SSID  */

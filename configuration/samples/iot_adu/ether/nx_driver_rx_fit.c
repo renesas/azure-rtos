@@ -89,8 +89,6 @@ static netx_driver_rx_fit_data_t netx_driver_rx_fit_data[1];
    initializing the driver by calling 'nx_ip_interface_physical_address_set()'
    otherwise the default address will be used.*/
 extern uint8_t df__netx_driver_rx_fit_mac_address[6];
-uint8_t _netx_driver_rx_fit_mac_address[6];
-
 
 VOID nx_driver_rx_fit(NX_IP_DRIVER *driver_req_ptr)
 {
@@ -191,16 +189,11 @@ static VOID _netx_driver_initialize(NX_IP_DRIVER *driver_req_ptr)
     netx_driver_rx_fit_data[chan].deferred_events_flags = 0u;
 
     /* Save the MAC address. */
-    for (UINT i = 0; i < NX_DRIVER_PHYSICAL_ADDRESS_SIZE ; i++)
-    {
-    	_netx_driver_rx_fit_mac_address[i] = df__netx_driver_rx_fit_mac_address[i];
-    }
-    
     interface_ptr->nx_interface_physical_address_msw =
-            (ULONG)((_netx_driver_rx_fit_mac_address[0] << 8) | (_netx_driver_rx_fit_mac_address[1]));
+            (ULONG)((df__netx_driver_rx_fit_mac_address[0] << 8) | (df__netx_driver_rx_fit_mac_address[1]));
     interface_ptr->nx_interface_physical_address_lsw =
-            (ULONG)((_netx_driver_rx_fit_mac_address[2] << 24) | (_netx_driver_rx_fit_mac_address[3] << 16) |
-                    (_netx_driver_rx_fit_mac_address[4] << 8) | (_netx_driver_rx_fit_mac_address[5]));
+            (ULONG)((df__netx_driver_rx_fit_mac_address[2] << 24) | (df__netx_driver_rx_fit_mac_address[3] << 16) |
+                    (df__netx_driver_rx_fit_mac_address[4] << 8) | (df__netx_driver_rx_fit_mac_address[5]));
 
     /* Indicate to the IP software that IP to physical mapping
        is required.  */
@@ -259,7 +252,7 @@ static VOID _netx_driver_enable(NX_IP_DRIVER *driver_req_ptr)
 
     /* Open the Ethernet channel. 
        Note that the API function R_ETHER_Initial must be called in advance. */
-    rx_ether_ret = R_ETHER_Open_ZC2(chan, _netx_driver_rx_fit_mac_address, ETHER_FLAG_OFF);
+    rx_ether_ret = R_ETHER_Open_ZC2(chan, df__netx_driver_rx_fit_mac_address, ETHER_FLAG_OFF);
     if(rx_ether_ret != ETHER_SUCCESS) {
         driver_req_ptr->nx_ip_driver_status = NX_DRIVER_ERROR;
         return;

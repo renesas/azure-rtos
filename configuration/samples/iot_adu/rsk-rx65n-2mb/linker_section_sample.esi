@@ -10,7 +10,6 @@
   <sections name="R_2"/>
   <sections name="B"/>
   <sections name="R"/>
-  <sections name="RPFRAM"/>
   <sections name="RPFRAM2"/>
   <sections name="FREEMEM"/>
   <sections name="D_CONNECT_INFO_1">
