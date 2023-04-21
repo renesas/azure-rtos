@@ -333,6 +333,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * Update Azure RTOS libraries to 6.2.1_rel
   * Support CC-RX for IoT Embedded SDK samples using EWF
   * Update SDK samples with EWF to support SCI channel configuration
+  * Migrate Root CA to "DigiCert Global G2 Root"
   * Enable optimizaton and "Motorola S format type" for CC-RX projects
   * Update bsp version from 7.20 to 7.21
   * Change SCI driver code style from CG to FIT
