@@ -22,15 +22,19 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 ### playlist on YouTube
 * https://www.youtube.com/playlist?list=PLgUXqPkOStPsB9yh-XZ7BNv0J6UtAERO1
 
-### RX65N Cloud Kit (new: CK-RX65N)
+### CK-RX65N (new: RX65N Cloud Kit)
 * Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
 * You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (new: ether(available)/cellular(now preparing))
 * same contents on both of Renesas website and YouTube/bilibili
   * en
-    * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
-    * https://www.youtube.com/watch?v=OyuIXlles8Q
+    * https://www.renesas.com/us/en/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-e
+    * Now preparing for YouTube version.
   * ja
-    * none
+    * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
+    * Now preparing for YouTube version.
+    
+<details>
+<summary>old boards</summary>
 ### RX65N Cloud Kit (old)
 * Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
 * You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (old: wifi)
@@ -39,6 +43,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     * https://www.renesas.com/jp/en/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
   * ja
     * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
+</details>
 
 ## For development phase
 * Getting started for Azure RTOS using Smart Configurator in e2 studio
