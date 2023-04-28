@@ -35,6 +35,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     
 <details>
 <summary>old boards</summary>
+ 
 ### RX65N Cloud Kit (old)
 * Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
 * You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (old: wifi)
@@ -43,6 +44,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     * https://www.renesas.com/jp/en/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
   * ja
     * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
+ 
 </details>
 
 ## For development phase
