@@ -28,10 +28,10 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * same contents on both of Renesas website and YouTube/bilibili
   * en
     * https://www.renesas.com/us/en/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-e
-    * Now preparing for YouTube version.
+    * https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP
   * ja
     * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
-    * Now preparing for YouTube version.
+    * https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1
     
 <details>
 <summary>old boards</summary>
