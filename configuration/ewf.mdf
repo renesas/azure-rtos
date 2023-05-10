@@ -33,6 +33,12 @@
         <constraint display="default disable" actionOnFail="disable">("${USE_EWF_DEBUG}" == 1)</constraint>
         <description />
       </property>
+      <!-- EWF_CONFIG_AZURE_RTOS_NETX -->
+      <property id="EWF_CONFIG_AZURE_RTOS_NETX" display="EWF usage with Azure Netxduo" default="0" type="checkbox">
+        <option id="EWF_CONFIG_AZURE_RTOS_NETX.0" display="Disable" value="0" />
+        <option id="EWF_CONFIG_AZURE_RTOS_NETX.1" display="Enable" value="1" />
+        <description />
+      </property>
       <!-- EWF SCI configurations -->
       <property id="EWF_CELLULAR_CFG_UART_SCI_CH" display="Specify SCI channel used for communication with cellular module" default="6" type="combobox">
         <option id="EWF_CELLULAR_CFG_UART_SCI_CH.0" display="0" value="0"/>

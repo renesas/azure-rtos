@@ -77,6 +77,7 @@ Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common_mqtt_basic.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common_nvm.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common_tls_basic.c</file>
+			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common_tokenizer.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common_urc.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_ryz014.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_ryz014.h</file>
@@ -101,15 +102,10 @@ Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
 			<file>embedded-wireless-framework/src/ewf_platform.h</file>
 			<file>embedded-wireless-framework/src/ewf_platform_threadx.c</file>
 			<file>embedded-wireless-framework/src/ewf_platform_threadx.h</file>
+			<file>embedded-wireless-framework/src/ewf_tokenizer_basic.c</file>
+			<file>embedded-wireless-framework/src/ewf_tokenizer_basic.h</file>
+			<file>embedded-wireless-framework/src/ewf_tokenizer.c</file>
 			<file>embedded-wireless-framework/src/ewf_tokenizer.h</file>
-			<path>libs/ewf/src</path>
-		</impdir>
-		<!-- copy patch file for Packet data protocol type IP -->
-		<impdir>
-			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_adapter_api_modem_packet_domain.h</file>
-			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_lib.c</file>
-			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_interface_rx_uart.h</file>
-			<file>configuration/samples/iot_sdk_ewf/ck-rx65n/libs/ewf/src/ewf_interface_rx_uart.c</file>
 			<path>libs/ewf/src</path>
 		</impdir>
 		<impdir>
@@ -122,17 +118,5 @@ Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
 			<path>libs/ewf</path>
 			<path>libs/ewf/src</path>
 		</incdir>
-		<excludebuild>
-			<path>libs/ewf/src/ewf_adapter_renesas_common.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_control.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_info.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_internet.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_mqtt_basic.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_nvm.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_tls_basic.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_common_urc.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_ryz024a.c</path>
-			<path>libs/ewf/src/ewf_adapter_renesas_ryz024a.h</path>
-		</excludebuild>
 	</package>
 </refinfo>

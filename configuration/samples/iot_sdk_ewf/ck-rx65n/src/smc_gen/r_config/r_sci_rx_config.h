@@ -140,7 +140,7 @@ Configuration Options
 #define SCI_CFG_CH2_RX_BUFSIZ   (80)
 #define SCI_CFG_CH3_RX_BUFSIZ   (80)
 #define SCI_CFG_CH4_RX_BUFSIZ   (80)
-#define SCI_CFG_CH5_RX_BUFSIZ   (2048)
+#define SCI_CFG_CH5_RX_BUFSIZ   (80)
 #define SCI_CFG_CH6_RX_BUFSIZ   (8192)
 #define SCI_CFG_CH7_RX_BUFSIZ   (80)
 #define SCI_CFG_CH8_RX_BUFSIZ   (80)

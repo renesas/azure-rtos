@@ -74,9 +74,9 @@ void demo_printf_transmit_end(void * pArgs)
 {
     sci_cb_args_t *p_args = (sci_cb_args_t*) pArgs;
 
-	if (SCI_EVT_TEI == p_args->event) {
-		tx_semaphore_put(&demo_printf_semaphore);
-	}
+    if (SCI_EVT_TEI == p_args->event) {
+        tx_semaphore_put(&demo_printf_semaphore);
+    }
 }
 
 void my_sw_charput_function(uint8_t c)

@@ -1498,7 +1498,7 @@
 				</impdir>
 				<impdir>
 					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk.c</file>
-					<file>netxduo/addons/azure_iot/samples/sample_azure_iot_embedded_sdk_connect.c</file>
+					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src/sample_azure_iot_embedded_sdk_connect.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -2084,6 +2084,13 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/demo_printf.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/hardware_setup.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/main.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/sample_config.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<folder>netxduo/addons/azure_iot/samples/cert</folder>
 					<path>src</path>
 				</impdir>
@@ -2094,8 +2101,8 @@
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
-					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
-					<path>src/smc_gen/r_pincfg</path>
+					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen</folder>
+					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2112,7 +2119,7 @@
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
-					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/linker_script.ld</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy readme common -->
@@ -2190,7 +2197,7 @@
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>CK-RX65N</board>
-					<path>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/CK-RX65N-iot-sdk-pnp-ewf_scfg.ftl</path>
+					<path>configuration/samples/iot_sdk_ewf/ck-rx65n/CK-RX65N-iot-sdk-ewf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->
@@ -2669,6 +2676,13 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/demo_printf.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/hardware_setup.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/main.c</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/src/sample_config.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<folder>configuration/samples/temperature_pnp/common</folder>
 					<path>src</path>
 				</impdir>
@@ -2678,18 +2692,13 @@
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
-					<folder>configuration/samples/temperature_pnp_ewf/ck-rx65n/src</folder>
-					<path>src</path>
-				</impdir>
-				<impdir>
-					<board>CK-RX65N</board>
 					<file>configuration/samples/iot_sdk_pnp_ewf/ck-rx65n/src/ewf_example.config.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
-					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen/r_pincfg</folder>
-					<path>src/smc_gen/r_pincfg</path>
+					<folder>configuration/samples/iot_sdk_ewf/ck-rx65n/src/smc_gen</folder>
+					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
@@ -2706,7 +2715,7 @@
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
-					<file>configuration/samples/temperature_pnp_ewf/ck-rx65n/linker_script.ld</file>
+					<file>configuration/samples/iot_sdk_ewf/ck-rx65n/linker_script.ld</file>
 					<path>src</path>
 				</impdir>
 				<!-- copy readme common -->
@@ -2784,7 +2793,7 @@
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>CK-RX65N</board>
-					<path>configuration/samples/temperature_pnp_ewf/ck-rx65n/CK-RX65N-temperature-pnp-ewf_scfg.ftl</path>
+					<path>configuration/samples/iot_sdk_ewf/ck-rx65n/CK-RX65N-iot-sdk-ewf_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<!-- set RXC linker section -->

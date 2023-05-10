@@ -29,5 +29,5 @@ int main(void)
 void    tx_application_define(void *first_unused_memory)
 {
 
-	tx_application_define_user();
+    tx_application_define_user();
 }

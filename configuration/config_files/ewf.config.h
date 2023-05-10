@@ -54,6 +54,8 @@ extern "C" {
 #define EWF_LOG(...)
 #endif
 
+/** Define enable EWF usage with Azure RTOS NETX */
+#define EWF_CONFIG_AZURE_RTOS_NETX             0
 
 /************************************************************************//**
  * @} *** group_configuration

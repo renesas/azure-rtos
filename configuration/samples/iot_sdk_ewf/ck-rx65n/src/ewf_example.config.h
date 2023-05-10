@@ -33,6 +33,16 @@ extern "C" {
 /** @brief the size of each message allocator block */
 #define EWF_CONFIG_MESSAGE_ALLOCATOR_BLOCK_SIZE                     (1500)
 
+/**
+* @defgroup group_example_configuration_modem Modem configuration
+* @brief Modem configuration settings used in examples
+* @{
+*/
+
+void renesas_ryz014a_adapter_power_on();
+/** @brief The modem power on user function */
+#define EWF_ADAPTER_USER_POWER_ON                                   renesas_ryz014a_adapter_power_on
+
 /** @} *** group_example_configuration_allocator */
 
 /**
