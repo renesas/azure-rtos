@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>netxduo_addons</name>
-		<version>6.2.1_rel-rx-1.0.0</version>
+		<version>6.2.1_rel-rx-1.0.1</version>
 		<application>AzureRTOSLibrary</application>
 		<desc>Azure RTOS NetX Duo Addons</desc>
 		<details>Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc.</details>

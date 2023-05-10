@@ -336,6 +336,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.2.1_rel-rx-1.0.1
+  * Update EWF library to the latest version
+  * Update SDK samples with EWF to use the latest codes (fixed debug off and iothub connection issue)
 * 6.2.1_rel-rx-1.0.0
   * Update Azure RTOS libraries to 6.2.1_rel
   * Support CC-RX for IoT Embedded SDK samples using EWF
