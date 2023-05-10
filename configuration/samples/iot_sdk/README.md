@@ -30,4 +30,4 @@ the sample program can not communicate with RYZ014A module.
 For the details of issue and workaround, please refer to this link
 https://github.com/Azure/embedded-wireless-framework/issues/16
 
-The issue will be fixed at next update of software package.
+The issue is fixed from software package v6.2.1_rel-rx-1.0.1
