@@ -394,3 +394,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 # Reference Video
 * Azure ADU (Firmware Update on the air) 
   * https://www.youtube.com/watch?v=gxODyzvWSYs
+
+# How to use Trusted Secure IP with Azure RTOS
+* under constructing...
+
