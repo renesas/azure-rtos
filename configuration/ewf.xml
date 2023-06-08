@@ -66,7 +66,6 @@ Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_tls_basic.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_udp.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_udp.h</file>
-			<file>embedded-wireless-framework/src/ewf_adapter_api_urc.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_wifi_station.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_wifi_station.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common.c</file>
