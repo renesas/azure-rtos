@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>usbx_hmsc</name>
-		<version>6.2.1_rel-rx-1.0.1</version>
+		<version>6.2.1_rel-rx-1.1.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure RTOS USBX HMSC</desc>
