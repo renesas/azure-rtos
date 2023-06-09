@@ -14,7 +14,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.21" version="7.21">
+            <component display="r_bsp" id="r_bsp7.30" version="7.30">
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
@@ -23,7 +23,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
+            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -92,7 +92,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.80" version="4.80">
                 <gridItem id="RXD2/SMISO2/SSCL2" selectedIndex="1"/>
                 <gridItem id="TXD2/SMOSI2/SSDA2" selectedIndex="1"/>
                 <gridItem id="SCI2" selectedIndex="1"/>
@@ -105,7 +105,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_flash_rx">
-            <component display="r_flash_rx" id="r_flash_rx4.91" version="4.91">
+            <component display="r_flash_rx" id="r_flash_rx5.00" version="5.00">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
