@@ -3,5 +3,108 @@
     <fileVersion>1.00</fileVersion>
     <formatVersion>2.00</formatVersion>
     <fileTemplate></fileTemplate>
-    <configuration></configuration>
+    <configuration>
+        <property id="AZURE_IOT" display="Include AZURE_IOT" default="1" type="checkbox">
+            <option id="AZURE_IOT.0" display="Disable" value="0"/>
+            <option id="AZURE_IOT.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="CLOUD" display="Include CLOUD" default="1" type="checkbox">
+            <option id="CLOUD.0" display="Disable" value="0"/>
+            <option id="CLOUD.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="DHCP" display="Include DHCP" default="1" type="checkbox">
+            <option id="DHCP.0" display="Disable" value="0"/>
+            <option id="DHCP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="DNS" display="Include DNS" default="1" type="checkbox">
+            <option id="DNS.0" display="Disable" value="0"/>
+            <option id="DNS.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="HTTP" display="Include HTTP" default="1" type="checkbox">
+            <option id="HTTP.0" display="Disable" value="0"/>
+            <option id="HTTP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="MQTT" display="Include MQTT" default="1" type="checkbox">
+            <option id="MQTT.0" display="Disable" value="0"/>
+            <option id="MQTT.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="NAT" display="Include NAT" default="1" type="checkbox">
+            <option id="NAT.0" display="Disable" value="0"/>
+            <option id="NAT.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="SMTP" display="Include SMTP" default="1" type="checkbox">
+            <option id="SMTP.0" display="Disable" value="0"/>
+            <option id="SMTP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="SNMP" display="Include SNMP" default="1" type="checkbox">
+            <option id="SNMP.0" display="Disable" value="0"/>
+            <option id="SNMP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="SNTP" display="Include SNTP" default="1" type="checkbox">
+            <option id="SNTP.0" display="Disable" value="0"/>
+            <option id="SNTP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="WEB" display="Include WEB" default="1" type="checkbox">
+            <option id="WEB.0" display="Disable" value="0"/>
+            <option id="WEB.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="AUTO_IP" display="Include AUTO_IP" default="0" type="checkbox">
+            <option id="AUTO_IP.0" display="Disable" value="0"/>
+            <option id="AUTO_IP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="BSD" display="Include BSD" default="0" type="checkbox">
+            <option id="BSD.0" display="Disable" value="0"/>
+            <option id="BSD.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="FTP" display="Include FTP" default="0" type="checkbox">
+            <option id="FTP.0" display="Disable" value="0"/>
+            <option id="FTP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="POP3" display="Include POP3" default="0" type="checkbox">
+            <option id="POP3.0" display="Disable" value="0"/>
+            <option id="POP3.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="TFTP" display="Include TFTP" default="0" type="checkbox">
+            <option id="TFTP.0" display="Disable" value="0"/>
+            <option id="TFTP.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+        <property id="TELNET" display="Include TELNET" default="0" type="checkbox">
+            <option id="TELNET.0" display="Disable" value="0"/>
+            <option id="TELNET.1" display="Enable" value="1"/>
+            <constraint display="The option is available from e2studio 2023-04" actionOnFail="disable">("${SC.version}" &gt;= 2160)</constraint>
+            <description></description>
+        </property>
+    </configuration>
 </module>
