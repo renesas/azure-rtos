@@ -22,6 +22,7 @@
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
             <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -52,6 +53,10 @@
                 <gridItem id="SCI8" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="0"/>
                 <gridItem id="SCI_CFG_CH8_INCLUDED" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH8_EN_TXI_NESTED_INT" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH8_EN_RXI_NESTED_INT" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH8_EN_TEI_NESTED_INT" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_CH8_EN_ERI_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

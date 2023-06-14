@@ -55,6 +55,10 @@
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
 				<!-- Copy resources to project -->
 				<impdir>
+					<folder>configuration/samples/bare/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
 					<file>configuration/samples/bare/hardware_setup.h</file>
 					<file>configuration/samples/bare/hardware_setup.c</file>
 					<file>configuration/samples/bare/demo_threadx.c</file>
@@ -68,10 +72,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<!-- copy ICCRX linker script for RX130, RX140, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
@@ -250,6 +250,10 @@
 			<app id="application" value="ramdisk" name="FileX RAM Disk sample project" description="Project includes ThreadX, FileX, BSP, CMT. This sample illustrates the use of the FileX embedded FAT file system. The example creates a small RAM-disk with a sample file and data, and reads the file data back into memory">
 				<!-- Copy resources to project -->
 				<impdir>
+					<folder>configuration/samples/ramdisk/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
 					<file>configuration/samples/ramdisk/hardware_setup.h</file>
 					<file>configuration/samples/ramdisk/hardware_setup.c</file>
 					<file>configuration/samples/ramdisk/sample_filex_ram_disk.c</file>
@@ -259,10 +263,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<!-- copy sample ld and readme for RX130, RX140, RX72N -->
 				<impdir>
@@ -596,10 +596,6 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
-				</impdir>
-				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<board>CK-RX65N</board>
@@ -917,10 +913,6 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
-				</impdir>
-				<impdir>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
@@ -1212,10 +1204,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
@@ -1539,10 +1527,6 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
-				</impdir>
-				<impdir>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
@@ -1799,10 +1783,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
@@ -2133,10 +2113,6 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
-				</impdir>
-				<impdir>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
@@ -2289,10 +2265,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
@@ -2479,10 +2451,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
@@ -2687,10 +2655,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_glcdc_rx/r_glcdc_rx_vx.xx/r_glcdc_rx</folder>
@@ -2906,10 +2870,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
@@ -3210,10 +3170,6 @@
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
-				</impdir>
-				<impdir>
 					<folder>rx-driver-package/source/r_usb_basic/r_usb_basic_vx.xx/r_usb_basic</folder>
 					<path>src/smc_gen/r_usb_basic</path>
 				</impdir>
@@ -3418,10 +3374,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
@@ -3787,10 +3739,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_flash_rx/r_flash_rx_vx.xx/r_flash_rx</folder>
@@ -4381,10 +4329,6 @@
 				<impdir>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<file>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_config/r_cmt_rx_config.h</file>
-					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
 					<folder>rx-driver-package/source/r_flash_rx/r_flash_rx_vx.xx/r_flash_rx</folder>

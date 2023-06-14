@@ -20,6 +20,7 @@
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
             <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
