@@ -184,7 +184,7 @@ SECTIONS
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
 	} >RAM
-    .r_bsp_istack BLOCK(0x4) (NOLOAD) :
+    .r_bsp_istack ALIGN(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
 	} >RAM
@@ -192,7 +192,7 @@ SECTIONS
 	{
 		"_istack" = .;
 	} >RAM
-    .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
+    .r_bsp_ustack ALIGN(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
 	} >RAM
