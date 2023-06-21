@@ -1,4 +1,3 @@
-/* Generated configuration header file - do not edit */
 /**********************************************************************************************************************
  * DISCLAIMER
  * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
@@ -15,16 +14,11 @@
  * following link:
  * http://www.renesas.com/disclaimer
  *
- * Copyright (C) 2021 Renesas Electronics Corporation. All rights reserved.
+ * Copyright (C) 2022 Renesas Electronics Corporation. All rights reserved.
  *********************************************************************************************************************/
 /**********************************************************************************************************************
  * File Name    : r_wifi_sx_ulpgn_config.h
- * Version      : 1.0
  * Description  : SX ULPGN WiFi driver Configuration.
- *********************************************************************************************************************/
-/**********************************************************************************************************************
- * History : DD.MM.YYYY Version  Description
- *         : 01.01.2020 1.00     First Release
  *********************************************************************************************************************/
 
 /**********************************************************************************************************************
