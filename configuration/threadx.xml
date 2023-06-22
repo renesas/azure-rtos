@@ -66,8 +66,10 @@
 		</impdir>
 		<impdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
@@ -77,8 +79,10 @@
 		</impdir>
 		<impdir>
 			<toolchain>RXC</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
@@ -88,8 +92,10 @@
 		</impdir>
 		<impdir>
 			<toolchain>ICCRX</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
@@ -157,8 +163,10 @@
 		</incdir>
 		<incdir>
 			<toolchain>GNURX</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
@@ -167,8 +175,10 @@
 		</incdir>
 		<incdir>
 			<toolchain>RXC</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
@@ -177,8 +187,10 @@
 		</incdir>
 		<incdir>
 			<toolchain>ICCRX</toolchain>
+			<series>RX200</series>
 			<series>RX600</series>
 			<series>RX700</series>
+			<group>RX26T</group>
 			<group>RX66T</group>
 			<group>RX660</group>
 			<group>RX671</group>
