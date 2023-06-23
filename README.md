@@ -50,7 +50,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 ## For development phase
 * Getting started for Azure RTOS using Smart Configurator in e2 studio
 * You can configure any settings: cpu board = any
-* same contents on both of Renesas website and YouTube/bilibili
+* Same contents on both of Renesas website and YouTube/bilibili
   * en 
     * https://www.renesas.com/jp/en/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.youtube.com/watch?v=97C1stpNFig
@@ -61,8 +61,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
     * https://www.bilibili.com/video/BV1K34y1E76k
 * How to create Azure RTOS sample project for IAR EW
-  * en: https://en-support.renesas.com/knowledgeBase/20533128
-  * ja: https://ja-support.renesas.com/knowledgeBase/20533124
+  * Video
+    * en: https://www.renesas.com/us/en/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
+    * ja: https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
+    * zh: https://www.renesas.cn/cn/zh/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
+  * FAQ
+    * en: https://en-support.renesas.com/knowledgeBase/20533128
+    * ja: https://ja-support.renesas.com/knowledgeBase/20533124
 
 # versioning
 * https://github.com/renesas/amazon-freertos/issues/8
@@ -76,6 +81,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>RX651</th>
     <th>RX130</th>
     <th>RX140</th>
+    <th>RX26T</th>
     <th>RX660</th>
     <th>RX66T</th>
     <th>RX72N</th>
@@ -90,6 +96,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
+    <th>MCB</th>
     <th>RSK</th>
     <th>RSK</th>
     <th>Envision Kit</th>
@@ -106,11 +113,28 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>-</th>
     <th>-</th>
     <th>-</th>
+    <th>-</th>
     <th>Ethernet</th>
     <th>Wi-Fi</th>
   </tr>
   <tr align="center">
     <td align="left">ThreadX sample</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Minimal sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -136,12 +160,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">Ping sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -162,6 +188,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>-</td>
   </tr>
@@ -170,6 +197,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -192,12 +220,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">IoT Embedded SDK PnP sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -220,38 +250,12 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-  </tr>
-  <tr align="center">
-    <td align="left">IoT Embedded SDK with IoT Plug and Play sample</td>
-    <td>O</td>
-    <td>O</td>
-    <td>O</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>O</td>
-    <td>O</td>
-  </tr>
-  <tr align="center">
-    <td align="left">IoT Embedded SDK with IoT Plug and Play sample using EWF</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>O</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
     <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -276,6 +280,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">USBX HMSC sample</td>
@@ -283,6 +288,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -300,6 +306,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>O</td>
     <td>-</td>
     <td>O</td>
@@ -310,6 +317,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -330,12 +338,20 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
 </table>
 
 ## History
+* 6.2.1_rel-rx-1.1.0
+  * Update RX Driver Package to 1.39
+  * Remove IoT Embedded SDK with IoT Plug and Play sample (it is similar as IoT Embedded SDK PnP sample)
+  * Add Minimal sample (blink LED and output message to terminal)
+  * Support RX26T for ThreadX, FileX and Minimal sample
+  * Enable nested interrupt of r_cmt_rx and r_sci_rx module by default
+  * Support UI configuration for netxduo_addons
 * 6.2.1_rel-rx-1.0.1
   * Update EWF library to the latest version
   * Update SDK samples with EWF to use the latest codes (fixed debug off and iothub connection issue)
