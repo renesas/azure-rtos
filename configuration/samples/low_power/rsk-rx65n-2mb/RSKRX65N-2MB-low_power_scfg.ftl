@@ -14,29 +14,30 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.21" version="7.21">
+            <component display="r_bsp" id="r_bsp7.30" version="7.30">
                 <gridItem id="BSP_CFG_IO_LIB_ENABLE" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
+            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_gpio_rx">
-            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_gpio_rx" id="r_gpio_rx4.70" version="4.70">
+            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_gpio_rx" id="r_gpio_rx4.90" version="4.90">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_irq_rx">
-            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_irq_rx" id="r_irq_rx4.10" version="4.10">
+            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_irq_rx" id="r_irq_rx4.30" version="4.30">
                 <gridItem id="IRQ11" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_lpc_rx">
-            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_lpc_rx" id="r_lpc_rx2.10" version="2.10">
+            <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_lpc_rx" id="r_lpc_rx2.20" version="2.20">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

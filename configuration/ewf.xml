@@ -4,13 +4,13 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>ewf</name>
-		<version>6.2.1_rel-rx-1.0.1</version>
+		<version>6.2.1_rel-rx-1.1.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure Embedded Wireless Framework (Preliminary version)</desc>
 		<details>This is preliminary version of EWF for the demonstration purpose. EWF simplifies connecting small devices to the internet using different connectivity adapters</details>
 		<moduleinfo>> This is preliminary version
-Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
+Package version 6.2.1_rel-rx-1.1.0</moduleinfo>
 		<function>RTOS</function>
 		<dependency>
 			<module>netxduo</module>
@@ -66,7 +66,6 @@ Package version 6.2.1_rel-rx-1.0.1</moduleinfo>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_tls_basic.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_udp.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_udp.h</file>
-			<file>embedded-wireless-framework/src/ewf_adapter_api_urc.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_wifi_station.c</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_api_wifi_station.h</file>
 			<file>embedded-wireless-framework/src/ewf_adapter_renesas_common.c</file>

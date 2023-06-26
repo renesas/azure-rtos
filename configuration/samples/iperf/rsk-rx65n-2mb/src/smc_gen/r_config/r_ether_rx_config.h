@@ -1,4 +1,3 @@
-/* Generated configuration header file - do not edit */
 /***********************************************************************************************************************
  * DISCLAIMER
  * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
@@ -19,7 +18,7 @@
  ***********************************************************************************************************************/
 /***********************************************************************************************************************
  * File Name    : r_ether_rx_config.h
- * Version      : 1.20
+ * Version      : 1.22
  * Description  : Ethernet module device driver
  ***********************************************************************************************************************/
 /**********************************************************************************************************************
@@ -31,6 +30,7 @@
  *         : 08.01.2018 1.04     Changed comment.
  *         : 30.07.2019 1.17     Added changes for RX72M.
  *         : 22.11.2019 1.20     Added changes for RX72N.
+ *         : 20.11.2021 1.22     Added config macro.
  ***********************************************************************************************************************/
 
 /* Guards against multiple inclusion */
@@ -50,12 +50,15 @@
 /* PHY-LSI address setting for ETHER0/1.
  Please set the value 31 ETHER_CFG_CH0_PHY_ADDRESS when use default setting of the RSK+RX63N.
  Please set the value 30 ETHER_CFG_CH0_PHY_ADDRESS when use default setting of the RSK+RX65N/RSK+RX65N_2MB.
- Please set the value 0 ETHER_CFG_CH0_PHY_ADDRESS and value 1 ETHER_CFG_CH1_PHY_ADDRESS when use default setting of the RSK+RX64M/RSK+RX71M.
- Please set the value 1 ETHER_CFG_CH0_PHY_ADDRESS and value 2 ETHER_CFG_CH1_PHY_ADDRESS when use default setting of the RSK+RX72M.
+ Please set the value 0 ETHER_CFG_CH0_PHY_ADDRESS and value 1 ETHER_CFG_CH1_PHY_ADDRESS when use default
+ setting of the RSK+RX64M/RSK+RX71M.
+ Please set the value 1 ETHER_CFG_CH0_PHY_ADDRESS and value 2 ETHER_CFG_CH1_PHY_ADDRESS when use default
+ setting of the RSK+RX72M.
  Please set the value 1 ETHER_CFG_CH1_PHY_ADDRESS when use default setting of the RSK+RX72N.
  */
-    #define ETHER_CFG_CH0_PHY_ADDRESS                   (30)     /* Please define the PHY-LSI address in the range of 0-31. */
-    #define ETHER_CFG_CH1_PHY_ADDRESS                   (1)     /* Please define the PHY-LSI address in the range of 0-31. */
+/* Please define the PHY-LSI address in the range of 0-31. */
+    #define ETHER_CFG_CH0_PHY_ADDRESS                   (30)
+    #define ETHER_CFG_CH1_PHY_ADDRESS                   (1)
 
 /* The number of Rx descriptors. */
     #define ETHER_CFG_EMAC_RX_DESCRIPTORS               (8)
@@ -68,11 +71,13 @@
     #define ETHER_CFG_BUFSIZE                           (1536)  /* Must be 32-byte aligned */
 
 /* EINT interrupt priority level. This definition is not used when EINT interrupt is assigned to Group interrupt. */
-    #define ETHER_CFG_EINT_INT_PRIORITY                 (2)     /* Please define the interruption level within the range of 1-15. */
+/* Please define the interruption level within the range of 1-15. */
+    #define ETHER_CFG_EINT_INT_PRIORITY                 (2)
 
 /* Group AL1 interrupt priority level. This definition is not used when EINT interrupt is assigned to Peripheral 
  interrupt. */
-    #define ETHER_CFG_AL1_INT_PRIORTY                   (2)     /* Please define the interruption level within the range of 1-15. */
+/* Please define the interruption level within the range of 1-15. */
+    #define ETHER_CFG_AL1_INT_PRIORTY                   (2)
 
 /* The register bus of PHY0/1 for ETHER0/1 select
  0 = The access of the register of PHY uses ETHER0.
@@ -80,7 +85,8 @@
 
  Please set the value 0 ETHER_CFG_CH0_PHY_ACCESS when use default setting of the RSK+RX63N.
  Please set the value 0 ETHER_CFG_CH0_PHY_ACCESS when use default setting of the RSK+RX65N/RSK+RX65N_2MB.
- Please set the value 1 ETHER_CFG_CH0_PHY_ACCESS and ETHER_CFG_CH1_PHY_ACCESS when use default setting of the RSK+RX64M/RSK+RX71M.
+ Please set the value 1 ETHER_CFG_CH0_PHY_ACCESS and ETHER_CFG_CH1_PHY_ACCESS when use default
+ setting of the RSK+RX64M/RSK+RX71M.
  Please set the value 0 ETHER_CFG_CH0_PHY_ACCESS and ETHER_CFG_CH1_PHY_ACCESS when use default setting of the RSK+RX72M.
  Please set the value 1 ETHER_CFG_CH1_PHY_ACCESS when use default setting of the RSK+RX72N.
  */
@@ -88,7 +94,7 @@
     #define ETHER_CFG_CH1_PHY_ACCESS                    (1)
 
 /* Define the access timing of MII/RMII register */
-    #define ETHER_CFG_PHY_MII_WAIT                      (8)     /* Plese define the value of 1 or more */
+    #define ETHER_CFG_PHY_MII_WAIT                      (8)     /* Please define the value of 1 or more */
 
 /* Define the waiting time for reset completion of PHY-LSI */
     #define ETHER_CFG_PHY_DELAY_RESET                   (0x00020000L)
@@ -109,6 +115,12 @@
  1 = use
  */
     #define ETHER_CFG_USE_PHY_KSZ8041NL                 (0)
+
+/* Definition of whether or not to use ICS1894_32 of the Renesas Electronics Corporation.
+ 0 = unused
+ 1 = use
+ */
+    #define ETHER_CFG_USE_PHY_ICS1894_32                (0)
 
 /* Definition of whether or not to use non blocking of PHY Management Station Operation
  0 = unused

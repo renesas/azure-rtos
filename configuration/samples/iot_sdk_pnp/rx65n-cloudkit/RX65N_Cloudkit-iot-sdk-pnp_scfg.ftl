@@ -14,13 +14,14 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.21" version="7.21">
+            <component display="r_bsp" id="r_bsp7.30" version="7.30">
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
+            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -49,7 +50,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.60" version="4.60">
+            <component detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx4.80" version="4.80">
             <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
             <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
             <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
@@ -63,6 +64,18 @@
             <gridItem id="SCI_CFG_CH0_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH1_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH5_INCLUDED" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_EN_TXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_EN_TXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH5_EN_TXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_EN_RXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_EN_RXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH5_EN_RXI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_EN_TEI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_EN_TEI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH5_EN_TEI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH0_EN_ERI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH1_EN_ERI_NESTED_INT" selectedIndex="1"/>
+            <gridItem id="SCI_CFG_CH5_EN_ERI_NESTED_INT" selectedIndex="1"/>
             <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
             <gridItem id="SCI_CFG_CH0_RX_BUFSIZ" selectedIndex="3000"/>
             <gridItem id="SCI_CFG_CH1_RX_BUFSIZ" selectedIndex="3000"/>

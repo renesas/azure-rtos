@@ -1,4 +1,3 @@
-/* Generated configuration header file - do not edit */
 /***********************************************************************************************************************
  * DISCLAIMER
  * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
@@ -47,6 +46,8 @@
  *         : 10.03.2020 2.46     RX23E-A support added.
  *         : 30.06.2021 2.48     RX671 support added.
  *         : 31.07.2021 2.49     RX140 support added.
+ *         : 31.12.2021 2.50     RX660 support added.
+ *         : 15.06.2022 2.60     RX26T support added.
  **********************************************************************************************************************/
 /* Guards against multiple inclusion */
 #ifndef SCI_IIC_CONFIG_H
@@ -75,9 +76,11 @@
 /*  RX23W    :    , ch1,    ,    ,    , ch5,    ,    , ch8,    ,    ,    ,ch12 */
 /*  RX24T    :    , ch1,    ,    ,    , ch5, ch6,    ,    ,    ,    ,    ,     */
 /*  RX24U    :    , ch1,    ,    ,    , ch5, ch6,    , ch8, ch9,    ,ch11,     */
+/*  RX26T    :    , ch1,    ,    ,    , ch5, ch6,    ,    ,    ,    ,    ,ch12 */
 /*  RX63N    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9,ch10,ch11,ch12 */
 /*  RX64M    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7,    ,    ,    ,    ,ch12 */
 /*  RX65N    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9,ch10,ch11,ch12 */
+/*  RX660    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9,ch10,ch11,ch12 */
 /*  RX66T    :    , ch1,    ,    ,    , ch5, ch6,    , ch8, ch9,    ,ch11,ch12 */
 /*  RX66N    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9,ch10,ch11,ch12 */
 /*  RX671    : ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9,ch10,ch11,ch12 */

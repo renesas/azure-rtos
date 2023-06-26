@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>netxduo_addons</name>
-		<version>6.2.1_rel-rx-1.0.1</version>
+		<version>6.2.1_rel-rx-1.1.0</version>
 		<application>AzureRTOSLibrary</application>
 		<desc>Azure RTOS NetX Duo Addons</desc>
 		<details>Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc.</details>
@@ -201,5 +201,295 @@
 				<address>0x00010000</address>
 			</section>
 		</sections-->
+		<apps appSetting="true">
+			<app id="AZURE_IOT" value="0">
+			</app>
+			<app id="AZURE_IOT" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure_iot_security_module</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/cmake-modules</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/doc</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/doc</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/docs</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/docs</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/inc</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot</path>
+				</impdir>
+				<impdir>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_nohttp.c</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</file>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform</path>
+				</impdir>
+				<impdir>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/CHANGELOG.md</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/CONTRIBUTING.md</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/CODE_OF_CONDUCT.md</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/LICENSE</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/NOTICE.txt</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/README.md</file>
+					<file>netxduo/addons/azure_iot/azure-sdk-for-c/SECURITY.md</file>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c</path>
+				</impdir>
+				<impdir>
+					<folder>netxduo/addons/azure_iot/docs</folder>
+					<path>libs/netxduo_addons/addons/azure_iot/docs</path>
+				</impdir>
+				<impdir>
+					<file>netxduo/addons/azure_iot/nx_azure_iot.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_adu_agent.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_adu_agent.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_adu_root_key.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_json_reader.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_json_reader.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_json_writer.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_json_writer.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client_properties.h</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_hub_client_properties.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_provisioning_client.c</file>
+					<file>netxduo/addons/azure_iot/nx_azure_iot_provisioning_client.h</file>
+					<path>libs/netxduo_addons/addons/azure_iot</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/azure_iot</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/inc</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc/configs/RTOS_BASE</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc</path>
+					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include</path>
+				</incdir>
+			</app>
+			<app id="CLOUD" value="0">
+			</app>
+			<app id="CLOUD" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/cloud</folder>
+					<path>libs/netxduo_addons/addons/cloud</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/cloud</path>
+				</incdir>
+			</app>
+			<app id="DHCP" value="0">
+			</app>
+			<app id="DHCP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/dhcp</folder>
+					<path>libs/netxduo_addons/addons/dhcp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/dhcp</path>
+				</incdir>
+			</app>
+			<app id="DNS" value="0">
+			</app>
+			<app id="DNS" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/dns</folder>
+					<path>libs/netxduo_addons/addons/dns</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/dns</path>
+				</incdir>
+			</app>
+			<app id="HTTP" value="0">
+			</app>
+			<app id="HTTP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/http</folder>
+					<path>libs/netxduo_addons/addons/http</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/http</path>
+				</incdir>
+			</app>
+			<app id="MQTT" value="0">
+			</app>
+			<app id="MQTT" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/mqtt</folder>
+					<path>libs/netxduo_addons/addons/mqtt</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/mqtt</path>
+				</incdir>
+			</app>
+			<app id="NAT" value="0">
+			</app>
+			<app id="NAT" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/nat</folder>
+					<path>libs/netxduo_addons/addons/nat</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/nat</path>
+				</incdir>
+			</app>
+			<app id="SMTP" value="0">
+			</app>
+			<app id="SMTP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/smtp</folder>
+					<path>libs/netxduo_addons/addons/smtp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/smtp</path>
+				</incdir>
+			</app>
+			<app id="SNMP" value="0">
+			</app>
+			<app id="SNMP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/snmp</folder>
+					<path>libs/netxduo_addons/addons/snmp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/snmp</path>
+				</incdir>
+			</app>
+			<app id="SNTP" value="0">
+			</app>
+			<app id="SNTP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/sntp</folder>
+					<path>libs/netxduo_addons/addons/sntp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/sntp</path>
+				</incdir>
+			</app>
+			<app id="WEB" value="0">
+			</app>
+			<app id="WEB" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/web</folder>
+					<path>libs/netxduo_addons/addons/web</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/web</path>
+				</incdir>
+			</app>
+			<app id="AUTO_IP" value="0">
+			</app>
+			<app id="AUTO_IP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/auto_ip</folder>
+					<path>libs/netxduo_addons/addons/auto_ip</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/auto_ip</path>
+				</incdir>
+			</app>
+			<app id="BSD" value="0">
+			</app>
+			<app id="BSD" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/BSD</folder>
+					<path>libs/netxduo_addons/addons/BSD</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/BSD</path>
+				</incdir>
+			</app>
+			<app id="FTP" value="0">
+			</app>
+			<app id="FTP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/ftp</folder>
+					<path>libs/netxduo_addons/addons/ftp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/ftp</path>
+				</incdir>
+			</app>
+			<app id="POP3" value="0">
+			</app>
+			<app id="POP3" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/pop3</folder>
+					<path>libs/netxduo_addons/addons/pop3</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/pop3</path>
+				</incdir>
+			</app>
+			<app id="TFTP" value="0">
+			</app>
+			<app id="TFTP" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/tftp</folder>
+					<path>libs/netxduo_addons/addons/tftp</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/tftp</path>
+				</incdir>
+			</app>
+			<app id="TELNET" value="0">
+			</app>
+			<app id="TELNET" value="1">
+				<!-- resource -->
+				<impdir>
+					<folder>netxduo/addons/telnet</folder>
+					<path>libs/netxduo_addons/addons/telnet</path>
+				</impdir>
+				<!-- include -->
+				<incdir>
+					<path>libs/netxduo_addons/addons/telnet</path>
+				</incdir>
+			</app>
+		</apps>
 	</package>
 </refinfo>

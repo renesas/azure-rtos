@@ -17,12 +17,13 @@
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.21" version="7.21">
+            <component display="r_bsp" id="r_bsp7.30" version="7.30">
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.40" version="5.40">
+            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

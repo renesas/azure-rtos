@@ -1,4 +1,3 @@
-/* Generated configuration header file - do not edit */
 /***********************************************************************************************************************
 * DISCLAIMER
 * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No 
@@ -28,6 +27,7 @@
 *         : 01.06.2018 1.70     Changed the default value of the following macro definition.
 *                                - BYTEQ_CFG_MAX_CTRL_BLKS - Changed the default value from 4 to 32.
 *         : 31.03.2021 1.90     Updated for queue protection.
+*         : 29.10.2021 2.00     Updated for critical section protection.
 ***********************************************************************************************************************/
 #ifndef BYTEQ_CONFIG_H
 #define BYTEQ_CONFIG_H
@@ -61,5 +61,8 @@ Configuration Options
 
 /* Selects to use disable interrupt to protect queue. */
 #define BYTEQ_CFG_PROTECT_QUEUE             (0)
+
+/* Selects to use disable interrupt to protect critical section. */
+#define BYTEQ_CFG_CRITICAL_SECTION          (0)
 
 #endif /* BYTEQ_CONFIG_H */

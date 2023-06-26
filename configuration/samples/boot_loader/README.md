@@ -24,7 +24,7 @@ please refer to section 2.12 of r01an6455ej0102-rx-azure-rtos.pdf
 Note: this setting is not required for bootloader project
 
 1.4. Please also take note that the sample project is verified with C project.
-If you create new project with C++ option, please confirm its behaviour by yourself.
+If you create new project with C++ option, please confirm its behavior by yourself.
 For example, if you create project with C++ option and CC-RX compiler, you will need to add abort() function manually.
 
 ------------------------
