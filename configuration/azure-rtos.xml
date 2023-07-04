@@ -4302,10 +4302,10 @@
 					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
 					<path>src/smc_gen/r_sys_time_rx</path>
 				</impdir>
-				<!--impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
 					<path>src/smc_gen/r_fwup</path>
-				</impdir-->
+				</impdir>
 				<!-- copy patch file for wifi -->
 				<impdir>
 					<board>RX65NCloudKit</board>
@@ -4876,10 +4876,10 @@
 					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
 					<path>src/smc_gen/r_sys_time_rx</path>
 				</impdir>
-				<!--impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
 					<path>src/smc_gen/r_fwup</path>
-				</impdir-->
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>
