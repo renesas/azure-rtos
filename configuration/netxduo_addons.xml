@@ -425,19 +425,19 @@
 					<path>libs/netxduo_addons/addons/auto_ip</path>
 				</incdir>
 			</app>
-			<app id="BSD" value="0">
-			</app>
-			<app id="BSD" value="1">
+			<!--app id="BSD" value="0">
+			</app-->
+			<!--app id="BSD" value="1"-->
 				<!-- resource -->
-				<impdir>
+				<!--impdir>
 					<folder>netxduo/addons/BSD</folder>
 					<path>libs/netxduo_addons/addons/BSD</path>
-				</impdir>
+				</impdir-->
 				<!-- include -->
-				<incdir>
+				<!--incdir>
 					<path>libs/netxduo_addons/addons/BSD</path>
 				</incdir>
-			</app>
+			</app-->
 			<app id="FTP" value="0">
 			</app>
 			<app id="FTP" value="1">

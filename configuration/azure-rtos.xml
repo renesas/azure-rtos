@@ -22,6 +22,8 @@
 		<toolchain>ICCRX</toolchain>
 		<board>TargetBoardRX130</board>
 		<board>RSKRX140</board>
+		<board>MCB-RX26T Type A</board>
+		<board>MCB-RX26T Type B</board>
 		<board>RSKRX65N-2MB</board>
 		<board>RSKRX65N-2MB(TSIP)</board>
 		<board>RX65NCloudKit</board>
@@ -29,6 +31,7 @@
 		<board>CK-RX65N</board>
 		<board>RSKRX660</board>
 		<board>RSKRX66T</board>
+		<board>RSKRX66T(TSIP)</board>
 		<board>RSKRX671</board>
 		<board>RX72NEnvisionKit</board>
 		<board>EnvisionKitRX72N</board>
@@ -221,6 +224,478 @@
 					<group>RX660</group>
 					<group>RX671</group>
 					<group>RX72N</group>
+					<section>
+						<name>B</name>
+						<name>FREEMEM</name>
+						<address>0x00004000</address>
+					</section>
+				</sections>
+				<!-- set 64-bit double data type -->
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.common</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.assembler</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.assembler.option.gOptimize</optionid>
+					<value>true</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize</optionid>
+					<value>com.renesas.cdt.managedbuild.renesas.ccrx.linker.option.optimize.all</value>
+				</option>
+				<option>
+					<toolchain>RXC</toolchain>
+					<toolid>com.renesas.cdt.managedbuild.renesas.ccrx.base.librarian</toolid>
+					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.librarian.option.goptimize</optionid>
+					<value>true</value>
+				</option>
+				<additionaloption>
+					<toolchain>GNURX</toolchain>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
+					<value>true</value>
+				</additionaloption>
+			</app>
+			<app id="application" value="minimal" name="ThreadX minimal sample project" description="This project is the simplest sample using ThreadX. It toggles LED and outputs information to the serial terminal.">
+				<board>TargetBoardRX130</board>
+				<board>RSKRX140</board>
+				<board>MCB-RX26T Type A</board>
+				<board>MCB-RX26T Type B</board>
+				<board>RSKRX65N-2MB</board>
+				<board>RSKRX65N-2MB(TSIP)</board>
+				<board>RX65NCloudKit</board>
+				<board>CloudKitRX65N</board>
+				<board>CK-RX65N</board>
+				<board>RSKRX660</board>
+				<board>RSKRX66T</board>
+				<board>RSKRX66T(TSIP)</board>
+				<board>RSKRX671</board>
+				<board>RX72NEnvisionKit</board>
+				<board>EnvisionKitRX72N</board>
+				<!-- Copy resources to project -->
+				<impdir>
+					<file>configuration/samples/minimal/common/hardware_setup.c</file>
+					<file>configuration/samples/minimal/common/hardware_setup.h</file>
+					<file>configuration/samples/minimal/common/main.c</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<folder>configuration/samples/minimal/targetboard-rx130/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<folder>configuration/samples/minimal/rsk-rx140/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<folder>configuration/samples/minimal/mcb-rx26t/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<folder>configuration/samples/minimal/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<folder>configuration/samples/minimal/cloudkit-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<folder>configuration/samples/minimal/ck-rx65n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX660</board>
+					<folder>configuration/samples/minimal/rsk-rx660/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<folder>configuration/samples/minimal/rsk-rx66t/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>configuration/samples/minimal/rsk-rx671/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>configuration/samples/minimal/envision-kit-rx72n/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<file>configuration/samples/minimal/README.md</file>
+					<path>.</path>
+				</impdir>
+				<!-- copy driver codes -->
+				<impdir>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx140</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx140</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX660</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx660</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx660</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx66t</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx66t</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX671</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
+					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
+					<path>src/smc_gen/r_gpio_rx</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX130, RX140, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>configuration/samples/bare/rx130/lnkr5f51308.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX26T</group>
+					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>configuration/samples/bare/rx65n/lnkr5f565ne.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX651</group>
+					<file>configuration/samples/bare/rx651/lnkr5f5651e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>configuration/samples/bare/rx660/lnkr5f56609h.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX66T</group>
+					<file>configuration/samples/bare/rx66t/lnkr5f566te.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX671</group>
+					<file>configuration/samples/bare/rx671/lnkr5f5671e.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>configuration/samples/bare/rx72n/lnkr5f572nn.icf</file>
+					<path>src</path>
+				</impdir>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX130</group>
+					<file>src/lnkr5f51308.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX100</series>
+					<group>RX140</group>
+					<file>src/lnkr5f51406.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX26T</group>
+					<file>src/lnkr5f526tf.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX65N</group>
+					<file>src/lnkr5f565ne.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX651</group>
+					<file>src/lnkr5f5651e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX660</group>
+					<file>src/lnkr5f56609h.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX66T</group>
+					<file>src/lnkr5f566te.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX600</series>
+					<group>RX671</group>
+					<file>src/lnkr5f5671e.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX700</series>
+					<group>RX72N</group>
+					<file>src/lnkr5f572nn.icf</file>
+				</linkerscript>
+				<!-- include -->
+				<incdir>
+					<path>src</path>
+					<path>src/smc_gen/r_cmt_rx</path>
+					<path>src/smc_gen/r_gpio_rx</path>
+					<path>src/smc_gen/r_gpio_rx/src</path>
+				</incdir>
+				<incdir>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
+				<!-- scfg template -->
+				<scfgtemplate>
+					<board>TargetBoardRX130</board>
+					<path>configuration/samples/minimal/targetboard-rx130/TB-RX130-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX140</board>
+					<path>configuration/samples/minimal/rsk-rx140/RSK-RX140-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<path>configuration/samples/minimal/rsk-rx65n-2mb/RSK-RX65N-2MB-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<path>configuration/samples/minimal/cloudkit-rx65n/Cloudkit-RX65N-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>CK-RX65N</board>
+					<path>configuration/samples/minimal/ck-rx65n/CK-RX65N-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX660</board>
+					<path>configuration/samples/minimal/rsk-rx660/RSK-RX660-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<path>configuration/samples/minimal/rsk-rx66t/RSK-RX66T-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RSKRX671</board>
+					<path>configuration/samples/minimal/rsk-rx671/RSK-RX671-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<path>configuration/samples/minimal/envision-kit-rx72n/EK-RX72N-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<!-- compiler setting -->
+				<sections>
+					<toolchain>RXC</toolchain>
 					<section>
 						<name>B</name>
 						<name>FREEMEM</name>
@@ -3839,10 +4314,10 @@
 					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
 					<path>src/smc_gen/r_sys_time_rx</path>
 				</impdir>
-				<!--impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
 					<path>src/smc_gen/r_fwup</path>
-				</impdir-->
+				</impdir>
 				<!-- copy patch file for wifi -->
 				<impdir>
 					<board>RX65NCloudKit</board>
@@ -4246,11 +4721,15 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/boot_loader.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_version.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_application_version.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/boot_loader/rsk-rx671/src/boot_loader.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -4413,10 +4892,10 @@
 					<folder>rx-driver-package/source/r_sys_time_rx/r_sys_time_rx_vx.xx/r_sys_time_rx</folder>
 					<path>src/smc_gen/r_sys_time_rx</path>
 				</impdir>
-				<!--impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_fwup/r_fwup_vx.xx/r_fwup</folder>
 					<path>src/smc_gen/r_fwup</path>
-				</impdir-->
+				</impdir>
 				<!-- include -->
 				<incdir>
 					<path>src/smc_gen/r_cmt_rx</path>

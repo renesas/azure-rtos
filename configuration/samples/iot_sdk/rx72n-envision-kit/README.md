@@ -17,7 +17,7 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 ------------------------
 2. Caution / Known Issue
 ------------------------
-The device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
+2.1 The device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
 However, when creating new project with old board version (v1.11 and older),
 the project is created with R5F572ND device (Flash memory 2MB).
 You can go to [Board] tab of Smart Configurator editor to check the correctness of the device.
@@ -25,3 +25,10 @@ In case the device is R5F572ND, at Board tab, you can click [...] button behind 
 to quickly go to Change Device dialog and change target device to R5F572NN.
 
 This issue is fixed from board version v1.12.
+
+2.2. After the project generation is completed, please do the pin assignment check for SCI.
+In Smart Configurator editor (<projectname>.scfg)
+- go to Pins tab
+- at Pin Function, select SCI channel being used on the left panel (channel with opened blue box)
+- on the right panel, check and change the pin function if it is incorrect: 
+  RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
