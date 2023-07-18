@@ -4709,11 +4709,15 @@
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
 					<board>CK-RX65N</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/boot_loader.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_version.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_application_version.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/boot_loader/rsk-rx671/src/boot_loader.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
