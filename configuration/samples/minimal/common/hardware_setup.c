@@ -1,4 +1,3 @@
-
 #include "r_smc_entry.h"
 
 #include <platform.h>

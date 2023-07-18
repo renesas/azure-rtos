@@ -24,33 +24,33 @@
 /***********************************************************************************************************************
 Includes   <System Includes> , "Project Includes"
 ***********************************************************************************************************************/
+#include <stdio.h>
 #include "azurertos_object_init.h"
 #include "platform.h"
-#include "r_gpio_rx_if.h"
-#include "demo_printf.h"
 #include "board_led.h"
 
-/* New Thread entry function */
+/**********************************************************************************************************************
+* Function Name: sample_entry
+* Description  : sample_entry
+* Arguments    : ULONG entry_input
+* Return Value : None
+**********************************************************************************************************************/
 void sample_entry(ULONG entry_input)
 {
 
     UINT log_index = 0;
 
     /* LED Initialize */
-
     /* Set Low to LED pin  */
     R_GPIO_PinWrite (LED_PIN, LED_OFF);
 
     /* Set LED Output Direction */
     R_GPIO_PinDirectionSet (LED_PIN, GPIO_DIRECTION_OUTPUT);
 
-    /* Initialize Log output. */
-    LogPrintInit ();
-
     while (1)
     {
         /* Output log*/
-        LogPrint ("Hello, RX AzureRTOS sample. [%d]\r\n", log_index++);
+        printf ("Hello, RX AzureRTOS sample. [%d]\r\n", log_index++);
 
         /* LED toggle */
         if (R_GPIO_PinRead (LED_PIN) != LED_ON)
@@ -68,4 +68,7 @@ void sample_entry(ULONG entry_input)
         tx_thread_sleep (100);
     }
 }
+/**********************************************************************************************************************
+* End of function sample_entry(ULONG entry_input)
+**********************************************************************************************************************/
 

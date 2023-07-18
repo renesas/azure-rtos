@@ -25,10 +25,12 @@
 #ifndef SRC_BOARD_H_
 #define SRC_BOARD_H_
 
-#define LED_ON 0x0
-#define LED_OFF 0x1
+#include "r_gpio_rx_if.h"
+
+#define LED_ON  (GPIO_LEVEL_LOW)
+#define LED_OFF (GPIO_LEVEL_HIGH)
 
 /* RX65N Cloud Kit LED1*/
-#define LED_PIN GPIO_PORT_B_PIN_0
+#define LED_PIN (GPIO_PORT_B_PIN_0)
 
 #endif /* SRC_BOARD_H_ */

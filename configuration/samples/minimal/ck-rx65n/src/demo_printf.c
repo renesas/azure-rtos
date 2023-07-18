@@ -1,4 +1,3 @@
-
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
@@ -32,9 +31,9 @@ void demo_printf_init(void)
     config.async.clk_src = SCI_CLK_INT;
     config.async.data_size = SCI_DATA_8BIT;
     config.async.parity_en = SCI_PARITY_OFF;
-    config.async.parity_type = SCI_EVEN_PARITY; 
+    config.async.parity_type = SCI_EVEN_PARITY;
     config.async.stop_bits = SCI_STOPBITS_1;
-    config.async.int_priority = 15; 
+    config.async.int_priority = 15;
     err = R_SCI_Open(SCI_CH5, SCI_MODE_ASYNC, &config, demo_printf_transmit_end, &Console);
 
     R_SCI_PinSet_SCI5();
@@ -73,22 +72,22 @@ void demo_printf(char *format, ...)
 
 void demo_printf_transmit_end(void * pArgs)
 {
-	sci_cb_args_t *p_args = (sci_cb_args_t*) pArgs;
+    sci_cb_args_t *p_args = (sci_cb_args_t*) pArgs;
 
-	if (SCI_EVT_TEI == p_args->event) {
-		tx_semaphore_put(&demo_printf_semaphore);
-	}
+    if (SCI_EVT_TEI == p_args->event) {
+        tx_semaphore_put(&demo_printf_semaphore);
+    }
 }
 
 void my_sw_charput_function(uint8_t c)
 {
     tx_mutex_get(&demo_printf_mutex, TX_WAIT_FOREVER);
-    
+
     R_SCI_Send(Console,&c,1);
-    
+
     tx_semaphore_get(&demo_printf_semaphore, TX_WAIT_FOREVER);
 
     tx_mutex_put(&demo_printf_mutex);
 
-	return;
+    return;
 }

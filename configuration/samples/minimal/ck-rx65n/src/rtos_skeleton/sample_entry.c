@@ -14,50 +14,64 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2023 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
- * File Name    : main.c
+ * File Name    : thread_x_entry.c
  * Version      : 1.0
- * Description  : main
+ * Description  : declare Thread entry function  
  **********************************************************************************************************************/
-/**********************************************************************************************************************
- Includes   <System Includes> , "Project Includes"
- *********************************************************************************************************************/
-#include "tx_api.h"
-#include "hardware_setup.h"
+/***********************************************************************************************************************
+Includes   <System Includes> , "Project Includes"
+***********************************************************************************************************************/
+#include "azurertos_object_init.h"
+#include "platform.h"
+#include "demo_printf.h"
+#include "board_led.h"
 
-extern void tx_application_define_user (void);
-
 /**********************************************************************************************************************
-* Function Name: main
-* Description  : Define main entry point.
-* Arguments    : void
+* Function Name: sample_entry
+* Description  : sample_entry
+* Arguments    : ULONG entry_input
 * Return Value : None
 **********************************************************************************************************************/
-void main(void)
+void sample_entry(ULONG entry_input)
 {
-    /* Setup the hardware. */
-    platform_setup();
 
-    /* Enter the ThreadX kernel.  */
-    tx_kernel_enter();
+    UINT log_index = 0;
+
+    /* LED Initialize */
+    /* Set Low to LED pin  */
+    R_GPIO_PinWrite (LED_PIN, LED_OFF);
+
+    /* Set LED Output Direction */
+    R_GPIO_PinDirectionSet (LED_PIN, GPIO_DIRECTION_OUTPUT);
+
+    /* Initialize Log output. */
+    demo_printf_init ();
+
+    while (1)
+    {
+        /* Output log*/
+        demo_printf ("Hello, RX AzureRTOS sample. [%d]\r\n", log_index++);
+
+        /* LED toggle */
+        if (R_GPIO_PinRead (LED_PIN) != LED_ON)
+        {
+            /* LED ON */
+            R_GPIO_PinWrite (LED_PIN, LED_ON);
+        }
+        else
+        {
+            /* LED OFF */
+            R_GPIO_PinWrite (LED_PIN, LED_OFF);
+        }
+
+        /* Sleep 1 second */
+        tx_thread_sleep (100);
+    }
 }
 /**********************************************************************************************************************
-* End of function main(void)
+* End of function sample_entry(ULONG entry_input)
 **********************************************************************************************************************/
 
-/**********************************************************************************************************************
-* Function Name: tx_application_define
-* Description  : Define what the initial system looks like.
-* Arguments    : void
-* Return Value : None
-**********************************************************************************************************************/
-void    tx_application_define(void *first_unused_memory)
-{
-    /* Initialize user thread */
-    tx_application_define_user ();
-}
-/**********************************************************************************************************************
-* End of function tx_application_define(void *first_unused_memory)
-**********************************************************************************************************************/

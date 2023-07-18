@@ -291,7 +291,26 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/minimal/common/sample_entry.c</file>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
 					<path>src/rtos_skeleton</path>
 				</impdir>
 				<impdir>
@@ -308,13 +327,6 @@
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<file>configuration/samples/minimal/ck-rx65n/src/demo_printf.h</file>
-					<path>src</path>
-				</impdir>
-				<impdir>
-					<board>TargetBoardRX130</board>
-					<board>MCB-RX26T Type A</board>
-					<board>MCB-RX26T Type B</board>
-					<file>configuration/samples/minimal/targetboard-rx130/src/demo_printf.h</file>
 					<path>src</path>
 				</impdir>
 				<impdir>

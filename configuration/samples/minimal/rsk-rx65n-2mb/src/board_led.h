@@ -25,10 +25,12 @@
 #ifndef SRC_BOARD_H_
 #define SRC_BOARD_H_
 
-#define LED_ON 0x0
-#define LED_OFF 0x1
+#include "r_gpio_rx_if.h"
+
+#define LED_ON  (GPIO_LEVEL_LOW)
+#define LED_OFF (GPIO_LEVEL_HIGH)
 
 /* RSK RX65N-2M LED0 */
-#define LED_PIN GPIO_PORT_7_PIN_3
+#define LED_PIN (GPIO_PORT_7_PIN_3)
 
 #endif /* SRC_BOARD_H_ */
