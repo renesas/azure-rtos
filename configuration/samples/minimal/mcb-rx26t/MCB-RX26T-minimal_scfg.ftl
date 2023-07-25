@@ -42,7 +42,7 @@
                         <option defaultValue="New Thread" id="threadname" value="sample_thread"/>
                         <option defaultValue="new_thread[X]_entry" id="entryfunction" value="sample_entry"/>
                         <option defaultValue="0" id="entryinput" value="0"/>
-                        <option defaultValue="1024" id="stacksize" value="1024"/>
+                        <option defaultValue="1024" id="stacksize" value="2048"/>
                         <option defaultValue="1" id="priority" value="16"/>
                         <option defaultValue="1" id="preemptionthreshold" value="16"/>
                         <option defaultValue="0" id="timeslice" value="0"/>
