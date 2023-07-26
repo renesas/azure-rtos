@@ -16,7 +16,27 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 ------------------------
 2. Caution / Known Issue
 ------------------------
-2.1. After the project generation is completed, please do the pin assignment check for SCI.
+2.1. When using GCC compiler, in case you set Optimization level as Optimize size(-Os), please set the linker option not to remove unused sections as following
+- in Project Explorer view, right-click on the project and select Properties
+- on Properties dialog select C/C++ Build -> Settings -> Tool Settings tab -> Linker -> Other
+- add "-Wl,--no-gc-sections" on User defined options
+- click Apply and Close" button
+
+2.2. When using GCC compiler, the "_end" section in src/linker_script.ld should be at the end. However, the default linker script may not meet this order, so please check linker_script.ld and move the section below to the end if needed, and build project again
+.bss :
+{
+	_bss = .;
+	*(.bss)
+	*(.bss.**)
+	*(COMMON)
+	*(B)
+	*(B_1)
+	*(B_2)
+	_ebss = .;
+	_end = .;
+} > RAM
+
+2.3. After the project generation is completed, please do the pin assignment check for SCI.
 In Smart Configurator editor (<projectname>.scfg)
 - go to Pins tab
 - at Pin Function, select SCI channel being used on the left panel (channel with opened blue box)
@@ -24,10 +44,3 @@ In Smart Configurator editor (<projectname>.scfg)
   RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
 
 This issue is fixed from e2 studio 2023-04 and Smart Configurator for RX 2.17.
-
-2.2. If you use sample project with EWF library (Preliminary version) and disable the debug log,
-the sample program can not communicate with RYZ014A module.
-For the details of issue and workaround, please refer to this link
-https://github.com/Azure/embedded-wireless-framework/issues/16
-
-The issue is fixed from software package v6.2.1_rel-rx-1.0.1
