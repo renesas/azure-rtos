@@ -12,7 +12,7 @@ To use PMOD2, following modifications are required
 - P52: J19 jumper header pin mounting (J19 Pin1-2 short), R225 removal
 
 1.2. For more information about how to use this sample project, 
-please refer to section 2.6 of r01an6455ej0102-rx-azure-rtos.pdf
+please refer to section 2.7 of r01an6455ej0103-rx-azure-rtos.pdf
 
 1.3. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
