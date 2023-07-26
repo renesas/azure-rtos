@@ -649,17 +649,32 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<toolchain>RXC</toolchain>
+					<toolchain>ICCRX</toolchain>
 					<board>TargetBoardRX130</board>
 					<path>configuration/samples/minimal/targetboard-rx130/TB-RX130-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>GNURX</toolchain>
+					<board>TargetBoardRX130</board>
+					<path>configuration/samples/minimal/targetboard-rx130/TB-RX130-minimal-GCC_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX140</board>
 					<path>configuration/samples/minimal/rsk-rx140/RSK-RX140-minimal_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
+					<toolchain>RXC</toolchain>
+					<toolchain>ICCRX</toolchain>
 					<board>MCB-RX26T Type A</board>
 					<board>MCB-RX26T Type B</board>
 					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>GNURX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal-GCC_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
