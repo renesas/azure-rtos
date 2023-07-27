@@ -15,7 +15,7 @@ https://docs.microsoft.com/azure/rtos/guix/about-guix
 
 
 1.2. For more information about how to use this sample project, 
-please refer to section 2.8 of r01an6455ej0102-rx-azure-rtos.pdf
+please refer to section 2.8 of r01an6455ej0103-rx-azure-rtos.pdf
 
 1.3. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
@@ -30,15 +30,32 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 ------------------------
 2. Caution / Known Issue
 ------------------------
-For GUIX 16bpp sample project only
+2.1. When using GCC compiler, in case you set Optimization level as Optimize size(-Os), please set the linker option not to remove unused sections as following
+- in Project Explorer view, right-click on the project and select Properties
+- on Properties dialog select C/C++ Build -> Settings -> Tool Settings tab -> Linker -> Other
+- add "-Wl,--no-gc-sections" on User defined options
+- click Apply and Close" button
 
-2.1. If you are using e2 studio 2022-04 or earlier verion with GCC RX compiler, please take note on following issue.
+2.2. When using GCC compiler, the "_end" section in src/linker_script.ld should be at the end. However, the default linker script may not meet this order, so please check linker_script.ld and move the section below to the end if needed, and build project again
+.bss :
+{
+	_bss = .;
+	*(.bss)
+	*(.bss.**)
+	*(COMMON)
+	*(B)
+	*(B_1)
+	*(B_2)
+	_ebss = .;
+	_end = .;
+} > RAM
 
-For this GUIX 16bpp sample project, RAM2 should be used for sections in src/linker_script.ld
+2.3. If you are using e2 studio 2022-04 or earlier verion with GCC RX compiler, please take note on following issue.
+For GUIX 16bpp sample project, RAM2 should be used for sections in src/linker_script.ld
 However, the section setting is changed to RAM in linker_script.ld when first build and after code generated.
 You can simply copy src/linker_script_sample.ld to src/linker_script.ld, and build project again
 
-2.2. If you are using RX72N Envision Kit, the device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
+2.4. If you are using RX72N Envision Kit, the device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
 However, when creating new project with old board version (v1.11 and older),
 the project is created with R5F572ND device (Flash memory 2MB).
 You can go to [Board] tab of Smart Configurator editor to check the correctness of the device.
