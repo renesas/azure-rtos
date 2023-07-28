@@ -1,17 +1,25 @@
 # Azure RTOS for RX family
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
-
+# Supported boards
+* [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
+ * [RX65N Cloud Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
+ * [RSK RX65N-2M](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
+ * [RSK RX671](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
+ * [RX72N Envision Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
+ * [RX130 Target Board](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
+ * [RSK RX140](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
+ * [RX660-Starter-Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660)
+ * [RX66T-Starter-Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
+ * MCB RX26T [Type A](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
 # Quick Start Steps
-1) Buy MCU board like CK-RX65N.
-<br/>[CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
-<br/>[RX Family Boards and Kits](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/software-tools/boards-kits)
+1) Buy supported MCU board. 
 2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
 3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository. You can find guidebook on this URL:
 <br/>https://www.renesas.com/search?keywords=R01AN6455
 1) Input your credential info for your Azure account.
 2) Build.
 3) Download built firmware to MCU.
-4) Run, MCU can connect to Azure servers.
+4) Run, MCU can connect to Azure.
 
 # For RA Family user
 * Please visit Flexible Software Package page.
@@ -28,8 +36,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     * [2/3](https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-23-ck-rx65n-program-build)
     * [3/3](https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-33-ck-rx65n-cloud-operation)
   * YouTube
-    * [English Video Playlist](https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP)
-    * [Japanese Video Playlist](https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1)
+    * [English Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP)
+    * [Japanese Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1)
     
 <details>
 <summary>old boards</summary>
