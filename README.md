@@ -3,15 +3,15 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 
 # Quick Start Steps
 1) Buy MCU board like CK-RX65N.
-<br/>https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group
-2) Install e2 studio.
-<br/>https://www.renesas.com/software-tool/e-studio
+<br/>[CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
+<br/>[RX Family Boards and Kits](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/software-tools/boards-kits)
+2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
 3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository. You can find guidebook on this URL:
 <br/>https://www.renesas.com/search?keywords=R01AN6455
-4) Input your credential info for your Azure account.
-5) Build.
-6) Download built firmware to MCU.
-7) Run, MCU can connect to Azure servers.
+1) Input your credential info for your Azure account.
+2) Build.
+3) Download built firmware to MCU.
+4) Run, MCU can connect to Azure servers.
 
 # For RA Family user
 * Please visit Flexible Software Package page.
@@ -57,9 +57,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * How to create Azure RTOS sample project for IAR EW
   * Video
     * https://www.renesas.com/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
-  * FAQ
-    * en: https://en-support.renesas.com/knowledgeBase/20533128
-    * ja: https://ja-support.renesas.com/knowledgeBase/20533124
+* FAQ
+  * English : https://en-support.renesas.com/knowledgeBase/20533128
+  * Japanese: https://ja-support.renesas.com/knowledgeBase/20533124
+* Renesas Community
+  * English : https://community.renesas.com/
+  * Japanese :  https://community-ja.renesas.com/cafe_rene/
+  * Chinese : https://community-ja.renesas.com/zh
 
 # versioning
 * https://github.com/renesas/amazon-freertos/issues/8#issuecomment-908914842
