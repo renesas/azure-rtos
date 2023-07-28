@@ -2,15 +2,15 @@
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
 # Supported boards
 * [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
- * [RX65N Cloud Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
- * [RSK RX65N-2M](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
- * [RSK RX671](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
- * [RX72N Envision Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
- * [RX130 Target Board](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
- * [RSK RX140](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
- * [RX660-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660)
- * [RX66T-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
- * MCB RX26T [Type A](https://www.renesas.com//products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
+* [Renesas RX65N Cloud Kit / RX65N Cloud Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
+* [Renesas Starter Kit+ for RX65N-2MB / RSK RX65N-2M](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
+* [RX72N Envision Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
+* [Renesas Starter Kit+ for RX671 / RSK RX671](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
+* [Renesas Starter Kit for RX660 / RX660-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660) 
+* [RX130 Target Board](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
+* [Renesas Starter Kit for RX140 / RSK RX140](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
+* [Renesas Starter Kit for RX66T /RX66T-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
+* MCB RX26T [Type A](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
 # Quick Start Steps
 1) Buy supported MCU board. 
 2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
@@ -82,7 +82,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   <tr>
     <th align="left">Device</th>
     <th colspan="4">RX65N</th>
-    <th>RX651</th>
     <th>RX130</th>
     <th>RX140</th>
     <th>RX26T</th>
@@ -97,7 +96,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>Cloud Kit</th>
     <th>CK</th>
     <th>CK</th>
-    <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
     <th>MCB</th>
@@ -117,13 +115,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>-</th>
     <th>-</th>
     <th>-</th>
-    <th>-</th>
     <th>Ethernet</th>
     <th>Wi-Fi</th>
   </tr>
   <tr align="center">
     <td align="left">ThreadX sample</td>
-    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -149,11 +145,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
-    <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">FileX sample</td>
-    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -177,7 +171,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -192,7 +185,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
     <td>O</td>
     <td>-</td>
   </tr>
@@ -201,7 +193,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
-    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -224,14 +215,12 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">IoT Embedded SDK PnP sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
-    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -254,12 +243,10 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
     <td>O</td>
-    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -284,7 +271,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">USBX HMSC sample</td>
@@ -297,13 +283,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">Threadx Low Power sample</td>
-    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -327,7 +311,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -336,7 +319,6 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
-    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
