@@ -2,15 +2,15 @@
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
 # Supported boards
 * [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
- * [RX65N Cloud Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
- * [RSK RX65N-2M](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
- * [RSK RX671](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
- * [RX72N Envision Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
- * [RX130 Target Board](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
- * [RSK RX140](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
- * [RX660-Starter-Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660)
- * [RX66T-Starter-Kit](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
- * MCB RX26T [Type A](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/jp/ja/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
+ * [RX65N Cloud Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
+ * [RSK RX65N-2M](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
+ * [RSK RX671](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
+ * [RX72N Envision Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
+ * [RX130 Target Board](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
+ * [RSK RX140](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
+ * [RX660-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660)
+ * [RX66T-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
+ * MCB RX26T [Type A](https://www.renesas.com//products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
 # Quick Start Steps
 1) Buy supported MCU board. 
 2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
@@ -33,8 +33,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * same contents on both of Renesas website and YouTube/bilibili
   * Renesas Website
     * [1/3](https://www.renesas.com/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-e)
-    * [2/3](https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-23-ck-rx65n-program-build)
-    * [3/3](https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-33-ck-rx65n-cloud-operation)
+    * [2/3](https://www.renesas.com/video/azure-rtos-tutorial-23-ck-rx65n-program-build)
+    * [3/3](https://www.renesas.com/video/azure-rtos-tutorial-33-ck-rx65n-cloud-operation)
   * YouTube
     * [English Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP)
     * [Japanese Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1)
