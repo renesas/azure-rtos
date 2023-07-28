@@ -82,6 +82,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   <tr>
     <th align="left">Device</th>
     <th colspan="4">RX65N</th>
+    <th>RX651</th>
     <th>RX130</th>
     <th>RX140</th>
     <th>RX26T</th>
@@ -94,8 +95,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th align="left">Board</th>
     <th>RSK</th>
     <th>Cloud Kit</th>
-    <th>CK</th>
-    <th>CK</th>
+    <th>New CK</th>
+    <th>New CK</th>
+    <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
     <th>MCB</th>
@@ -115,11 +117,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>-</th>
     <th>-</th>
     <th>-</th>
+    <th>-</th>
     <th>Ethernet</th>
     <th>Wi-Fi</th>
   </tr>
   <tr align="center">
     <td align="left">ThreadX sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -145,9 +149,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">FileX sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -171,6 +177,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -185,6 +192,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>-</td>
   </tr>
@@ -193,6 +201,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -215,12 +224,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">IoT Embedded SDK PnP sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -243,10 +254,12 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -271,6 +284,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">USBX HMSC sample</td>
@@ -283,11 +297,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">Threadx Low Power sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -311,6 +327,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -319,6 +336,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
