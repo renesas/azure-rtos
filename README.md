@@ -1,17 +1,25 @@
-# azure-rtos
+# Azure RTOS for RX family
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
-
+# Supported boards
+* [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
+* [Renesas RX65N Cloud Kit / RX65N Cloud Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-cloud-kit-renesas-rx65n-cloud-kit)
+* [Renesas Starter Kit+ for RX65N-2MB / RSK RX65N-2M](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx65n-2mb-starter-kit-plus-renesas-starter-kit-rx65n-2mb)
+* [RX72N Envision Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx72n-envision-kit-rx72n-envision-kit)
+* [Renesas Starter Kit+ for RX671 / RSK RX671](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx671-starter-kit-plus-renesas-starter-kit-rx671)
+* [Renesas Starter Kit for RX660 / RX660-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx660) 
+* [RX130 Target Board](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk5rx1300c00000br-target-board-rx130)
+* [Renesas Starter Kit for RX140 / RSK RX140](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/renesas-starter-kit-rx140)
+* [Renesas Starter Kit for RX66T /RX66T-Starter-Kit](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx66t-starter-kit-renesas-starter-kit-rx66t)
+* MCB RX26T [Type A](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c00000bj-mcb-rx26t-type-cpu-board-rx26t-mcu-group), [Type B](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rtk0emxe70c01000bj-mcb-rx26t-type-b-cpu-board-rx26t-mcu-group-trusted-secure-ip-tsip-lite)
 # Quick Start Steps
-1) Buy MCU board like CK-RX65N.
-<br/>https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group
-2) Install e2 studio.
-<br/>https://www.renesas.com/software-tool/e-studio
+1) Buy supported MCU board. 
+2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
 3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository. You can find guidebook on this URL:
 <br/>https://www.renesas.com/search?keywords=R01AN6455
-4) Input your credential info for your Azure account.
-5) Build.
-6) Download built firmware to MCU.
-7) Run, MCU can connect to Azure servers.
+1) Input your credential info for your Azure account.
+2) Build.
+3) Download built firmware to MCU.
+4) Run, MCU can connect to Azure.
 
 # For RA Family user
 * Please visit Flexible Software Package page.
@@ -19,19 +27,17 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   
 # Tutorial Video
 ## Just demos
-### playlist on YouTube
-* https://www.youtube.com/playlist?list=PLgUXqPkOStPsB9yh-XZ7BNv0J6UtAERO1
-
-### CK-RX65N (new: RX65N Cloud Kit)
-* Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
-* You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (new: ether(available)/cellular(now preparing))
+### [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
+* Azure RTOS Tutorial (n/3) CK-RX65N: ~ Development Environment Setup
+* You can download, compile, execution for 1st step: cpu board = CK-RX65N (Ether)
 * same contents on both of Renesas website and YouTube/bilibili
-  * en
-    * https://www.renesas.com/us/en/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-e
-    * https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP
-  * ja
-    * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-j
-    * https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1
+  * Renesas Website
+    * [1/3](https://www.renesas.com/video/azure-rtos-tutorial-13-ck-rx65n-setup?rxsw-e)
+    * [2/3](https://www.renesas.com/video/azure-rtos-tutorial-23-ck-rx65n-program-build)
+    * [3/3](https://www.renesas.com/video/azure-rtos-tutorial-33-ck-rx65n-cloud-operation)
+  * YouTube
+    * [English Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPuSFEGrxJi1uDbo1Hv4X2lP)
+    * [Japanese Video](https://www.youtube.com/playlist?list=PLgUXqPkOStPvSOWrIECsFJV5Ci3X8sVJ1)
     
 <details>
 <summary>old boards</summary>
@@ -40,10 +46,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
 * You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (old: wifi)
 * same contents on both of Renesas website and YouTube/bilibili
-  * en
-    * https://www.renesas.com/jp/en/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
-  * ja
-    * https://www.renesas.com/jp/ja/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
+  * Renesas Website
+    * https://www.renesas.com/video/azure-rtos-tutorial-13-rx65n-cloud-kit-development-environment-setup
  
 </details>
 
@@ -51,26 +55,26 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * Getting started for Azure RTOS using Smart Configurator in e2 studio
 * You can configure any settings: cpu board = any
 * Same contents on both of Renesas website and YouTube/bilibili
-  * en 
-    * https://www.renesas.com/jp/en/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
-    * https://www.youtube.com/watch?v=97C1stpNFig
-  * ja
-    * https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
-    * https://www.youtube.com/watch?v=TKUFraKUSpQ
-  * zh
-    * https://www.renesas.com/jp/zh/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
-    * https://www.bilibili.com/video/BV1K34y1E76k
+  * Renesas Website 
+    * https://www.renesas.com/video/getting-started-azure-rtos-using-smart-configurator-e2-studio
+  * YouTube  
+    * [English Video](https://www.youtube.com/watch?v=97C1stpNFig)
+    * [Japanese Video](https://www.youtube.com/watch?v=TKUFraKUSpQ)
+  * bilibili 
+    * [Chinese video](https://www.bilibili.com/video/BV1K34y1E76k)
 * How to create Azure RTOS sample project for IAR EW
   * Video
-    * en: https://www.renesas.com/us/en/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
-    * ja: https://www.renesas.com/jp/ja/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
-    * zh: https://www.renesas.cn/cn/zh/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
+    * https://www.renesas.com/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
   * FAQ
-    * en: https://en-support.renesas.com/knowledgeBase/20533128
-    * ja: https://ja-support.renesas.com/knowledgeBase/20533124
+    * English : https://en-support.renesas.com/knowledgeBase/20533128
+    * Japanese: https://ja-support.renesas.com/knowledgeBase/20533124
+* Renesas Community
+  * English : https://community.renesas.com/
+  * Japanese :  https://community-ja.renesas.com/cafe_rene/
+  * Chinese : https://community-ja.renesas.com/zh
 
 # versioning
-* https://github.com/renesas/amazon-freertos/issues/8
+* https://github.com/renesas/amazon-freertos/issues/8#issuecomment-908914842
 
 # Supported boards/devices and applications
 ## The latest software package
@@ -91,8 +95,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th align="left">Board</th>
     <th>RSK</th>
     <th>Cloud Kit</th>
-    <th>New CK</th>
-    <th>New CK</th>
+    <th>CK</th>
+    <th>CK</th>
     <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
