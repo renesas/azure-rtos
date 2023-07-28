@@ -65,9 +65,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 * How to create Azure RTOS sample project for IAR EW
   * Video
     * https://www.renesas.com/video/getting-started-azure-rtos-using-rx-smart-configurator-iar-embedded-workbench
-* FAQ
-  * English : https://en-support.renesas.com/knowledgeBase/20533128
-  * Japanese: https://ja-support.renesas.com/knowledgeBase/20533124
+  * FAQ
+    * English : https://en-support.renesas.com/knowledgeBase/20533128
+    * Japanese: https://ja-support.renesas.com/knowledgeBase/20533124
 * Renesas Community
   * English : https://community.renesas.com/
   * Japanese :  https://community-ja.renesas.com/cafe_rene/
