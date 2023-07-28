@@ -27,8 +27,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   
 # Tutorial Video
 ## Just demos
-### [CK-RX65N (new: RX65N Cloud Kit)](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
-* Azure RTOS Tutorial (n/3) RX65N Cloud Kit: ~ Development Environment Setup
+### [CK-RX65N](https://www.renesas.com/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/ck-rx65n-cloud-kit-based-rx65n-mcu-group)
+* Azure RTOS Tutorial (n/3) CK-RX65N: ~ Development Environment Setup
 * You can download, compile, execution for 1st step: cpu board = RX65N Cloud Kit (new: ether(available)/cellular(now preparing))
 * same contents on both of Renesas website and YouTube/bilibili
   * Renesas Website
@@ -95,8 +95,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th align="left">Board</th>
     <th>RSK</th>
     <th>Cloud Kit</th>
-    <th>New CK</th>
-    <th>New CK</th>
+    <th>CK</th>
+    <th>CK</th>
     <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
