@@ -45,7 +45,8 @@
 
 /* Supported Low Power Mode for devices */
 #if defined(BSP_MCU_RX110) || defined(BSP_MCU_RX111) || defined(BSP_MCU_RX113) || defined(BSP_MCU_RX130) || \
-	defined(BSP_MCU_RX140) || defined(BSP_MCU_RX230) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX23W)
+	defined(BSP_MCU_RX140) || defined(BSP_MCU_RX230) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX23W) || \
+	defined(BSP_MCU_RX23E_B)
 
 	#define DEMO_LP_SLEEP		(1)
 	#define DEMO_LP_DEEP_SLEEP	(1)
@@ -78,6 +79,13 @@
 
     #define DEMO_LED_PIN	(GPIO_PORT_2_PIN_1)
     #define DEMO_IRQ_NUM	(IRQ_NUM_1)
+    #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
+    #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
+
+#elif defined(DEMO_BOARD_RSSKRX23EB)	/* RSSKRX23EB RSSK Board */
+
+    #define DEMO_LED_PIN	(GPIO_PORT_7_PIN_3)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_7)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
 
