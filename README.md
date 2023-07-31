@@ -85,6 +85,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>RX651</th>
     <th>RX130</th>
     <th>RX140</th>
+    <th>RX23E-B</th>
     <th>RX26T</th>
     <th>RX660</th>
     <th>RX66T</th>
@@ -100,6 +101,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>RSK RX65N</th>
     <th>Target Board</th>
     <th>RSK</th>
+    <th>RSSK</th>
     <th>MCB</th>
     <th>RSK</th>
     <th>RSK</th>
@@ -118,11 +120,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <th>-</th>
     <th>-</th>
     <th>-</th>
+    <th>-</th>
     <th>Ethernet</th>
     <th>Wi-Fi</th>
   </tr>
   <tr align="center">
     <td align="left">ThreadX sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -150,9 +154,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">FileX sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -178,6 +184,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -193,6 +200,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>-</td>
   </tr>
@@ -201,6 +209,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -225,12 +234,14 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">IoT Embedded SDK PnP sample</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -255,10 +266,12 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">GUIX (8bpp, 16bpp, draw 2d) sample</td>
     <td>O</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -285,6 +298,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
   </tr>
   <tr align="center">
     <td align="left">USBX HMSC sample</td>
@@ -298,11 +312,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
   <tr align="center">
     <td align="left">Threadx Low Power sample</td>
+    <td>O</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -328,6 +344,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
@@ -343,12 +360,16 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>-</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
     <td>O</td>
     <td>O</td>
   </tr>
 </table>
 
 ## History
+* 6.2.1_rel-rx-1.2.0
+  * Support RX23E-B for ThreadX, FileX, Minimal, and Low Power sample
+  * Use the latest version of FIT modules in RX Driver Pacakae 1.40 for RX23E-B samples
 * 6.2.1_rel-rx-1.1.0
   * Update RX Driver Package to 1.39
   * Remove IoT Embedded SDK with IoT Plug and Play sample (it is similar as IoT Embedded SDK PnP sample)
