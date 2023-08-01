@@ -36,7 +36,7 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 	_end = .;
 } > RAM
 
-2.3. If you are using RX72N Envision Kit, after the project generation is completed, please do the pin assignment check for SCI.
+2.3. If you are using RX72N Envision Kit or Custom board, after the project generation is completed, please do the pin assignment check for SCI.
 In Smart Configurator editor (<projectname>.scfg)
 - go to Pins tab
 - at Pin Function, select SCI channel being used on the left panel (channel with opened blue box)

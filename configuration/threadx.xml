@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>threadx</name>
-		<version>6.2.1_rel-rx-1.1.0</version>
+		<version>6.2.1_rel-rx-1.2.0</version>
 		<application>AzureRTOSKernel</application>
 		<category>rtos.kernel</category>
 		<desc>Azure RTOS ThreadX</desc>
@@ -37,8 +37,11 @@
 		<impdir>
 			<toolchain>GNURX</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/gnu</folder>
@@ -47,8 +50,11 @@
 		<impdir>
 			<toolchain>RXC</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/ccrx</folder>
@@ -57,8 +63,11 @@
 		<impdir>
 			<toolchain>ICCRX</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<folder>threadx/ports/rxv2/iar</folder>
@@ -137,8 +146,11 @@
 		<incdir>
 			<toolchain>GNURX</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/gnu/inc</path>
@@ -146,8 +158,11 @@
 		<incdir>
 			<toolchain>RXC</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/ccrx/inc</path>
@@ -155,8 +170,11 @@
 		<incdir>
 			<toolchain>ICCRX</toolchain>
 			<series>RX100</series>
+			<series>RX200</series>
 			<series>RX600</series>
 			<group>RX140</group>
+			<group>RX23E-B</group>
+			<group>RX23EB</group>
 			<group>RX65N</group>
 			<group>RX651</group>
 			<path>libs/threadx/ports/rxv2/iar/inc</path>

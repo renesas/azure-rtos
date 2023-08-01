@@ -42,6 +42,8 @@
 		<series>RX700</series>
 		<group>RX130</group>
 		<group>RX140</group>
+		<group>RX23E-B</group>
+		<group>RX23EB</group>
 		<group>RX26T</group>
 		<group>RX65N</group>
 		<group>RX651</group>
@@ -54,7 +56,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.2.1_rel-rx-1.1.0</version>
+		<version>6.2.1_rel-rx-1.2.0</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
@@ -75,10 +77,19 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
+					<group>RX130</group>
+					<group>RX140</group>
+					<group>RX26T</group>
+					<group>RX65N</group>
+					<group>RX651</group>
+					<group>RX660</group>
+					<group>RX66T</group>
+					<group>RX671</group>
+					<group>RX72N</group>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
-				<!-- copy ICCRX linker script for RX130, RX140, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX23E-B, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
@@ -91,6 +102,14 @@
 					<series>RX100</series>
 					<group>RX140</group>
 					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>configuration/samples/bare/rx23e-b/lnkr5f523e6b.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -157,6 +176,13 @@
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>src/lnkr5f523e6b.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
 					<group>RX26T</group>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
@@ -202,6 +228,11 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<path>configuration/samples/bare/rx23eb_bare_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RSKRX660</board>
 					<path>configuration/samples/bare/rx660_bare_scfg.ftl</path>
 				</scfgtemplate>
@@ -217,6 +248,8 @@
 					<series>RX700</series>
 					<group>RX130</group>
 					<group>RX140</group>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
 					<group>RX26T</group>
 					<group>RX65N</group>
 					<group>RX651</group>
@@ -283,6 +316,10 @@
 				<board>RSKRX671</board>
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
+				<memoryreq>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+				</memoryreq>
 				<!-- Copy resources to project -->
 				<impdir>
 					<file>configuration/samples/minimal/common/hardware_setup.c</file>
@@ -303,6 +340,12 @@
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
 					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
 					<path>src/rtos_skeleton</path>
 				</impdir>
@@ -330,6 +373,12 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>configuration/samples/minimal/ck-rx65n/src/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
 					<board>TargetBoardRX130</board>
 					<folder>configuration/samples/minimal/targetboard-rx130/src</folder>
 					<path>src</path>
@@ -337,6 +386,12 @@
 				<impdir>
 					<board>RSKRX140</board>
 					<folder>configuration/samples/minimal/rsk-rx140/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>configuration/samples/minimal/rx23e-b/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -390,6 +445,21 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
@@ -501,10 +571,25 @@
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX66T</board>
+					<board>RSKRX66T(TSIP)</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
 					<path>src/smc_gen/r_gpio_rx</path>
 				</impdir>
-				<!-- copy ICCRX linker script for RX130, RX140, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX23E-B, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
@@ -517,6 +602,14 @@
 					<series>RX100</series>
 					<group>RX140</group>
 					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>configuration/samples/bare/rx23e-b/lnkr5f523e6b.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -579,6 +672,13 @@
 					<series>RX100</series>
 					<group>RX140</group>
 					<file>src/lnkr5f51406.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>src/lnkr5f523e6b.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -662,6 +762,11 @@
 				<scfgtemplate>
 					<board>RSKRX140</board>
 					<path>configuration/samples/minimal/rsk-rx140/RSK-RX140-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<path>configuration/samples/minimal/rx23e-b/RSSK-RX23E-B-minimal_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<toolchain>RXC</toolchain>
@@ -768,6 +873,15 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
+					<group>RX130</group>
+					<group>RX140</group>
+					<group>RX26T</group>
+					<group>RX65N</group>
+					<group>RX651</group>
+					<group>RX660</group>
+					<group>RX66T</group>
+					<group>RX671</group>
+					<group>RX72N</group>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
@@ -821,7 +935,7 @@
 						<path>src</path>
 					</impdir>
 				</postscgen>
-				<!-- copy ICCRX linker script for RX130, RX140, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
+				<!-- copy ICCRX linker script for RX130, RX140, RX23E-B, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
@@ -834,6 +948,14 @@
 					<series>RX100</series>
 					<group>RX140</group>
 					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>configuration/samples/bare/rx23e-b/lnkr5f523e6b.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -900,6 +1022,13 @@
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>src/lnkr5f523e6b.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
 					<group>RX26T</group>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
@@ -945,6 +1074,11 @@
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<path>configuration/samples/ramdisk/rx23eb_ramdisk_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RSKRX660</board>
 					<path>configuration/samples/ramdisk/rx660_ramdisk_scfg.ftl</path>
 				</scfgtemplate>
@@ -960,6 +1094,8 @@
 					<series>RX700</series>
 					<group>RX130</group>
 					<group>RX140</group>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
 					<group>RX26T</group>
 					<group>RX65N</group>
 					<group>RX651</group>
@@ -3832,6 +3968,10 @@
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
 				<memoryreq>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+				</memoryreq>
+				<memoryreq>
 					<group>RX651</group>
 				</memoryreq>
 				<!-- Copy resources to project -->
@@ -3847,6 +3987,12 @@
 				<impdir>
 					<board>RSKRX140</board>
 					<folder>configuration/samples/low_power/rsk-rx140/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>configuration/samples/low_power/rx23e-b/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -3894,34 +4040,146 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
 					<path>src/smc_gen/r_gpio_rx</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
+					<path>src/smc_gen/r_gpio_rx</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<file>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_config/r_gpio_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<file>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_config/r_gpio_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_irq_rx/r_irq_rx_vx.xx/r_irq_rx</folder>
 					<path>src/smc_gen/r_irq_rx</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<folder>rx-driver-package/source/r_irq_rx/r_irq_rx_vx.xx/r_irq_rx</folder>
+					<path>src/smc_gen/r_irq_rx</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<file>rx-driver-package/source/r_irq_rx/r_irq_rx_vx.xx/r_config/r_irq_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<file>rx-driver-package/source/r_irq_rx/r_irq_rx_vx.xx/r_config/r_irq_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_lpc_rx/r_lpc_rx_vx.xx/r_lpc_rx</folder>
 					<path>src/smc_gen/r_lpc_rx</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<folder>rx-driver-package/source/r_lpc_rx/r_lpc_rx_vx.xx/r_lpc_rx</folder>
+					<path>src/smc_gen/r_lpc_rx</path>
+				</impdir>
+				<impdir>
+					<board>TargetBoardRX130</board>
+					<board>RSKRX140</board>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CK-RX65N</board>
+					<board>RSKRX660</board>
+					<board>RSKRX671</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
 					<file>rx-driver-package/source/r_lpc_rx/r_lpc_rx_vx.xx/r_config/r_lpc_rx_config.h</file>
 					<path>src/smc_gen/r_config</path>
 				</impdir>
-				<!-- copy ICCRX linker script for RX130, RX140, RX65N, RX651, RX660, RX671, RX72N -->
+				<impdir>
+					<group>RX651</group>
+					<file>rx-driver-package/source/r_lpc_rx/r_lpc_rx_vx.xx/r_config/r_lpc_rx_config.h</file>
+					<path>src/smc_gen/r_config</path>
+				</impdir>
+				<!-- copy ICCRX linker script for RX130, RX140, RX23E-B, RX65N, RX651, RX660, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
 					<series>RX100</series>
@@ -3934,6 +4192,14 @@
 					<series>RX100</series>
 					<group>RX140</group>
 					<file>configuration/samples/bare/rx140/lnkr5f51406.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>configuration/samples/bare/rx23e-b/lnkr5f523e6b.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -3985,6 +4251,13 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<series>RX200</series>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>src/lnkr5f523e6b.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
 					<series>RX600</series>
 					<group>RX65N</group>
 					<file>src/lnkr5f565ne.icf</file>
@@ -4031,6 +4304,11 @@
 					<path>configuration/samples/low_power/rsk-rx140/RSK-RX140-low_power_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<path>configuration/samples/low_power/rx23e-b/RX23E-B-low_power_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<path>configuration/samples/low_power/rsk-rx65n-2mb/RSKRX65N-2MB-low_power_scfg.ftl</path>
@@ -4065,10 +4343,13 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<series>RX100</series>
+					<series>RX200</series>
 					<series>RX600</series>
 					<series>RX700</series>
 					<group>RX130</group>
 					<group>RX140</group>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
 					<group>RX65N</group>
 					<group>RX651</group>
 					<group>RX660</group>
