@@ -14,7 +14,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.30" version="7.30">
+            <component display="r_bsp" id="r_bsp7.41" version="7.41">
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
@@ -22,7 +22,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+            <component display="r_cmt_rx" id="r_cmt_rx5.60" version="5.60">
                 <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -73,7 +73,7 @@
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
         <configuration inuse="true" name="r_flash_rx">
-            <component display="r_flash_rx" id="r_flash_rx5.00" version="5.00">
+            <component display="r_flash_rx" id="r_flash_rx5.10" version="5.10">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
@@ -87,7 +87,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component display="r_sci_rx" id="r_sci_rx4.80" version="4.80">
+            <component display="r_sci_rx" id="r_sci_rx4.90" version="4.90">
                 <gridItem id="RXD0/SMISO0/SSCL0" selectedIndex="1"/>
                 <gridItem id="TXD0/SMOSI0/SSDA0" selectedIndex="1"/>
                 <gridItem id="CTS0#/RTS0#/SS0#" selectedIndex="1"/>
