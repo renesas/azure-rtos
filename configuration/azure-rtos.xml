@@ -116,6 +116,13 @@
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
 					<path>src</path>
 				</impdir>
@@ -184,6 +191,12 @@
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>src/lnkr5f526ta.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
 				<linkerscript>
@@ -320,6 +333,10 @@
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
 				</memoryreq>
+				<memoryreq>
+					<group>RX26T</group>
+					<RAM>48</RAM>
+				</memoryreq>
 				<!-- Copy resources to project -->
 				<impdir>
 					<file>configuration/samples/minimal/common/hardware_setup.c</file>
@@ -353,6 +370,12 @@
 					<board>TargetBoardRX130</board>
 					<board>MCB-RX26T Type A</board>
 					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
 					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
 					<path>src/rtos_skeleton</path>
 				</impdir>
@@ -399,6 +422,18 @@
 					<board>MCB-RX26T Type B</board>
 					<folder>configuration/samples/minimal/mcb-rx26t/src</folder>
 					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
+					<file>configuration/samples/minimal/mcb-rx26t/rx26t-c/board_led.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
+					<folder>configuration/samples/minimal/mcb-rx26t/src/smc_gen</folder>
+					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
@@ -460,6 +495,12 @@
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
+					<path>src/smc_gen/r_cmt_rx</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
@@ -589,6 +630,12 @@
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
 					<path>src/smc_gen/r_gpio_rx</path>
 				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
+					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
+					<path>src/smc_gen/r_gpio_rx</path>
+				</impdir>
 				<!-- copy ICCRX linker script for RX130, RX140, RX23E-B, RX26T, RX65N, RX651, RX660, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
@@ -614,9 +661,17 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
-					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -682,9 +737,16 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>src/lnkr5f526tf.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
-					<file>src/lnkr5f526tf.icf</file>
+					<file>src/lnkr5f526ta.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -779,6 +841,19 @@
 					<toolchain>GNURX</toolchain>
 					<board>MCB-RX26T Type A</board>
 					<board>MCB-RX26T Type B</board>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal-GCC_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>RXC</toolchain>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
+					<group>RX26T</group>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>GNURX</toolchain>
+					<board>Default</board>
+					<group>RX26T</group>
 					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal-GCC_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
@@ -962,6 +1037,13 @@
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
 					<path>src</path>
 				</impdir>
@@ -1030,6 +1112,12 @@
 					<toolchain>ICCRX</toolchain>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>src/lnkr5f526ta.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
 				<linkerscript>
