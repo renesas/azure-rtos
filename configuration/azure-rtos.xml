@@ -114,6 +114,7 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
 					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
@@ -189,6 +190,7 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
 					<file>src/lnkr5f526ta.icf</file>
@@ -480,27 +482,6 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
-					<board>TargetBoardRX130</board>
-					<board>RSKRX140</board>
-					<board>MCB-RX26T Type A</board>
-					<board>MCB-RX26T Type B</board>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX660</board>
-					<board>RSKRX66T</board>
-					<board>RSKRX66T(TSIP)</board>
-					<board>RSKRX671</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
-					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
-					<path>src/smc_gen/r_cmt_rx</path>
-				</impdir>
-				<impdir>
-					<board>Default</board>
-					<group>RX26T</group>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
@@ -521,6 +502,12 @@
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -537,9 +524,21 @@
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx140</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx140</path>
+				</impdir>
+				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx23e-b</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx23e-b</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX660</board>
@@ -595,6 +594,18 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -612,27 +623,13 @@
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
-					<board>TargetBoardRX130</board>
-					<board>RSKRX140</board>
-					<board>MCB-RX26T Type A</board>
-					<board>MCB-RX26T Type B</board>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX660</board>
-					<board>RSKRX66T</board>
-					<board>RSKRX66T(TSIP)</board>
-					<board>RSKRX671</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
-					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
-					<path>src/smc_gen/r_gpio_rx</path>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
-					<board>Default</board>
-					<group>RX26T</group>
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
 					<path>src/smc_gen/r_gpio_rx</path>
 				</impdir>
@@ -1035,6 +1032,7 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
 					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
@@ -1110,6 +1108,7 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
 					<file>src/lnkr5f526ta.icf</file>
