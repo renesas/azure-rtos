@@ -56,7 +56,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>AzureRTOS</name>
-		<version>6.2.1_rel-rx-1.2.0</version>
+		<version>6.2.1_rel-rx-1.3.0</version>
 		<application>AzureRTOS</application>
 		<apps>
 			<app id="application" value="bare" name="ThreadX sample project" description="Project includes ThreadX, BSP, and CMT. This sample is the standard 8-thread ThreadX example, that illustrates the use of the main ThreadX services, including threads, message queues, timers, semaphores, byte memory pools, block memory pools, event flag groups, and mutexes">
@@ -114,8 +114,16 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
 					<path>src</path>
 				</impdir>
@@ -182,8 +190,15 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>src/lnkr5f526ta.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
 				<linkerscript>
@@ -320,6 +335,10 @@
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
 				</memoryreq>
+				<memoryreq>
+					<group>RX26T</group>
+					<RAM>48</RAM>
+				</memoryreq>
 				<!-- Copy resources to project -->
 				<impdir>
 					<file>configuration/samples/minimal/common/hardware_setup.c</file>
@@ -353,6 +372,12 @@
 					<board>TargetBoardRX130</board>
 					<board>MCB-RX26T Type A</board>
 					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
 					<file>configuration/samples/minimal/mcb-rx26t/src/rtos_skeleton/sample_entry.c</file>
 					<path>src/rtos_skeleton</path>
 				</impdir>
@@ -401,6 +426,18 @@
 					<path>src</path>
 				</impdir>
 				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
+					<file>configuration/samples/minimal/mcb-rx26t/rx26t-c/board_led.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<board>Default</board>
+					<group>RX26T</group>
+					<folder>configuration/samples/minimal/mcb-rx26t/src/smc_gen</folder>
+					<path>src/smc_gen</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/minimal/rsk-rx65n-2mb/src</folder>
@@ -445,21 +482,6 @@
 				</impdir>
 				<!-- copy driver codes -->
 				<impdir>
-					<board>TargetBoardRX130</board>
-					<board>RSKRX140</board>
-					<board>MCB-RX26T Type A</board>
-					<board>MCB-RX26T Type B</board>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX660</board>
-					<board>RSKRX66T</board>
-					<board>RSKRX66T(TSIP)</board>
-					<board>RSKRX671</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_cmt_rx/r_cmt_rx_vx.xx/r_cmt_rx</folder>
 					<path>src/smc_gen/r_cmt_rx</path>
 				</impdir>
@@ -480,6 +502,12 @@
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
+					<path>src/smc_gen/r_byteq</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -496,9 +524,21 @@
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
+					<path>src/smc_gen/r_sci_rx/doc</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx140</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx140</path>
+				</impdir>
+				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx23e-b</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx23e-b</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX660</board>
@@ -554,6 +594,18 @@
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</impdir>
 				<impdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.c</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dtc.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_platform.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_private.h</file>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</impdir>
+				<impdir>
 					<board>RSKRX140</board>
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
@@ -571,21 +623,13 @@
 					<path>src/smc_gen/r_sci_rx</path>
 				</impdir>
 				<impdir>
-					<board>TargetBoardRX130</board>
-					<board>RSKRX140</board>
-					<board>MCB-RX26T Type A</board>
-					<board>MCB-RX26T Type B</board>
-					<board>RSKRX65N-2MB</board>
-					<board>RSKRX65N-2MB(TSIP)</board>
-					<board>RX65NCloudKit</board>
-					<board>CloudKitRX65N</board>
-					<board>CK-RX65N</board>
-					<board>RSKRX660</board>
-					<board>RSKRX66T</board>
-					<board>RSKRX66T(TSIP)</board>
-					<board>RSKRX671</board>
-					<board>RX72NEnvisionKit</board>
-					<board>EnvisionKitRX72N</board>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
+					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
+					<path>src/smc_gen/r_sci_rx</path>
+				</impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_gpio_rx/r_gpio_rx_vx.xx/r_gpio_rx</folder>
 					<path>src/smc_gen/r_gpio_rx</path>
 				</impdir>
@@ -614,9 +658,17 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
-					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -682,9 +734,16 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
+					<file>src/lnkr5f526tf.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
-					<file>src/lnkr5f526tf.icf</file>
+					<file>src/lnkr5f526ta.icf</file>
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
@@ -779,6 +838,19 @@
 					<toolchain>GNURX</toolchain>
 					<board>MCB-RX26T Type A</board>
 					<board>MCB-RX26T Type B</board>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal-GCC_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>RXC</toolchain>
+					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
+					<group>RX26T</group>
+					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<toolchain>GNURX</toolchain>
+					<board>Default</board>
+					<group>RX26T</group>
 					<path>configuration/samples/minimal/mcb-rx26t/MCB-RX26T-minimal-GCC_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
@@ -960,8 +1032,16 @@
 				</impdir>
 				<impdir>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>configuration/samples/bare/rx26t/lnkr5f526ta.icf</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>configuration/samples/bare/rx26t/lnkr5f526tf.icf</file>
 					<path>src</path>
 				</impdir>
@@ -1028,8 +1108,15 @@
 				</linkerscript>
 				<linkerscript>
 					<toolchain>ICCRX</toolchain>
+					<board>Default</board>
 					<series>RX200</series>
 					<group>RX26T</group>
+					<file>src/lnkr5f526ta.icf</file>
+				</linkerscript>
+				<linkerscript>
+					<toolchain>ICCRX</toolchain>
+					<board>MCB-RX26T Type A</board>
+					<board>MCB-RX26T Type B</board>
 					<file>src/lnkr5f526tf.icf</file>
 				</linkerscript>
 				<linkerscript>
@@ -4402,13 +4489,19 @@
 				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX65N-2MB(DUAL)</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
+				<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 				<board>RX65NCloudKit</board>
 				<board>CloudKitRX65N</board>
+				<board>CloudKitRX65N(DUAL)</board>
 				<board>CK-RX65N</board>
+				<board>CK-RX65N(DUAL)</board>
 				<board>RSKRX671</board>
+				<board>RSKRX671(DUAL)</board>
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
+				<board>EnvisionKitRX72N(DUAL)</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/iot_adu/common</folder>
@@ -4420,30 +4513,40 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/ether</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>configuration/samples/iot_adu/wifi</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<folder>configuration/samples/iot_adu/rsk-rx65n-2mb/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/linker_script.ld</file>
 					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/linker_script_sample.ld</file>
 					<path>src</path>
@@ -4451,13 +4554,16 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<file>configuration/samples/iot_adu/rsk-rx65n-2mb/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/rx65n-cloudkit/src</folder>
 					<path>src</path>
 				</impdir>
@@ -4465,6 +4571,7 @@
 					<toolchain>GNURX</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<file>configuration/samples/iot_adu/rx65n-cloudkit/linker_script.ld</file>
 					<file>configuration/samples/iot_adu/rx65n-cloudkit/linker_script_sample.ld</file>
 					<path>src</path>
@@ -4473,17 +4580,20 @@
 					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<file>configuration/samples/iot_adu/rx65n-cloudkit/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/ck-rx65n/ether/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<file>configuration/samples/iot_adu/ck-rx65n/ether/linker_script.ld</file>
 					<file>configuration/samples/iot_adu/ck-rx65n/ether/linker_script_sample.ld</file>
 					<path>src</path>
@@ -4491,17 +4601,20 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<file>configuration/samples/iot_adu/ck-rx65n/ether/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>configuration/samples/iot_adu/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<file>configuration/samples/iot_adu/rsk-rx671/linker_script.ld</file>
 					<file>configuration/samples/iot_adu/rsk-rx671/linker_script_sample.ld</file>
 					<path>src</path>
@@ -4509,12 +4622,14 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<file>configuration/samples/iot_adu/rsk-rx671/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/rx72n-envision-kit/src</folder>
 					<path>src</path>
 				</impdir>
@@ -4522,6 +4637,7 @@
 					<toolchain>GNURX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<file>configuration/samples/iot_adu/rx72n-envision-kit/linker_script.ld</file>
 					<file>configuration/samples/iot_adu/rx72n-envision-kit/linker_script_sample.ld</file>
 					<path>src</path>
@@ -4530,6 +4646,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<file>configuration/samples/iot_adu/rx72n-envision-kit/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
@@ -4549,10 +4666,14 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>rx-driver-package/source/r_ether_rx/r_ether_rx_vx.xx/r_ether_rx</folder>
 					<path>src/smc_gen/r_ether_rx</path>
 				</impdir>
@@ -4562,21 +4683,27 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
 				</impdir>
@@ -4602,7 +4729,9 @@
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>rx-driver-package/source/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_vx.xx/r_wifi_sx_ulpgn</folder>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
@@ -4618,7 +4747,9 @@
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<file>configuration/libs/rx-driver-package/r_wifi_sx_ulpgn/r_wifi_sx_ulpgn_if.h</file>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 				</impdir>
@@ -4629,58 +4760,70 @@
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/CK-RX65N</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_RSK</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX65N_Cloudkit</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX671_RSK</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/AzureDeviceUpdateScripts/RX72N_EnvisionKit</folder>
 					<path>tools/AzureDeviceUpdateScripts</path>
 				</impdir>
 				<!-- copy flash project for ADU -->
 				<impdir>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/FlashProjects/CK-RX65N</folder>
 					<path>tools/FlashProjects</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_RSK</folder>
 					<path>tools/FlashProjects</path>
 				</impdir>
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX65N_Cloudkit</folder>
 					<path>tools/FlashProjects</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX671_RSK</folder>
 					<path>tools/FlashProjects</path>
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>configuration/samples/iot_adu/tools/FlashProjects/RX72N_EnvisionKit</folder>
 					<path>tools/FlashProjects</path>
 				</impdir>
@@ -4689,7 +4832,9 @@
 					<impdir>
 						<board>RX65NCloudKit</board>
 						<board>CloudKitRX65N</board>
+						<board>CloudKitRX65N(DUAL)</board>
 						<board>RSKRX671</board>
+						<board>RSKRX671(DUAL)</board>
 						<file>configuration/libs/netxduo_addons/dns/nxd_dns.c</file>
 						<path>libs/netxduo_addons/addons/dns</path>
 					</impdir>
@@ -4698,7 +4843,9 @@
 				<excludebuild>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c</path>
 				</excludebuild>
 				<!-- include -->
@@ -4723,54 +4870,72 @@
 				</incdir>
 				<incdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<path>src/smc_gen/r_ether_rx</path>
 				</incdir>
 				<incdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<path>src/smc_gen/r_wifi_sx_ulpgn</path>
 					<path>src/smc_gen/r_wifi_sx_ulpgn/src</path>
 				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<path>configuration/samples/iot_adu/rsk-rx65n-2mb/RSKRX65N-2MB-iot-sdk-adu_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<path>configuration/samples/iot_adu/rx65n-cloudkit/RX65N_Cloudkit-iot-sdk-adu_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<path>configuration/samples/iot_adu/ck-rx65n/ether/CK-RX65N-iot-sdk-adu_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<path>configuration/samples/iot_adu/rsk-rx671/RSKRX671-iot-sdk-adu_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<path>configuration/samples/iot_adu/rx72n-envision-kit/RX72N_EK-iot-sdk-adu_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>RPFRAM</name>
 						<name>RPFRAM2</name>
@@ -4782,13 +4947,19 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>D_CONNECT_INFO_1</name>
 						<address>0x00100000</address>
@@ -4797,10 +4968,14 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>B_ETHERNET_BUFFERS*</name>
 						<name>B_RX_DESC*</name>
@@ -4811,10 +4986,14 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<section>
 						<name>BEXRAM_1</name>
 						<name>REXRAM_1</name>
@@ -4832,6 +5011,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>BEXRAM_1</name>
 						<name>REXRAM_1</name>
@@ -4851,10 +5031,14 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<section>
 						<name>C_1</name>
 						<name>C_2</name>
@@ -4875,6 +5059,7 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<section>
 						<name>C_1</name>
 						<name>C_2</name>
@@ -4895,6 +5080,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>C_1</name>
 						<name>C_2</name>
@@ -4915,16 +5101,28 @@
 						<address>0xFFE00300</address>
 					</section>
 				</sections>
+				<removesections>
+					<toolchain>RXC</toolchain>
+					<section>
+						<name>D*</name>
+					</section>
+				</removesections>
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>EXCEPTVECT</name>
 						<address>0xFFFEFF80</address>
@@ -4933,13 +5131,19 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>RESETVECT</name>
 						<address>0xFFFEFFFC</address>
@@ -4953,9 +5157,12 @@
 				<macrodefinition>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<compiler>NX_ENABLE_TCPIP_OFFLOAD</compiler>
 					<compiler>NX_ENABLE_INTERFACE_CAPABILITY</compiler>
 				</macrodefinition>
@@ -5001,13 +5208,19 @@
 				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
 				<board>RSKRX65N-2MB</board>
+				<board>RSKRX65N-2MB(DUAL)</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
+				<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 				<board>RX65NCloudKit</board>
 				<board>CloudKitRX65N</board>
+				<board>CloudKitRX65N(DUAL)</board>
 				<board>CK-RX65N</board>
+				<board>CK-RX65N(DUAL)</board>
 				<board>RSKRX671</board>
+				<board>RSKRX671(DUAL)</board>
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
+				<board>EnvisionKitRX72N(DUAL)</board>
 				<!-- Copy resources to project -->
 				<impdir>
 					<folder>configuration/samples/boot_loader/common</folder>
@@ -5016,7 +5229,9 @@
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/boot_loader.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_version.c</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/src/demo_application_version.h</file>
@@ -5025,19 +5240,24 @@
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx671/src/boot_loader.c</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<folder>configuration/samples/boot_loader/rsk-rx65n-2mb/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/linker_script.ld</file>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/linker_script_sample.ld</file>
 					<path>src</path>
@@ -5045,13 +5265,16 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx65n-2mb/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<folder>configuration/samples/boot_loader/rx65n-cloudkit/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
@@ -5059,6 +5282,7 @@
 					<toolchain>GNURX</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rx65n-cloudkit/linker_script.ld</file>
 					<file>configuration/samples/boot_loader/rx65n-cloudkit/linker_script_sample.ld</file>
 					<path>src</path>
@@ -5067,17 +5291,20 @@
 					<toolchain>RXC</toolchain>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rx65n-cloudkit/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<folder>configuration/samples/boot_loader/ck-rx65n/ether/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_script.ld</file>
 					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_script_sample.ld</file>
 					<path>src</path>
@@ -5085,17 +5312,20 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<file>configuration/samples/boot_loader/ck-rx65n/ether/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>configuration/samples/boot_loader/rsk-rx671/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<toolchain>GNURX</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx671/linker_script.ld</file>
 					<file>configuration/samples/boot_loader/rsk-rx671/linker_script_sample.ld</file>
 					<path>src</path>
@@ -5103,12 +5333,14 @@
 				<impdir>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<file>configuration/samples/boot_loader/rsk-rx671/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>configuration/samples/boot_loader/rx72n-envision-kit/smc_gen</folder>
 					<path>src/smc_gen</path>
 				</impdir>
@@ -5116,6 +5348,7 @@
 					<toolchain>GNURX</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rx72n-envision-kit/linker_script.ld</file>
 					<file>configuration/samples/boot_loader/rx72n-envision-kit/linker_script_sample.ld</file>
 					<path>src</path>
@@ -5124,6 +5357,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<file>configuration/samples/boot_loader/rx72n-envision-kit/linker_section_sample.esi</file>
 					<path>src</path>
 				</impdir>
@@ -5147,14 +5381,18 @@
 				</impdir>
 				<impdir>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx671</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx671</path>
 				</impdir>
 				<impdir>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
@@ -5162,6 +5400,7 @@
 				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
 					<path>src/smc_gen/r_sci_rx/src/targets/rx72n</path>
 				</impdir>
@@ -5220,53 +5459,67 @@
 				<!-- scfg template -->
 				<scfgtemplate>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<path>configuration/samples/boot_loader/rsk-rx65n-2mb/RSKRX65N-2MB-boot_loader_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<path>configuration/samples/boot_loader/rx65n-cloudkit/RX65N_Cloudkit-boot_loader_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<path>configuration/samples/boot_loader/ck-rx65n/ether/CK-RX65N-boot_loader_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<path>configuration/samples/boot_loader/rsk-rx671/RSKRX671-boot_loader_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<path>configuration/samples/boot_loader/rx72n-envision-kit/RX72N_EK-boot_loader_scfg.ftl</path>
 				</scfgtemplate>
 				<!-- compiler setting -->
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
-						<name>RPFRAM</name>
-						<!--name>RPFRAM2</name-->
+						<name>RPFRAM2</name>
 						<address>0x00000004</address>
 					</section>
-					<mappedramrom>PFRAM=RPFRAM</mappedramrom>
-					<!--mappedramrom>PFRAM2=RPFRAM2</mappedramrom-->
+					<mappedramrom>PFRAM2=RPFRAM2</mappedramrom>
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<section>
 						<name>BEXRAM_1</name>
 						<name>REXRAM_1</name>
@@ -5284,6 +5537,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>BEXRAM_1</name>
 						<name>REXRAM_1</name>
@@ -5303,10 +5557,14 @@
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 					<board>RX65NCloudKit</board>
 					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
 					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
 					<section>
 						<name>PResetPRG</name>
 						<name>C_1</name>
@@ -5323,15 +5581,16 @@
 						<name>L</name>
 						<name>P</name>
 						<name>PFRAM</name>
-						<!--name>PFRAM2</name-->
+						<name>PFRAM2</name>
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
 				<sections>
 					<toolchain>RXC</toolchain>
 					<board>RSKRX671</board>
+					<board>RSKRX671(DUAL)</board>
 					<section>
-						<!--name>PResetPRG</name>
+						<name>PResetPRG</name>
 						<name>C_1</name>
 						<name>C_2</name>
 						<name>C_8</name>
@@ -5340,9 +5599,9 @@
 						<name>D*</name>
 						<name>W*</name>
 						<name>L</name>
-						<name>P</name-->
+						<name>P</name>
 						<name>PFRAM</name>
-						<!--name>PFRAM2</name-->
+						<name>PFRAM2</name>
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
@@ -5350,6 +5609,7 @@
 					<toolchain>RXC</toolchain>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>PResetPRG</name>
 						<name>C_1</name>
@@ -5360,6 +5620,7 @@
 						<name>D</name>
 						<name>D_1</name>
 						<name>D_2</name>
+						<name>D_8</name>
 						<name>DEXRAM</name>
 						<name>DEXRAM_1</name>
 						<name>DEXRAM_2</name>
@@ -5368,10 +5629,16 @@
 						<name>L</name>
 						<name>P</name>
 						<name>PFRAM</name>
-						<!--name>PFRAM2</name-->
+						<name>PFRAM2</name>
 						<address>0xFFFF0000</address>
 					</section>
 				</sections>
+				<removesections>
+					<toolchain>RXC</toolchain>
+					<section>
+						<name>D*</name>
+					</section>
+				</removesections>
 			</app>
 		</apps>
 		<!-- Setting for all sample projects -->

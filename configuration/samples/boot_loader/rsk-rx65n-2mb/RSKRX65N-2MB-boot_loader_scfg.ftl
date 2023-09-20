@@ -12,7 +12,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component display="r_bsp" id="r_bsp7.30" version="7.30">
+            <component display="r_bsp" id="r_bsp7.41" version="7.41">
                 <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" selectedIndex="1"/>
@@ -21,13 +21,13 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.50" version="5.50">
+            <component display="r_cmt_rx" id="r_cmt_rx5.60" version="5.60">
                 <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_flash_rx">
-            <component display="r_flash_rx" id="r_flash_rx5.00" version="5.00">
+            <component display="r_flash_rx" id="r_flash_rx5.10" version="5.10">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
@@ -47,7 +47,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
-            <component display="r_sci_rx" id="r_sci_rx4.80" version="4.80">
+            <component display="r_sci_rx" id="r_sci_rx4.90" version="4.90">
                 <gridItem id="RXD8/SMISO8/SSCL8" selectedIndex="1"/>
                 <gridItem id="TXD8/SMOSI8/SSDA8" selectedIndex="1"/>
                 <gridItem id="SCI8" selectedIndex="1"/>

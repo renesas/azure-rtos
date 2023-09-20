@@ -367,6 +367,10 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.2.1_rel-rx-1.3.0
+  * Update RX Driver Package to 1.41
+  * Support RX26T (RAM 48KB) for ThreadX, FileX and Minimal sample
+  * Add DUAL boards to the supported list for ADU and bootloader sample
 * 6.2.1_rel-rx-1.2.0
   * Support RX23E-B for ThreadX, FileX, Minimal, and Low Power sample
   * Use the latest version of FIT modules in RX Driver Pacakae 1.40 for RX23E-B samples
