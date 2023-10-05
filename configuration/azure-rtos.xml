@@ -25,16 +25,22 @@
 		<board>MCB-RX26T Type A</board>
 		<board>MCB-RX26T Type B</board>
 		<board>RSKRX65N-2MB</board>
+		<board>RSKRX65N-2MB(DUAL)</board>
 		<board>RSKRX65N-2MB(TSIP)</board>
+		<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 		<board>RX65NCloudKit</board>
 		<board>CloudKitRX65N</board>
+		<board>CloudKitRX65N(DUAL)</board>
 		<board>CK-RX65N</board>
+		<board>CK-RX65N(DUAL)</board>
 		<board>RSKRX660</board>
 		<board>RSKRX66T</board>
 		<board>RSKRX66T(TSIP)</board>
 		<board>RSKRX671</board>
+		<board>RSKRX671(DUAL)</board>
 		<board>RX72NEnvisionKit</board>
 		<board>EnvisionKitRX72N</board>
+		<board>EnvisionKitRX72N(DUAL)</board>
 		<family>RX</family>
 		<series>RX100</series>
 		<series>RX200</series>
@@ -5635,6 +5641,18 @@
 				</sections>
 				<removesections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
+					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>D*</name>
 					</section>
