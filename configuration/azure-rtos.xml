@@ -25,16 +25,22 @@
 		<board>MCB-RX26T Type A</board>
 		<board>MCB-RX26T Type B</board>
 		<board>RSKRX65N-2MB</board>
+		<board>RSKRX65N-2MB(DUAL)</board>
 		<board>RSKRX65N-2MB(TSIP)</board>
+		<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
 		<board>RX65NCloudKit</board>
 		<board>CloudKitRX65N</board>
+		<board>CloudKitRX65N(DUAL)</board>
 		<board>CK-RX65N</board>
+		<board>CK-RX65N(DUAL)</board>
 		<board>RSKRX660</board>
 		<board>RSKRX66T</board>
 		<board>RSKRX66T(TSIP)</board>
 		<board>RSKRX671</board>
+		<board>RSKRX671(DUAL)</board>
 		<board>RX72NEnvisionKit</board>
 		<board>EnvisionKitRX72N</board>
+		<board>EnvisionKitRX72N(DUAL)</board>
 		<family>RX</family>
 		<series>RX100</series>
 		<series>RX200</series>
@@ -332,6 +338,9 @@
 				<board>RX72NEnvisionKit</board>
 				<board>EnvisionKitRX72N</board>
 				<memoryreq>
+					<group>RX651</group>
+				</memoryreq>
+				<memoryreq>
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
 				</memoryreq>
@@ -359,6 +368,11 @@
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
+					<path>src/rtos_skeleton</path>
+				</impdir>
+				<impdir>
+					<group>RX651</group>
 					<file>configuration/samples/minimal/ck-rx65n/src/rtos_skeleton/sample_entry.c</file>
 					<path>src/rtos_skeleton</path>
 				</impdir>
@@ -394,6 +408,11 @@
 					<board>RSKRX671</board>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
+					<file>configuration/samples/minimal/ck-rx65n/src/demo_printf.h</file>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX651</group>
 					<file>configuration/samples/minimal/ck-rx65n/src/demo_printf.h</file>
 					<path>src</path>
 				</impdir>
@@ -441,6 +460,11 @@
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<folder>configuration/samples/minimal/rsk-rx65n-2mb/src</folder>
+					<path>src</path>
+				</impdir>
+				<impdir>
+					<group>RX651</group>
+					<folder>configuration/samples/minimal/rx651/src</folder>
 					<path>src</path>
 				</impdir>
 				<impdir>
@@ -504,6 +528,7 @@
 				<impdir>
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
+					<group>RX651</group>
 					<folder>rx-driver-package/source/r_byteq/r_byteq_vx.xx/r_byteq</folder>
 					<path>src/smc_gen/r_byteq</path>
 				</impdir>
@@ -526,6 +551,7 @@
 				<impdir>
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
+					<group>RX651</group>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/doc</folder>
 					<path>src/smc_gen/r_sci_rx/doc</path>
 				</impdir>
@@ -566,6 +592,11 @@
 					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
 				</impdir>
 				<impdir>
+					<group>RX651</group>
+					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx65n</folder>
+					<path>src/smc_gen/r_sci_rx/src/targets/rx65n</path>
+				</impdir>
+				<impdir>
 					<board>RX72NEnvisionKit</board>
 					<board>EnvisionKitRX72N</board>
 					<folder>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/targets/rx72n</folder>
@@ -596,6 +627,7 @@
 				<impdir>
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
+					<group>RX651</group>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.c</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/src/r_sci_rx_dmaca.h</file>
@@ -625,6 +657,7 @@
 				<impdir>
 					<group>RX23E-B</group>
 					<group>RX23EB</group>
+					<group>RX651</group>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/r_sci_rx_if.h</file>
 					<file>rx-driver-package/source/r_sci_rx/r_sci_rx_vx.xx/r_sci_rx/readme.txt</file>
 					<path>src/smc_gen/r_sci_rx</path>
@@ -806,6 +839,15 @@
 					<path>src/smc_gen/r_sci_rx</path>
 					<path>src/smc_gen/r_sci_rx/src</path>
 				</incdir>
+				<incdir>
+					<group>RX23E-B</group>
+					<group>RX23EB</group>
+					<group>RX651</group>
+					<path>src/smc_gen/r_byteq</path>
+					<path>src/smc_gen/r_byteq/src</path>
+					<path>src/smc_gen/r_sci_rx</path>
+					<path>src/smc_gen/r_sci_rx/src</path>
+				</incdir>
 				<!-- scfg template -->
 				<scfgtemplate>
 					<toolchain>RXC</toolchain>
@@ -857,6 +899,10 @@
 					<board>RSKRX65N-2MB</board>
 					<board>RSKRX65N-2MB(TSIP)</board>
 					<path>configuration/samples/minimal/rsk-rx65n-2mb/RSK-RX65N-2MB-minimal_scfg.ftl</path>
+				</scfgtemplate>
+				<scfgtemplate>
+					<group>RX651</group>
+					<path>configuration/samples/minimal/rx651/RX651-minimal_scfg.ftl</path>
 				</scfgtemplate>
 				<scfgtemplate>
 					<board>RX65NCloudKit</board>
@@ -5635,6 +5681,18 @@
 				</sections>
 				<removesections>
 					<toolchain>RXC</toolchain>
+					<board>RSKRX65N-2MB</board>
+					<board>RSKRX65N-2MB(DUAL)</board>
+					<board>RSKRX65N-2MB(TSIP)</board>
+					<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
+					<board>RX65NCloudKit</board>
+					<board>CloudKitRX65N</board>
+					<board>CloudKitRX65N(DUAL)</board>
+					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
+					<board>RX72NEnvisionKit</board>
+					<board>EnvisionKitRX72N</board>
+					<board>EnvisionKitRX72N(DUAL)</board>
 					<section>
 						<name>D*</name>
 					</section>

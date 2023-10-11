@@ -38,6 +38,8 @@ When using GCC compiler, the "_end" section in src/linker_script.ld should be at
 	_end = .;
 } > RAM
 
+When you connect RX65N Cloud Kit to your PC and get USB device not recognized message from Windows, please go to Clock page of Smart Configurator, enable SCKCR2 and set USB clock to 48MHz.
+
 
 Changes of sample project
 =========================
