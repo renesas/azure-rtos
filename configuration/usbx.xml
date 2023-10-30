@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<module>r_usb_basic</module>
-			<version>1.41</version>
+			<version>1.42</version>
 		</dependency>
 		<!-- Copy resources to project -->
 		<impdir>
@@ -175,11 +175,16 @@
 			<folder>usbx/common/usbx_device_classes/inc</folder>
 			<path>libs/usbx/common/usbx_device_classes/inc</path>
 		</impdir>
+		<impdir>
+			<folder>usbx/common/usbx_host_classes/inc</folder>
+			<path>libs/usbx/common/usbx_host_classes/inc</path>
+		</impdir>
 		<!-- include header-->
 		<incdir>
 			<path>libs/usbx</path>
 			<path>libs/usbx/common/core/inc</path>
 			<path>libs/usbx/common/usbx_device_classes/inc</path>
+			<path>libs/usbx/common/usbx_host_classes/inc</path>
 		</incdir>
 	</package>
 </refinfo>

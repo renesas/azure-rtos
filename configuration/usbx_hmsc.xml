@@ -58,13 +58,6 @@
 			<file>usbx/common/usbx_host_classes/src/ux_host_class_storage_unit_ready_test.c</file>
 			<path>libs/usbx/common/usbx_host_classes/src</path>
 		</impdir>
-		<impdir>
-			<folder>usbx/common/usbx_host_classes/inc</folder>
-			<path>libs/usbx/common/usbx_host_classes/inc</path>
-		</impdir>
 		<!-- include header-->
-		<incdir>
-			<path>libs/usbx/common/usbx_host_classes/inc</path>
-		</incdir>
 	</package>
 </refinfo>
