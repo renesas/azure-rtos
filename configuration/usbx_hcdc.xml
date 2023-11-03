@@ -4,11 +4,11 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>usbx_hcdc</name>
-		<version>6.2.1_rel-rx-1.3.0</version>
+		<version>6.2.1_rel-rx-2.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure RTOS USBX HCDC</desc>
-		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. This package provides USB Peripheral Communications Device Class.</details>
+		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. This package provides USB Host Communications Device Class.</details>
 		<function>RTOS</function>
 		<dependency>
 			<module>usbx</module>
