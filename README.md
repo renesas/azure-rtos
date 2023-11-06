@@ -317,6 +317,22 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
     <td>O</td>
   </tr>
   <tr align="center">
+    <td align="left">USBX HCDC sample</td>
+    <td>O</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr align="center">
     <td align="left">Threadx Low Power sample</td>
     <td>O</td>
     <td>O</td>
@@ -367,6 +383,9 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.2.1_rel-rx-2.0.0
+  * Support USBX HCDC sample
+  * Update ADU and bootloader sample to use FWUP V2
 * 6.2.1_rel-rx-1.3.0
   * Update RX Driver Package to 1.41
   * Support RX26T (RAM 48KB) for ThreadX, FileX and Minimal sample

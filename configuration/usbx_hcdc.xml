@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refinfo>
+	<!-- only one package entry allowed -->
+	<package>
+		<type>rtosmodule</type>
+		<name>usbx_hcdc</name>
+		<version>6.2.1_rel-rx-2.0.0</version>
+		<application>AzureRTOSLibrary</application>
+		<category>rtos.library</category>
+		<desc>Azure RTOS USBX HCDC</desc>
+		<details>Azure RTOS USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack, that is fully integrated with Azure RTOS ThreadX. This package provides USB Host Communications Device Class.</details>
+		<function>RTOS</function>
+		<dependency>
+			<module>usbx</module>
+		</dependency>
+		<dependency>
+			<module>r_usb_hcdc</module>
+			<version>1.42</version>
+		</dependency>
+		<!-- Copy resources to project -->
+		<impdir>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_activate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_capabilities_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_command.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_configure.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_deactivate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_endpoints_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_entry.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_ioctl.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_read.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_reception_callback.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_reception_start.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_reception_stop.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_transfer_request_completed.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_cdc_acm_write.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_activate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_change_detect.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_change_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_configure.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_deactivate.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_descriptor_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_entry.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_feature.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_hub_change_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_interrupt_endpoint_start.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_connection_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_enable_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_over_current_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_reset_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_change_suspend_process.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_port_reset.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_ports_power.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_status_get.c</file>
+			<file>usbx/common/usbx_host_classes/src/ux_host_class_hub_transfer_request_completed.c</file>
+			<path>libs/usbx/common/usbx_host_classes/src</path>
+		</impdir>
+		<!-- include header-->
+	</package>
+</refinfo>
