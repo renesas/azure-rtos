@@ -84,8 +84,8 @@
 
 #elif defined(DEMO_BOARD_RSSKRX23EB)	/* RSSKRX23EB RSSK Board */
 
-    #define DEMO_LED_PIN	(GPIO_PORT_7_PIN_3)
-    #define DEMO_IRQ_NUM	(IRQ_NUM_7)
+    #define DEMO_LED_PIN	(GPIO_PORT_7_PIN_1)
+    #define DEMO_IRQ_NUM	(IRQ_NUM_4)
     #define DEMO_LED_ON		(GPIO_LEVEL_LOW)
     #define DEMO_LED_OFF	(GPIO_LEVEL_HIGH)
 

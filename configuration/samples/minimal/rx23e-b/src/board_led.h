@@ -31,6 +31,6 @@
 #define LED_OFF (GPIO_LEVEL_HIGH)
 
 /* RSSK RX23EB LED1*/
-#define LED_PIN (GPIO_PORT_7_PIN_3)
+#define LED_PIN (GPIO_PORT_7_PIN_1)
 
 #endif /* SRC_BOARD_H_ */

@@ -22,6 +22,7 @@
 		<toolchain>ICCRX</toolchain>
 		<board>TargetBoardRX130</board>
 		<board>RSKRX140</board>
+		<board>RSSKRX23EB</board>
 		<board>MCB-RX26T Type A</board>
 		<board>MCB-RX26T Type B</board>
 		<board>RSKRX65N-2MB</board>
@@ -324,6 +325,7 @@
 			<app id="application" value="minimal" name="ThreadX minimal sample project" description="This project is the simplest sample using ThreadX. It toggles LED and outputs information to the serial terminal.">
 				<board>TargetBoardRX130</board>
 				<board>RSKRX140</board>
+				<board>RSSKRX23EB</board>
 				<board>MCB-RX26T Type A</board>
 				<board>MCB-RX26T Type B</board>
 				<board>RSKRX65N-2MB</board>
@@ -4261,6 +4263,7 @@
 			<app id="application" value="low_power" name="ThreadX Low Power sample project" description="This demonstration illustrates how to use ThreadX with low power mode">
 				<board>TargetBoardRX130</board>
 				<board>RSKRX140</board>
+				<board>RSSKRX23EB</board>
 				<board>RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(TSIP)</board>
 				<board>RX65NCloudKit</board>
