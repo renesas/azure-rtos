@@ -13,37 +13,38 @@
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
             <component display="r_bsp" id="r_bsp7.41" version="7.41">
-                <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_SWINT_UNIT1_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" selectedIndex="5"/>
-            </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-        </configuration>
-        <configuration inuse="true" name="r_cmt_rx">
-            <component display="r_cmt_rx" id="r_cmt_rx5.60" version="5.60">
-                <gridItem id="CMT_CFG_CH0_EN_NESTED_INT" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY" selectedIndex="3"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx5.10" version="5.10">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
-                <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
-                <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_RUN_FROM_ROM" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_fwup">
-            <component display="r_fwup" id="r_fwup1.06" version="1.06">
-                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="0"/>
-                <gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
+            <component display="r_fwup" id="r_fwup2.01" version="2.01">
+                <gridItem id="FWUP_CFG_UPDATE_MODE" selectedIndex="0"/>
+                <gridItem id="FWUP_CFG_FUNCTION_MODE" selectedIndex="0"/>
+                <gridItem id="FWUP_CFG_MAIN_AREA_ADDR_L" selectedIndex="0xFFF00000"/>
+                <gridItem id="FWUP_CFG_BUF_AREA_ADDR_L" selectedIndex="0xFFE00000"/>
+                <gridItem id="FWUP_CFG_AREA_SIZE" selectedIndex="0xF0000"/>
+                <gridItem id="FWUP_CFG_CF_BLK_SIZE" selectedIndex="0x8000"/>
+                <gridItem id="FWUP_CFG_EXT_BUF_AREA_ADDR_L" selectedIndex="0x00000000"/>
+                <gridItem id="FWUP_CFG_EXT_BUF_AREA_BLK_SIZE" selectedIndex="4096"/>
+                <gridItem id="FWUP_CFG_DF_ADDR_L" selectedIndex="0x00100000"/>
+                <gridItem id="FWUP_CFG_DF_BLK_SIZE" selectedIndex="64"/>
+                <gridItem id="FWUP_CFG_DF_NUM_BLKS" selectedIndex="512"/>
+                <gridItem id="FWUP_CFG_SIGNATURE_VERIFICATION" selectedIndex="0"/>
+                <gridItem id="FWUP_CFG_PRINTF_DISABLE" selectedIndex="0"/>
             </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-        </configuration>
-        <configuration inuse="true" name="r_sys_time_rx">
-            <component display="r_sys_time_rx" id="r_sys_time_rx1.01" version="1.01"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_sci_rx">
@@ -57,6 +58,7 @@
                 <gridItem id="SCI_CFG_CH5_EN_RXI_NESTED_INT" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH5_EN_TEI_NESTED_INT" selectedIndex="1"/>
                 <gridItem id="SCI_CFG_CH5_EN_ERI_NESTED_INT" selectedIndex="1"/>
+                <gridItem id="SCI_CFG_TEI_INCLUDED" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

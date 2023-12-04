@@ -49,6 +49,15 @@ void demo_printf_init(void)
         for(;;) {}
     }
 
+#if defined(__GNUC__)
+    /* Use non-buffering mode for stdout. Need to appropriately implement fstat in lowsrc.c when buffering mode is used. */
+    res = setvbuf(stdout, NULL, _IONBF, 0);
+    if (0 != res)
+    {
+    	for(;;) {}
+    }
+#endif
+
 }
 
 void demo_printf(char *format, ...)

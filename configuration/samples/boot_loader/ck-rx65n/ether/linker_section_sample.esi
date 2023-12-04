@@ -34,9 +34,8 @@
   <sections name="DEXRAM_2"/>
   <sections name="W*"/>
   <sections name="L"/>
-  <sections name="PFRAM"/>
-  <sections name="PFRAM2"/>
   <sections name="P"/>
+  <sections name="PFRAM2"/>
   <sections name="EXCEPTVECT">
     <sectionAddress xsi:type="com.renesas.linkersection.model:FixedAddress" fixedAddress="4294967168"/>
   </sections>

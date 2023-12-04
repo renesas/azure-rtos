@@ -18,6 +18,7 @@
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x800"/>
                 <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" selectedIndex="5"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
@@ -33,7 +34,12 @@
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="netxduo_addons">
-            <component display="Azure RTOS NetX Duo Addons" id="netxduo_addons${packageVersion}" version="${packageVersion}"/>
+            <component display="Azure RTOS NetX Duo Addons" id="netxduo_addons${packageVersion}" version="${packageVersion}">
+                <gridItem id="HTTP" selectedIndex="0"/>
+                <gridItem id="NAT" selectedIndex="0"/>
+                <gridItem id="SMTP" selectedIndex="0"/>
+                <gridItem id="SNMP" selectedIndex="0"/>
+            </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
         <configuration enable="true" exclude="false" inuse="true" name="netxduo">
@@ -52,11 +58,6 @@
                 <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex="&quot;CK-RX65N&quot;"/>
                 <gridItem id="SAMPLE_LEAF_DEVICE_MANUFACTURER" selectedIndex="&quot;RENESAS&quot;"/>
                 <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex="&quot;CK-RX65N-Leaf&quot;"/>
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
-        <configuration enable="true" exclude="false" inuse="true" name="filex">
-            <component display="Azure RTOS FileX" id="filex${packageVersion}" version="${packageVersion}">
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
@@ -104,8 +105,8 @@
         <configuration inuse="true" name="r_flash_rx">
             <component display="r_flash_rx" id="r_flash_rx5.10" version="5.10">
                 <gridItem id="FLASH_CFG_CODE_FLASH_ENABLE" selectedIndex="1"/>
-                <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="1"/>
-                <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="1"/>
+                <gridItem id="FLASH_CFG_DATA_FLASH_BGO" selectedIndex="0"/>
+                <gridItem id="FLASH_CFG_CODE_FLASH_BGO" selectedIndex="0"/>
                 <gridItem id="FLASH_CFG_CODE_FLASH_RUN_FROM_ROM" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
@@ -116,15 +117,21 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_fwup">
-            <component display="r_fwup" id="r_fwup1.06" version="1.06">
-                <gridItem id="FWUP_CFG_IMPLEMENTATION_ENVIRONMENT" selectedIndex="4"/>
-                <gridItem id="FWUP_CFG_COMMUNICATION_FUNCTION" selectedIndex="1"/>
-                <gridItem id="FWUP_CFG_SERIAL_TERM_SCI" selectedIndex="5"/>
+            <component display="r_fwup" id="r_fwup2.01" version="2.01">
+                <gridItem id="FWUP_CFG_UPDATE_MODE" selectedIndex="0"/>
+                <gridItem id="FWUP_CFG_FUNCTION_MODE" selectedIndex="1"/>
+                <gridItem id="FWUP_CFG_MAIN_AREA_ADDR_L" selectedIndex="0xFFF00000"/>
+                <gridItem id="FWUP_CFG_BUF_AREA_ADDR_L" selectedIndex="0xFFE00000"/>
+                <gridItem id="FWUP_CFG_AREA_SIZE" selectedIndex="0xF0000"/>
+                <gridItem id="FWUP_CFG_CF_BLK_SIZE" selectedIndex="0x8000"/>
+                <gridItem id="FWUP_CFG_EXT_BUF_AREA_ADDR_L" selectedIndex="0x00000000"/>
+                <gridItem id="FWUP_CFG_EXT_BUF_AREA_BLK_SIZE" selectedIndex="4096"/>
+                <gridItem id="FWUP_CFG_DF_ADDR_L" selectedIndex="0x00100000"/>
+                <gridItem id="FWUP_CFG_DF_BLK_SIZE" selectedIndex="64"/>
+                <gridItem id="FWUP_CFG_DF_NUM_BLKS" selectedIndex="512"/>
+                <gridItem id="FWUP_CFG_SIGNATURE_VERIFICATION" selectedIndex="0"/>
+                <gridItem id="FWUP_CFG_PRINTF_DISABLE" selectedIndex="0"/>
             </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-        </configuration>
-        <configuration inuse="true" name="r_sys_time_rx">
-            <component display="r_sys_time_rx" id="r_sys_time_rx1.01" version="1.01"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
     </tool>

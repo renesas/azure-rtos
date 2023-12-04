@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rtos>
+    <node id="netxduo_addons">
+        <setting id="MQTT" value="1"/>
+        <setting id="NAT" value="1"/>
+        <setting id="FTP" value="0"/>
+        <setting id="TELNET" value="0"/>
+        <setting id="CLOUD" value="1"/>
+        <setting id="POP3" value="0"/>
+        <setting id="DNS" value="1"/>
+        <setting id="TFTP" value="0"/>
+        <setting id="HTTP" value="1"/>
+        <setting id="DHCP" value="1"/>
+        <setting id="SMTP" value="1"/>
+        <setting id="SNTP" value="1"/>
+        <setting id="AUTO_IP" value="0"/>
+        <setting id="WEB" value="1"/>
+        <setting id="SNMP" value="1"/>
+        <setting id="AZURE_IOT" value="1"/>
+    </node>
+</rtos>
