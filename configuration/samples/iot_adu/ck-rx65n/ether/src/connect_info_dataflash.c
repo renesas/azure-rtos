@@ -53,8 +53,10 @@ volatile uint8_t df_wifi_password[WIFI_PASSWORD_MAX_LENGTH + 1] = WIFI_PASSWORD;
 R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
 volatile uint8_t df_module_id[MODULE_ID_MAX_LENGTH + 1] = MODULE_ID;
 #if	USE_DEVICE_CERTIFICATE == 1
-volatile uint8_t df_device_cert[DEVICE_CER_MAX_LENGTH + 1];
-volatile uint8_t df_device_private_key[PRIVATE_KEY_MAX_LENGTH + 1];
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_device_cert[DEVICE_CER_MAX_LENGTH + 1] =  DEVICE_CERT;
+R_BSP_ATTRIB_SECTION_CHANGE(D, _CONNECT_INFO , 1)
+volatile uint8_t df_device_private_key[PRIVATE_KEY_MAX_LENGTH + 1] = DEVICE_PRIVATE_KEY;
 #endif /* End USE_DEVICE_CERTIFICATE == 1*/
 R_BSP_ATTRIB_SECTION_CHANGE_END
 #else /* (defined(__CCRX__) || defined(__GNUC__)) */

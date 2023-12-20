@@ -32,6 +32,8 @@ void nx_azure_iot_adu_agent_driver (NX_AZURE_IOT_ADU_AGENT_DRIVER * driver_req_p
 void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER * driver_req_ptr)
 {
 
+    static uint8_t s_fragmented_data_size = 0;
+
     /* Default to successful return.  */
     driver_req_ptr->nx_azure_iot_adu_agent_driver_status = NX_AZURE_IOT_SUCCESS;
         
@@ -41,6 +43,8 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER * driver_req_pt
         
         case NX_AZURE_IOT_ADU_AGENT_DRIVER_INITIALIZE:
         {
+
+            s_fragmented_data_size = 0;
 
             /* Process initialize requests.  */
             if (R_FWUP_Open() != FWUP_SUCCESS)
@@ -62,7 +66,6 @@ void nx_azure_iot_adu_agent_driver(NX_AZURE_IOT_ADU_AGENT_DRIVER * driver_req_pt
         case NX_AZURE_IOT_ADU_AGENT_DRIVER_WRITE:
         {
             static uint8_t s_fragmented_data[FLASH_CF_MIN_PGM_SIZE];
-            static uint8_t s_fragmented_data_size = 0;
 
             uint32_t current_data_offset = 0;
             uint32_t remaining_bytes     = driver_req_ptr->nx_azure_iot_adu_agent_driver_firmware_data_size;

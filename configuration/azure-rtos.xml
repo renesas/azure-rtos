@@ -4800,7 +4800,7 @@
 					<file>configuration/samples/boot_loader/common/src/base64_decode.c</file>
 					<file>configuration/samples/boot_loader/common/src/base64_decode.h</file>
 					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/connect_info_dataflash.c</file>
-					<file>configuration/samples/iot_adu/common/connect_info_dataflash.h</file>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/connect_info_dataflash.h</file>
 					<path>src/common</path>
 				</impdir>
 				<impdir>
@@ -4810,7 +4810,8 @@
 					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/nx_azure_iot_adu_agent_rx_driver.c</file>
 					<file>configuration/samples/iot_adu/common/sample_azure_iot_embedded_sdk_connect.c</file>
 					<file>configuration/samples/iot_adu/ether/sample_azure_iot_embedded_sdk_pnp.c</file>
-					<file>configuration/samples/iot_adu/common/sample_device_identity.c</file>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/sample_device_identity.c</file>
+					<file>configuration/samples/iot_adu/ck-rx65n/ether/src/sample_device_identity.h</file>
 					<path>src/demo</path>
 				</impdir>
 				<impdir>
@@ -4828,7 +4829,13 @@
 				<impdir>
 					<board>CK-RX65N</board>
 					<board>CK-RX65N(DUAL)</board>
-					<folder>configuration/samples/boot_loader/common/src/tinycrypt</folder>
+					<folder>configuration/samples/boot_loader/common/src/tinycrypt/lib</folder>
+					<path>src/tinycrypt/lib</path>
+				</impdir>
+				<impdir>
+					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
+					<folder>configuration/samples/iot_adu/ck-rx65n/ether/src/tinycrypt</folder>
 					<path>src/tinycrypt</path>
 				</impdir>
 				<impdir>
@@ -5626,6 +5633,14 @@
 					<optionid>com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize</optionid>
 					<value>true</value>
 				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
+					<toolid>com.renesas.cdt.managedbuild.gcc.rx.tool.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.linker.other.userDefinedOptions</optionid>
+					<value>-Wl,--no-gc-sections</value>
+				</option>
 				<additionaloption>
 					<toolchain>GNURX</toolchain>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.cpu.64bitdouble</optionid>
@@ -6214,6 +6229,14 @@
 					<board>CK-RX65N(DUAL)</board>
 					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.debug.warnStackSize</optionid>
 					<value>300</value>
+				</option>
+				<option>
+					<toolchain>GNURX</toolchain>
+					<board>CK-RX65N</board>
+					<board>CK-RX65N(DUAL)</board>
+					<toolid>com.renesas.cdt.managedbuild.gcc.rx.tool.linker</toolid>
+					<optionid>com.renesas.cdt.managedbuild.gcc.core.option.linker.other.userDefinedOptions</optionid>
+					<value>-Wl,--no-gc-sections</value>
 				</option>
 			</app>
 		</apps>
