@@ -1,5 +1,5 @@
 /*
- * base64_decode.h
+ * code_signer_public_key.h
  * Copyright (C) Renesas Electronics Corporation and/or its affiliates.
  * All Rights Reserved.
  *
@@ -23,11 +23,18 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef BASE64_DECODE_H_
-#define BASE64_DECODE_H_
+#ifndef CODE_SIGNER_PUBLIC_KEY_H_
+#define CODE_SIGNER_PUBLIC_KEY_H_
 
-#include "platform.h"
+/*
+ * PEM-encoded code signer public key.
+ *
+ * Must include the PEM header and footer:
+ * "-----BEGIN CERTIFICATE-----"\
+ * "...base64 data..."\
+ * "-----END CERTIFICATE-----"
+ */
 
-uint32_t base64_decode(uint8_t *source, uint8_t *result, uint32_t size);
+#define CODE_SIGNER_PUBLIC_KEY_PEM "Paste code signer public key here."
 
-#endif /* BASE64_DECODE_H_ */
+#endif /* CODE_SIGNER_PUBLIC_KEY_H_ */

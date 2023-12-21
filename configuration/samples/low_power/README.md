@@ -36,7 +36,7 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 	_end = .;
 } > RAM
 
-2.3. If you are using Custom board, after the project generation is completed, please do the pin assignment check for IRQ.
+2.3. If you are using RSSKRX23EB and Custom board, after the project generation is completed, please do the pin assignment check for IRQ.
 In Smart Configurator editor (<projectname>.scfg)
 - go to Pins tab
 - at Pin Function, select "Interrupt controller unit"

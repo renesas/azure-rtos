@@ -32,7 +32,7 @@
         </configuration>
         <configuration inuse="true" name="r_irq_rx">
             <component description="Dependency : r_bsp version(s) 6.20&#10;" display="r_irq_rx" id="r_irq_rx4.40" version="4.40">
-                <gridItem id="IRQ7" selectedIndex="1"/>
+                <gridItem id="IRQ4" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>

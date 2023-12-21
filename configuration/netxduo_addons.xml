@@ -10,9 +10,6 @@
 		<details>Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc.</details>
 		<category>rtos.library</category>
 		<dependency>
-			<module>filex</module>
-		</dependency>
-		<dependency>
 			<module>netxduo</module>
 		</dependency>
 		<!-- Copy resources to project -->
