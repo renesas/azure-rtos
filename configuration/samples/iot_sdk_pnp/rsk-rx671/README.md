@@ -63,7 +63,7 @@ In Smart Configurator editor (<projectname>.scfg)
     check "CTS2#/RTS2#/SS2# Pin"
 And [Generate Code]
 
-2.4. When using RX microcontrollers with DPFPUs
+2.4. When using RX microcontrollers with DPFPU
 Target projects (RX72N, RX671):
 - Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
 Workaround:

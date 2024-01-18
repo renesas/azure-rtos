@@ -64,7 +64,7 @@ to quickly go to Change Device dialog and change target device to R5F572NN.
 
 This issue is fixed from board version v1.12.
 
-2.5. When using RX microcontrollers with DPFPUs
+2.5. When using RX microcontrollers with DPFPU
 Target projects (RX72N, RX671):
 - Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
 Workaround:
