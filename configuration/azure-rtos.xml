@@ -4138,7 +4138,7 @@
 					<path>src/smc_gen</path>
 				</impdir>
 				<impdir>
-					<file>configuration/samples/usbx_hmsc/README.md</file>
+					<file>configuration/samples/usbx_hcdc/README.md</file>
 					<path>.</path>
 				</impdir>
 				<!-- copy driver codes -->
