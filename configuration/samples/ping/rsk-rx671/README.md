@@ -45,3 +45,9 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 	_ebss = .;
 	_end = .;
 } > RAM
+
+2.3. When using RX microcontrollers with DPFPU
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.
