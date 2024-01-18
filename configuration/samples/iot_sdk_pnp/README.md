@@ -44,3 +44,9 @@ In Smart Configurator editor (<projectname>.scfg)
   RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
 
 This issue is fixed from e2 studio 2023-04 and Smart Configurator for RX 2.17.
+
+2.4. When using RX microcontrollers with DPFPUs
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.

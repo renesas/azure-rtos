@@ -41,3 +41,9 @@ In Smart Configurator editor (<projectname>.scfg)
 - go to Pins tab
 - at Pin Function, select "Interrupt controller unit"
 - on the right panel, check and change the pin assignment for IRQ channel being used if it is incorrect
+
+2.4. When using RX microcontrollers with DPFPUs
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.

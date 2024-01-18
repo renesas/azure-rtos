@@ -42,3 +42,9 @@ In Smart Configurator editor (<projectname>.scfg)
 - at Pin Function, select SCI channel being used on the left panel (channel with opened blue box)
 - on the right panel, check and change the pin function if it is incorrect: 
   RXDx and TXDx should be used but the default setting could be SMISOx and SMOSIx
+
+2.4 When using RX microcontrollers with DPFPUs
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.

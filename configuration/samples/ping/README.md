@@ -50,3 +50,9 @@ if you see build error related to duplicate symbol "_nxde_dns_host_by_name_get",
 please open libs\netxduo_addons\addons\dns\nxd_dns.c and comment out _nxde_dns_host_by_name_get function.
 
 This issue is fixed from Smart Configurator for RX 2.17.
+
+2.5 When using RX microcontrollers with DPFPUs
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.

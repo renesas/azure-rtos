@@ -43,3 +43,9 @@ In Smart Configurator editor (<projectname>.scfg)
 - on the right panel, check and change USB0_VBUSEN pin number if it is incorrect (there is a warning icon)
 
 This issue will be fixed at that next update of RSK board description file.
+
+2.4 When using RX microcontrollers with DPFPUs
+Target projects (RX72N, RX671):
+- Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
+Workaround:
+- Call tx_thread_fpu_enable() at the beginning of every task.

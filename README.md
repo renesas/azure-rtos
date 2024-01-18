@@ -460,5 +460,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
   * https://www.youtube.com/watch?v=gxODyzvWSYs
 
 # How to use Trusted Secure IP with Azure RTOS
-* under constructing...
+We provide an Azure RTOS sample that leverages Trusted Secure IP which is hardware acceleration for encryption processing.
 
+Please visit Renesas Website for more details.
+* [RX Family TLS Implementation Example Using TSIP Driver (Azure RTOS)](https://www.renesas.com/search?keywords=r01an6948)
