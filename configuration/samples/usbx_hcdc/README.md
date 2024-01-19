@@ -3,7 +3,7 @@
 ---------------
 1.1. This sample project requires r_usb_basic v1.42 and r_usb_hcdc v1.42 as minimum version.
 After project generation, please confirm it as following steps:
- In Smart Configurator editor, go to Component tab
+ In Smart Configurator editor, go to Components tab
  - If you see r_usb_basic and r_usb_hcdc configuration are blue and can see its settings, 
    it is okay, you don't need to do anything.
  - If you see r_usb_basic and r_usb_hcdc configuration are grey off, 
