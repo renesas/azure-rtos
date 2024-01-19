@@ -1,21 +1,17 @@
 ---------------
 1. Usage Notes
 ---------------
-1.1. To configure/change the current graphical display on LCD, please use Azure RTOS GUIX Studio
-(The Azure RTOS GUIX Studio installer is available here: https://aka.ms/azrtos-guix-installer)
-- Open Azure RTOS GUIX Studio
-- Select "Open Project"
-- Select .gxp file that is available under "src" folder of this project
-
-For more information about how to use Azure RTOS GUIX Studio, please check this page
-https://docs.microsoft.com/azure/rtos/guix/about-guix-studio
-
-For more information about GUIX in general, please refer to the following page
-https://docs.microsoft.com/azure/rtos/guix/about-guix
-
-
+1.1. This sample project requires r_usb_basic v1.42 and r_usb_hcdc v1.42 as minimum version.
+After project generation, please confirm it as following steps:
+ In Smart Configurator editor, go to Components tab
+ - If you see r_usb_basic and r_usb_hcdc configuration are blue and can see its settings, 
+   it is okay, you don't need to do anything.
+ - If you see r_usb_basic and r_usb_hcdc configuration are grey off, 
+   you can select grey component and click on the link to download missing module.
+   After downloading completed, click Generate Code button to generate code for it.
+ 
 1.2. For more information about how to use this sample project, 
-please refer to section 2.8 of r01an6455ej0200-rx-azure-rtos.pdf
+please refer to section 2.11 of r01an6455ej0200-rx-azure-rtos.pdf
 
 1.3. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
@@ -25,7 +21,6 @@ please refer to section 2.8 of r01an6455ej0200-rx-azure-rtos.pdf
 1.4. Please also take note that the sample project is verified with C project.
 If you create new project with C++ option, please confirm its behavior by yourself.
 For example, if you create project with C++ option and CC-RX compiler, you will need to add abort() function manually.
-
 
 ------------------------
 2. Caution / Known Issue
@@ -50,21 +45,15 @@ For example, if you create project with C++ option and CC-RX compiler, you will 
 	_end = .;
 } > RAM
 
-2.3. If you are using e2 studio 2022-04 or earlier verion with GCC RX compiler, please take note on following issue.
-For GUIX 16bpp sample project, RAM2 should be used for sections in src/linker_script.ld
-However, the section setting is changed to RAM in linker_script.ld when first build and after code generated.
-You can simply copy src/linker_script_sample.ld to src/linker_script.ld, and build project again
+2.3. If you are using RSK board (RSK RX65N, RSK RX671), please do the pin assignment check for USB0_VBUSEN.
+In Smart Configurator editor (<projectname>.scfg)
+- go to Pins tab
+- at Pin Function, select USB0 on the left panel
+- on the right panel, check and change USB0_VBUSEN pin number if it is incorrect (there is a warning icon)
 
-2.4. If you are using RX72N Envision Kit, the device on RX72N Envision Kit is R5F572NN (Flash memory 4MB).
-However, when creating new project with old board version (v1.11 and older),
-the project is created with R5F572ND device (Flash memory 2MB).
-You can go to [Board] tab of Smart Configurator editor to check the correctness of the device.
-In case the device is R5F572ND, at Board tab, you can click [...] button behind the Board combo-box
-to quickly go to Change Device dialog and change target device to R5F572NN.
+This issue will be fixed at that next update of RSK board description file.
 
-This issue is fixed from board version v1.12.
-
-2.5. When using RX microcontrollers with DPFPU
+2.4 When using RX microcontrollers with DPFPU
 Target projects (RX72N, RX671):
 - Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
 Workaround:

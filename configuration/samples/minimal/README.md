@@ -2,7 +2,7 @@
 1. Usage Notes
 ---------------
 1.1. For more information about how to use this sample project, 
-please refer to section 2.2 of r01an6455ej0103-rx-azure-rtos.pdf
+please refer to section 2.2 of r01an6455ej0200-rx-azure-rtos.pdf
 
 1.2. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
