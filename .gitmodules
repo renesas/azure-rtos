@@ -3,19 +3,19 @@
 	url = https://github.com/azure-rtos/filex
 [submodule "netxduo"]
 	path = netxduo
-	url = https://github.com/azure-rtos/netxduo
+	url = https://github.com/eclipse-threadx/netxduo
 [submodule "threadx"]
 	path = threadx
-	url = https://github.com/azure-rtos/threadx
+	url = https://github.com/eclipse-threadx/threadx
 [submodule "rx-driver-package"]
 	path = rx-driver-package
 	url = https://github.com/renesas/rx-driver-package
 [submodule "guix"]
 	path = guix
-	url = https://github.com/azure-rtos/guix
+	url = https://github.com/eclipse-threadx/guix
 [submodule "usbx"]
 	path = usbx
-	url = https://github.com/azure-rtos/usbx/
+	url = https://github.com/eclipse-threadx/usbx
 [submodule "embedded-wireless-framework"]
 	path = embedded-wireless-framework
 	url = https://github.com/renesas/embedded-wireless-framework
