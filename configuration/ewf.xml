@@ -4,13 +4,13 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>ewf</name>
-		<version>6.2.1_rel-rx-2.0.0</version>
+		<version>6.4.0_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure Embedded Wireless Framework (Preliminary version)</desc>
 		<details>This is preliminary version of EWF for the demonstration purpose. EWF simplifies connecting small devices to the internet using different connectivity adapters</details>
 		<moduleinfo>> This is preliminary version
-Package version 6.2.1_rel-rx-2.0.0</moduleinfo>
+Package version 6.4.0_rel-rx-1.0.0</moduleinfo>
 		<function>RTOS</function>
 		<dependency>
 			<module>netxduo</module>

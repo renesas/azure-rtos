@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>usbx_pcdc</name>
-		<version>6.2.1_rel-rx-2.0.0</version>
+		<version>6.4.0_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure RTOS USBX PCDC</desc>

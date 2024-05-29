@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>usbx</name>
-		<version>6.2.1_rel-rx-2.0.0</version>
+		<version>6.4.0_rel-rx-1.0.0</version>
 		<application>AzureRTOSLibrary</application>
 		<category>rtos.library</category>
 		<desc>Azure RTOS USBX Common</desc>
@@ -127,6 +127,8 @@
 			<file>usbx/common/core/src/ux_utility_memory_allocate_add_safe.c</file>
 			<file>usbx/common/core/src/ux_utility_memory_allocate_mulc_safe.c</file>
 			<file>usbx/common/core/src/ux_utility_memory_allocate_mulv_safe.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_byte_pool_create.c</file>
+			<file>usbx/common/core/src/ux_utility_memory_byte_pool_search.c</file>
 			<file>usbx/common/core/src/ux_utility_memory_allocate.c</file>
 			<file>usbx/common/core/src/ux_utility_memory_compare.c</file>
 			<file>usbx/common/core/src/ux_utility_memory_copy.c</file>

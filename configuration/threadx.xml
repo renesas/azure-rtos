@@ -4,7 +4,7 @@
 	<package>
 		<type>rtosmodule</type>
 		<name>threadx</name>
-		<version>6.2.1_rel-rx-2.0.0</version>
+		<version>6.4.0_rel-rx-1.0.0</version>
 		<application>AzureRTOSKernel</application>
 		<category>rtos.kernel</category>
 		<desc>Azure RTOS ThreadX</desc>
