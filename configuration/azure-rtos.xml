@@ -4134,19 +4134,19 @@
 			<app id="application" value="iot_adu" name="Azure Device Update (ADU) sample project" description="This demonstration illustrates OTA firmware update. Note: this project requires bootloader project.">
 				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
-				<board>RSKRX65N-2MB</board>
+				<board isDual="true">RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(DUAL)</board>
-				<board>RSKRX65N-2MB(TSIP)</board>
+				<board isDual="true">RSKRX65N-2MB(TSIP)</board>
 				<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
-				<board>RX65NCloudKit</board>
-				<board>CloudKitRX65N</board>
+				<board isDual="true">RX65NCloudKit</board>
+				<board isDual="true">CloudKitRX65N</board>
 				<board>CloudKitRX65N(DUAL)</board>
-				<board>CK-RX65N</board>
+				<board isDual="true">CK-RX65N</board>
 				<board>CK-RX65N(DUAL)</board>
-				<board>RSKRX671</board>
+				<board isDual="true">RSKRX671</board>
 				<board>RSKRX671(DUAL)</board>
-				<board>RX72NEnvisionKit</board>
-				<board>EnvisionKitRX72N</board>
+				<board isDual="true">RX72NEnvisionKit</board>
+				<board isDual="true">EnvisionKitRX72N</board>
 				<board>EnvisionKitRX72N(DUAL)</board>
 				<!-- Copy resources to project -->
 				<impdir>
@@ -5064,19 +5064,19 @@
 			<app id="application" value="boot_loader" name="Secure bootloader sample project" description="This sample is used together with ADU sample project to provide a secure boot">
 				<toolchain>RXC</toolchain>
 				<toolchain>GNURX</toolchain>
-				<board>RSKRX65N-2MB</board>
+				<board isDual="true">RSKRX65N-2MB</board>
 				<board>RSKRX65N-2MB(DUAL)</board>
-				<board>RSKRX65N-2MB(TSIP)</board>
+				<board isDual="true">RSKRX65N-2MB(TSIP)</board>
 				<board>RSKRX65N-2MB(TSIP)(DUAL)</board>
-				<board>RX65NCloudKit</board>
-				<board>CloudKitRX65N</board>
+				<board isDual="true">RX65NCloudKit</board>
+				<board isDual="true">CloudKitRX65N</board>
 				<board>CloudKitRX65N(DUAL)</board>
-				<board>CK-RX65N</board>
+				<board isDual="true">CK-RX65N</board>
 				<board>CK-RX65N(DUAL)</board>
-				<board>RSKRX671</board>
+				<board isDual="true">RSKRX671</board>
 				<board>RSKRX671(DUAL)</board>
-				<board>RX72NEnvisionKit</board>
-				<board>EnvisionKitRX72N</board>
+				<board isDual="true">RX72NEnvisionKit</board>
+				<board isDual="true">EnvisionKitRX72N</board>
 				<board>EnvisionKitRX72N(DUAL)</board>
 				<!-- Copy resources to project -->
 				<impdir>

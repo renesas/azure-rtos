@@ -14,10 +14,6 @@
 		</dependency>
 		<!-- Copy resources to project -->
 		<impdir>
-			<folder>netxduo/addons/azure_iot/azure_iot_security_module</folder>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
-		</impdir>
-		<impdir>
 			<folder>netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules</folder>
 			<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/cmake-modules</path>
 		</impdir>
@@ -153,11 +149,6 @@
 		<incdir>
 			<path>libs/netxduo_addons/addons/azure_iot</path>
 			<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/inc</path>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc</path>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc/configs/RTOS_BASE</path>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc</path>
-			<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include</path>
 			<path>libs/netxduo_addons/addons/cloud</path>
 			<path>libs/netxduo_addons/addons/dhcp</path>
 			<path>libs/netxduo_addons/addons/dns</path>
@@ -203,10 +194,6 @@
 			</app>
 			<app id="AZURE_IOT" value="1">
 				<!-- resource -->
-				<impdir>
-					<folder>netxduo/addons/azure_iot/azure_iot_security_module</folder>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
-				</impdir>
 				<impdir>
 					<folder>netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules</folder>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/cmake-modules</path>
@@ -272,11 +259,6 @@
 				<incdir>
 					<path>libs/netxduo_addons/addons/azure_iot</path>
 					<path>libs/netxduo_addons/addons/azure_iot/azure-sdk-for-c/sdk/inc</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/inc/configs/RTOS_BASE</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc</path>
-					<path>libs/netxduo_addons/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include</path>
 				</incdir>
 			</app>
 			<app id="CLOUD" value="0">
