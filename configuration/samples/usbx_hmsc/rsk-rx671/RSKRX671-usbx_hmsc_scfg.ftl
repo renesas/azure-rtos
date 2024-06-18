@@ -29,7 +29,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
 		<configuration inuse="true" name="r_usb_basic">
-            <component display="r_usb_basic" id="r_usb_basic1.41" version="1.41">
+            <component display="r_usb_basic" id="r_usb_basic1.42" version="1.42">
 				<gridItem id="USB0_DP" selectedIndex="1"/>
                 <gridItem id="USB0_DM" selectedIndex="1"/>
                 <gridItem id="USB0_VBUSEN" selectedIndex="1"/>
