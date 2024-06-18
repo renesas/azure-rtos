@@ -3167,10 +3167,10 @@
 					<folder>rx-driver-package/source/r_usb_pcdc/r_usb_pcdc_vx.xx/r_usb_pcdc</folder>
 					<path>src/smc_gen/r_usb_pcdc</path>
 				</impdir>
-				<!--impdir>
+				<impdir>
 					<folder>rx-driver-package/source/r_usb_basic/r_usb_basic_vx.xx/r_usb_basic</folder>
 					<path>src/smc_gen/r_usb_basic</path>
-				</impdir-->
+				</impdir>
 				<!-- copy ICCRX linker script for RX65N, RX66T, RX671, RX72N -->
 				<impdir>
 					<toolchain>ICCRX</toolchain>
