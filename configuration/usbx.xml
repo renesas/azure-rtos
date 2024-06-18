@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<module>r_usb_basic</module>
-			<version>1.42</version>
+			<version>1.41</version>
 		</dependency>
 		<!-- Copy resources to project -->
 		<impdir>
