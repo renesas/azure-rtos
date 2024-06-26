@@ -50,3 +50,12 @@ Target projects (RX72N, RX671):
 - Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
 Workaround:
 - Call tx_thread_fpu_enable() at the beginning of every task.
+
+2.5. Note : Renesas Discontinues Sequans-Sourced LTE Modules RYZ014A (CAT-M1)
+Renesas announces to discontinue the existing Sequans-sourced LTE modules known as the RYZ014A(CAT-M1) part numbers and will no longer be shipping these product.
+ If you have one of these in a current design or in production, the Sequans part numbers, GM01Q(CAT-M1) is pin for pin, form fit and function exact drop-in replacements from those RYZ014A. 
+Below Cellular driver of RX family works the below alternate product combination.
+
+ - RYZ014A Cellular control module ÅF Sequans GM01Q is the compatible module.
+
+Regarding EOL notice of the RYZ014A, please see [the link](https://www.renesas.com/jp/ja/document/eln/plc-240004-end-life-eol-process-select-part-numbers?r=1503996) at [the product page](https://www.renesas.com/products/wireless-connectivity/cellular-iot-modules/ryz014a-lte-cat-m1-cellular-iot-module) 
