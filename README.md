@@ -384,7 +384,11 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 
 ## History
 * 6.4.0_rel-rx-1.0.0
-  * Update Azure RTOS from v6.2.1 to v6.4.0
+  * Update Azure RTOS from v6.2.1 to v6.4.0 
+    * Implementation of Vulnerability Countermeasures.
+      * Please refer to the following two sources for details on vulnerabilities.
+        * [Azure RTOS ThreadX Remote Code Execution Vulnerability](https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-p7w6-62rq-vrf9)
+        * [Renesas PSIRT](https://www.renesas.com/us/en/support/renesas-psirt)
   * Remove IoT Embedded SDK PnP sample project
 * 6.2.1_rel-rx-2.0.0
   * Support USBX HCDC sample
