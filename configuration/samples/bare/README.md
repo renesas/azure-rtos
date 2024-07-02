@@ -41,3 +41,9 @@ Target projects (RX72N, RX671):
 - Projects with the double precision floating point instruction generation option (CC-RX: -dpfpu, GCC: --mdfpu=64, IAR: --fpu=64) enabled on RXv3 core devices
 Workaround:
 - Call tx_thread_fpu_enable() at the beginning of every task.
+
+2.4. Critical Vulnerability in Microsoft Azure RTOS ThreadX
+Azure RTOS ThreadX allows arbitrary read and write access and potential privilege escalation due to a vulnerability in its parameter checking mechanism, affecting versions 6.2.1 and below, with no known workarounds.
+Please refer to the following two sources for details on vulnerabilities.
+  * [Azure RTOS ThreadX Remote Code Execution Vulnerability](https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-p7w6-62rq-vrf9)
+  * [Renesas PSIRT](https://www.renesas.com/us/en/support/renesas-psirt)

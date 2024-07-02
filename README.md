@@ -14,7 +14,7 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 # Quick Start Steps
 1) Buy supported MCU board. 
 2) Install [e2 studio](https://www.renesas.com/software-tool/e-studio).
-3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.2.1_rel-rx-1.0.0. e2 studio can download the code from this repository. You can find guidebook on this URL:
+3) Create new project on e2 studio, and user can select "Azure RTOS" on project generator, and specify version like v6.4.0_rel-rx-1.0.0. e2 studio can download the code from this repository. You can find guidebook on this URL:
 <br/>https://www.renesas.com/search?keywords=R01AN6455
 1) Input your credential info for your Azure account.
 2) Build.
@@ -383,6 +383,13 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.4.0_rel-rx-1.0.0
+  * Update Azure RTOS from v6.2.1 to v6.4.0 
+    * Implementation of Vulnerability Countermeasures.
+      * Please refer to the following two sources for details on vulnerabilities.
+        * [Azure RTOS ThreadX Remote Code Execution Vulnerability](https://github.com/eclipse-threadx/threadx/security/advisories/GHSA-p7w6-62rq-vrf9)
+        * [Renesas PSIRT](https://www.renesas.com/us/en/support/renesas-psirt)
+  * Remove IoT Embedded SDK PnP sample project
 * 6.2.1_rel-rx-2.0.0
   * Support USBX HCDC sample
   * Update ADU and bootloader sample to use FWUP V2
