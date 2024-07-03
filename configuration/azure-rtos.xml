@@ -5672,12 +5672,12 @@
 			<file>threadx/LICENSE.txt</file>
 			<file>threadx/LICENSED-HARDWARE.txt</file>
 			<file>threadx/SECURITY.md</file>
-			<file>configuration/samples/r01an6455ej0200-rx-azure-rtos.pdf</file>
+			<file>configuration/samples/r01an6455ej0210-rx-azure-rtos.pdf</file>
 			<path>.</path>
 		</impdir>
 		<openfile>
 			<path>README.md</path>
-			<path>r01an6455ej0200-rx-azure-rtos.pdf</path>
+			<path>r01an6455ej0210-rx-azure-rtos.pdf</path>
 		</openfile>
 		<!-- Update ewp file for IAR project setting -->
 		<sourceedit>

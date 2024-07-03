@@ -11,7 +11,7 @@ After project generation, please confirm it as following steps:
    After downloading completed, click Generate Code button to generate code for it.
  
 1.2. For more information about how to use this sample project, 
-please refer to section 2.11 of r01an6455ej0200-rx-azure-rtos.pdf
+please refer to section 2.11 of r01an6455ej0210-rx-azure-rtos.pdf
 
 1.3. To keep 8 bytes size for double type
  "-dbl_size=8" compiler build option is set as default for CC-RX project
