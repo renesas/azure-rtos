@@ -471,3 +471,15 @@ We provide an Azure RTOS sample that leverages Trusted Secure IP which is hardwa
 
 Please visit Renesas Website for more details.
 * [RX Family TLS Implementation Example Using TSIP Driver (Azure RTOS)](https://www.renesas.com/search?keywords=r01an6948)
+
+# Troubleshooting: GCC 14 and Later – Build Error and Workaround
+
+When using GCC 14 or later, you may encounter build errors related to incompatible pointer types.
+To resolve this issue, please add the following option to suppress the error:
+
+`-Wno-error=incompatible-pointer-types`
+
+To set this option on e2studio, follow these steps:
+
+1. Right-click your project and select [Properties], or click the button to open the Properties window.
+2. Navigate to C/C++ Build → Settings → Tool Settings tab → Warnings, and add the compiler option in the [Other Flags] field.
