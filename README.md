@@ -395,6 +395,8 @@ This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) a
 </table>
 
 ## History
+* 6.4.0_rel-rx-1.0.1
+  * Added deprecation notice for Azure IoT Hub/Central samples.
 * 6.4.0_rel-rx-1.0.0
   * Update Azure RTOS from v6.2.1 to v6.4.0 
     * Implementation of Vulnerability Countermeasures.
