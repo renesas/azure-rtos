@@ -1,3 +1,15 @@
+# Deprecation Notice
+As of October 7, 2025, the Azure IoT Hub/Central connected samples in this repository have been deprecated, because the Azure Certified Device program had  terminated in 2024. These samples can no longer be generated from e² studio. However, Azure RTOS samples (such as ThreadX, NetX/Duo, USBX, GUIX, etc.) remain available.
+* Deprecated samples:
+  * IoT Embedded SDK sample
+  * IoT Embedded SDK sample using EWF
+  * IoT Embedded SDK PnP sample
+  * IoT Embedded SDK PnP sample using EWF
+  * ADU sample
+  * Bootloader sample
+  
+Azure RTOS has been transitioned to an open-source model under the Eclipse Foundation, a recognized leader in hosting open-source IoT projects in April of 2024.
+
 # Azure RTOS for RX family
 This Azure RTOS repository that includes some modules (ThreadX/NetX/FileX/etc) as git submodule are referred from e2 studio/SmartConfigurator(SC).
 # Supported boards
